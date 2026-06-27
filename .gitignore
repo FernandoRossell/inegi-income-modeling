@@ -1,0 +1,27 @@
+# Python / notebooks
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Local configuration
+.env
+.env.*
+
+# Large or restricted data files
+data/raw/*
+data/interim/*
+data/processed/*
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# Generated outputs
+outputs/*
+reports/figures/*
+reports/tables/*
+!outputs/.gitkeep
+!reports/figures/.gitkeep
+!reports/tables/.gitkeep
