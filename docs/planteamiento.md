@@ -1,4 +1,4 @@
-# Planteamiento de la tesina
+# Determinantes del ingreso laboral y evolución de la desigualdad regional en México: un análisis estadístico utilizando la ENIGH (2018–2024)
 
 ## Tema
 
@@ -7,6 +7,16 @@ Este trabajo tiene como propósito analizar los determinantes del ingreso labora
 El interés central es identificar qué características individuales, educativas, laborales, del hogar y del contexto territorial se asocian con diferencias en el ingreso laboral, así como analizar si la importancia de estos factores ha cambiado entre distintas regiones del país y a través del tiempo.
 
 El proyecto prioriza la explicación sobre la predicción. Por ello, el análisis se centrará en modelos estadísticos interpretables que permitan cuantificar la relación entre el ingreso y sus principales determinantes.
+
+---
+
+# Justificación
+
+Comprender los factores asociados al ingreso laboral resulta relevante tanto desde una perspectiva económica como de política pública. La evidencia obtenida puede contribuir a entender las desigualdades existentes entre distintos grupos poblacionales y regiones del país, así como identificar los factores que presentan mayor asociación con las brechas de ingreso.
+
+Desde el punto de vista metodológico, el proyecto permitirá integrar herramientas de inferencia estadística, regresión multivariada, análisis de desigualdad y aprendizaje estadístico aplicadas a un problema real utilizando datos oficiales de cobertura nacional.
+
+Asimismo, el estudio busca generar una metodología reproducible que pueda servir como base para futuras investigaciones relacionadas con desigualdad, mercado laboral y desarrollo regional en México.
 
 ---
 
@@ -26,24 +36,35 @@ Los microdatos de la ENIGH ofrecen una oportunidad para estudiar estas relacione
 
 ---
 
+# Hipótesis
+
+## Hipótesis general
+
+Las características individuales, educativas, laborales y territoriales presentan una asociación significativa con el ingreso laboral de la población mexicana, y la importancia relativa de estos factores ha cambiado entre regiones y a través del tiempo.
+
+## Hipótesis específicas
+
+* **H1.** La escolaridad presenta una asociación positiva con el ingreso laboral.
+* **H2.** Existen diferencias salariales por género aun después de controlar por variables observables como educación, edad, ocupación y experiencia laboral.
+* **H3.** Las características económicas y sociales de la región de residencia contribuyen a explicar parte de la variabilidad del ingreso laboral.
+* **H4.** La importancia relativa de los principales determinantes del ingreso ha cambiado entre los levantamientos de la ENIGH de 2018, 2020, 2022 y 2024.
+
+---
+
 # Objetivo general
 
-Analizar los determinantes del ingreso laboral en México mediante microdatos de la ENIGH correspondientes a distintos levantamientos, utilizando herramientas estadísticas interpretables para estimar la relación entre el ingreso laboral y un conjunto de características individuales, educativas, laborales y territoriales, así como estudiar la evolución regional de dichas relaciones y de indicadores de desigualdad como el índice de Gini.
+Analizar los determinantes del ingreso laboral en México mediante microdatos de la ENIGH correspondientes a los levantamientos de 2018, 2020, 2022 y 2024, utilizando herramientas estadísticas interpretables para estimar la relación entre el ingreso laboral y un conjunto de características individuales, educativas, laborales y territoriales, así como estudiar la evolución regional de dichas relaciones.
 
 ---
 
 # Objetivos específicos
 
 * Describir la distribución del ingreso laboral y comparar su evolución entre distintos levantamientos de la ENIGH.
-
-* Analizar las diferencias regionales del ingreso laboral e incorporar indicadores de desigualdad, como el índice de Gini, para contextualizar dichas diferencias.
-
+* Analizar las diferencias regionales del ingreso laboral.
+* Evaluar la pertinencia de incorporar indicadores agregados de desigualdad, como el índice de Gini, para contextualizar las diferencias regionales.
 * Construir variables explicativas relevantes a partir de los microdatos y de información contextual proveniente de fuentes oficiales.
-
 * Estimar modelos estadísticos interpretables para cuantificar la asociación entre el ingreso laboral y variables individuales, educativas, laborales, del hogar y territoriales.
-
 * Comparar la magnitud e importancia relativa de los determinantes del ingreso entre distintos años y regiones del país.
-
 * Discutir las limitaciones del análisis, particularmente en relación con variables omitidas, sesgos de selección y las restricciones para realizar inferencia causal.
 
 ---
@@ -52,7 +73,9 @@ Analizar los determinantes del ingreso laboral en México mediante microdatos de
 
 El trabajo se concentrará en explicar las diferencias observadas en el ingreso laboral y no únicamente en desarrollar un modelo con el mayor desempeño predictivo.
 
-El estudio utilizará principalmente los levantamientos de la ENIGH correspondientes a **2018, 2020, 2022 y 2024**, lo que permitirá incorporar una dimensión temporal al análisis y evaluar si los determinantes del ingreso han cambiado antes, durante y después del periodo de la pandemia por COVID-19.
+El estudio utilizará principalmente los levantamientos de la ENIGH correspondientes a **2018, 2020, 2022 y 2024**, lo que permitirá incorporar una dimensión temporal al análisis y evaluar si los determinantes del ingreso han cambiado antes, durante y después del periodo asociado a la pandemia por COVID-19.
+
+Los indicadores agregados de desigualdad y desarrollo social se incorporarán únicamente cuando exista una justificación metodológica clara y su nivel de agregación sea consistente con el análisis realizado.
 
 La interpretación causal dependerá de la estructura de los datos y de la estrategia empírica que resulte viable. En ausencia de un diseño causal explícito, los resultados se presentarán como asociaciones condicionadas por las variables observadas.
 
@@ -64,57 +87,42 @@ Se espera obtener una caracterización estadísticamente sólida de los principa
 
 El trabajo incluirá análisis descriptivos, modelos estadísticos, indicadores de desigualdad, tablas y visualizaciones que permitan responder la pregunta de investigación con evidencia empírica, manteniendo una interpretación cuidadosa de los resultados y de sus limitaciones metodológicas.
 
----
-
-# Observaciones metodológicas
-
-Existen algunos aspectos del diseño del proyecto que considero importantes discutir antes de comenzar el análisis:
-
-* Confirmar si la ENIGH constituye la fuente de información más adecuada para responder la pregunta de investigación o si conviene incorporar otras bases como la ENOE o los Censos de Población.
-* Definir si la comparación temporal se realizará utilizando los levantamientos de la ENIGH de 2018, 2020, 2022 y 2024, o si conviene modificar el periodo de estudio.
-* Determinar el nivel geográfico de análisis (entidad federativa, región o municipio), considerando la disponibilidad de información y la comparabilidad entre años.
-* Evaluar la pertinencia de incorporar indicadores agregados, como el índice de Gini, el rezago social o la pobreza, provenientes de CONEVAL.
-* Discutir si dichos indicadores deben utilizarse únicamente como elementos descriptivos para contextualizar los resultados o si resulta metodológicamente apropiado incorporarlos como variables explicativas.
+Además, se espera desarrollar una metodología completamente reproducible que documente el proceso de obtención, limpieza, integración y análisis de los datos, facilitando la replicación y extensión del estudio en investigaciones futuras.
 
 ---
 
-# Relación de tablas disponibles por año
+# Contribución esperada
 
-Los microdatos de la ENIGH se encuentran organizados en `data/raw/EINGH/` por año de levantamiento. Para cada año se conservaron los archivos CSV extraídos de las bases originales y el archivo PDF de documentación correspondiente.
+Esta investigación busca integrar herramientas de inferencia estadística, econometría y aprendizaje automático con énfasis en la interpretabilidad de los resultados.
 
-## Resumen por levantamiento
+El propósito es identificar los principales determinantes del ingreso laboral, analizar su evolución temporal y regional, y construir una metodología reproducible que pueda servir como base para futuras investigaciones relacionadas con desigualdad, mercado laboral y desarrollo regional en México.
 
-| Año | Ruta | Tablas CSV disponibles | Documentación |
-| --- | --- | ---: | --- |
-| 2018 | `data/raw/EINGH/2018/` | 12 | `702825188061.pdf` |
-| 2020 | `data/raw/EINGH/2020/` | 17 | `889463901242.pdf` |
-| 2022 | `data/raw/EINGH/2022/` | 17 | `889463910626.pdf` |
-| 2024 | `data/raw/EINGH/2024/` | 17 | `889463924494.pdf` |
+---
 
-## Tablas por año
+## Tablas disponibles en el ENIGH
 
-| Tabla CSV | 2018 | 2020 | 2022 | 2024 |
-| --- | :---: | :---: | :---: | :---: |
-| `agro.csv` | Sí | Sí | Sí | Sí |
-| `agroconsumo.csv` | No | Sí | Sí | Sí |
-| `agrogasto.csv` | No | Sí | Sí | Sí |
-| `agroproductos.csv` | No | Sí | Sí | Sí |
-| `concentradohogar.csv` | Sí | Sí | Sí | Sí |
-| `erogaciones.csv` | Sí | Sí | Sí | Sí |
-| `gastoshogar.csv` | Sí | Sí | Sí | Sí |
-| `gastospersona.csv` | Sí | Sí | Sí | Sí |
-| `gastotarjetas.csv` | Sí | Sí | Sí | Sí |
-| `hogares.csv` | Sí | Sí | Sí | Sí |
-| `ingresos.csv` | Sí | Sí | Sí | Sí |
-| `ingresos_jcf.csv` | No | Sí | Sí | Sí |
-| `noagro.csv` | Sí | Sí | Sí | Sí |
-| `noagroimportes.csv` | No | Sí | Sí | Sí |
-| `poblacion.csv` | Sí | Sí | Sí | Sí |
-| `trabajos.csv` | Sí | Sí | Sí | Sí |
-| `viviendas.csv` | Sí | Sí | Sí | Sí |
+| Tabla                  | Nivel de análisis                         | Uso esperado en la investigación                                               |
+| ---------------------- | ----------------------------------------- | ------------------------------------------------------------------------------ |
+| `poblacion.csv`        | Persona                                   | Variables sociodemográficas (edad, sexo, escolaridad, etc.)                    |
+| `trabajos.csv`         | Trabajo                                   | Características laborales, ocupación, horas trabajadas y prestaciones          |
+| `ingresos.csv`         | Persona                                   | Variable respuesta: ingreso laboral y sus componentes                          |
+| `concentradohogar.csv` | Hogar                                     | Variables agregadas del hogar, factores de expansión y contexto socioeconómico |
+| `hogares.csv`          | Hogar                                     | Información complementaria del hogar                                           |
+| `viviendas.csv`        | Vivienda                                  | Características de la vivienda y localización                                  |
+| Otras tablas           | Actividades económicas, gastos y negocios | Se utilizarán únicamente si aportan variables relevantes al modelo             |
 
-## Documentación conservada
+La ENIGH contiene un total de 17 tablas (12 en el levantamiento 2018), organizadas en distintos niveles de observación (vivienda, hogar, persona, trabajo, ingresos, gastos y actividades económicas). Para el objetivo de esta investigación se espera trabajar principalmente con las tablas poblacion, trabajos, ingresos, concentradohogar, hogares y viviendas, debido a que concentran la mayor parte de las variables necesarias para explicar el ingreso laboral. El resto de las tablas se incorporará únicamente si durante el desarrollo del proyecto aportan información relevante para responder la pregunta de investigación.
 
-Los archivos PDF se mantienen junto a los CSV de cada levantamiento porque sirven como documentación metodológica y de estructura de datos. En particular, permiten consultar definiciones de variables, criterios de levantamiento, notas sobre comparabilidad y referencias necesarias para justificar decisiones de limpieza, unión de tablas y construcción de variables.
+---
 
-Para el análisis empírico, las tablas centrales serán `concentradohogar.csv`, `poblacion.csv`, `trabajos.csv` e `ingresos.csv`, ya que permiten vincular características del hogar, atributos individuales, condiciones laborales e ingresos. El resto de las tablas podrá utilizarse como información complementaria si resulta pertinente para el alcance final del modelo.
+
+# Observaciones metodológicas para discutir
+
+Antes de iniciar el desarrollo del proyecto hay que validar algunos aspectos metodológicos:
+
+* Confirmar que la ENIGH constituye la fuente de información más adecuada para responder la pregunta de investigación o evaluar la conveniencia de incorporar otras fuentes como la ENOE o los Censos de Población.
+* Validar la selección de los levantamientos 2018, 2020, 2022 y 2024 como horizonte temporal del estudio.
+* Definir el nivel geográfico más adecuado para el análisis (entidad federativa, región o municipio), considerando la comparabilidad entre levantamientos y la disponibilidad de información.
+* Evaluar la pertinencia de incorporar indicadores agregados provenientes de CONEVAL (índice de Gini, pobreza, rezago social, entre otros).
+* Discutir si dichos indicadores deben emplearse únicamente para contextualizar los resultados o si resulta metodológicamente apropiado incorporarlos como variables explicativas mediante modelos multinivel u otras estrategias estadísticas.
+* Definir el alcance del uso de técnicas de aprendizaje automático como herramienta complementaria para comparar resultados con los modelos estadísticos tradicionales, manteniendo el énfasis principal del trabajo en la interpretación estadística.
