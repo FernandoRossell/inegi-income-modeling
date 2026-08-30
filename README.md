@@ -1,4 +1,4 @@
-# INEGI Income Modeling
+****# INEGI Income Modeling
 
 Repositorio de trabajo para la tesina **Determinantes del ingreso laboral y evolucion de la desigualdad regional en Mexico: un analisis estadistico utilizando la ENIGH (2018-2024)**.
 

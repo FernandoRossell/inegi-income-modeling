@@ -14,11 +14,13 @@ venv/
 data/raw/*
 data/interim/*
 data/processed/*
+data/min_sin_acento_baja/
 !data/raw/.gitkeep
 !data/interim/.gitkeep
 !data/processed/.gitkeep
 
 # Generated outputs
+tmp/
 outputs/*
 reports/figures/*
 reports/tables/*
