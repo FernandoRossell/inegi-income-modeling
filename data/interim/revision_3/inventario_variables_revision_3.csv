@@ -1,0 +1,559 @@
+tabla,variable,tipo_conceptual,decodificada,estable_4_anios,observacion
+concentradohogar,anio,fecha,No,sin mapping,
+concentradohogar,folioviv,identificador,No,no disponible en todos los años,
+concentradohogar,foliohog,identificador,No,no disponible en todos los años,
+concentradohogar,ubica_geo,llave geográfica,No,no disponible en todos los años,
+concentradohogar,tam_loc,categórica ordinal,Sí,estable,Decodificada con mapping oficial por año.
+concentradohogar,est_socio,categórica ordinal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+concentradohogar,est_dis,llave de diseño,No,no disponible en todos los años,
+concentradohogar,upm,llave de diseño,No,no disponible en todos los años,
+concentradohogar,factor,numérica discreta,No,no disponible en todos los años,
+concentradohogar,clase_hog,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+concentradohogar,sexo_jefe,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+concentradohogar,edad_jefe,numérica discreta,No,no disponible en todos los años,
+concentradohogar,educa_jefe,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+concentradohogar,tot_integ,numérica discreta,No,no disponible en todos los años,
+concentradohogar,hombres,numérica discreta,No,no disponible en todos los años,
+concentradohogar,mujeres,numérica discreta,No,no disponible en todos los años,
+concentradohogar,mayores,numérica discreta,No,no disponible en todos los años,
+concentradohogar,menores,numérica discreta,No,no disponible en todos los años,
+concentradohogar,p12_64,numérica discreta,No,no disponible en todos los años,
+concentradohogar,p65mas,numérica discreta,No,no disponible en todos los años,
+concentradohogar,ocupados,numérica discreta,No,no disponible en todos los años,
+concentradohogar,percep_ing,numérica discreta,No,no disponible en todos los años,
+concentradohogar,perc_ocupa,numérica discreta,No,no disponible en todos los años,
+concentradohogar,ing_cor,numérica continua,No,no disponible en todos los años,
+concentradohogar,ingtrab,numérica continua,No,no disponible en todos los años,
+concentradohogar,trabajo,numérica continua,No,no disponible en todos los años,
+concentradohogar,sueldos,numérica continua,No,no disponible en todos los años,
+concentradohogar,horas_extr,numérica continua,No,no disponible en todos los años,
+concentradohogar,comisiones,numérica continua,No,no disponible en todos los años,
+concentradohogar,aguinaldo,numérica continua,No,no disponible en todos los años,
+concentradohogar,indemtrab,numérica continua,No,no disponible en todos los años,
+concentradohogar,otra_rem,numérica continua,No,no disponible en todos los años,
+concentradohogar,remu_espec,numérica continua,No,no disponible en todos los años,
+concentradohogar,negocio,numérica continua,No,no disponible en todos los años,
+concentradohogar,noagrop,numérica continua,No,no disponible en todos los años,
+concentradohogar,industria,numérica continua,No,no disponible en todos los años,
+concentradohogar,comercio,numérica continua,No,no disponible en todos los años,
+concentradohogar,servicios,numérica continua,No,no disponible en todos los años,
+concentradohogar,agrope,numérica continua,No,no disponible en todos los años,
+concentradohogar,agricolas,numérica continua,No,no disponible en todos los años,
+concentradohogar,pecuarios,numérica continua,No,no disponible en todos los años,
+concentradohogar,reproducc,numérica continua,No,no disponible en todos los años,
+concentradohogar,pesca,numérica continua,No,no disponible en todos los años,
+concentradohogar,otros_trab,numérica continua,No,no disponible en todos los años,
+concentradohogar,rentas,numérica continua,No,no disponible en todos los años,
+concentradohogar,utilidad,numérica continua,No,no disponible en todos los años,
+concentradohogar,arrenda,numérica continua,No,no disponible en todos los años,
+concentradohogar,transfer,numérica continua,No,no disponible en todos los años,
+concentradohogar,jubilacion,numérica continua,No,no disponible en todos los años,
+concentradohogar,becas,numérica continua,No,no disponible en todos los años,
+concentradohogar,donativos,numérica continua,No,no disponible en todos los años,
+concentradohogar,remesas,numérica continua,No,no disponible en todos los años,
+concentradohogar,bene_gob,numérica continua,No,no disponible en todos los años,
+concentradohogar,transf_hog,numérica continua,No,no disponible en todos los años,
+concentradohogar,trans_inst,numérica continua,No,no disponible en todos los años,
+concentradohogar,estim_alqu,numérica continua,No,no disponible en todos los años,
+concentradohogar,otros_ing,numérica continua,No,no disponible en todos los años,
+concentradohogar,gasto_mon,numérica continua,No,no disponible en todos los años,
+concentradohogar,alimentos,numérica continua,No,no disponible en todos los años,
+concentradohogar,ali_dentro,numérica continua,No,no disponible en todos los años,
+concentradohogar,cereales,numérica continua,No,no disponible en todos los años,
+concentradohogar,carnes,numérica continua,No,no disponible en todos los años,
+concentradohogar,pescado,numérica continua,No,no disponible en todos los años,
+concentradohogar,leche,numérica continua,No,no disponible en todos los años,
+concentradohogar,huevo,numérica continua,No,no disponible en todos los años,
+concentradohogar,aceites,numérica continua,No,no disponible en todos los años,
+concentradohogar,tuberculo,numérica continua,No,no disponible en todos los años,
+concentradohogar,verduras,numérica continua,No,no disponible en todos los años,
+concentradohogar,frutas,numérica continua,No,no disponible en todos los años,
+concentradohogar,azucar,numérica continua,No,no disponible en todos los años,
+concentradohogar,cafe,numérica continua,No,no disponible en todos los años,
+concentradohogar,especias,numérica continua,No,no disponible en todos los años,
+concentradohogar,otros_alim,numérica continua,No,no disponible en todos los años,
+concentradohogar,bebidas,numérica continua,No,no disponible en todos los años,
+concentradohogar,ali_fuera,numérica continua,No,no disponible en todos los años,
+concentradohogar,tabaco,numérica continua,No,no disponible en todos los años,
+concentradohogar,vesti_calz,numérica continua,No,no disponible en todos los años,
+concentradohogar,vestido,numérica continua,No,no disponible en todos los años,
+concentradohogar,calzado,numérica continua,No,no disponible en todos los años,
+concentradohogar,vivienda,numérica continua,No,no disponible en todos los años,
+concentradohogar,alquiler,numérica continua,No,no disponible en todos los años,
+concentradohogar,pred_cons,numérica continua,No,no disponible en todos los años,
+concentradohogar,agua,numérica continua,No,no disponible en todos los años,
+concentradohogar,energia,numérica continua,No,no disponible en todos los años,
+concentradohogar,limpieza,numérica continua,No,no disponible en todos los años,
+concentradohogar,cuidados,numérica continua,No,no disponible en todos los años,
+concentradohogar,utensilios,numérica continua,No,no disponible en todos los años,
+concentradohogar,enseres,numérica continua,No,no disponible en todos los años,
+concentradohogar,salud,numérica continua,No,no disponible en todos los años,
+concentradohogar,hospital,numérica continua,No,no disponible en todos los años,
+concentradohogar,transporte,numérica continua,No,no disponible en todos los años,
+concentradohogar,publico,numérica continua,No,no disponible en todos los años,
+concentradohogar,foraneo,numérica continua,No,no disponible en todos los años,
+concentradohogar,adqui_vehi,numérica continua,No,no disponible en todos los años,
+concentradohogar,mantenim,numérica continua,No,no disponible en todos los años,
+concentradohogar,refaccion,numérica continua,No,no disponible en todos los años,
+concentradohogar,combus,numérica continua,No,no disponible en todos los años,
+concentradohogar,comunica,numérica continua,No,no disponible en todos los años,
+concentradohogar,educa_espa,numérica continua,No,no disponible en todos los años,
+concentradohogar,educacion,numérica continua,No,no disponible en todos los años,
+concentradohogar,esparci,numérica continua,No,no disponible en todos los años,
+concentradohogar,paq_turist,numérica continua,No,no disponible en todos los años,
+concentradohogar,personales,numérica continua,No,no disponible en todos los años,
+concentradohogar,cuida_pers,numérica continua,No,no disponible en todos los años,
+concentradohogar,acces_pers,numérica continua,No,no disponible en todos los años,
+concentradohogar,otros_gas,numérica continua,No,no disponible en todos los años,
+concentradohogar,transf_gas,numérica continua,No,no disponible en todos los años,
+concentradohogar,percep_tot,numérica continua,No,no disponible en todos los años,
+concentradohogar,retiro_inv,numérica continua,No,no disponible en todos los años,
+concentradohogar,prestamos,numérica continua,No,no disponible en todos los años,
+concentradohogar,otras_perc,numérica continua,No,no disponible en todos los años,
+concentradohogar,ero_nm_viv,numérica continua,No,no disponible en todos los años,
+concentradohogar,ero_nm_hog,numérica continua,No,no disponible en todos los años,
+concentradohogar,erogac_tot,numérica continua,No,no disponible en todos los años,
+concentradohogar,cuota_viv,numérica continua,No,no disponible en todos los años,
+concentradohogar,mater_serv,numérica continua,No,no disponible en todos los años,
+concentradohogar,material,numérica continua,No,no disponible en todos los años,
+concentradohogar,servicio,numérica continua,No,no disponible en todos los años,
+concentradohogar,deposito,numérica continua,No,no disponible en todos los años,
+concentradohogar,prest_terc,numérica continua,No,no disponible en todos los años,
+concentradohogar,pago_tarje,numérica continua,No,no disponible en todos los años,
+concentradohogar,deudas,numérica continua,No,no disponible en todos los años,
+concentradohogar,balance,numérica continua,No,no disponible en todos los años,
+concentradohogar,otras_erog,numérica continua,No,no disponible en todos los años,
+concentradohogar,smg,numérica continua,No,no disponible en todos los años,
+concentradohogar,cve_ent,llave geográfica,No,sin mapping,
+concentradohogar,entidad,llave geográfica,No,sin mapping,
+concentradohogar,cve_mun,llave geográfica,No,sin mapping,
+concentradohogar,municipio,llave geográfica,No,sin mapping,
+hogares,anio,fecha,No,sin mapping,
+hogares,folioviv,identificador,No,no disponible en todos los años,
+hogares,foliohog,identificador,No,no disponible en todos los años,
+hogares,huespedes,numérica discreta,No,no disponible en todos los años,
+hogares,huesp_come,numérica discreta,No,no disponible en todos los años,
+hogares,num_trab_d,numérica discreta,No,no disponible en todos los años,
+hogares,trab_come,numérica discreta,No,no disponible en todos los años,
+hogares,acc_alim1,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+hogares,acc_alim2,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,acc_alim3,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,acc_alim4,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,acc_alim5,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,acc_alim6,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+hogares,acc_alim7,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,acc_alim8,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,acc_alim9,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+hogares,acc_alim10,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,acc_alim11,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,acc_alim12,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,acc_alim13,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+hogares,acc_alim14,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,acc_alim15,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,acc_alim16,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,alim17_1,numérica discreta,No,no disponible en todos los años,
+hogares,alim17_2,numérica discreta,No,no disponible en todos los años,
+hogares,alim17_3,numérica discreta,No,no disponible en todos los años,
+hogares,alim17_4,numérica discreta,No,no disponible en todos los años,
+hogares,alim17_5,numérica discreta,No,no disponible en todos los años,
+hogares,alim17_6,numérica discreta,No,no disponible en todos los años,
+hogares,alim17_7,numérica discreta,No,no disponible en todos los años,
+hogares,alim17_8,numérica discreta,No,no disponible en todos los años,
+hogares,alim17_9,numérica discreta,No,no disponible en todos los años,
+hogares,alim17_10,numérica discreta,No,no disponible en todos los años,
+hogares,alim17_11,numérica discreta,No,no disponible en todos los años,
+hogares,alim17_12,numérica discreta,No,no disponible en todos los años,
+hogares,acc_alim18,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+hogares,telefono,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+hogares,celular,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,tv_paga,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,conex_inte,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,num_auto,numérica discreta,No,no disponible en todos los años,
+hogares,anio_auto,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 213 códigos sin mapping."
+hogares,num_van,numérica discreta,No,no disponible en todos los años,
+hogares,anio_van,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 193 códigos sin mapping."
+hogares,num_pickup,numérica discreta,No,no disponible en todos los años,
+hogares,anio_pickup,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 215 códigos sin mapping."
+hogares,num_moto,numérica discreta,No,no disponible en todos los años,
+hogares,anio_moto,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 152 códigos sin mapping."
+hogares,num_bici,numérica discreta,No,no disponible en todos los años,
+hogares,anio_bici,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 230 códigos sin mapping."
+hogares,num_trici,numérica discreta,No,no disponible en todos los años,
+hogares,anio_trici,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 143 códigos sin mapping."
+hogares,num_carret,numérica discreta,No,no disponible en todos los años,
+hogares,anio_carret,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 140 códigos sin mapping."
+hogares,num_canoa,numérica discreta,No,no disponible en todos los años,
+hogares,anio_canoa,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 116 códigos sin mapping."
+hogares,num_otro,numérica discreta,No,no disponible en todos los años,
+hogares,anio_otro,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 106 códigos sin mapping."
+hogares,num_ester,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 40 códigos sin mapping."
+hogares,anio_ester,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 201 códigos sin mapping."
+hogares,num_radio,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 49 códigos sin mapping."
+hogares,anio_radio,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 226 códigos sin mapping."
+hogares,num_tva,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 36 códigos sin mapping."
+hogares,anio_tva,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 210 códigos sin mapping."
+hogares,num_tvd,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 51 códigos sin mapping."
+hogares,anio_tvd,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 139 códigos sin mapping."
+hogares,num_dvd,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 31 códigos sin mapping."
+hogares,anio_dvd,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 146 códigos sin mapping."
+hogares,num_licua,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 47 códigos sin mapping."
+hogares,anio_licua,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 232 códigos sin mapping."
+hogares,num_tosta,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 23 códigos sin mapping."
+hogares,anio_tosta,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 180 códigos sin mapping."
+hogares,num_micro,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 32 códigos sin mapping."
+hogares,anio_micro,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 166 códigos sin mapping."
+hogares,num_refri,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 45 códigos sin mapping."
+hogares,anio_refri,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 234 códigos sin mapping."
+hogares,num_estuf,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 47 códigos sin mapping."
+hogares,anio_estuf,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 263 códigos sin mapping."
+hogares,num_lavad,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 45 códigos sin mapping."
+hogares,anio_lavad,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 210 códigos sin mapping."
+hogares,num_planc,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 52 códigos sin mapping."
+hogares,anio_planc,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 225 códigos sin mapping."
+hogares,num_maqui,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 40 códigos sin mapping."
+hogares,anio_maqui,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 280 códigos sin mapping."
+hogares,num_venti,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 65 códigos sin mapping."
+hogares,anio_venti,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 202 códigos sin mapping."
+hogares,num_aspir,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 27 códigos sin mapping."
+hogares,anio_aspir,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 156 códigos sin mapping."
+hogares,num_compu,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 42 códigos sin mapping."
+hogares,anio_compu,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 125 códigos sin mapping."
+hogares,num_impre,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 30 códigos sin mapping."
+hogares,anio_impre,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 113 códigos sin mapping."
+hogares,num_juego,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 46 códigos sin mapping."
+hogares,anio_juego,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 119 códigos sin mapping."
+hogares,tsalud1_h,numérica discreta,No,no disponible en todos los años,
+hogares,tsalud1_m,numérica discreta,No,no disponible en todos los años,
+hogares,habito_1,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,habito_2,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,habito_3,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+hogares,habito_4,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+hogares,habito_5,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,habito_6,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,consumo,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,nr_viv,identificador,No,no disponible en todos los años,
+hogares,tarjeta,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,pagotarjet,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,regalotar,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,regalodado,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,autocons,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,regalos,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,remunera,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,transferen,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,parto_g,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+hogares,negcua,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,est_alim,numérica discreta,No,no disponible en todos los años,
+hogares,est_trans,numérica discreta,No,no disponible en todos los años,
+hogares,bene_licon,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,cond_licon,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+hogares,lts_licon,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,otros_lts,numérica discreta,No,no disponible en todos los años,
+hogares,diconsa,categórica nominal,No,categorías diferentes,"Mapping extraído, pero no se decodifica por 3 códigos sin mapping."
+hogares,frec_dicon,categórica ordinal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 3 códigos sin mapping."
+hogares,cond_dicon,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+hogares,pago_dicon,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+hogares,otro_pago,numérica discreta,No,no disponible en todos los años,
+ingresos,anio,fecha,No,sin mapping,
+ingresos,folioviv,identificador,No,no disponible en todos los años,
+ingresos,foliohog,identificador,No,no disponible en todos los años,
+ingresos,numren,identificador,No,no disponible en todos los años,
+ingresos,clave,código de catálogo,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+ingresos,mes_1,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+ingresos,mes_2,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+ingresos,mes_3,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+ingresos,mes_4,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+ingresos,mes_5,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+ingresos,mes_6,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+ingresos,ing_1,numérica discreta,No,no disponible en todos los años,
+ingresos,ing_2,numérica discreta,No,no disponible en todos los años,
+ingresos,ing_3,numérica discreta,No,no disponible en todos los años,
+ingresos,ing_4,numérica discreta,No,no disponible en todos los años,
+ingresos,ing_5,numérica discreta,No,no disponible en todos los años,
+ingresos,ing_6,numérica discreta,No,no disponible en todos los años,
+ingresos,ing_tri,numérica continua,No,no disponible en todos los años,
+poblacion,anio,fecha,No,sin mapping,
+poblacion,folioviv,identificador,No,no disponible en todos los años,
+poblacion,foliohog,identificador,No,no disponible en todos los años,
+poblacion,numren,identificador,No,no disponible en todos los años,
+poblacion,parentesco,código de catálogo,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,sexo,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,edad,numérica discreta,No,no disponible en todos los años,
+poblacion,madre_hog,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,madre_id,identificador,No,estable,"Mapping extraído, pero no se decodifica por 67 códigos sin mapping."
+poblacion,padre_hog,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,padre_id,identificador,No,estable,"Mapping extraído, pero no se decodifica por 64 códigos sin mapping."
+poblacion,hablaind,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,lenguaind,código de catálogo,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 84 códigos sin mapping."
+poblacion,hablaesp,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,comprenind,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,etnia,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,alfabetism,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,asis_esc,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,nivel,categórica ordinal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,grado,categórica ordinal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,tipoesc,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,tiene_b,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,otorg_b,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,forma_b,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,tiene_c,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,otorg_c,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,forma_c,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,nivelaprob,categórica ordinal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,gradoaprob,categórica ordinal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,antec_esc,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,residencia,código de catálogo,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,edo_conyug,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,pareja_hog,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,conyuge_id,identificador,No,estable,"Mapping extraído, pero no se decodifica por 68 códigos sin mapping."
+poblacion,segsoc,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,ss_aa,numérica discreta,No,no disponible en todos los años,
+poblacion,ss_mm,numérica discreta,No,no disponible en todos los años,
+poblacion,redsoc_1,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,redsoc_2,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,redsoc_3,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,redsoc_4,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,redsoc_5,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,redsoc_6,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,hor_1,numérica discreta,No,no disponible en todos los años,
+poblacion,min_1,numérica discreta,No,no disponible en todos los años,
+poblacion,usotiempo1,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,hor_2,numérica discreta,No,no disponible en todos los años,
+poblacion,min_2,numérica discreta,No,no disponible en todos los años,
+poblacion,usotiempo2,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,hor_3,numérica discreta,No,no disponible en todos los años,
+poblacion,min_3,numérica discreta,No,no disponible en todos los años,
+poblacion,usotiempo3,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,hor_4,numérica discreta,No,no disponible en todos los años,
+poblacion,min_4,numérica discreta,No,no disponible en todos los años,
+poblacion,usotiempo4,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,hor_5,numérica discreta,No,no disponible en todos los años,
+poblacion,min_5,numérica discreta,No,no disponible en todos los años,
+poblacion,usotiempo5,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,hor_6,numérica discreta,No,no disponible en todos los años,
+poblacion,min_6,numérica discreta,No,no disponible en todos los años,
+poblacion,usotiempo6,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,hor_7,numérica discreta,No,no disponible en todos los años,
+poblacion,min_7,numérica discreta,No,no disponible en todos los años,
+poblacion,usotiempo7,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,hor_8,numérica discreta,No,no disponible en todos los años,
+poblacion,min_8,numérica discreta,No,no disponible en todos los años,
+poblacion,usotiempo8,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,atemed,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,inst_1,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,inst_2,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,inst_3,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,inst_4,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,inst_5,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,inst_6,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,inscr_1,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,inscr_2,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,inscr_3,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,inscr_4,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,inscr_5,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,inscr_6,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,inscr_7,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,inscr_8,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,prob_anio,categórica nominal,No,estable,"Mapping extraído, pero no se decodifica por 238 códigos sin mapping."
+poblacion,prob_mes,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,prob_sal,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,aten_sal,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,servmed_1,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,servmed_2,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,servmed_3,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,servmed_4,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,servmed_5,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,servmed_6,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,servmed_7,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 1 códigos sin mapping."
+poblacion,servmed_8,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,servmed_9,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,servmed_10,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,servmed_11,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,hh_lug,numérica discreta,No,no disponible en todos los años,
+poblacion,mm_lug,numérica discreta,No,no disponible en todos los años,
+poblacion,hh_esp,numérica discreta,No,no disponible en todos los años,
+poblacion,mm_esp,numérica discreta,No,no disponible en todos los años,
+poblacion,pagoaten_1,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,pagoaten_2,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,pagoaten_3,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,pagoaten_4,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,pagoaten_5,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,pagoaten_6,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,pagoaten_7,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,noatenc_1,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,noatenc_2,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,noatenc_3,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,noatenc_4,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,noatenc_5,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,noatenc_6,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,noatenc_7,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,noatenc_8,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,noatenc_9,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,noatenc_10,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,noatenc_11,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,noatenc_12,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,noatenc_13,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,noatenc_14,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,noatenc_15,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,noatenc_16,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,norecib_1,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,norecib_2,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,norecib_3,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,norecib_4,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,norecib_5,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,norecib_6,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,norecib_7,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,norecib_8,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,norecib_9,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,norecib_10,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,norecib_11,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,razon_1,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,razon_2,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,razon_3,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,razon_4,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,razon_5,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,razon_6,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,razon_7,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,razon_8,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,razon_9,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,razon_10,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,razon_11,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,diabetes,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,pres_alta,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,peso,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,segvol_1,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,segvol_2,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,segvol_3,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,segvol_4,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,segvol_5,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,segvol_6,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,segvol_7,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,hijos_viv,numérica discreta,No,no disponible en todos los años,
+poblacion,hijos_mue,numérica discreta,No,no disponible en todos los años,
+poblacion,hijos_sob,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 76 códigos sin mapping."
+poblacion,trabajo_mp,categórica nominal,Sí,estable,Decodificada en corrección acotada con ficha oficial por año; columna trabajo_mp_desc creada.
+poblacion,motivo_aus,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,act_pnea1,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+poblacion,act_pnea2,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+poblacion,num_trabaj,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+trabajos,anio,fecha,No,sin mapping,
+trabajos,folioviv,identificador,No,no disponible en todos los años,
+trabajos,foliohog,identificador,No,no disponible en todos los años,
+trabajos,numren,identificador,No,no disponible en todos los años,
+trabajos,id_trabajo,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,trapais,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,subor,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,indep,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,personal,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pago,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,contrato,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,tipocontr,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_1,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+trabajos,pres_2,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_3,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_4,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_5,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_6,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_7,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_8,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+trabajos,pres_9,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_10,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_11,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_12,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_13,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_14,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_15,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_16,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_17,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_18,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_19,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,pres_20,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+trabajos,htrab,numérica discreta,No,no disponible en todos los años,
+trabajos,sinco,no decodificable,No,no disponible en todos los años,Requiere catálogo externo no incluido en estos PDFs.
+trabajos,scian,no decodificable,No,no disponible en todos los años,Requiere catálogo externo no incluido en estos PDFs.
+trabajos,clas_emp,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,tam_emp,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,no_ing,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+trabajos,tiene_suel,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,tipoact,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+trabajos,socios,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,soc_nr1,identificador,No,no disponible en todos los años,
+trabajos,soc_nr2,identificador,No,no disponible en todos los años,
+trabajos,soc_resp,identificador,No,no disponible en todos los años,
+trabajos,otra_act,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+trabajos,tipoact2,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+trabajos,tipoact3,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,tipoact4,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+trabajos,lugar,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,conf_pers,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,medtrab_1,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,medtrab_2,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,medtrab_3,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+trabajos,medtrab_4,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,medtrab_5,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,medtrab_6,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+trabajos,medtrab_7,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,anio,fecha,No,sin mapping,
+viviendas,folioviv,identificador,No,no disponible en todos los años,
+viviendas,tipo_viv,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,mat_pared,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,mat_techos,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,mat_pisos,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,antiguedad,numérica discreta,No,no disponible en todos los años,
+viviendas,antigua_ne,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,cocina,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,cocina_dor,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,cuart_dorm,numérica discreta,No,no disponible en todos los años,
+viviendas,num_cuarto,numérica discreta,No,no disponible en todos los años,
+viviendas,dotac_agua,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,excusado,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,uso_compar,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,sanit_agua,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,biodigest,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,bano_comp,numérica discreta,No,no disponible en todos los años,
+viviendas,bano_excus,numérica discreta,No,no disponible en todos los años,
+viviendas,bano_regad,numérica discreta,No,no disponible en todos los años,
+viviendas,drenaje,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,disp_elect,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,focos_ahor,numérica discreta,No,no disponible en todos los años,
+viviendas,combustible,categórica nominal,Sí,estable,Decodificada en corrección acotada con ficha oficial por año; columna combustible_desc creada.
+viviendas,eli_basura,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,tenencia,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,renta,numérica discreta,No,no disponible en todos los años,
+viviendas,estim_pago,numérica discreta,No,no disponible en todos los años,
+viviendas,pago_viv,numérica discreta,No,no disponible en todos los años,
+viviendas,pago_mesp,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,tipo_adqui,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,viv_usada,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,num_dueno1,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 42 códigos sin mapping."
+viviendas,hog_dueno1,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 13 códigos sin mapping."
+viviendas,num_dueno2,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 28 códigos sin mapping."
+viviendas,hog_dueno2,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 9 códigos sin mapping."
+viviendas,escrituras,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,lavadero,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,fregadero,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,regadera,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,tinaco_azo,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,cisterna,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,pileta,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,calent_sol,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,calent_gas,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,medidor_luz,categórica nominal,Sí,estable,Decodificada en corrección acotada con ficha oficial por año; columna medidor_luz_desc creada.
+viviendas,bomba_agua,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,tanque_gas,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,aire_acond,categórica nominal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,calefacc,categórica nominal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,tot_resid,numérica discreta,No,no disponible en todos los años,
+viviendas,tot_hom,numérica discreta,No,no disponible en todos los años,
+viviendas,tot_muj,numérica discreta,No,no disponible en todos los años,
+viviendas,tot_hog,numérica discreta,No,no disponible en todos los años,
+viviendas,ubica_geo,llave geográfica,No,no disponible en todos los años,
+viviendas,tam_loc,categórica ordinal,Sí,estable,Decodificada con mapping oficial por año.
+viviendas,est_socio,categórica ordinal,Sí,categorías diferentes,Decodificada con mapping oficial por año.
+viviendas,est_dis,llave de diseño,No,no disponible en todos los años,
+viviendas,upm,llave de diseño,No,no disponible en todos los años,
+viviendas,factor,numérica discreta,No,no disponible en todos los años,
+viviendas,procaptar,categórica nominal,No,no disponible en todos los años,"Mapping extraído, pero no se decodifica por 2 códigos sin mapping."
+viviendas,cve_ent,llave geográfica,No,sin mapping,
+viviendas,entidad,llave geográfica,No,sin mapping,
+viviendas,cve_mun,llave geográfica,No,sin mapping,
+viviendas,municipio,llave geográfica,No,sin mapping,

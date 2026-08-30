@@ -1,0 +1,689 @@
+tabla,variable,2018,2020,2022,2024,estado,decodificar
+concentradohogar,acces_pers,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,aceites,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,adqui_vehi,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,agricolas,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,agrope,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,agua,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,aguinaldo,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,ali_dentro,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,ali_fuera,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,alimentos,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,alquiler,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,ambul_serv,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,arrenda,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,aten_hosp,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,atenc_ambu,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,azucar,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,balance,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,bebidas,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,becas,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,bene_gob,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,cafe,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,calzado,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,carnes,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,cereales,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,clase_hog,documentada,documentada,documentada,documentada,categorías diferentes,True
+concentradohogar,combus,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,comercio,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,comisiones,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,comunica,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,cuida_pers,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,cuidados,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,cuota_viv,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,deposito,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,deudas,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,donativos,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,edad_jefe,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,educa_espa,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,educa_jefe,documentada,documentada,documentada,documentada,estable,True
+concentradohogar,educacion,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,energia,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,enseres,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,ero_nm_hog,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,ero_nm_viv,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,erogac_tot,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,esparci,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,especias,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,est_dis,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,est_socio,documentada,documentada,documentada,documentada,categorías diferentes,True
+concentradohogar,estim_alqu,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,factor,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,foliohog,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,folioviv,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,foraneo,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,frutas,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,gasto_mon,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,hombres,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,horas_extr,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,hospital,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,huevo,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,indemtrab,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,industria,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,ing_cor,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,ingtrab,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,jubilacion,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,leche,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,limpieza,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,mantenim,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,mater_serv,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,material,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,mayores,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,medic_prod,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,medicinas,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,menores,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,mujeres,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,negocio,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,noagrop,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,ocupados,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,otra_rem,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,otras_erog,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,otras_perc,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,otro_alim,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,otros_alim,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,otros_gas,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,otros_ing,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,otros_trab,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,p12_64,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,p65mas,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,pago_tarje,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,paq_turist,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,pecuarios,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,perc_ocupa,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,percep_ing,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,percep_tot,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,personales,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,pesca,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,pescado,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,pred_cons,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,prest_terc,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,prestamos,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,publico,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,refaccion,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,remesas,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,remu_espec,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,rentas,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,reproducc,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,retiro_inv,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,salud,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,servicio,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,servicios,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,sexo_jefe,documentada,documentada,documentada,documentada,estable,True
+concentradohogar,smg,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,sueldos,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,tabaco,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,tam_loc,documentada,documentada,documentada,documentada,estable,True
+concentradohogar,tot_integ,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,trabajo,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,trans_inst,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,transf_gas,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,transf_hog,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,transfer,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,transporte,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,tuberculo,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,ubica_geo,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,upm,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,utensilios,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,utilidad,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,verduras,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,vesti_calz,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,vestido,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+concentradohogar,vivienda,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,acc_alim1,documentada,documentada,documentada,documentada,categorías diferentes,True
+hogares,acc_alim10,documentada,documentada,documentada,documentada,estable,True
+hogares,acc_alim11,documentada,documentada,documentada,documentada,estable,True
+hogares,acc_alim12,documentada,documentada,documentada,documentada,estable,True
+hogares,acc_alim13,documentada,documentada,documentada,documentada,categorías diferentes,True
+hogares,acc_alim14,documentada,documentada,documentada,documentada,estable,True
+hogares,acc_alim15,documentada,documentada,documentada,documentada,estable,True
+hogares,acc_alim16,documentada,documentada,documentada,documentada,estable,True
+hogares,acc_alim18,documentada,documentada,documentada,documentada,categorías diferentes,True
+hogares,acc_alim2,documentada,documentada,documentada,documentada,estable,True
+hogares,acc_alim3,documentada,documentada,documentada,documentada,estable,True
+hogares,acc_alim4,documentada,documentada,documentada,documentada,estable,True
+hogares,acc_alim5,documentada,documentada,documentada,documentada,estable,True
+hogares,acc_alim6,documentada,documentada,documentada,documentada,categorías diferentes,True
+hogares,acc_alim7,documentada,documentada,documentada,documentada,estable,True
+hogares,acc_alim8,documentada,documentada,documentada,documentada,estable,True
+hogares,acc_alim9,documentada,documentada,documentada,documentada,categorías diferentes,True
+hogares,af_cultivo,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,af_empleo,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,af_negocio,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,af_otro,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,af_salud,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,af_trabajo,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,af_viv,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,alim17_1,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,alim17_10,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,alim17_11,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,alim17_12,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,alim17_2,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,alim17_3,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,alim17_4,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,alim17_5,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,alim17_6,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,alim17_7,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,alim17_8,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,alim17_9,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,anio_aspir,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_auto,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_bici,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_canoa,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_carre,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,anio_carret,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,anio_compu,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_dvd,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_ester,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_estuf,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_grab,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,anio_impre,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_juego,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_lap,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,anio_lavad,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_licua,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_maqui,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_micro,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_moto,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_otro,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_pick,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,anio_pickup,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,anio_planc,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_radio,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_refri,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_table,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,anio_tosta,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_trici,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_tva,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_tvd,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_van,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_venti,documentada,documentada,documentada,documentada,estable,False
+hogares,anio_video,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,autocons,documentada,documentada,documentada,documentada,estable,True
+hogares,bene_licon,documentada,documentada,documentada,documentada,estable,True
+hogares,camb_clim,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,celular,documentada,documentada,documentada,documentada,estable,True
+hogares,cond_dicon,documentada,documentada,documentada,documentada,categorías diferentes,True
+hogares,cond_licon,documentada,documentada,documentada,documentada,categorías diferentes,True
+hogares,conex_inte,documentada,documentada,documentada,documentada,estable,True
+hogares,consumo,documentada,documentada,documentada,documentada,estable,True
+hogares,diconsa,documentada,documentada,documentada,documentada,categorías diferentes,False
+hogares,embarazo_g,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,entidad,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,er_aparato,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,er_aplicac,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,er_celular,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,er_compu,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,er_otro,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,er_tv,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,esc_radio,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,est_alim,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,est_dis,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,est_trans,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,f_desliza,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,f_helada,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,f_huracan,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,f_incendio,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,f_inunda,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,f_otro,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,f_sequia,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,factor,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,foliohog,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,folioviv,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,frec_dicon,no documentada,documentada,documentada,documentada,no disponible en todos los años,False
+hogares,habito_1,documentada,documentada,documentada,documentada,estable,True
+hogares,habito_2,documentada,documentada,documentada,documentada,estable,True
+hogares,habito_3,documentada,documentada,documentada,documentada,categorías diferentes,True
+hogares,habito_4,documentada,documentada,documentada,documentada,categorías diferentes,True
+hogares,habito_5,documentada,documentada,documentada,documentada,estable,True
+hogares,habito_6,documentada,documentada,documentada,documentada,estable,True
+hogares,huesp_come,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,huespedes,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,lts_licon,documentada,documentada,documentada,documentada,estable,True
+hogares,negcua,documentada,documentada,documentada,documentada,estable,True
+hogares,nr_viv,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,num_aspir,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_auto,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,num_bici,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,num_canoa,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,num_carre,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,num_carret,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,num_compu,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_dvd,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_ester,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_estuf,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_grab,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_impre,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_juego,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_lap,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,num_lavad,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_licua,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_maqui,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_micro,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_moto,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,num_otro,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,num_pick,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,num_pickup,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,num_planc,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_radio,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_refri,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_table,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,num_tosta,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_trab_d,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,num_trici,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,num_tva,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_tvd,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_van,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,num_venti,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,num_video,no documentada,no documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,otro_pago,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,otros_lts,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,pago_dicon,documentada,documentada,documentada,documentada,estable,True
+hogares,pagotarjet,documentada,documentada,documentada,documentada,estable,True
+hogares,parto_g,documentada,documentada,documentada,documentada,categorías diferentes,True
+hogares,peliculas,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+hogares,recib_tvd,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+hogares,regalodado,documentada,documentada,documentada,documentada,estable,True
+hogares,regalos,documentada,documentada,documentada,documentada,estable,True
+hogares,regalotar,documentada,documentada,documentada,documentada,estable,True
+hogares,remunera,documentada,documentada,documentada,documentada,estable,True
+hogares,tarjeta,documentada,documentada,documentada,documentada,estable,True
+hogares,telefono,documentada,documentada,documentada,documentada,categorías diferentes,True
+hogares,trab_come,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,transferen,documentada,documentada,documentada,documentada,estable,True
+hogares,tsalud1_h,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,tsalud1_m,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+hogares,tv_paga,documentada,documentada,documentada,documentada,estable,True
+hogares,upm,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+ingresos,clave,documentada,documentada,documentada,documentada,categorías diferentes,True
+ingresos,entidad,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+ingresos,est_dis,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+ingresos,factor,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+ingresos,foliohog,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+ingresos,folioviv,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+ingresos,ing_1,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+ingresos,ing_2,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+ingresos,ing_3,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+ingresos,ing_4,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+ingresos,ing_5,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+ingresos,ing_6,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+ingresos,ing_tri,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+ingresos,mes_1,documentada,documentada,documentada,documentada,estable,True
+ingresos,mes_2,documentada,documentada,documentada,documentada,estable,True
+ingresos,mes_3,documentada,documentada,documentada,documentada,estable,True
+ingresos,mes_4,documentada,documentada,documentada,documentada,categorías diferentes,True
+ingresos,mes_5,documentada,documentada,documentada,documentada,estable,True
+ingresos,mes_6,documentada,documentada,documentada,documentada,estable,True
+ingresos,numren,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+ingresos,upm,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,act_pnea1,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,act_pnea2,documentada,documentada,documentada,documentada,estable,True
+poblacion,afrod,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+poblacion,alfabetism,documentada,documentada,documentada,documentada,estable,True
+poblacion,antec_esc,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,asis_esc,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,atemed,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,aten_sal,documentada,documentada,documentada,documentada,estable,True
+poblacion,c_futuro,no documentada,documentada,documentada,documentada,no disponible en todos los años,False
+poblacion,cau_acti,no documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+poblacion,cau_apren,no documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+poblacion,cau_brazo,no documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+poblacion,cau_camin,no documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+poblacion,cau_habla,no documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+poblacion,cau_oir,no documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+poblacion,cau_ver,no documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+poblacion,cau_vest,no documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+poblacion,causa1,documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,causa2,documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,causa3,documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,causa4,documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,causa5,documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,causa6,documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,causa7,documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,comprenind,documentada,documentada,documentada,documentada,estable,True
+poblacion,conyuge_id,documentada,documentada,documentada,documentada,estable,False
+poblacion,ct_futuro,no documentada,documentada,documentada,documentada,no disponible en todos los años,False
+poblacion,diabetes,documentada,documentada,documentada,documentada,estable,True
+poblacion,disc1,documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,disc2,documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,disc3,documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,disc4,documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,disc5,documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,disc6,documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,disc7,documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,disc_acti,no documentada,documentada,documentada,documentada,no disponible en todos los años,False
+poblacion,disc_apren,no documentada,documentada,documentada,documentada,no disponible en todos los años,False
+poblacion,disc_brazo,no documentada,documentada,documentada,documentada,no disponible en todos los años,False
+poblacion,disc_camin,no documentada,documentada,documentada,documentada,no disponible en todos los años,False
+poblacion,disc_habla,no documentada,documentada,documentada,documentada,no disponible en todos los años,False
+poblacion,disc_oir,no documentada,documentada,documentada,documentada,no disponible en todos los años,False
+poblacion,disc_ver,no documentada,documentada,documentada,documentada,no disponible en todos los años,False
+poblacion,disc_vest,no documentada,documentada,documentada,documentada,no disponible en todos los años,False
+poblacion,edad,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,edo_conyug,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,edu_ini,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+poblacion,entidad,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,est_dis,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,etnia,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,factor,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,foliohog,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,folioviv,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,forma_b,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,forma_c,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,grado,documentada,documentada,documentada,documentada,estable,True
+poblacion,gradoaprob,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,hablaesp,documentada,documentada,documentada,documentada,estable,True
+poblacion,hablaind,documentada,documentada,documentada,documentada,estable,True
+poblacion,hh_esp,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,hh_lug,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,hijos_mue,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,hijos_sob,documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,hijos_viv,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,hor_1,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,hor_2,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,hor_3,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,hor_4,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,hor_5,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,hor_6,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,hor_7,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,hor_8,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,inscr_1,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,inscr_2,documentada,documentada,documentada,documentada,estable,True
+poblacion,inscr_3,documentada,documentada,documentada,documentada,estable,True
+poblacion,inscr_4,documentada,documentada,documentada,documentada,estable,True
+poblacion,inscr_5,documentada,documentada,documentada,documentada,estable,True
+poblacion,inscr_6,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,inscr_7,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,inscr_8,documentada,documentada,documentada,documentada,estable,True
+poblacion,inst_1,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,inst_2,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,inst_3,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,inst_4,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,inst_5,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,inst_6,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,inst_7,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+poblacion,inst_8,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+poblacion,inst_9,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+poblacion,lenguaind,no documentada,documentada,documentada,documentada,no disponible en todos los años,False
+poblacion,madre_hog,documentada,documentada,documentada,documentada,estable,True
+poblacion,madre_id,documentada,documentada,documentada,documentada,estable,False
+poblacion,min_1,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,min_2,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,min_3,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,min_4,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,min_5,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,min_6,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,min_7,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,min_8,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,mm_esp,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,mm_lug,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,motivo_aus,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,nivel,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,nivelaprob,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,no_asis,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+poblacion,no_asisb,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+poblacion,noatenc_1,documentada,documentada,documentada,documentada,estable,True
+poblacion,noatenc_10,documentada,documentada,documentada,documentada,estable,True
+poblacion,noatenc_11,documentada,documentada,documentada,documentada,estable,True
+poblacion,noatenc_12,documentada,documentada,documentada,documentada,estable,True
+poblacion,noatenc_13,documentada,documentada,documentada,documentada,estable,True
+poblacion,noatenc_14,documentada,documentada,documentada,documentada,estable,True
+poblacion,noatenc_15,documentada,documentada,documentada,documentada,estable,True
+poblacion,noatenc_16,documentada,documentada,documentada,documentada,estable,True
+poblacion,noatenc_2,documentada,documentada,documentada,documentada,estable,True
+poblacion,noatenc_3,documentada,documentada,documentada,documentada,estable,True
+poblacion,noatenc_4,documentada,documentada,documentada,documentada,estable,True
+poblacion,noatenc_5,documentada,documentada,documentada,documentada,estable,True
+poblacion,noatenc_6,documentada,documentada,documentada,documentada,estable,True
+poblacion,noatenc_7,documentada,documentada,documentada,documentada,estable,True
+poblacion,noatenc_8,documentada,documentada,documentada,documentada,estable,True
+poblacion,noatenc_9,documentada,documentada,documentada,documentada,estable,True
+poblacion,norecib_1,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,norecib_10,documentada,documentada,documentada,documentada,estable,True
+poblacion,norecib_11,documentada,documentada,documentada,documentada,estable,True
+poblacion,norecib_12,no documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+poblacion,norecib_2,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,norecib_3,documentada,documentada,documentada,documentada,estable,True
+poblacion,norecib_4,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,norecib_5,documentada,documentada,documentada,documentada,estable,True
+poblacion,norecib_6,documentada,documentada,documentada,documentada,estable,True
+poblacion,norecib_7,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,norecib_8,documentada,documentada,documentada,documentada,estable,True
+poblacion,norecib_9,documentada,documentada,documentada,documentada,estable,True
+poblacion,num_trabaj,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,numren,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,otorg_b,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,otorg_c,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,padre_hog,documentada,documentada,documentada,documentada,estable,True
+poblacion,padre_id,documentada,documentada,documentada,documentada,estable,False
+poblacion,pagoaten_1,documentada,documentada,documentada,documentada,estable,True
+poblacion,pagoaten_2,documentada,documentada,documentada,documentada,estable,True
+poblacion,pagoaten_3,documentada,documentada,documentada,documentada,estable,True
+poblacion,pagoaten_4,documentada,documentada,documentada,documentada,estable,True
+poblacion,pagoaten_5,documentada,documentada,documentada,documentada,estable,True
+poblacion,pagoaten_6,documentada,documentada,documentada,documentada,estable,True
+poblacion,pagoaten_7,documentada,documentada,documentada,documentada,estable,True
+poblacion,pais_nac,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+poblacion,pareja_hog,documentada,documentada,documentada,documentada,estable,True
+poblacion,parentesco,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,peso,documentada,documentada,documentada,documentada,estable,True
+poblacion,pop_insabi,no documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+poblacion,pres_alta,documentada,documentada,documentada,documentada,estable,True
+poblacion,prob_anio,documentada,documentada,documentada,documentada,estable,False
+poblacion,prob_mes,documentada,documentada,documentada,documentada,estable,True
+poblacion,prob_sal,documentada,documentada,documentada,documentada,estable,True
+poblacion,razon_1,documentada,documentada,documentada,documentada,estable,True
+poblacion,razon_10,documentada,documentada,documentada,documentada,estable,True
+poblacion,razon_11,documentada,documentada,documentada,documentada,estable,True
+poblacion,razon_2,documentada,documentada,documentada,documentada,estable,True
+poblacion,razon_3,documentada,documentada,documentada,documentada,estable,True
+poblacion,razon_4,documentada,documentada,documentada,documentada,estable,True
+poblacion,razon_5,documentada,documentada,documentada,documentada,estable,True
+poblacion,razon_6,documentada,documentada,documentada,documentada,estable,True
+poblacion,razon_7,documentada,documentada,documentada,documentada,estable,True
+poblacion,razon_8,documentada,documentada,documentada,documentada,estable,True
+poblacion,razon_9,documentada,documentada,documentada,documentada,estable,True
+poblacion,redsoc_1,documentada,documentada,documentada,documentada,estable,True
+poblacion,redsoc_2,documentada,documentada,documentada,documentada,estable,True
+poblacion,redsoc_3,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,redsoc_4,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,redsoc_5,documentada,documentada,documentada,documentada,estable,True
+poblacion,redsoc_6,documentada,documentada,documentada,documentada,estable,True
+poblacion,residencia,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,segpop,documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,segsoc,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,segvol_1,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,segvol_2,documentada,documentada,documentada,documentada,estable,True
+poblacion,segvol_3,documentada,documentada,documentada,documentada,estable,True
+poblacion,segvol_4,documentada,documentada,documentada,documentada,estable,True
+poblacion,segvol_5,documentada,documentada,documentada,documentada,estable,True
+poblacion,segvol_6,documentada,documentada,documentada,documentada,estable,True
+poblacion,segvol_7,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,servmed_1,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,servmed_10,documentada,documentada,documentada,documentada,estable,True
+poblacion,servmed_11,documentada,documentada,documentada,documentada,estable,True
+poblacion,servmed_12,no documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+poblacion,servmed_2,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,servmed_3,documentada,documentada,documentada,documentada,estable,True
+poblacion,servmed_4,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,servmed_5,documentada,documentada,documentada,documentada,estable,True
+poblacion,servmed_6,documentada,documentada,documentada,documentada,estable,True
+poblacion,servmed_7,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+poblacion,servmed_8,documentada,documentada,documentada,documentada,estable,True
+poblacion,servmed_9,documentada,documentada,documentada,documentada,estable,True
+poblacion,sexo,documentada,documentada,documentada,documentada,estable,True
+poblacion,ss_aa,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,ss_mm,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,tiene_b,documentada,documentada,documentada,documentada,estable,True
+poblacion,tiene_c,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,tipoesc,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,trabajo_mp,documentada,documentada,documentada,documentada,no disponible en todos los años,False
+poblacion,upm,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+poblacion,usotiempo1,documentada,documentada,documentada,documentada,estable,True
+poblacion,usotiempo2,documentada,documentada,documentada,documentada,estable,True
+poblacion,usotiempo3,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,usotiempo4,documentada,documentada,documentada,documentada,estable,True
+poblacion,usotiempo5,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,usotiempo6,documentada,documentada,documentada,documentada,estable,True
+poblacion,usotiempo7,documentada,documentada,documentada,documentada,categorías diferentes,True
+poblacion,usotiempo8,documentada,documentada,documentada,documentada,estable,True
+trabajos,clas_emp,documentada,documentada,documentada,documentada,estable,True
+trabajos,conf_pers,documentada,documentada,documentada,documentada,estable,True
+trabajos,contrato,documentada,documentada,documentada,documentada,estable,True
+trabajos,entidad,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+trabajos,est_dis,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+trabajos,factor,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+trabajos,foliohog,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+trabajos,folioviv,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+trabajos,htrab,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+trabajos,id_trabajo,documentada,documentada,documentada,documentada,estable,True
+trabajos,indep,documentada,documentada,documentada,documentada,estable,True
+trabajos,lugar,documentada,documentada,documentada,documentada,estable,True
+trabajos,medtrab_1,documentada,documentada,documentada,documentada,estable,True
+trabajos,medtrab_2,documentada,documentada,documentada,documentada,estable,True
+trabajos,medtrab_3,documentada,documentada,documentada,documentada,categorías diferentes,True
+trabajos,medtrab_4,documentada,documentada,documentada,documentada,estable,True
+trabajos,medtrab_5,documentada,documentada,documentada,documentada,estable,True
+trabajos,medtrab_6,documentada,documentada,documentada,documentada,estable,True
+trabajos,medtrab_7,documentada,documentada,documentada,documentada,categorías diferentes,True
+trabajos,no_ing,documentada,documentada,documentada,documentada,categorías diferentes,True
+trabajos,numren,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+trabajos,otra_act,documentada,documentada,documentada,documentada,categorías diferentes,True
+trabajos,pago,documentada,documentada,documentada,documentada,estable,True
+trabajos,personal,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_1,documentada,documentada,documentada,documentada,categorías diferentes,True
+trabajos,pres_10,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_11,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_12,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_13,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_14,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_15,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_16,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_17,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_18,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_19,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_2,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_20,documentada,documentada,documentada,documentada,categorías diferentes,True
+trabajos,pres_3,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_4,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_5,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_6,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_7,documentada,documentada,documentada,documentada,estable,True
+trabajos,pres_8,documentada,documentada,documentada,documentada,categorías diferentes,True
+trabajos,pres_9,documentada,documentada,documentada,documentada,estable,True
+trabajos,scian,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+trabajos,sinco,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+trabajos,soc_nr1,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+trabajos,soc_nr2,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+trabajos,soc_resp,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+trabajos,socios,documentada,documentada,documentada,documentada,estable,True
+trabajos,subor,documentada,documentada,documentada,documentada,estable,True
+trabajos,tam_emp,documentada,documentada,documentada,documentada,estable,True
+trabajos,tiene_suel,documentada,documentada,documentada,documentada,estable,True
+trabajos,tipoact,documentada,documentada,documentada,documentada,categorías diferentes,True
+trabajos,tipoact2,documentada,documentada,documentada,documentada,categorías diferentes,True
+trabajos,tipoact3,documentada,documentada,documentada,documentada,estable,True
+trabajos,tipoact4,documentada,documentada,documentada,documentada,categorías diferentes,True
+trabajos,tipocontr,documentada,documentada,documentada,documentada,estable,True
+trabajos,trapais,documentada,documentada,documentada,documentada,estable,True
+trabajos,upm,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,ab_agua,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,agua_ent,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,agua_noe,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,aire_acond,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,antigua_ne,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,antiguedad,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,bano_comp,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,bano_excus,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,bano_regad,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,biodigest,documentada,documentada,documentada,documentada,estable,True
+viviendas,bomba_agua,documentada,documentada,documentada,documentada,estable,True
+viviendas,calefacc,documentada,documentada,documentada,documentada,estable,True
+viviendas,calen_lena,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,calent_gas,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,calent_sol,documentada,documentada,documentada,documentada,estable,True
+viviendas,cisterna,documentada,documentada,documentada,documentada,estable,True
+viviendas,cocina,documentada,documentada,documentada,documentada,estable,True
+viviendas,cocina_dor,documentada,documentada,documentada,documentada,estable,True
+viviendas,combus,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,combustible,documentada,documentada,documentada,documentada,no disponible en todos los años,False
+viviendas,cuart_dorm,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,disp_agua,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+viviendas,disp_elect,documentada,documentada,documentada,documentada,estable,True
+viviendas,dotac_agua,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,drenaje,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,eli_basura,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,ero_1,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,ero_2,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,ero_3,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,ero_4,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,ero_5,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,ero_6,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,ero_tri,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,escrituras,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,est_dis,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,est_socio,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,estim_pago,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,estufa_chi,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+viviendas,excusado,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,factor,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,finan_1,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,finan_2,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,finan_3,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,finan_4,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,finan_5,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,finan_6,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,finan_7,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,finan_8,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,focos,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,focos_ahor,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,focos_inca,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,fogon_chi,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,folioviv,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,fregadero,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,hog_dueno1,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+viviendas,hog_dueno2,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+viviendas,lavadero,documentada,documentada,documentada,documentada,estable,True
+viviendas,lugar_coc,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,mat_pared,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,mat_pisos,documentada,documentada,documentada,documentada,estable,True
+viviendas,mat_techos,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,medid_luz,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,medidor_luz,documentada,documentada,documentada,documentada,no disponible en todos los años,False
+viviendas,mes_1,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+viviendas,mes_2,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+viviendas,mes_3,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+viviendas,mes_4,no documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+viviendas,mes_5,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+viviendas,mes_6,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+viviendas,num_cuarto,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,num_dueno1,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+viviendas,num_dueno2,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+viviendas,p_electric,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,p_fractura,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,p_grietas,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,p_humedad,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,p_levanta,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,p_pandeos,no documentada,no documentada,no documentada,documentada,no disponible en todos los años,False
+viviendas,p_tuberias,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,pago_mesp,documentada,documentada,documentada,documentada,estable,True
+viviendas,pago_viv,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,pileta,documentada,documentada,documentada,documentada,estable,True
+viviendas,procaptar,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+viviendas,regadera,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,renta,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,sanit_agua,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,tam_loc,documentada,documentada,documentada,documentada,estable,True
+viviendas,tanque_gas,documentada,documentada,documentada,documentada,estable,True
+viviendas,tenencia,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,tinaco_azo,documentada,documentada,documentada,documentada,estable,True
+viviendas,tipo_adqui,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,tipo_finan,documentada,documentada,documentada,no documentada,no disponible en todos los años,False
+viviendas,tipo_viv,documentada,documentada,documentada,documentada,categorías diferentes,True
+viviendas,tot_hog,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,tot_hom,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,tot_muj,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,tot_resid,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,ubica_geo,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,upm,no documentada,no documentada,no documentada,no documentada,no disponible en todos los años,False
+viviendas,uso_compar,documentada,documentada,documentada,documentada,estable,True
+viviendas,viv_usada,documentada,documentada,documentada,documentada,estable,True
