@@ -213,23 +213,47 @@ Las bases conservan `factor`, `factor_hogar`, `est_dis` y `upm`. En esta etapa s
 
 ## Ponderación y factor de expansión
 
-En ENIGH, cada observación representa una cantidad determinada de unidades de la población. En las bases analíticas actuales, `factor` es un alias operativo de `factor_hogar`.
+Auditoría metodológica agregada el 2026-08-31 antes de continuar con deflactación, diseño muestral formal o modelos. El principio permanente queda así: antes de reportar media, mediana, cuantiles, Gini, proporciones o brechas se debe registrar unidad de observación, población objetivo, variable de peso y definición del estimando.
 
-Evidencia revisada:
+Evidencia oficial INEGI revisada en los PDF locales `data/raw/EINGH/<año>/doc_<año>.pdf`, sección 1.3.3:
 
-- `docs/enigh_variable_metadata.csv` documenta `factor` como “Factor de expansión”.
-- `concentradohogar.csv` contiene `factor`, `est_dis` y `upm` en 2018, 2020, 2022 y 2024.
-- El notebook 05 construyó `mart_hogar` con `factor_hogar` desde `concentradohogar` y expuso `factor` como alias.
-- En 2022 y 2024, las tablas raw que traen `factor` coinciden con `concentradohogar`; no se detectaron cambios de valor del factor entre tablas.
+- 2018 y 2020: el factor de expansión para cualquier nivel se encuentra en `factor` de VIVIENDAS y CONCENTRADOHOGAR; `poblacion.csv` no trae `factor` directo.
+- 2022 y 2024: el factor de expansión para cualquier nivel se encuentra en `factor` de VIVIENDAS, HOGARES, POBLACION, GASTOSHOGAR, GASTOSPERSONA, INGRESOS, TRABAJOS y CONCENTRADOHOGAR.
+- En las tablas raw donde aparece `factor`, no se detectaron diferencias contra CONCENTRADOHOGAR por las llaves disponibles.
+- En `mart_persona`, cada fila ya representa una persona y debe ponderarse con `factor`; no se debe multiplicar de nuevo por `tot_integ`.
 
-Uso actual:
+Tabla definitiva de ponderación:
 
-| Uso | Nivel | Peso |
-| --- | --- | --- |
-| Ingreso corriente total del hogar | Hogar | `factor` |
-| Gini nacional y regional de hogares | Hogar | `factor` |
-| Ingreso laboral individual | Persona | `factor` |
-| Ingreso corriente per cápita como bienestar individual | Personas en hogares | `factor * tot_integ` |
+| Estimando | Unidad de la tabla | Peso | Interpretación |
+| --- | --- | --- | --- |
+| Media ingreso hogar | Hogar | `factor` | Hogares |
+| Mediana ingreso hogar | Hogar | `factor` | Hogares |
+| Media ingreso individual | Persona | `factor` | Personas |
+| Mediana ingreso individual | Persona | `factor` | Personas |
+| Población total desde hogares | Hogar | `factor × tot_integ` | Personas integrantes del hogar |
+| Ingreso PC hogar distribuido entre hogares | Hogar | `factor` | Hogares |
+| Ingreso PC hogar distribuido entre personas | Hogar | `factor × tot_integ` | Personas integrantes del hogar |
+| Ingreso PC hogar distribuido entre personas desde `mart_persona` | Persona | `factor` | Personas |
+
+Prueba de doble ponderación sobre filas persona:
+
+| Año | `sum(factor)` en `mart_persona` | `sum(factor × tot_integ)` sobre `mart_persona` | Razón |
+| --- | ---: | ---: | ---: |
+| 2018 | 123,934,029 | 561,257,240 | 4.53 |
+| 2020 | 126,838,467 | 566,104,426 | 4.46 |
+| 2022 | 128,999,038 | 558,856,484 | 4.33 |
+| 2024 | 130,325,969 | 554,726,112 | 4.26 |
+
+Esto demuestra que `factor × tot_integ` no puede usarse sobre filas que ya son personas.
+
+Para ingreso corriente per cápita del hogar, el estimando principal del análisis territorial queda definido como distribución **entre personas**: una fila por persona en `mart_persona`, valor `ing_cor_hogar_pc_oficial_tri`, peso `factor`. El cálculo desde hogares con `factor × tot_integ` se conserva solo como contraste conceptual. La equivalencia no es exacta porque la suma de `factor` en `mart_persona` difiere ligeramente de `factor × tot_integ` desde hogares, pero las diferencias de mediana son pequeñas.
+
+| Año | Mediana hogar × integrantes | Mediana `mart_persona` | Diferencia | Gini hogar × integrantes | Gini `mart_persona` | Diferencia |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 2018 | 9,294.44 | 9,297.60 | 3.16 | 46.01 | 46.29 | 0.28 |
+| 2020 | 9,710.88 | 9,717.91 | 7.03 | 44.95 | 45.05 | 0.09 |
+| 2022 | 12,979.34 | 12,989.18 | 9.84 | 43.70 | 44.04 | 0.34 |
+| 2024 | 16,596.64 | 16,602.02 | 5.38 | 42.87 | 43.05 | 0.18 |
 
 Media ponderada:
 
@@ -249,12 +273,14 @@ Gini ponderado: la distribución considera la frecuencia poblacional representad
 
 Resumen de expansión:
 
-| Año | Hogares muestrales | Hogares expandidos | Población expandida |
-| --- | ---: | ---: | ---: |
-| 2018 | 74,647 | 34,400,515 | 123,836,081 |
-| 2020 | 89,006 | 35,749,659 | 126,760,856 |
-| 2022 | 90,102 | 37,560,123 | 128,889,708 |
-| 2024 | 91,414 | 38,830,230 | 130,226,218 |
+| Año | Hogares muestrales | Hogares expandidos | Personas desde hogares | Personas desde `mart_persona` |
+| --- | ---: | ---: | ---: | ---: |
+| 2018 | 74,647 | 34,400,515 | 123,836,081 | 123,934,029 |
+| 2020 | 89,006 | 35,749,659 | 126,760,856 | 126,838,467 |
+| 2022 | 90,102 | 37,560,123 | 128,889,708 | 128,999,038 |
+| 2024 | 91,414 | 38,830,230 | 130,226,218 | 130,325,969 |
+
+El diseño complejo se mantiene separado: `factor + est_dis + upm` será necesario para errores estándar, intervalos de confianza y pruebas inferenciales. En esta etapa solo se reportan estimaciones descriptivas puntuales.
 
 ## Validación externa del Gini
 
@@ -300,7 +326,7 @@ Diagnóstico de definición:
 
 - El cálculo hogar-total ponderado por `factor` queda sistemáticamente por debajo de Banxico.
 - La discrepancia máxima con esa definición es 3.22 puntos de Gini en Sur 2020.
-- Una variante diagnóstica con `ing_cor_pc_oficial_tri` y `factor * tot_integ` se acerca mucho más: discrepancia máxima aproximada de 1.06 puntos.
+- Una variante diagnóstica con ingreso per cápita distribuido entre personas, calculada desde `mart_persona` con `factor`, se acerca más: discrepancia máxima aproximada de 1.71 puntos.
 - Esto sugiere que la diferencia más probable no está en el mart ni en la ausencia de ponderación, sino en la definición exacta de ingreso/unidad de distribución usada por las bases CONEVAL/Banxico.
 - No se fuerza la coincidencia: hasta reproducir exactamente la construcción CONEVAL, la validación se clasifica como reproducción parcial.
 
@@ -318,15 +344,15 @@ La desigualdad interna mide dispersión dentro de un territorio: Gini, P90/P10 y
 
 ![Distribución regional del ingreso corriente per cápita, 2024](figures_documentacion/ingreso_pc_region_2024.png)
 
-Fuente: elaboración propia con ENIGH 2024. Ingreso corriente per cápita del hogar ponderado con `factor * tot_integ`. Montos nominales trimestrales.
+Fuente: elaboración propia con ENIGH 2024. Ingreso corriente per cápita del hogar distribuido entre personas: `mart_persona` + `factor`. Montos nominales trimestrales.
 
 ![Gradiente por tamaño de localidad, 2024](figures_documentacion/gradiente_tam_loc_2024.png)
 
-Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corriente per cápita del hogar. Montos nominales trimestrales.
+Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corriente per cápita del hogar distribuido entre personas: `mart_persona` + `factor`. Montos nominales trimestrales.
 
 ![Gradiente por estrato socioeconómico, 2024](figures_documentacion/gradiente_est_socio_2024.png)
 
-Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corriente per cápita del hogar. Montos nominales trimestrales.
+Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corriente per cápita del hogar distribuido entre personas: `mart_persona` + `factor`. Montos nominales trimestrales.
 
 ## Zonas metropolitanas y CDMX
 
@@ -355,28 +381,28 @@ CDMX no es equivalente a la Zona Metropolitana del Valle de México:
 | Métrica 2024 | n muestral | Población expandida | Mediana ponderada | Gini ponderado |
 | --- | ---: | ---: | ---: | ---: |
 | CDMX entidad: ingreso corriente hogar | 2,576 | 3,082,330 | $81,866 | 40.40 |
-| CDMX entidad: ingreso corriente per cápita | 2,576 | 9,345,564 | $23,930 | 45.70 |
-| ZM Valle de México: ingreso corriente per cápita | 4,540 | 22,370,536 | $19,671 | 43.43 |
+| CDMX entidad: ingreso corriente per cápita entre personas | 8,182 | 9,381,255 | $23,987 | 46.23 |
+| ZM Valle de México: ingreso corriente per cápita entre personas | 14,755 | 22,419,780 | $19,705 | 43.84 |
 | CDMX entidad: ingreso laboral individual positivo | 4,285 | 4,903,427 | $28,673 | 48.67 |
 
 ![CDMX entidad vs Zona Metropolitana del Valle de México](figures_documentacion/cdmx_vs_zmvm_2024.png)
 
-Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corriente per cápita del hogar con `factor * tot_integ`. Montos nominales trimestrales.
+Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corriente per cápita del hogar distribuido entre personas: `mart_persona` + `factor`. Montos nominales trimestrales.
 
 Comparación 2024 de grandes zonas metropolitanas y contexto desfavorecido:
 
 | Grupo | n muestral | Población expandida | Mediana ponderada | Gini | P90/P10 |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Monterrey | 2,509 | 5,736,479 | $24,900 | 44.80 | 5.71 |
-| Guadalajara | 1,373 | 6,017,359 | $21,064 | 39.25 | 5.23 |
-| Valle de México | 4,540 | 22,370,536 | $19,671 | 43.43 | 6.31 |
-| Localidad pequeña y estrato socioeconómico bajo | 13,724 | 13,980,966 | $7,888 | 39.45 | 6.14 |
+| Monterrey | 8,264 | 5,743,578 | $24,911 | 45.35 | 5.72 |
+| Guadalajara | 4,487 | 6,021,378 | $21,078 | 39.31 | 5.22 |
+| Valle de México | 14,755 | 22,419,780 | $19,705 | 43.84 | 6.35 |
+| Localidad pequeña y estrato socioeconómico bajo | 50,657 | 13,981,703 | $7,888 | 39.45 | 6.13 |
 
-El grupo desfavorecido es descriptivo, no una clasificación de marginación: se define con `tam_loc_desc = Localidades con menos de 2 500 habitantes` y `est_socio_desc = Bajo`. La razón de medianas entre Monterrey y este grupo es 3.16 en 2024.
+El grupo desfavorecido es descriptivo, no una clasificación de marginación: se define con `tam_loc_desc = Localidades con menos de 2 500 habitantes` y `est_socio_desc = Bajo`. La razón de medianas entre Monterrey y este grupo es 3.16 en 2024, ahora medida como ingreso per cápita distribuido entre personas.
 
 ![Brecha territorial: metrópolis y contexto desfavorecido](figures_documentacion/brecha_metropolitana_2024.png)
 
-Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corriente per cápita del hogar con `factor * tot_integ`. Montos nominales trimestrales.
+Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corriente per cápita del hogar distribuido entre personas: `mart_persona` + `factor`. Montos nominales trimestrales.
 
 ## Mermaid metodológico
 
@@ -406,16 +432,16 @@ Ponderación y diseño:
 
 ```mermaid
 flowchart TD
-    A["Muestra ENIGH"] --> B["Factor de expansión"]
-    B --> C["Estimaciones poblacionales puntuales"]
-    C --> C1["Media ponderada"]
-    C --> C2["Mediana y cuantiles ponderados"]
-    C --> C3["Gini ponderado"]
-    A --> D["Diseño complejo"]
-    D --> D1["Factor"]
-    D --> D2["Estrato: est_dis"]
-    D --> D3["UPM"]
-    D --> E["Errores estándar e inferencia"]
+    A["¿Cuál es la unidad de observación?"] --> H["Hogar"]
+    A --> P["Persona"]
+    H --> H1["Peso: factor"]
+    P --> P1["Peso: factor"]
+    H1 --> H2{"¿Quiero distribuir a personas desde hogares?"}
+    H2 -->|Sí| H3["Peso: factor × tot_integ"]
+    H2 -->|No| H4["Estimando entre hogares"]
+    P1 --> P2["Estimando entre personas"]
+    D["Diseño muestral completo"] --> D1["factor + est_dis + upm"]
+    D1 --> D2["Errores estándar e inferencia"]
 ```
 
 Flujo de análisis de faltantes:
@@ -446,7 +472,7 @@ Roadmap:
 
 ```mermaid
 flowchart TD
-    A["08 Calidad de bases: COMPLETO"] --> B["09 Desigualdad territorial: EN DESARROLLO"]
+    A["08 Calidad de bases: COMPLETO"] --> B["09 Desigualdad territorial: COMPLETO"]
     B --> C["10 Homologación monetaria: SIGUIENTE"]
     C --> D["11 Diseño muestral formal"]
     D --> E["12 Determinantes del ingreso"]
@@ -460,7 +486,7 @@ flowchart TD
 | Etapa | Estado |
 | --- | --- |
 | 08 Calidad de bases | COMPLETO |
-| 09 Desigualdad territorial | EN DESARROLLO: ponderación auditada, Gini nacional/regional, validación Banxico, CDMX, zonas metropolitanas, brechas territoriales, desigualdad interna vs brecha |
+| 09 Desigualdad territorial | COMPLETO: ponderación auditada, Gini nacional/regional, validación Banxico, CDMX, zonas metropolitanas, brechas territoriales, unidad del estimando documentada |
 | 10 Homologación monetaria | SIGUIENTE |
 | 11 Diseño muestral formal | Pendiente |
 | 12 Determinantes del ingreso | Pendiente |
@@ -483,6 +509,7 @@ flowchart TD
 
 ## Principios metodológicos
 
+- Antes de reportar cualquier estadístico ponderado, registrar: unidad de observación, población objetivo, variable de peso y definición del estimando.
 - No inventar resultados: todo valor reportado debe salir de notebooks o documentación revisada.
 - No asumir causalidad desde asociaciones descriptivas.
 - No usar municipios como dominios representativos sin revisión de diseño y muestra.
