@@ -6,7 +6,7 @@
 
 Este documento consolida las decisiones metodológicas ya tomadas en las revisiones 1 a 4, el estado del arte geográfico y los notebooks 04 a 08. Los archivos históricos en `reports/` se conservan como bitácora; de aquí en adelante este archivo funciona como referencia principal del proyecto.
 
-## 1. Resumen del proyecto
+## Resumen del proyecto
 
 El proyecto usa microdatos de la Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH) para estudiar la distribución del ingreso en México entre 2018 y 2024. El énfasis actual está en construir bases analíticas interpretables, reproducibles y adecuadas para una tesina escolar, más que en montar una arquitectura operativa compleja.
 
@@ -20,7 +20,7 @@ La estrategia seguida ha sido:
 - documentar faltantes, ceros y universos aplicables;
 - iniciar análisis territorial descriptivo con regiones Banxico, entidad, tamaño de localidad y estrato socioeconómico.
 
-## 2. Pregunta de investigación
+## Pregunta de investigación
 
 La pregunta refinada del proyecto es:
 
@@ -28,11 +28,11 @@ La pregunta refinada del proyecto es:
 
 Esta formulación evita limitar la tesina a comparar promedios o Gini por región, porque Banco de México ya tiene antecedentes directos sobre desigualdad regional con ENIGH.
 
-## 3. Objetivo general
+## Objetivo general
 
 Analizar la relación entre características personales, laborales, del hogar y territoriales con el ingreso en México, usando microdatos ENIGH 2018, 2020, 2022 y 2024, con una base metodológica reproducible y documentada.
 
-## 4. Objetivos específicos
+## Objetivos específicos
 
 - Construir bases analíticas comparables a nivel persona y hogar.
 - Verificar que las variables centrales estén homologadas y decodificadas de forma comparable.
@@ -41,7 +41,7 @@ Analizar la relación entre características personales, laborales, del hogar y 
 - Separar análisis de niveles de ingreso, desigualdad interna y brechas territoriales.
 - Mantener explícitas las limitaciones de inferencia de la ENIGH.
 
-## 5. Hipótesis de trabajo
+## Hipótesis de trabajo
 
 Las hipótesis actuales son de asociación, no de causalidad:
 
@@ -51,13 +51,13 @@ Las hipótesis actuales son de asociación, no de causalidad:
 - Las asociaciones entre características individuales/laborales e ingreso no son completamente estables entre 2018 y 2024.
 - Las variables territoriales pueden enriquecer el análisis, siempre que no se interprete el municipio como dominio representativo automático.
 
-## 6. Fuente de datos
+## Fuente de datos
 
 La fuente es ENIGH para los levantamientos 2018, 2020, 2022 y 2024, almacenados localmente en `data/raw/EINGH/`.
 
 Los cuatro levantamientos se concatenan como cortes transversales independientes. No son panel: un hogar observado en 2018 y uno observado en 2024 no representan seguimiento de la misma unidad.
 
-## 7. Estructura original de ENIGH y relaciones
+## Estructura original de ENIGH y relaciones
 
 El notebook `04_relaciones_entre_bases.ipynb` validó la estructura relacional:
 
@@ -74,7 +74,7 @@ Todas las llaves propuestas tuvieron 0 duplicados por año y las unidades hijas 
 
 Una regla metodológica importante es no hacer merges directos `poblacion -> trabajos -> ingresos` sin agregación previa, porque `trabajos` e `ingresos` son tablas 1:N respecto a persona.
 
-## 8. Bases analíticas o marts
+## Bases analíticas o marts
 
 Se construyeron dos bases analíticas en `data/interim/revision_4/`:
 
@@ -85,7 +85,7 @@ Se construyeron dos bases analíticas en `data/interim/revision_4/`:
 
 `mart` significa base analítica preparada para análisis a una granularidad específica. En la documentación visible se usa también "base analítica de personas" y "base analítica de hogares".
 
-## 9. Limpieza y homologación
+## Limpieza y homologación
 
 Los avances principales fueron:
 
@@ -99,7 +99,7 @@ Los avances principales fueron:
 
 No se modificó `data/raw/`. Las correcciones viven en las bases intermedias y en los notebooks que permiten reproducirlas.
 
-## 10. Variables categóricas
+## Variables categóricas
 
 El notebook 03 y la revisión 3 documentan la decodificación:
 
@@ -110,7 +110,7 @@ El notebook 03 y la revisión 3 documentan la decodificación:
 
 La prueba inicial confirmó mapeos para variables prioritarias como sexo, habla indígena, etnia, alfabetismo, asistencia escolar, nivel aprobado, estado conyugal, parentesco y residencia. Algunas variables de años de adquisición o conteos del hogar quedaron para revisión manual porque no conviene tratarlas como categóricas sustantivas sin validar su universo.
 
-## 11. Geografía
+## Geografía
 
 La geografía se incorporó mediante `ubica_geo`, construida como clave entidad + municipio. Con esta llave se obtuvo cobertura de 100% en los cruces con `concentradohogar` y `viviendas`, incorporando:
 
@@ -121,7 +121,7 @@ La geografía se incorporó mediante `ubica_geo`, construida como clave entidad 
 
 No se incorporó localidad, latitud ni longitud, porque la llave validada identifica entidad y municipio, no una localidad exacta del hogar.
 
-## 12. Estratificación territorial
+## Estratificación territorial
 
 Las clasificaciones territoriales actuales son:
 
@@ -133,9 +133,9 @@ Las clasificaciones territoriales actuales son:
 
 No se creó una regionalización propia ni clustering territorial. La decisión actual es usar primero clasificaciones oficiales o institucionales.
 
-## 13. Estado del arte
+## Estado del arte
 
-El documento `reports/estado_del_arte_geografia_ingresos_ENIGH.md` identifica tres referencias principales:
+En el documento `reports/estado_del_arte_geografia_ingresos_ENIGH.md` se identifican tres referencias principales:
 
 - INEGI: diseño muestral estratificado, tamaño de localidad, estrato socioeconómico, factor, `est_dis` y `upm`.
 - Banco de México: regiones económicas y análisis regional de Gini/fuentes de ingreso con ENIGH.
@@ -143,9 +143,9 @@ El documento `reports/estado_del_arte_geografia_ingresos_ENIGH.md` identifica tr
 
 Banco de México reporta Gini regional aproximado para 2018, 2020 y 2022. La tabla documentada usa valores en escala 0-100: Nacional 45.7, 45.0 y 43.1; Sur muestra la desigualdad más alta entre regiones. El recuadro metodológico indica que el benchmark usa ingreso corriente total promedio por hogar, por lo que la comparación del notebook 09 usa `ing_cor_hogar_oficial_tri`, no el ingreso per cápita.
 
-## 14. Diferenciación del proyecto
+## Diferenciación del proyecto
 
-El valor potencial de la tesina no está en repetir que hay diferencias regionales de ingreso o Gini. La aportación más defendible es estudiar:
+El valor potencial del proyecto no está en repetir que hay diferencias regionales de ingreso o Gini. La aportación más defendible es estudiar:
 
 ```text
 determinantes del ingreso
@@ -155,7 +155,7 @@ determinantes del ingreso
 
 Es decir: cómo cambian las asociaciones entre ingreso y educación, sexo, edad, características laborales, composición del hogar y estratos territoriales entre 2018 y 2024.
 
-## 15. EDA y análisis regional hasta notebook 07
+## EDA y análisis regional hasta notebook 07
 
 El notebook `07_analisis_regional_ingresos.ipynb` usa como target central `ingreso_persona_laboral_negocio_tri` y separa la submuestra con ingreso laboral positivo para evitar que las medianas queden dominadas por personas sin ingreso laboral.
 
@@ -171,7 +171,7 @@ Hallazgos descriptivos preliminares del notebook 07:
 
 Estos resultados son descriptivos, nominales y no ponderados. No deben leerse como estimaciones poblacionales hasta recalcular su versión ponderada con el factor adecuado.
 
-## 16. Calidad, faltantes y ceros hasta notebook 08
+## Calidad, faltantes y ceros hasta notebook 08
 
 El notebook `08_calidad_bases_analiticas.ipynb` audita faltantes, ceros y universos aplicables. La documentación técnica detallada queda en `reports/calidad_faltantes_y_ceros.md`.
 
@@ -191,7 +191,7 @@ Correcciones cerradas antes de avanzar:
 - `asis_esc_desc`: corregida por código oficial `asis_esc` (`1 = Sí`, `2 = No`).
 - `personas_con_registros_ingreso`: 250 `NaN` validados contra `mart_persona` y convertidos a 0 porque no había registros individuales en `ingresos.csv`.
 
-## 17. Poblaciones analíticas
+## Poblaciones analíticas
 
 | Universo | 2018 | 2020 | 2022 | 2024 | Total |
 | --- | ---: | ---: | ---: | ---: | ---: |
@@ -205,13 +205,13 @@ Para ingreso laboral se recomienda separar:
 - probabilidad de tener ingreso laboral positivo;
 - monto del ingreso condicionado a ingreso laboral positivo.
 
-## 18. Diseño muestral
+## Diseño muestral
 
 Las bases conservan `factor`, `factor_hogar`, `est_dis` y `upm`. En esta etapa se usan para estimaciones descriptivas puntuales, no para inferencia formal.
 
 `factor` permite expandir la muestra a la población representada. Para errores estándar, intervalos de confianza o pruebas inferenciales todavía será necesario incorporar el diseño complejo con `factor`, `est_dis` y `upm`.
 
-## Ponderación y factor de expansión
+## Factor de expansión
 
 Auditoría metodológica agregada el 2026-08-31 antes de continuar con deflactación, diseño muestral formal o modelos. El principio permanente queda así: antes de reportar media, mediana, cuantiles, Gini, proporciones o brechas se debe registrar unidad de observación, población objetivo, variable de peso y definición del estimando.
 
@@ -282,9 +282,42 @@ Resumen de expansión:
 
 El diseño complejo se mantiene separado: `factor + est_dis + upm` será necesario para errores estándar, intervalos de confianza y pruebas inferenciales. En esta etapa solo se reportan estimaciones descriptivas puntuales.
 
-## Validación externa del Gini
+## Índice Gini
 
 Benchmark: [Banco de México, Recuadro 2 del Reporte sobre las Economías Regionales enero-marzo 2024](https://www.banxico.org.mx/publicaciones-y-prensa/reportes-sobre-las-economias-regionales/recuadros/%7B3B45625A-C009-A961-91D8-9A75F663F11A%7D.pdf). El recuadro reporta Gini 2018, 2020 y 2022 por región y nacional, con bases generadas por CONEVAL a partir de ENIGH.
+
+Para calcular el índice de Gini se utiliza la siguiente fórmula:
+
+$$
+G = 1 - \sum_{i=1}^{n-1}(X_{i+1}-X_i)(Y_{i+1}+Y_i)
+$$
+
+Donde:
+
+- **$G$**: índice de Gini.
+- **$X_i$**: proporción acumulada de la población hasta la observación $i$.
+- **$Y_i$**: proporción acumulada del ingreso hasta la observación $i$.
+- **$n$**: número total de observaciones o grupos considerados.
+
+
+Escala de valores:
+- 0 o 0%: Representa la igualdad perfecta. Significa que todas las personas de la población tienen exactamente los mismos ingresos
+- 1 o 100%: Representa la desigualdad máxima. Significa que una sola persona concentra la totalidad de los ingresos y el resto no recibe nada.
+
+Niveles de referencia prácticos
+* **Menor a 0.3**: Indica una sociedad con una distribución de ingresos muy igualitaria (común en algunos países nórdicos o europeos).
+* **Entre 0.3 y 0.4**: Señala una igualdad aceptable, aunque ya existe cierta concentración de la riqueza.
+* **Mayor a 0.4**: Representa un punto de alerta o crítico de desigualdad significativa, el cual suele asociarse con mayores tensiones sociales. 
+* **Valores superiores a 0.5** son comunes en regiones con brechas muy pronunciadas, como en algunas zonas de América Latina.
+
+Referencia:  https://www.esic.edu/rethink/business/indice-de-gini-que-es-y-como-se-calcula-c
+
+### Ejemplo gráfico
+
+![Gráfico del índice de Gini](figures_documentacion/Gini.png)
+
+Referencia: https://saludyeducacion2.blogspot.com/2018/02/el-coeficiente-de-gini-y-sus.html
+
 
 Definición primaria usada en el notebook 09:
 
@@ -292,7 +325,8 @@ Definición primaria usada en el notebook 09:
 - ponderador: `factor`;
 - universo: hogares con ingreso no faltante, ingreso no negativo y factor positivo;
 - unidad: hogar;
-- escala: Gini en 0-100.
+- escala: Gini en 0-100
+  
 
 Gini nacional propio:
 
@@ -338,7 +372,7 @@ Fuente: elaboración propia con ENIGH 2018-2022 y benchmark Banco de México. Es
 
 Fuente: elaboración propia con ENIGH 2018-2024. Gini ponderado con `factor`, ingreso corriente total del hogar, universo de hogares.
 
-## Desigualdad interna y brecha territorial
+## y brecha territorial
 
 La desigualdad interna mide dispersión dentro de un territorio: Gini, P90/P10 y P75/P25. La brecha territorial mide distancia entre territorios: diferencia de medianas, razón de medianas o diferencia de ingreso per cápita.
 
@@ -354,7 +388,7 @@ Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corrie
 
 Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corriente per cápita del hogar distribuido entre personas: `mart_persona` + `factor`. Montos nominales trimestrales.
 
-## Zonas metropolitanas y CDMX
+## Guadalajara Monterrey y CDMX
 
 Fuente oficial: [CONAPO/SEDATU/INEGI, Las metrópolis de México 2020](https://www.datos.gob.mx/es/dataset/metropolis_mexico_2020), recurso “Características poblacionales por municipio”. Se construyó `docs/zonas_metropolitanas_prioritarias_2020.csv` con las tres zonas requeridas.
 
@@ -404,7 +438,7 @@ El grupo desfavorecido es descriptivo, no una clasificación de marginación: se
 
 Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corriente per cápita del hogar distribuido entre personas: `mart_persona` + `factor`. Montos nominales trimestrales.
 
-## Homologación monetaria
+## Deflactores de ingresos
 
 Etapa agregada el 2026-08-31. A partir de esta sección, las comparaciones temporales de niveles monetarios entre 2018, 2020, 2022 y 2024 se reportan como montos reales en pesos de 2024. Los montos nominales originales se conservan en paralelo para contraste y sensibilidad.
 
@@ -609,9 +643,8 @@ Decisión para modelos futuros:
 
 Esta comparación permitirá estudiar cambios en coeficientes, efectos temporales, interacciones con año, estabilidad de signos, estabilidad de significancia y capacidad explicativa. En modelos logarítmicos deberá verificarse posteriormente que, si el deflactor es constante dentro de cada año y el modelo incluye efectos fijos de año, la homologación equivale a sumar una constante específica del año al logaritmo del ingreso; esto puede dejar casi intactos algunos efectos transversales y cambiar principalmente interceptos, efectos de año e interpretación temporal.
 
-## Mermaid metodológico
 
-Flujo de datos:
+## Flujo de datos:
 
 ```mermaid
 flowchart TD
@@ -621,7 +654,7 @@ flowchart TD
     D --> E["Documentación y figuras"]
 ```
 
-Construcción de bases analíticas:
+## Construcción de bases analíticas:
 
 ```mermaid
 flowchart LR
@@ -633,7 +666,7 @@ flowchart LR
     E --> P
 ```
 
-Ponderación y diseño:
+## Ponderación y diseño:
 
 ```mermaid
 flowchart TD
@@ -649,7 +682,7 @@ flowchart TD
     D1 --> D2["Errores estándar e inferencia"]
 ```
 
-Flujo de análisis de faltantes:
+## Flujo de análisis de faltantes:
 
 ```mermaid
 flowchart TD
@@ -660,7 +693,7 @@ flowchart TD
     E --> F["No imputar sin justificación"]
 ```
 
-Desigualdad vs brecha:
+## Desigualdad vs brecha:
 
 ```mermaid
 flowchart LR
@@ -673,22 +706,7 @@ flowchart LR
     C --> C2["Razón de medianas"]
 ```
 
-Roadmap:
-
-```mermaid
-flowchart TD
-    A["08 Calidad de bases: COMPLETO"] --> B["09 Desigualdad territorial: COMPLETO"]
-    B --> C["10 Homologación monetaria: COMPLETO"]
-    C --> D["11 Diseño muestral formal"]
-    D --> E["12 Determinantes del ingreso"]
-    E --> F["13 Heterogeneidad territorial"]
-    F --> G["14 Descomposición de desigualdad"]
-    G --> R["15 Robustez y sensibilidad"]
-    R --> H["16 Resultados y conclusiones"]
-```
-
 ## Roadmap
-
 | Etapa | Estado |
 | --- | --- |
 | 08 Calidad de bases | COMPLETO |
@@ -701,7 +719,7 @@ flowchart TD
 | 15 Robustez y sensibilidad | Pendiente: nominal vs real, con/sin `est_socio`, universos alternativos, 2020 y especificaciones alternativas |
 | 16 Resultados y conclusiones | Pendiente |
 
-## Limitaciones actuales
+## Comentarios generales
 
 - Los años son cortes transversales, no panel.
 - Las comparaciones temporales centrales ya cuentan con variables reales en pesos de 2024 en `revision_5`; los nominales se conservan como referencia y sensibilidad.
@@ -714,7 +732,7 @@ flowchart TD
 - Las asociaciones observadas no deben interpretarse como causalidad.
 - Los agregados derivados desde `ingresos.csv` no sustituyen automáticamente las variables oficiales de `concentradohogar`.
 
-## Principios metodológicos
+## Siguientes pasos
 
 - Antes de reportar cualquier estadístico ponderado, registrar: unidad de observación, población objetivo, variable de peso y definición del estimando.
 - No inventar resultados: todo valor reportado debe salir de notebooks o documentación revisada.
