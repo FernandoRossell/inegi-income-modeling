@@ -159,17 +159,17 @@ Es decir: cómo cambian las asociaciones entre ingreso y educación, sexo, edad,
 
 El notebook `07_analisis_regional_ingresos.ipynb` usa como target central `ingreso_persona_laboral_negocio_tri` y separa la submuestra con ingreso laboral positivo para evitar que las medianas queden dominadas por personas sin ingreso laboral.
 
-Hallazgos descriptivos preliminares:
+Hallazgos descriptivos preliminares del notebook 07:
 
 - personas con ingreso laboral positivo: 574,462, equivalentes a 47.7% de la base de personas;
-- mediana trimestral de ingreso laboral: Norte $22,131 y Sur $11,739;
-- ingreso corriente per cápita del hogar: Norte tiene mediana $16,713 y Sur $10,477;
-- localidades de 100,000 o más habitantes tienen mediana laboral $22,500 frente a $13,011 en localidades menores de 2,500 habitantes;
-- estrato Alto registra mediana laboral $33,359 y Bajo $10,125;
-- hombres: $19,392; mujeres: $12,984;
-- con contrato: $28,124; sin contrato: $14,478.
+- mediana trimestral muestral de ingreso laboral: Norte $22,131 y Sur $11,739;
+- ingreso corriente per cápita del hogar, mediana muestral: Norte $16,713 y Sur $10,477;
+- localidades de 100,000 o más habitantes tienen mediana laboral muestral $22,500 frente a $13,011 en localidades menores de 2,500 habitantes;
+- estrato Alto registra mediana laboral muestral $33,359 y Bajo $10,125;
+- mediana laboral muestral por sexo: hombres $19,392; mujeres $12,984;
+- mediana laboral muestral por contrato: con contrato $28,124; sin contrato $14,478.
 
-Estos resultados son descriptivos y nominales. No separan composición educativa, edad, sexo, ocupación, estructura del hogar ni inflación.
+Estos resultados son descriptivos, nominales y no ponderados. No deben leerse como estimaciones poblacionales hasta recalcular su versión ponderada con el factor adecuado.
 
 ## 16. Calidad, faltantes y ceros hasta notebook 08
 
@@ -207,40 +207,281 @@ Para ingreso laboral se recomienda separar:
 
 ## 18. Diseño muestral
 
-Las bases conservan:
+Las bases conservan `factor`, `factor_hogar`, `est_dis` y `upm`. En esta etapa se usan para estimaciones descriptivas puntuales, no para inferencia formal.
 
-- `factor`;
-- `factor_hogar`;
-- `est_dis`;
-- `upm`.
+`factor` permite expandir la muestra a la población representada. Para errores estándar, intervalos de confianza o pruebas inferenciales todavía será necesario incorporar el diseño complejo con `factor`, `est_dis` y `upm`.
 
-La decisión actual es usar `factor` para descriptivos ponderados. Todavía no se implementa inferencia formal con diseño muestral complejo. Si el análisis avanza a intervalos de confianza o pruebas inferenciales, será necesario incorporar estratos y conglomerados de forma explícita.
+## Ponderación y factor de expansión
 
-## 19. Limitaciones actuales
+En ENIGH, cada observación representa una cantidad determinada de unidades de la población. En las bases analíticas actuales, `factor` es un alias operativo de `factor_hogar`.
+
+Evidencia revisada:
+
+- `docs/enigh_variable_metadata.csv` documenta `factor` como “Factor de expansión”.
+- `concentradohogar.csv` contiene `factor`, `est_dis` y `upm` en 2018, 2020, 2022 y 2024.
+- El notebook 05 construyó `mart_hogar` con `factor_hogar` desde `concentradohogar` y expuso `factor` como alias.
+- En 2022 y 2024, las tablas raw que traen `factor` coinciden con `concentradohogar`; no se detectaron cambios de valor del factor entre tablas.
+
+Uso actual:
+
+| Uso | Nivel | Peso |
+| --- | --- | --- |
+| Ingreso corriente total del hogar | Hogar | `factor` |
+| Gini nacional y regional de hogares | Hogar | `factor` |
+| Ingreso laboral individual | Persona | `factor` |
+| Ingreso corriente per cápita como bienestar individual | Personas en hogares | `factor * tot_integ` |
+
+Media ponderada:
+
+$$
+\bar{x}_w = \frac{\sum_i w_i x_i}{\sum_i w_i}
+$$
+
+Mediana ponderada:
+
+1. Ordenar las observaciones por valor.
+2. Acumular los pesos.
+3. Identificar el punto donde se alcanza 50% del peso acumulado.
+
+Cuantiles ponderados: la misma lógica se usa para P25, P75, P90, P95 y P99.
+
+Gini ponderado: la distribución considera la frecuencia poblacional representada por cada peso. En el notebook se conservan ceros y se excluyen solo valores faltantes, negativos o pesos no positivos.
+
+Resumen de expansión:
+
+| Año | Hogares muestrales | Hogares expandidos | Población expandida |
+| --- | ---: | ---: | ---: |
+| 2018 | 74,647 | 34,400,515 | 123,836,081 |
+| 2020 | 89,006 | 35,749,659 | 126,760,856 |
+| 2022 | 90,102 | 37,560,123 | 128,889,708 |
+| 2024 | 91,414 | 38,830,230 | 130,226,218 |
+
+## Validación externa del Gini
+
+Benchmark: [Banco de México, Recuadro 2 del Reporte sobre las Economías Regionales enero-marzo 2024](https://www.banxico.org.mx/publicaciones-y-prensa/reportes-sobre-las-economias-regionales/recuadros/%7B3B45625A-C009-A961-91D8-9A75F663F11A%7D.pdf). El recuadro reporta Gini 2018, 2020 y 2022 por región y nacional, con bases generadas por CONEVAL a partir de ENIGH.
+
+Definición primaria usada en el notebook 09:
+
+- variable: `ing_cor_hogar_oficial_tri`, equivalente en el mart a `ing_cor` de `concentradohogar`;
+- ponderador: `factor`;
+- universo: hogares con ingreso no faltante, ingreso no negativo y factor positivo;
+- unidad: hogar;
+- escala: Gini en 0-100.
+
+Gini nacional propio:
+
+| Año | Gini ponderado |
+| --- | ---: |
+| 2018 | 43.83 |
+| 2020 | 42.60 |
+| 2022 | 41.27 |
+| 2024 | 40.06 |
+
+Comparación mart vs `concentradohogar` directo:
+
+| Año | Gini mart | Gini concentradohogar | Diferencia |
+| --- | ---: | ---: | ---: |
+| 2018 | 43.8299 | 43.8299 | 0.0000 |
+| 2020 | 42.5978 | 42.5978 | 0.0000 |
+| 2022 | 41.2677 | 41.2677 | 0.0000 |
+| 2024 | 40.0624 | 40.0624 | 0.0000 |
+
+La construcción del mart no explica la discrepancia con Banxico.
+
+Comparación ponderado vs no ponderado, nacional:
+
+| Año | Gini ponderado | Gini no ponderado | Banxico |
+| --- | ---: | ---: | ---: |
+| 2018 | 43.83 | 42.73 | 45.70 |
+| 2020 | 42.60 | 42.05 | 45.00 |
+| 2022 | 41.27 | 40.95 | 43.10 |
+
+Diagnóstico de definición:
+
+- El cálculo hogar-total ponderado por `factor` queda sistemáticamente por debajo de Banxico.
+- La discrepancia máxima con esa definición es 3.22 puntos de Gini en Sur 2020.
+- Una variante diagnóstica con `ing_cor_pc_oficial_tri` y `factor * tot_integ` se acerca mucho más: discrepancia máxima aproximada de 1.06 puntos.
+- Esto sugiere que la diferencia más probable no está en el mart ni en la ausencia de ponderación, sino en la definición exacta de ingreso/unidad de distribución usada por las bases CONEVAL/Banxico.
+- No se fuerza la coincidencia: hasta reproducir exactamente la construcción CONEVAL, la validación se clasifica como reproducción parcial.
+
+![Gini nacional propio vs Banxico](figures_documentacion/gini_banxico_comparacion_2018_2022.png)
+
+Fuente: elaboración propia con ENIGH 2018-2022 y benchmark Banco de México. Estadísticos ponderados; la línea per cápita es diagnóstica. Montos nominales trimestrales.
+
+![Evolución del Gini por región](figures_documentacion/gini_regiones_2018_2024.png)
+
+Fuente: elaboración propia con ENIGH 2018-2024. Gini ponderado con `factor`, ingreso corriente total del hogar, universo de hogares.
+
+## Desigualdad interna y brecha territorial
+
+La desigualdad interna mide dispersión dentro de un territorio: Gini, P90/P10 y P75/P25. La brecha territorial mide distancia entre territorios: diferencia de medianas, razón de medianas o diferencia de ingreso per cápita.
+
+![Distribución regional del ingreso corriente per cápita, 2024](figures_documentacion/ingreso_pc_region_2024.png)
+
+Fuente: elaboración propia con ENIGH 2024. Ingreso corriente per cápita del hogar ponderado con `factor * tot_integ`. Montos nominales trimestrales.
+
+![Gradiente por tamaño de localidad, 2024](figures_documentacion/gradiente_tam_loc_2024.png)
+
+Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corriente per cápita del hogar. Montos nominales trimestrales.
+
+![Gradiente por estrato socioeconómico, 2024](figures_documentacion/gradiente_est_socio_2024.png)
+
+Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corriente per cápita del hogar. Montos nominales trimestrales.
+
+## Zonas metropolitanas y CDMX
+
+Fuente oficial: [CONAPO/SEDATU/INEGI, Las metrópolis de México 2020](https://www.datos.gob.mx/es/dataset/metropolis_mexico_2020), recurso “Características poblacionales por municipio”. Se construyó `docs/zonas_metropolitanas_prioritarias_2020.csv` con las tres zonas requeridas.
+
+La fuente nombra la zona como “Ciudad de México”; en el proyecto se reporta como “Valle de México”, conservando `nombre_oficial` en el mapping. La delimitación incluye:
+
+| Zona | Municipios oficiales | Entidades incluidas |
+| --- | ---: | --- |
+| Valle de México | 63 | Ciudad de México, Hidalgo, México |
+| Guadalajara | 7 | Jalisco |
+| Monterrey | 16 | Nuevo León |
+
+Cobertura ENIGH 2024:
+
+| Zona | Hogares | Personas | Población expandida | Municipios presentes | UPM-diseño |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Valle de México | 4,540 | 14,755 | 22,419,780 | 50 | 735 |
+| Guadalajara | 1,373 | 4,487 | 6,021,378 | 7 | 277 |
+| Monterrey | 2,509 | 8,264 | 5,743,578 | 15 | 419 |
+
+La cobertura es razonable para una comparación descriptiva agregada, pero no equivale a inferencia formal con diseño complejo.
+
+CDMX no es equivalente a la Zona Metropolitana del Valle de México:
+
+| Métrica 2024 | n muestral | Población expandida | Mediana ponderada | Gini ponderado |
+| --- | ---: | ---: | ---: | ---: |
+| CDMX entidad: ingreso corriente hogar | 2,576 | 3,082,330 | $81,866 | 40.40 |
+| CDMX entidad: ingreso corriente per cápita | 2,576 | 9,345,564 | $23,930 | 45.70 |
+| ZM Valle de México: ingreso corriente per cápita | 4,540 | 22,370,536 | $19,671 | 43.43 |
+| CDMX entidad: ingreso laboral individual positivo | 4,285 | 4,903,427 | $28,673 | 48.67 |
+
+![CDMX entidad vs Zona Metropolitana del Valle de México](figures_documentacion/cdmx_vs_zmvm_2024.png)
+
+Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corriente per cápita del hogar con `factor * tot_integ`. Montos nominales trimestrales.
+
+Comparación 2024 de grandes zonas metropolitanas y contexto desfavorecido:
+
+| Grupo | n muestral | Población expandida | Mediana ponderada | Gini | P90/P10 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Monterrey | 2,509 | 5,736,479 | $24,900 | 44.80 | 5.71 |
+| Guadalajara | 1,373 | 6,017,359 | $21,064 | 39.25 | 5.23 |
+| Valle de México | 4,540 | 22,370,536 | $19,671 | 43.43 | 6.31 |
+| Localidad pequeña y estrato socioeconómico bajo | 13,724 | 13,980,966 | $7,888 | 39.45 | 6.14 |
+
+El grupo desfavorecido es descriptivo, no una clasificación de marginación: se define con `tam_loc_desc = Localidades con menos de 2 500 habitantes` y `est_socio_desc = Bajo`. La razón de medianas entre Monterrey y este grupo es 3.16 en 2024.
+
+![Brecha territorial: metrópolis y contexto desfavorecido](figures_documentacion/brecha_metropolitana_2024.png)
+
+Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corriente per cápita del hogar con `factor * tot_integ`. Montos nominales trimestrales.
+
+## Mermaid metodológico
+
+Flujo de datos:
+
+```mermaid
+flowchart TD
+    A["ENIGH original 2018-2024"] --> B["Limpieza y homologación"]
+    B --> C["Bases analíticas"]
+    C --> D["Análisis descriptivo"]
+    D --> E["Documentación y figuras"]
+```
+
+Construcción de bases analíticas:
+
+```mermaid
+flowchart LR
+    A["concentradohogar"] --> H["mart_hogar"]
+    B["poblacion"] --> P["mart_persona"]
+    C["ingresos agregados"] --> P
+    D["trabajos agregados"] --> P
+    E["geografía y categorías"] --> H
+    E --> P
+```
+
+Ponderación y diseño:
+
+```mermaid
+flowchart TD
+    A["Muestra ENIGH"] --> B["Factor de expansión"]
+    B --> C["Estimaciones poblacionales puntuales"]
+    C --> C1["Media ponderada"]
+    C --> C2["Mediana y cuantiles ponderados"]
+    C --> C3["Gini ponderado"]
+    A --> D["Diseño complejo"]
+    D --> D1["Factor"]
+    D --> D2["Estrato: est_dis"]
+    D --> D3["UPM"]
+    D --> E["Errores estándar e inferencia"]
+```
+
+Flujo de análisis de faltantes:
+
+```mermaid
+flowchart TD
+    A["Universo analítico"] --> B["Skip logic o no aplicable"]
+    A --> C["Missing residual"]
+    C --> D["Cramer's V y SMD"]
+    D --> E["Clasificación metodológica"]
+    E --> F["No imputar sin justificación"]
+```
+
+Desigualdad vs brecha:
+
+```mermaid
+flowchart LR
+    A["Diferencias territoriales"] --> B["Desigualdad interna"]
+    A --> C["Brecha entre territorios"]
+    B --> B1["Gini"]
+    B --> B2["P90/P10"]
+    B --> B3["P75/P25"]
+    C --> C1["Diferencia de medianas"]
+    C --> C2["Razón de medianas"]
+```
+
+Roadmap:
+
+```mermaid
+flowchart TD
+    A["08 Calidad de bases: COMPLETO"] --> B["09 Desigualdad territorial: EN DESARROLLO"]
+    B --> C["10 Homologación monetaria: SIGUIENTE"]
+    C --> D["11 Diseño muestral formal"]
+    D --> E["12 Determinantes del ingreso"]
+    E --> F["13 Heterogeneidad territorial"]
+    F --> G["14 Descomposición de desigualdad"]
+    G --> H["Conclusiones"]
+```
+
+## Roadmap
+
+| Etapa | Estado |
+| --- | --- |
+| 08 Calidad de bases | COMPLETO |
+| 09 Desigualdad territorial | EN DESARROLLO: ponderación auditada, Gini nacional/regional, validación Banxico, CDMX, zonas metropolitanas, brechas territoriales, desigualdad interna vs brecha |
+| 10 Homologación monetaria | SIGUIENTE |
+| 11 Diseño muestral formal | Pendiente |
+| 12 Determinantes del ingreso | Pendiente |
+| 13 Heterogeneidad territorial | Pendiente |
+| 14 Descomposición de desigualdad | Pendiente |
+| Conclusiones | Pendiente |
+
+## Limitaciones actuales
 
 - Los años son cortes transversales, no panel.
-- Los ingresos entre años están en pesos nominales; no se ha deflactado.
-- Los municipios se usan solo como contexto o exploración.
+- Los ingresos entre años están en pesos nominales; todavía no se ha deflactado.
+- Las comparaciones monetarias de nivel entre 2018, 2020, 2022 y 2024 requieren homologación monetaria.
+- El Gini dentro de un año no cambia si todos los ingresos se multiplican por el mismo deflactor, pero comparaciones reales de niveles sí requieren deflactar.
+- `factor` permite estimaciones puntuales ponderadas; no sustituye el diseño muestral completo para inferencia.
+- Los municipios y zonas metropolitanas se usan como agregados descriptivos; no se reportan como dominios inferenciales formales.
 - No se incorporó marginación CONAPO en esta etapa.
 - No se construyó una variable definitiva de formalidad laboral.
 - Las asociaciones observadas no deben interpretarse como causalidad.
 - Los agregados derivados desde `ingresos.csv` no sustituyen automáticamente las variables oficiales de `concentradohogar`.
 
-## 20. Roadmap
-
-Prioridad inmediata después del notebook 09:
-
-- decidir si la siguiente comparación temporal debe deflactar ingresos;
-- revisar formalidad laboral;
-- evaluar enriquecimiento CONAPO;
-- pasar de EDA a modelos descriptivos/explicativos con cautela metodológica;
-- mantener separada la desigualdad interna de cada territorio de las brechas entre territorios.
-
-Después:
-
-- documentar cualquier cambio de universo antes de calcular nuevos indicadores.
-
-## 21. Principios metodológicos
+## Principios metodológicos
 
 - No inventar resultados: todo valor reportado debe salir de notebooks o documentación revisada.
 - No asumir causalidad desde asociaciones descriptivas.
@@ -249,54 +490,3 @@ Después:
 - Separar ceros legítimos, ceros estructurales y códigos con valor 0.
 - Priorizar interpretabilidad, visualización y reproducibilidad.
 - Mantener documentación viva en este archivo y detalle técnico de calidad en `reports/calidad_faltantes_y_ceros.md`.
-
-## 22. Notebook 09: desigualdad territorial
-
-Se creó `notebooks/09_desigualdad_territorial.ipynb` para calcular desigualdad territorial con tablas y gráficas reproducibles.
-
-Definición principal:
-
-- ingreso: `ing_cor_hogar_oficial_tri`;
-- ponderador: `factor`;
-- universo: todos los hogares con ingreso no faltante, ingreso no negativo y factor positivo;
-- ceros: se conservan;
-- escala: Gini en 0-1 y 0-100;
-- años comparables con Banxico: 2018, 2020 y 2022.
-
-Gini nacional propio, en escala 0-100:
-
-| Año | Gini |
-| --- | ---: |
-| 2018 | 43.83 |
-| 2020 | 42.60 |
-| 2022 | 41.27 |
-| 2024 | 40.06 |
-
-Validación contra Banxico:
-
-- el patrón general coincide: la desigualdad baja entre 2018 y 2022;
-- los valores propios quedan por debajo del benchmark Banxico;
-- la mayor discrepancia es Sur 2020: -3.22 puntos;
-- explicación plausible: Banco de México usa bases generadas por CONEVAL a partir de ENIGH, mientras este notebook usa el mart propio y la variable oficial de `concentradohogar`; pueden diferir definición CONEVAL, procesamiento, universo, ponderación, escala temporal del ingreso o redondeo.
-
-Hallazgos territoriales 2024:
-
-- región con mayor mediana de ingreso corriente del hogar: Norte, $75,412;
-- región con menor mediana: Sur, $42,533;
-- brecha de mediana Norte/Sur: 1.77 veces;
-- brecha entre localidades de 100,000 o más habitantes y menores de 2,500 habitantes: 2.00 veces;
-- brecha entre estrato Alto y Bajo: 3.28 veces.
-
-CDMX:
-
-- ingreso corriente del hogar, mediana 2024: $81,866;
-- ingreso corriente per cápita del hogar, mediana 2024: $30,297;
-- ingreso laboral individual positivo, mediana 2024: $28,678;
-- los ingresos están en pesos nominales trimestrales.
-
-Grandes urbes:
-
-- no se encontró una delimitación metropolitana oficial incorporada al proyecto;
-- no se aproximaron grandes urbes con municipios sueltos;
-- se dejó como enriquecimiento futuro;
-- por ahora se usan solo `tam_loc_desc` y `est_socio_desc` como dimensiones existentes, sin llamarlas zonas metropolitanas ni marginalidad.
