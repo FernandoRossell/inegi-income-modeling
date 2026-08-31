@@ -141,7 +141,7 @@ El documento `reports/estado_del_arte_geografia_ingresos_ENIGH.md` identifica tr
 - Banco de México: regiones económicas y análisis regional de Gini/fuentes de ingreso con ENIGH.
 - CONAPO: índices de marginación como posible enriquecimiento futuro.
 
-Banco de México reporta Gini regional aproximado para 2018, 2020 y 2022. La tabla documentada usa valores en escala 0-100: Nacional 45.7, 45.0 y 43.1; Sur muestra la desigualdad más alta entre regiones.
+Banco de México reporta Gini regional aproximado para 2018, 2020 y 2022. La tabla documentada usa valores en escala 0-100: Nacional 45.7, 45.0 y 43.1; Sur muestra la desigualdad más alta entre regiones. El recuadro metodológico indica que el benchmark usa ingreso corriente total promedio por hogar, por lo que la comparación del notebook 09 usa `ing_cor_hogar_oficial_tri`, no el ingreso per cápita.
 
 ## 14. Diferenciación del proyecto
 
@@ -228,20 +228,17 @@ La decisión actual es usar `factor` para descriptivos ponderados. Todavía no s
 
 ## 20. Roadmap
 
-Prioridad inmediata:
+Prioridad inmediata después del notebook 09:
 
-- construir `notebooks/09_desigualdad_territorial.ipynb`;
-- calcular Gini ponderado nacional y territorial;
-- comparar con el benchmark Banxico 2018-2022 sin forzar equivalencia;
-- documentar diferencias de definición, universo y escala;
-- explorar CDMX y brechas territoriales con métricas interpretables.
+- decidir si la siguiente comparación temporal debe deflactar ingresos;
+- revisar formalidad laboral;
+- evaluar enriquecimiento CONAPO;
+- pasar de EDA a modelos descriptivos/explicativos con cautela metodológica;
+- mantener separada la desigualdad interna de cada territorio de las brechas entre territorios.
 
 Después:
 
-- definir si se incorpora deflactación;
-- revisar formalidad laboral;
-- evaluar enriquecimiento CONAPO;
-- pasar de EDA a modelos descriptivos/explicativos con cautela metodológica.
+- documentar cualquier cambio de universo antes de calcular nuevos indicadores.
 
 ## 21. Principios metodológicos
 
@@ -252,3 +249,54 @@ Después:
 - Separar ceros legítimos, ceros estructurales y códigos con valor 0.
 - Priorizar interpretabilidad, visualización y reproducibilidad.
 - Mantener documentación viva en este archivo y detalle técnico de calidad en `reports/calidad_faltantes_y_ceros.md`.
+
+## 22. Notebook 09: desigualdad territorial
+
+Se creó `notebooks/09_desigualdad_territorial.ipynb` para calcular desigualdad territorial con tablas y gráficas reproducibles.
+
+Definición principal:
+
+- ingreso: `ing_cor_hogar_oficial_tri`;
+- ponderador: `factor`;
+- universo: todos los hogares con ingreso no faltante, ingreso no negativo y factor positivo;
+- ceros: se conservan;
+- escala: Gini en 0-1 y 0-100;
+- años comparables con Banxico: 2018, 2020 y 2022.
+
+Gini nacional propio, en escala 0-100:
+
+| Año | Gini |
+| --- | ---: |
+| 2018 | 43.83 |
+| 2020 | 42.60 |
+| 2022 | 41.27 |
+| 2024 | 40.06 |
+
+Validación contra Banxico:
+
+- el patrón general coincide: la desigualdad baja entre 2018 y 2022;
+- los valores propios quedan por debajo del benchmark Banxico;
+- la mayor discrepancia es Sur 2020: -3.22 puntos;
+- explicación plausible: Banco de México usa bases generadas por CONEVAL a partir de ENIGH, mientras este notebook usa el mart propio y la variable oficial de `concentradohogar`; pueden diferir definición CONEVAL, procesamiento, universo, ponderación, escala temporal del ingreso o redondeo.
+
+Hallazgos territoriales 2024:
+
+- región con mayor mediana de ingreso corriente del hogar: Norte, $75,412;
+- región con menor mediana: Sur, $42,533;
+- brecha de mediana Norte/Sur: 1.77 veces;
+- brecha entre localidades de 100,000 o más habitantes y menores de 2,500 habitantes: 2.00 veces;
+- brecha entre estrato Alto y Bajo: 3.28 veces.
+
+CDMX:
+
+- ingreso corriente del hogar, mediana 2024: $81,866;
+- ingreso corriente per cápita del hogar, mediana 2024: $30,297;
+- ingreso laboral individual positivo, mediana 2024: $28,678;
+- los ingresos están en pesos nominales trimestrales.
+
+Grandes urbes:
+
+- no se encontró una delimitación metropolitana oficial incorporada al proyecto;
+- no se aproximaron grandes urbes con municipios sueltos;
+- se dejó como enriquecimiento futuro;
+- por ahora se usan solo `tam_loc_desc` y `est_socio_desc` como dimensiones existentes, sin llamarlas zonas metropolitanas ni marginalidad.
