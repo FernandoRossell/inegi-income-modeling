@@ -98,7 +98,7 @@ Llave:
 Resultado:
 
 - filas: 1,203,231;
-- columnas: 138;
+- columnas: 140;
 - duplicados de llave final: 0.
 
 Auditoría de joins:
@@ -111,7 +111,7 @@ Auditoría de joins:
 | Agregar variables de hogares | 1,203,231 | 1,203,231 | 100.0000 | esperado |
 | Agregar vivienda | 1,203,231 | 1,203,231 | 100.0000 | esperado |
 
-La geografía se incorpora desde hogar/vivienda mediante las relaciones validadas. No se agrega localidad, latitud ni longitud.
+La geografía se incorpora desde hogar/vivienda mediante las relaciones validadas. No se agrega localidad, latitud ni longitud. En esta actualización también se conserva `region_banxico`, construida desde `cve_ent` con la clasificación de cuatro regiones revisada en el estado del arte.
 
 ## Construcción de `mart_hogar`
 
@@ -128,7 +128,7 @@ Llave:
 Resultado:
 
 - filas: 345,169;
-- columnas: 90;
+- columnas: 92;
 - duplicados de llave final: 0.
 
 Auditoría de joins:
@@ -156,9 +156,123 @@ La metadata muestra que `factor`, `est_dis` y `upm` están disponibles longitudi
 Decisión de esta etapa:
 
 - `mart_hogar` conserva `factor_hogar`, `est_dis` y `upm` desde `concentradohogar`;
+- ambos marts exponen `factor` como alias operativo de `factor_hogar` para resúmenes descriptivos ponderados;
 - `mart_persona` hereda estas columnas desde el hogar para mantener consistencia 2018-2024;
 - todavía no se implementa inferencia con diseño muestral complejo;
 - el dashboard distingue análisis muestral y deja ponderación como pendiente metodológico.
+
+## Auditoría geográfica y análisis regional
+
+Esta actualización responde a la necesidad de revisar si las bases analíticas ya estaban alineadas con las variables geográficas y de estratificación documentadas. Se tomó como referencia `reports/estado_del_arte_geografia_ingresos_ENIGH.md`, especialmente la clasificación Banxico de cuatro regiones: Norte, Centro Norte, Centro y Sur.
+
+Cambios mínimos en los marts:
+
+| Mart | Filas antes | Filas después | Columnas antes | Columnas después | Duplicados llave | Faltantes `region_banxico` | Faltantes `factor` |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| `mart_persona` | 1,203,231 | 1,203,231 | 138 | 140 | 0 | 0 | 0 |
+| `mart_hogar` | 345,169 | 345,169 | 90 | 92 | 0 | 0 | 0 |
+
+Variables incorporadas o normalizadas:
+
+- `region_banxico`, construida desde `cve_ent`;
+- `factor`, como alias documentado de `factor_hogar`;
+- `est_socio_desc`, normalizada por código 1-4 para corregir una etiqueta dañada en 2022 sin cambiar `est_socio`.
+
+Validaciones:
+
+- las 32 entidades aparecen exactamente una vez en el mapa entidad-región;
+- no hay faltantes en `cve_ent`, `entidad`, `cve_mun`, `municipio`, `tam_loc_desc`, `est_socio_desc`, `region_banxico`, `factor`, `est_dis` ni `upm`;
+- no cambió la granularidad de `mart_persona` ni de `mart_hogar`;
+- no se modificó `data/raw/`.
+
+Se creó `notebooks/07_analisis_regional_ingresos.ipynb`. El target principal es `ingreso_persona_laboral_negocio_tri`; las tablas centrales usan la submuestra con ingreso laboral positivo para evitar medianas en cero al incluir población sin ingreso laboral. El ingreso corriente per cápita del hogar se conserva como contraste territorial. La libreta ejecutó sus 17 celdas de código sin error desde un proceso limpio de Python.
+
+Hallazgos descriptivos preliminares:
+
+- la muestra central tiene 574,462 personas con ingreso laboral positivo, 47.7% del mart persona;
+- la mediana trimestral de ingreso laboral es mayor en Norte ($22,131) y menor en Sur ($11,739);
+- el mismo orden territorial aparece en ingreso corriente per cápita del hogar: Norte tiene la mediana más alta ($16,713) y Sur la más baja ($10,477);
+- el tamaño de localidad muestra un gradiente urbano-rural: localidades de 100,000 o más habitantes tienen mediana de $22,500 frente a $13,011 en localidades menores de 2,500 habitantes;
+- el estrato socioeconómico separa fuertemente la distribución: Alto registra $33,359 y Bajo $10,125;
+- la educación presenta un gradiente amplio: licenciatura o ingeniería alcanza $36,685 de mediana y maestría $50,967, frente a $11,331 en primaria y $6,722 en ningún nivel aprobado;
+- la brecha por sexo aparece sin controles: hombres $19,392 y mujeres $12,984;
+- tener contrato se asocia con una mediana mayor ($28,124) que no tenerlo ($14,478);
+- entre 2018 y 2024 la mediana sube en todas las regiones, con el mayor aumento absoluto en Norte.
+
+Estos hallazgos no son causales y todavía no separan composición educativa, edad, sexo, ocupación, estructura del hogar ni diferencias nominales/reales entre años.
+
+## Calidad de las bases analíticas
+
+Se creó `notebooks/08_calidad_bases_analiticas.ipynb` para auditar las bases antes de avanzar a desigualdad territorial, Gini, deflactación o modelos. La libreta usa la terminología visible:
+
+- `mart_persona`: base analítica de personas;
+- `mart_hogar`: base analítica de hogares;
+- data mart: nombre técnico de una tabla preparada para análisis a una granularidad específica.
+
+La libreta no reconstruye bases, no modifica datos crudos, no imputa y no elimina filas. Reutiliza los artefactos actuales de `data/interim/revision_4`.
+
+Acumulación temporal:
+
+| Base analítica | 2018 | 2020 | 2022 | 2024 | Total |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Personas | 269,206 | 315,743 | 309,684 | 308,598 | 1,203,231 |
+| Hogares | 74,647 | 89,006 | 90,102 | 91,414 | 345,169 |
+
+Estas bases concatenan levantamientos independientes. No son un panel: una persona u hogar de 2018 y una persona u hogar de 2024 son observaciones independientes.
+
+Faltantes principales:
+
+- geografía, estratos y diseño muestral están completos en variables prioritarias: `region_banxico`, `entidad`, `tam_loc_desc`, `est_socio_desc`, `factor`, `est_dis` y `upm`;
+- los targets monetarios principales no tienen faltantes: `ingreso_persona_laboral_negocio_tri`, `ingreso_persona_total_registros_tri`, `ing_cor_hogar_pc_oficial_tri`, `ing_cor_hogar_oficial_tri` e `ing_cor_pc_oficial_tri`;
+- `edo_conyug_desc` tiene 233,128 faltantes, 19.38% de la base de personas, explicados por menores de 12 años; dentro de personas de 12 años o más el faltante es 0%;
+- `nivelaprob_desc` tiene 47,209 faltantes, 3.92%, concentrados en edades 0-5; desde 6 años prácticamente desaparecen;
+- `nivel_desc` tiene 869,288 faltantes, 72.25%, porque describe nivel educativo actual y solo aplica cuando la persona asiste a la escuela;
+- variables laborales como `subor_principal_desc` y `tam_emp_principal_desc` faltan en 51.96% de la base completa, pero dentro de personas con trabajo reportado están completas;
+- `contrato_principal_desc` falta en 65.56% de la base completa, pero está completa dentro de trabajadores que reciben pago;
+- `personas_con_registros_ingreso` tenía 250 faltantes en la base de hogares, 0.07%, por el merge opcional de ingresos agregados a hogar; al validar contra `mart_persona`, todos esos hogares tenían integrantes pero 0 personas con registros en `ingresos.csv`, por lo que el contador se corrigió a 0.
+
+Clasificación provisional de mecanismos:
+
+| Grupo | Variables | Interpretación |
+| --- | --- | --- |
+| Sin faltantes | edad, sexo, ingresos principales, geografía, estratos, factor, `est_dis`, `upm`, variables centrales de hogar | Usar directamente, documentando universo y ponderación cuando aplique. |
+| Estructural / no aplica | estado conyugal en menores de 12, educación aprobada en edades 0-5, nivel educativo actual fuera de asistencia escolar, variables laborales fuera de trabajadores o fuera de su ruta de cuestionario | Restringir universo antes de analizar. |
+| Compatible con MCAR | Ninguna variable central se clasifica así como conclusión fuerte | No afirmar MCAR sin supuestos adicionales. |
+| Compatible con MAR | Ninguna variable central se clasifica así después de aplicar universos | Las asociaciones brutas con edad o trabajo reflejan principalmente saltos lógicos. |
+| Posible MNAR | Ninguna variable central identificada | MNAR no puede demostrarse con datos observados; requeriría supuestos adicionales. |
+| Cambio metodológico | No se detecta desaparición de variables prioritarias entre 2018-2024 | Mantener vigilancia si se incorporan variables nuevas. |
+| Problema potencial de datos | Sin variables centrales pendientes después de la corrección acotada de `asis_esc_desc` y `personas_con_registros_ingreso` | Mantener vigilancia si estas variables se vuelven centrales. |
+
+Análisis de ceros:
+
+- `ingreso_persona_laboral_negocio_tri` no tiene faltantes ni negativos; tiene 628,769 ceros y 574,462 positivos;
+- por año, personas con ingreso laboral positivo: 2018 = 127,846; 2020 = 148,082; 2022 = 149,569; 2024 = 148,965;
+- por año, personas con ingreso laboral cero: 2018 = 141,360; 2020 = 167,661; 2022 = 160,115; 2024 = 159,633;
+- 94.71% de las personas sin trabajo reportado tiene ingreso laboral cero; esto respalda tratar el cero como legítimo/estructural, no como faltante;
+- `registros_ingreso = 0` representa ausencia de registros en `ingresos.csv`;
+- `n_trabajos = 0` y `horas_trabajo_principal = 0` representan ausencia de trabajo reportado;
+- 36 hogares tienen ingreso corriente oficial cero; se conservan, pero conviene revisarlos si se vuelven sustantivos;
+- ceros en códigos o identificadores, como `trabajo_mp`, `grado`, `gradoaprob`, `est_dis` o `upm`, no se interpretan como cantidades.
+
+Poblaciones analíticas propuestas:
+
+| Universo | 2018 | 2020 | 2022 | 2024 | Total |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Base completa de personas | 269,206 | 315,743 | 309,684 | 308,598 | 1,203,231 |
+| Personas con trabajo reportado | 127,638 | 149,387 | 150,682 | 150,382 | 578,089 |
+| Personas con ingreso laboral positivo | 127,846 | 148,082 | 149,569 | 148,965 | 574,462 |
+| Hogares | 74,647 | 89,006 | 90,102 | 91,414 | 345,169 |
+
+Decisión metodológica provisional: para ingreso laboral conviene separar dos análisis posteriores. Primero, probabilidad de tener ingreso laboral positivo. Segundo, monto del ingreso condicionado a `ingreso_persona_laboral_negocio_tri > 0`. Todavía no se construyen esos modelos.
+
+Variables que requieren decisión antes de usarse:
+
+- `asis_esc_desc`: las etiquetas dañadas para "No" en 2020/2022 se corrigieron por código oficial `asis_esc` (`1 = Sí`, `2 = No`); el faltante restante corresponde a edades 0-5;
+- `personas_con_registros_ingreso`: los 250 `NaN` se validaron contra `mart_persona` y se rellenaron con 0 porque representan ausencia de registros individuales en `ingresos.csv`, no pérdida de llave;
+- `nivel_desc`: no mide escolaridad general, sino nivel educativo actual de quienes asisten a la escuela;
+- `contrato_principal_desc`: debe usarse en el universo de trabajadores que reciben pago, no en toda la población.
+
+La libreta ejecutó sus 14 celdas de código sin error desde un proceso limpio de Python.
 
 ## Dashboard exploratorio
 
@@ -200,6 +314,8 @@ Notebooks:
 - `notebooks/04_relaciones_entre_bases.ipynb`
 - `notebooks/05_bases_analiticas.ipynb`
 - `notebooks/06_dashboard_exploratorio.ipynb`
+- `notebooks/07_analisis_regional_ingresos.ipynb`
+- `notebooks/08_calidad_bases_analiticas.ipynb`
 
 Datos intermedios:
 
@@ -221,7 +337,9 @@ Datos intermedios:
 
 - Revisar con más detalle las claves de ingreso si se quiere convertir los agregados persona en definiciones finales publicables.
 - Definir tratamiento de ingresos nominales vs reales antes de comparación temporal sustantiva.
-- Decidir formalmente si el análisis usará ponderadores y cómo se reportará el diseño muestral.
+- Definir formalmente cómo se reportará el diseño muestral si los resultados pasan de descriptivos a inferenciales.
+- Mantener documentada la corrección de `asis_esc_desc` si asistencia escolar se usa como variable explicativa.
+- Mantener documentada la decisión de tratar como 0 los 250 casos previos de `personas_con_registros_ingreso`.
 - Revisar las diferencias entre `tot_integ` oficial y conteo reconstruido desde `poblacion`.
 - No interpretar municipios como representativos sin revisar diseño muestral y tamaños de muestra.
 - Construir variables de formalidad sólo después de revisar definiciones sustantivas y documentación.
