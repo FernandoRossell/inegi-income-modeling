@@ -63,6 +63,9 @@ inegi-income-modeling/
 - `docs/planteamiento.md`: planteamiento actualizado de la tesina.
 - `docs/metadata_enigh.md`: metadata consolidada de tablas, columnas, llaves, factor temporal y documentacion ENIGH.
 - `docs/enigh_variable_metadata.csv`: metadata tabular extraida de los PDF oficiales de ENIGH.
+- `reports/documentacion_final_en_desarrollo.md`: documento vivo con decisiones metodologicas, roadmap y estado de cada etapa.
+- `reports/diseno_muestral_formal.md`: etapa 11; inferencia descriptiva aproximada con `factor`, `est_dis`, `upm` y JKn estratificado por UPM.
+- `notebooks/11_diseno_muestral_formal.ipynb`: libreta reproducible de auditoria de diseno, estimaciones, contraste Norte-Sur y validaciones.
 - `src/data/extract_enigh_pdf_metadata.py`: script para extraer metadata desde los PDF.
 - `src/data/build_metadata_enigh.py`: script para reconstruir la documentacion de metadata.
 

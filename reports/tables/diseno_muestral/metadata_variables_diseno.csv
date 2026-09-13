@@ -1,0 +1,61 @@
+year,table,variable,label,dtype,source_pdf,source_page
+2018,concentradohogar.csv,est_dis,Estrato de diseño muestral,C (7),702825188061.pdf,28
+2018,concentradohogar.csv,factor,Factor de expansión,N (5),702825188061.pdf,28
+2018,concentradohogar.csv,upm,Unidad primaria de muestreo,C (5),702825188061.pdf,28
+2018,viviendas.csv,est_dis,Estrato de diseño muestral,C (3),702825188061.pdf,17
+2018,viviendas.csv,factor,Factor de expansión,N (5),702825188061.pdf,17
+2018,viviendas.csv,upm,Unidad primaria de muestreo,C (5),702825188061.pdf,17
+2020,concentradohogar.csv,est_dis,Estrato de diseño muestral,C (3),889463901242.pdf,32
+2020,concentradohogar.csv,factor,Factor de expansión,N (5),889463901242.pdf,32
+2020,concentradohogar.csv,upm,Unidad primaria de muestreo,C (7),889463901242.pdf,32
+2020,viviendas.csv,est_dis,Estrato de diseño muestral,C (3),889463901242.pdf,19
+2020,viviendas.csv,factor,Factor de expansión,N (5),889463901242.pdf,19
+2020,viviendas.csv,upm,Unidad primaria de muestreo,C (7),889463901242.pdf,19
+2022,concentradohogar.csv,est_dis,Estrato de diseño muestral,C (3),889463910626.pdf,32
+2022,concentradohogar.csv,factor,Factor de expansión,N (5),889463910626.pdf,32
+2022,concentradohogar.csv,upm,Unidad primaria de muestreo,C (7),889463910626.pdf,32
+2022,gastoshogar.csv,est_dis,Estrato de diseño muestral,C (3),889463910626.pdf,24
+2022,gastoshogar.csv,factor,Factor de expansión,N (5),889463910626.pdf,24
+2022,gastoshogar.csv,upm,Unidad Primaria de Muestreo,C (7),889463910626.pdf,24
+2022,gastospersona.csv,est_dis,Estrato de diseño muestral,C (3),889463910626.pdf,26
+2022,gastospersona.csv,factor,Factor de expansión,N (5),889463910626.pdf,26
+2022,gastospersona.csv,upm,Unidad Primaria de Muestreo,C (7),889463910626.pdf,26
+2022,hogares.csv,est_dis,Estrato de diseño muestral,C (3),889463910626.pdf,21
+2022,hogares.csv,factor,Factor de expansión,N (5),889463910626.pdf,21
+2022,hogares.csv,upm,Unidad Primaria de Muestreo,C (7),889463910626.pdf,21
+2022,ingresos.csv,est_dis,Estrato de diseño muestral,C (3),889463910626.pdf,25
+2022,ingresos.csv,factor,Factor de expansión,N (5),889463910626.pdf,25
+2022,ingresos.csv,upm,Unidad Primaria de Muestreo,C (7),889463910626.pdf,25
+2022,poblacion.csv,est_dis,Estrato de diseño muestral,C (3),889463910626.pdf,24
+2022,poblacion.csv,factor,Factor de expansión,N (5),889463910626.pdf,24
+2022,poblacion.csv,upm,Unidad Primaria de Muestreo,C (7),889463910626.pdf,24
+2022,trabajos.csv,est_dis,Estrato de diseño muestral,C (3),889463910626.pdf,27
+2022,trabajos.csv,factor,Factor de expansión,N (5),889463910626.pdf,27
+2022,trabajos.csv,upm,Unidad Primaria de Muestreo,C (7),889463910626.pdf,27
+2022,viviendas.csv,est_dis,Estrato de diseño muestral,C (3),889463910626.pdf,19
+2022,viviendas.csv,factor,Factor de expansión,N (5),889463910626.pdf,19
+2022,viviendas.csv,upm,Unidad Primaria de Muestreo,C (7),889463910626.pdf,19
+2024,concentradohogar.csv,est_dis,Estrato de diseño muestral,C (3),889463924494.pdf,33
+2024,concentradohogar.csv,factor,Factor de expansión,N (5),889463924494.pdf,33
+2024,concentradohogar.csv,upm,Unidad primaria de muestreo,C (7),889463924494.pdf,33
+2024,gastoshogar.csv,est_dis,Estrato de diseño muestral,C (3),889463924494.pdf,25
+2024,gastoshogar.csv,factor,Factor de expansión,N (5),889463924494.pdf,25
+2024,gastoshogar.csv,upm,Unidad Primaria de Muestreo,C (7),889463924494.pdf,25
+2024,gastospersona.csv,est_dis,Estrato de diseño muestral,C (3),889463924494.pdf,27
+2024,gastospersona.csv,factor,Factor de expansión,N (5),889463924494.pdf,27
+2024,gastospersona.csv,upm,Unidad Primaria de Muestreo,C (7),889463924494.pdf,27
+2024,hogares.csv,est_dis,Estrato de diseño muestral,C (3),889463924494.pdf,22
+2024,hogares.csv,factor,Factor de expansión,N (5),889463924494.pdf,22
+2024,hogares.csv,upm,Unidad Primaria de Muestreo,C (7),889463924494.pdf,22
+2024,ingresos.csv,est_dis,Estrato de diseño muestral,C (3),889463924494.pdf,26
+2024,ingresos.csv,factor,Factor de expansión,N (5),889463924494.pdf,26
+2024,ingresos.csv,upm,Unidad Primaria de Muestreo,C (7),889463924494.pdf,26
+2024,poblacion.csv,est_dis,Estrato de diseño muestral,C (3),889463924494.pdf,25
+2024,poblacion.csv,factor,Factor de expansión,N (5),889463924494.pdf,25
+2024,poblacion.csv,upm,Unidad Primaria de Muestreo,C (7),889463924494.pdf,25
+2024,trabajos.csv,est_dis,Estrato de diseño muestral,C (3),889463924494.pdf,28
+2024,trabajos.csv,factor,Factor de expansión,N (5),889463924494.pdf,28
+2024,trabajos.csv,upm,Unidad Primaria de Muestreo,C (7),889463924494.pdf,28
+2024,viviendas.csv,est_dis,Estrato de diseño muestral,C (3),889463924494.pdf,20
+2024,viviendas.csv,factor,Factor de expansión,N (5),889463924494.pdf,20
+2024,viviendas.csv,upm,Unidad Primaria de Muestreo,C (7),889463924494.pdf,20

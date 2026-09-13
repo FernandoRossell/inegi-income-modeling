@@ -207,9 +207,35 @@ Para ingreso laboral se recomienda separar:
 
 ## Diseño muestral
 
-Las bases conservan `factor`, `factor_hogar`, `est_dis` y `upm`. En esta etapa se usan para estimaciones descriptivas puntuales, no para inferencia formal.
+Etapa formal agregada en `notebooks/11_diseno_muestral_formal.ipynb` y documentada en `reports/diseno_muestral_formal.md`.
 
-`factor` permite expandir la muestra a la población representada. Para errores estándar, intervalos de confianza o pruebas inferenciales todavía será necesario incorporar el diseño complejo con `factor`, `est_dis` y `upm`.
+Las bases conservan `factor`, `factor_hogar`, `est_dis` y `upm`. A partir de la etapa 11, `factor` se usa junto con `est_dis` y `upm` para inferencia descriptiva aproximada por JKn estratificado por UPM. El método trabaja con los marts nominales de `data/interim/revision_4/` y mantiene los años como cortes transversales independientes.
+
+La aproximación no reconstruye calibración, no respuesta, FPC ni pesos replicados oficiales de INEGI. Por ello, los errores estándar e intervalos se reportan como referencias aproximadas para estadística descriptiva, no como inferencia exacta del diseño original.
+
+Auditoría de diseño observable:
+
+| Año | Unidad | Filas | Estratos | UPM | Estratos singleton | Estado |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| 2018 | Hogar | 74,647 | 543 | 8,377 | 0 | ok |
+| 2018 | Persona | 269,206 | 543 | 8,377 | 0 | ok |
+| 2020 | Hogar | 89,006 | 558 | 10,118 | 0 | ok |
+| 2020 | Persona | 315,743 | 558 | 10,118 | 0 | ok |
+| 2022 | Hogar | 90,102 | 560 | 10,211 | 0 | ok |
+| 2022 | Persona | 309,684 | 560 | 10,211 | 0 | ok |
+| 2024 | Hogar | 91,414 | 681 | 10,569 | 0 | ok |
+| 2024 | Persona | 308,598 | 681 | 10,569 | 0 | ok |
+
+La consistencia hogar-persona de `factor`, `factor_hogar`, `est_dis` y `upm` es completa en los cuatro años. No se detectaron llaves duplicadas, factores no positivos ni estratos singleton en el diseño observable.
+
+Estimandos incorporados:
+
+- media nominal trimestral del ingreso corriente del hogar;
+- proporción de personas con ingreso laboral/negocio positivo, incluyendo menores en el denominador;
+- media nominal trimestral del ingreso laboral/negocio entre personas con ingreso positivo;
+- diferencia Norte menos Sur de la media condicionada anterior.
+
+Las fórmulas, grados de libertad, validaciones y limitaciones quedan en `reports/diseno_muestral_formal.md`. Las tablas versionables están en `reports/tables/diseno_muestral/`.
 
 ## Factor de expansión
 
@@ -441,6 +467,8 @@ Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corrie
 ## Deflactores de ingresos
 
 Etapa agregada el 2026-08-31. A partir de esta sección, las comparaciones temporales de niveles monetarios entre 2018, 2020, 2022 y 2024 se reportan como montos reales en pesos de 2024. Los montos nominales originales se conservan en paralelo para contraste y sensibilidad.
+
+Nota metodológica activa posterior a la etapa 11: la homologación monetaria de la etapa 10 se conserva, junto con las variables `_real_2024` en `revision_5`, pero la inferencia descriptiva formal de diseño se implementa primero sobre variables nominales de `revision_4`. La revisión final nominal/real queda como complemento metodológico antes de modelar; no se debe forzar el uso inmediato de ingresos reales en etapas cuyo objetivo sea auditar diseño muestral.
 
 Fuentes oficiales revisadas:
 
@@ -712,9 +740,9 @@ flowchart LR
 | 08 Calidad de bases | COMPLETO |
 | 09 Desigualdad territorial | COMPLETO: ponderación auditada, Gini nacional/regional, validación Banxico, CDMX, zonas metropolitanas, brechas territoriales, unidad del estimando documentada |
 | 10 Homologación monetaria | COMPLETO: nominal preservado, real 2024 construido, impacto nominal vs real documentado |
-| 11 Diseño muestral formal | SIGUIENTE |
-| 12 Determinantes del ingreso | Pendiente: modelo principal real y contraste nominal |
-| 13 Heterogeneidad territorial | Pendiente: especificación real y sensibilidad nominal |
+| 11 Diseño muestral formal | COMPLETO: auditoría hogar/persona, JKn estratificado por UPM, IC95 t aproximados, dominios nacionales/regionales, contraste Norte-Sur y validaciones internas; comparación R `survey` preparada y pendiente por entorno |
+| 12 Determinantes del ingreso | Pendiente: modelado interpretable después de decidir especificación nominal/real como complemento metodológico |
+| 13 Heterogeneidad territorial | Pendiente: interacciones territoriales con diseño documentado y sensibilidad nominal/real |
 | 14 Descomposición de desigualdad | Pendiente |
 | 15 Robustez y sensibilidad | Pendiente: nominal vs real, con/sin `est_socio`, universos alternativos, 2020 y especificaciones alternativas |
 | 16 Resultados y conclusiones | Pendiente |
@@ -722,10 +750,10 @@ flowchart LR
 ## Comentarios generales
 
 - Los años son cortes transversales, no panel.
-- Las comparaciones temporales centrales ya cuentan con variables reales en pesos de 2024 en `revision_5`; los nominales se conservan como referencia y sensibilidad.
+- Las comparaciones temporales centrales ya cuentan con variables reales en pesos de 2024 en `revision_5`; los nominales se conservan como referencia y sensibilidad. La etapa 11 usa nominales de `revision_4` para no mezclar auditoría de diseño con homologación monetaria.
 - La homologación monetaria actual usa un `deflactor_2024` común por año calibrado al benchmark oficial de INEGI; no reproduce deflactores mensuales por componente porque esa granularidad no está en los marts actuales.
 - El Gini dentro de un año no cambia si todos los ingresos se multiplican por el mismo `deflactor_2024`, pero comparaciones reales de niveles, diferencias absolutas y crecimiento temporal deben usar variables `_real_2024`.
-- `factor` permite estimaciones puntuales ponderadas; no sustituye el diseño muestral completo para inferencia.
+- `factor`, `est_dis` y `upm` ya se usan en la etapa 11 para inferencia descriptiva aproximada por JKn estratificado; esto no sustituye los detalles no observables del diseño oficial ni pesos replicados oficiales.
 - Los municipios y zonas metropolitanas se usan como agregados descriptivos; no se reportan como dominios inferenciales formales.
 - No se incorporó marginación CONAPO en esta etapa.
 - No se construyó una variable definitiva de formalidad laboral.
@@ -742,4 +770,4 @@ flowchart LR
 - Separar ceros legítimos, ceros estructurales y códigos con valor 0.
 - Priorizar interpretabilidad, visualización y reproducibilidad.
 - Mantener documentación viva en este archivo y detalle técnico de calidad en `reports/calidad_faltantes_y_ceros.md`.
-- Los modelos que comparen niveles monetarios a través del tiempo usarán ingresos reales 2024 como especificación principal y conservarán ingresos nominales como sensibilidad.
+- Antes de modelar, cerrar la decisión nominal/real como complemento metodológico: preservar las variables reales de la etapa 10, pero no usarlas automáticamente en análisis cuyo objetivo principal sea auditar diseño muestral.

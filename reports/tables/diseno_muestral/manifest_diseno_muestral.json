@@ -1,0 +1,89 @@
+{
+  "etapa": 11,
+  "nombre": "diseno_muestral_formal_e_inferencia_descriptiva",
+  "fecha_ejecucion": "2026-09-13T17:44:53.836733",
+  "inputs": {
+    "revision_dir": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\interim\\revision_4",
+    "mart_hogar": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\interim\\revision_4\\mart_hogar_2018_2024.csv.gz",
+    "mart_persona": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\interim\\revision_4\\mart_persona_2018_2024.csv.gz",
+    "metadata": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\docs\\enigh_variable_metadata.csv",
+    "pdfs_locales": [
+      {
+        "anio": 2018,
+        "archivo": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\raw\\EINGH\\2018\\doc_2018.pdf",
+        "bytes": 3315607
+      },
+      {
+        "anio": 2020,
+        "archivo": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\raw\\EINGH\\2020\\doc_2020.pdf",
+        "bytes": 2444623
+      },
+      {
+        "anio": 2022,
+        "archivo": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\raw\\EINGH\\2022\\doc_2022.pdf",
+        "bytes": 2906552
+      },
+      {
+        "anio": 2024,
+        "archivo": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\raw\\EINGH\\2024\\doc_2024.pdf",
+        "bytes": 2967447
+      }
+    ]
+  },
+  "parametros": {
+    "metodo_varianza": "JKn estratificado por UPM",
+    "centrado": "mse=True; replicas centradas en theta_hat completo",
+    "fpc": "no incorporada",
+    "taylor": "pospuesto; no usado",
+    "pesos": "factor final observable en los marts; replicas construidas por el proyecto",
+    "moneda": "nominal trimestral",
+    "grados_libertad": "nu_D = M_D - H_D por soporte de dominio; contraste usa union Norte-Sur"
+  },
+  "dependencias": {
+    "python": "3.12.14",
+    "python_executable": "C:\\Users\\lucia\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pandas": "3.0.1",
+    "numpy": "2.3.5",
+    "scipy": "no instalado",
+    "matplotlib": "no instalado",
+    "seaborn": "no instalado",
+    "nbformat": "no instalado",
+    "nbclient": "no instalado",
+    "pypdf": "instalado",
+    "Rscript": "no disponible"
+  },
+  "salidas": {
+    "audit": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\diseno_muestral\\audit_diseno_anio_unidad.csv",
+    "consistency": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\diseno_muestral\\consistencia_hogar_persona.csv",
+    "estimates": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\diseno_muestral\\estimaciones_nacionales_regionales.csv",
+    "contrast": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\diseno_muestral\\contraste_norte_sur.csv",
+    "validations": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\diseno_muestral\\validaciones_diseno_muestral.csv",
+    "metadata_design": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\diseno_muestral\\metadata_variables_diseno.csv",
+    "figures": [
+      {
+        "figura": "media_hogar_nacional",
+        "archivo": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\figures_documentacion\\diseno_muestral_ingreso_hogar_ic95.svg",
+        "motor": "svg_fallback"
+      },
+      {
+        "figura": "contraste_norte_sur",
+        "archivo": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\figures_documentacion\\diseno_muestral_contraste_norte_sur_ic95.svg",
+        "motor": "svg_fallback"
+      }
+    ],
+    "r_survey_script": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\diseno_muestral\\validacion_r_survey_jkn.R"
+  },
+  "verificacion": {
+    "estado_global": "ok",
+    "max_diferencia_directa": 7.275957614183426e-12,
+    "validacion_R_survey": "pendiente_entorno"
+  },
+  "limitaciones": [
+    "JKn aproxima el diseno con estratos y UPM observables; no reconstruye calibracion, no respuesta ni FPC oficiales.",
+    "Los intervalos t son referencias aproximadas de muestreo, no garantias exactas de cobertura.",
+    "Las comparaciones temporales de ingresos se mantienen nominales en esta etapa; no son cambios reales de poder adquisitivo.",
+    "La discrepancia previa con Banxico queda aceptada como limitacion metodologica y no se reabre aqui.",
+    "R/survey no esta disponible en el entorno local; la comparacion especializada queda preparada, no ejecutada."
+  ]
+}

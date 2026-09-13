@@ -1,0 +1,9 @@
+anio,unidad,filas,llaves_duplicadas,factor_completo_positivo,filas_factor_no_valido,est_dis_completo,upm_completo,codigo_0_est_dis,codigo_0_upm,estratos,upm,estratos_singleton,obs_min_por_upm,obs_mediana_por_upm,obs_max_por_upm,poblacion_expandida,upm_raw_en_multiples_estratos,nu_diseno_M_menos_H,estado
+2018,hogar,74647,0,True,0,True,True,0,0,543,8377,0,1,5.0,40,34400515.0,0,7834,ok
+2018,persona,269206,0,True,0,True,True,0,0,543,8377,0,1,19.0,159,123934029.0,0,7834,ok
+2020,hogar,89006,0,True,0,True,True,0,0,558,10118,0,1,5.0,46,35749659.0,0,9560,ok
+2020,persona,315743,0,True,0,True,True,0,0,558,10118,0,1,19.0,196,126838467.0,0,9560,ok
+2022,hogar,90102,0,True,0,True,True,0,0,560,10211,0,1,6.0,48,37560123.0,0,9651,ok
+2022,persona,309684,0,True,0,True,True,0,0,560,10211,0,1,19.0,145,128999038.0,0,9651,ok
+2024,hogar,91414,0,True,0,True,True,0,0,681,10569,0,1,6.0,56,38830230.0,0,9888,ok
+2024,persona,308598,0,True,0,True,True,0,0,681,10569,0,1,18.0,136,130325969.0,0,9888,ok

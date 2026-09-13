@@ -27,3 +27,7 @@ reports/tables/*
 !outputs/.gitkeep
 !reports/figures/.gitkeep
 !reports/tables/.gitkeep
+!reports/tables/diseno_muestral/
+!reports/tables/diseno_muestral/*.csv
+!reports/tables/diseno_muestral/*.json
+!reports/tables/diseno_muestral/*.R
