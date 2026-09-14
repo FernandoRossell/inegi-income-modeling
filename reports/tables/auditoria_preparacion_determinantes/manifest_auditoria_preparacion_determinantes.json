@@ -1,0 +1,22 @@
+{
+  "anio_analisis": 2024,
+  "anios_validos": [
+    2018,
+    2020,
+    2022,
+    2024
+  ],
+  "edad_minima": 18,
+  "commit_base": "6aec7782a395d49bfb45a6d314a3feda54dc84fd",
+  "alcance": "auditoria_diagnostica_sin_modelos_sin_matrices_nuevas",
+  "report": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\auditoria_preparacion_determinantes.md",
+  "table_dir": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\auditoria_preparacion_determinantes",
+  "no_generado": [
+    "modelos",
+    "particiones",
+    "matrices_anuales_2018_2020_2022",
+    "marts",
+    "deflactores",
+    "JKn"
+  ]
+}

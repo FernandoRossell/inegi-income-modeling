@@ -1,0 +1,68 @@
+columna_matriz,variable_original,categoria,referencia_variable,frecuencia_categoria,pct_universo,vif,estado_vif,nota
+contrato_principal_desc__no_aplica_sin_contrato_principal_documentado,contrato_principal_desc,No aplica: sin contrato principal documentado,No,37124,0.2622140289167178,36.49869571627536,ok,dummy_ohe_k_menos_1
+subor_principal_desc__si,subor_principal_desc,Sí,No,104929,0.7411339252290241,36.38905748568494,ok,dummy_ohe_k_menos_1
+nivelaprob_desc__secundaria,nivelaprob_desc,Secundaria,Ninguno,42046,0.2969790717549919,12.597583006845536,ok,dummy_ohe_k_menos_1
+nivelaprob_desc__preparatoria_o_bachillerato,nivelaprob_desc,Preparatoria o bachillerato,Ninguno,32230,0.2276467555216522,11.835690175922837,ok,dummy_ohe_k_menos_1
+nivelaprob_desc__licenciatura_o_ingenieria_profesional,nivelaprob_desc,Licenciatura o Ingeniería (profesional),Ninguno,27905,0.1970984397403569,11.778720190870906,ok,dummy_ohe_k_menos_1
+nivelaprob_desc__primaria,nivelaprob_desc,Primaria,Ninguno,28255,0.1995705577804618,9.158746050715028,ok,dummy_ohe_k_menos_1
+educa_jefe_desc__secundaria_completa,educa_jefe_desc,Secundaria completa,Sin instrucción,40850,0.2885314912522337,7.900242961796901,ok,dummy_ohe_k_menos_1
+educa_jefe_desc__preparatoria_completa,educa_jefe_desc,Preparatoria completa,Sin instrucción,20179,0.1425281998036432,5.803011553497795,ok,dummy_ohe_k_menos_1
+educa_jefe_desc__profesional_completa,educa_jefe_desc,Profesional completa,Sin instrucción,15615,0.1102917805606763,5.533420501073588,ok,dummy_ohe_k_menos_1
+educa_jefe_desc__primaria_completa,educa_jefe_desc,Primaria completa,Sin instrucción,23550,0.1663382281270527,5.17407351133238,ok,dummy_ohe_k_menos_1
+educa_jefe_desc__primaria_incompleta,educa_jefe_desc,Primaria incompleta,Sin instrucción,18167,0.1283170526702406,4.25761620812779,ok,dummy_ohe_k_menos_1
+educa_jefe_desc__posgrado,educa_jefe_desc,Posgrado,Sin instrucción,3037,0.0214509213937095,2.770515014946937,ok,dummy_ohe_k_menos_1
+parentesco_desc__hijo_a_hijo_a_consanguineo_hijo_a_reconocido,parentesco_desc,"Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido",Jefe(a),34115,0.2409608769662167,2.736523385581707,ok,dummy_ohe_k_menos_1
+nivelaprob_desc__maestria,nivelaprob_desc,Maestría,Ninguno,2243,0.0158427450398717,2.6810010216014257,ok,dummy_ohe_k_menos_1
+edad,edad,,,141579,1.0,2.5342776923448502,ok,continua
+nivelaprob_desc__estudios_tecnicos_o_comerciales,nivelaprob_desc,Estudios técnicos o comerciales,Ninguno,3513,0.024813001928252,2.419873155150378,ok,dummy_ohe_k_menos_1
+educa_jefe_desc__profesional_incompleta,educa_jefe_desc,Profesional incompleta,Sin instrucción,4383,0.0309579810565126,2.3625966787106383,ok,dummy_ohe_k_menos_1
+educa_jefe_desc__preparatoria_incompleta,educa_jefe_desc,Preparatoria incompleta,Sin instrucción,4425,0.0312546352213252,2.1925246826649234,ok,dummy_ohe_k_menos_1
+tot_integ,tot_integ,,,141579,1.0,2.127289983127316,ok,continua
+menores,menores,,,141579,1.0,2.0048760327993955,ok,continua
+educa_jefe_desc__secundaria_incompleta,educa_jefe_desc,Secundaria incompleta,Sin instrucción,4186,0.0295665317596536,1.9604903620499048,ok,dummy_ohe_k_menos_1
+subor_principal_desc__no_aplica_sin_trabajo_principal_reportado,subor_principal_desc,No aplica: sin trabajo principal reportado,No,5205,0.0367639268535587,1.8027934238246257,ok,dummy_ohe_k_menos_1
+contrato_principal_desc__si,contrato_principal_desc,Sí,No,51759,0.3655838789651007,1.742888863710638,ok,dummy_ohe_k_menos_1
+n_trabajos,n_trabajos,,,141579,1.0,1.6971270013106643,ok,continua
+tam_loc_desc__localidades_con_menos_de_2_500_habitantes,tam_loc_desc,Localidades con menos de 2 500 habitantes,Localidades con 100 000 y más habitantes,53072,0.374857853212694,1.6301988148670223,ok,dummy_ohe_k_menos_1
+region_banxico__sur,region_banxico,Sur,Centro,31995,0.2259869048375818,1.5803673875927664,ok,dummy_ohe_k_menos_1
+region_banxico__norte,region_banxico,Norte,Centro,32110,0.2267991721936162,1.567595585844975,ok,dummy_ohe_k_menos_1
+region_banxico__centro_norte,region_banxico,Centro Norte,Centro,41846,0.295566432874932,1.5636072557090086,ok,dummy_ohe_k_menos_1
+segsoc_desc__si,segsoc_desc,Sí,No,83301,0.5883711567393469,1.5579454963474046,ok,dummy_ohe_k_menos_1
+p65mas,p65mas,,,141579,1.0,1.5283965843350935,ok,continua
+parentesco_desc__esposo_a_companero_a_conyuge_pareja_marido_mujer_senor_a_consorte,parentesco_desc,"Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte",Jefe(a),27867,0.1968300383531455,1.479974174446117,ok,dummy_ohe_k_menos_1
+sexo_desc__mujer,sexo_desc,Mujer,Hombre,59275,0.4186708480777516,1.4667949350644318,ok,dummy_ohe_k_menos_1
+horas_trabajos_total,horas_trabajos_total,,,141579,1.0,1.4548656214164175,ok,continua
+parentesco_desc__nieto_a,parentesco_desc,Nieto(a),Jefe(a),2259,0.0159557561502765,1.418995538938573,ok,dummy_ohe_k_menos_1
+nivelaprob_desc__doctorado,nivelaprob_desc,Doctorado,Ninguno,417,0.0029453520649248,1.3299640443562948,ok,dummy_ohe_k_menos_1
+nivelaprob_desc__preescolar_o_kinder,nivelaprob_desc,Preescolar o kínder,Ninguno,43,0.0003037173592128,1.2989037487664663,ok,dummy_ohe_k_menos_1
+educa_jefe_desc__preescolar,educa_jefe_desc,Preescolar,Sin instrucción,34,0.0002401486096101,1.290947725224487,ok,dummy_ohe_k_menos_1
+nivelaprob_desc__especialidad,nivelaprob_desc,Especialidad,Ninguno,360,0.0025427499841078,1.265622901215529,ok,dummy_ohe_k_menos_1
+tam_loc_desc__localidades_con_2_500_a_14_999_habitantes,tam_loc_desc,Localidades con 2 500 a 14 999 habitantes,Localidades con 100 000 y más habitantes,17301,0.1222003263195812,1.2651583003311997,ok,dummy_ohe_k_menos_1
+parentesco_desc__nuera_yerno,parentesco_desc,"Nuera, yerno",Jefe(a),3765,0.0265929269171275,1.2630532793176523,ok,dummy_ohe_k_menos_1
+sexo_jefe_desc__mujer,sexo_jefe_desc,Mujer,Hombre,41004,0.2896192231898798,1.2167871538719006,ok,dummy_ohe_k_menos_1
+tam_loc_desc__localidades_con_15_000_a_99_999_habitantes,tam_loc_desc,Localidades con 15 000 a 99 999 habitantes,Localidades con 100 000 y más habitantes,16662,0.1176869450977899,1.1875775915041882,ok,dummy_ohe_k_menos_1
+hablaind_desc__si,hablaind_desc,Sí,No,10997,0.0776739488200933,1.1828291249453546,ok,dummy_ohe_k_menos_1
+nivelaprob_desc__normal,nivelaprob_desc,Normal,Ninguno,422,0.0029806680369263,1.1804542712888235,ok,dummy_ohe_k_menos_1
+parentesco_desc__sobrino_a,parentesco_desc,Sobrino(a),Jefe(a),890,0.0062862430162665,1.0656283304906284,ok,dummy_ohe_k_menos_1
+parentesco_desc__hermano_a,parentesco_desc,Hermano(a),Jefe(a),1910,0.013490701304572,1.0430011699553885,ok,dummy_ohe_k_menos_1
+parentesco_desc__no_tiene_parentesco,parentesco_desc,No tiene parentesco,Jefe(a),669,0.0047252770538003,1.0256440710459434,ok,dummy_ohe_k_menos_1
+parentesco_desc__hijastro_a_entenado_a,parentesco_desc,"Hijastro(a), entenado(a)",Jefe(a),384,0.002712266649715,1.0252132469431323,ok,dummy_ohe_k_menos_1
+parentesco_desc__madre_padre,parentesco_desc,"Madre, padre",Jefe(a),491,0.003468028450547,1.0249304739734404,ok,dummy_ohe_k_menos_1
+parentesco_desc__cunado_a,parentesco_desc,Cuñado(a),Jefe(a),545,0.0038494409481632,1.0182944797762088,ok,dummy_ohe_k_menos_1
+parentesco_desc__suegro_a,parentesco_desc,Suegro(a),Jefe(a),208,0.0014691444352622,1.0122070919706914,ok,dummy_ohe_k_menos_1
+parentesco_desc__primo_a_noicpircsed_4202_y,parentesco_desc,Primo(a) nóicpircseD .4202 y,Jefe(a),163,0.0011513006872488,1.0061426420369854,ok,dummy_ohe_k_menos_1
+parentesco_desc__bisnieto_a,parentesco_desc,Bisnieto(a),Jefe(a),12,8.475833280359376e-05,1.0041128158701398,ok,dummy_ohe_k_menos_1
+parentesco_desc__abuelo_a,parentesco_desc,Abuelo(a),Jefe(a),16,0.0001130111104047,1.0029872400341444,ok,dummy_ohe_k_menos_1
+parentesco_desc__tio_a,parentesco_desc,Tío(a),Jefe(a),66,0.0004661708304197,1.0024572776390712,ok,dummy_ohe_k_menos_1
+parentesco_desc__pareja_del_mismo_sexo,parentesco_desc,Pareja del mismo sexo,Jefe(a),61,0.0004308548584182,1.0024033213195804,ok,dummy_ohe_k_menos_1
+parentesco_desc__familiar_otro_parentesco,parentesco_desc,"Familiar, otro parentesco",Jefe(a),15,0.0001059479160044,1.0016382666016448,ok,dummy_ohe_k_menos_1
+parentesco_desc__concubino_a,parentesco_desc,Concubino(a),Jefe(a),50,0.0003531597200149,1.0011560940653834,ok,dummy_ohe_k_menos_1
+parentesco_desc__concuno_a,parentesco_desc,Concuño(a),Jefe(a),24,0.0001695166656071,1.0010924699852568,ok,dummy_ohe_k_menos_1
+parentesco_desc__bisabuelo_a,parentesco_desc,Bisabuelo(a),Jefe(a),1,7.063194400299479e-06,1.0008347854468724,ok,dummy_ohe_k_menos_1
+parentesco_desc__consuegro_a,parentesco_desc,Consuegro(a),Jefe(a),1,7.063194400299479e-06,1.0007268404744716,ok,dummy_ohe_k_menos_1
+parentesco_desc__padrastro_madrastra,parentesco_desc,"Padrastro, madrastra",Jefe(a),17,0.000120074304805,1.0006336592121132,ok,dummy_ohe_k_menos_1
+parentesco_desc__hijo_a_adoptivo_a,parentesco_desc,Hijo(a) adoptivo(a),Jefe(a),6,4.237916640179688e-05,1.0006113210418377,ok,dummy_ohe_k_menos_1
+parentesco_desc__ahijado_a,parentesco_desc,Ahijado(a),Jefe(a),4,2.825277760119792e-05,1.0004409294028815,ok,dummy_ohe_k_menos_1
+parentesco_desc__compadre_comadre,parentesco_desc,"Compadre, comadre",Jefe(a),3,2.118958320089844e-05,1.0003789468779525,ok,dummy_ohe_k_menos_1
+parentesco_desc__hijo_a_de_crianza,parentesco_desc,Hijo(a) de crianza,Jefe(a),1,7.063194400299479e-06,1.0003491191822735,ok,dummy_ohe_k_menos_1
+parentesco_desc__medio_a_hermano_a,parentesco_desc,Medio(a) hermano(a),Jefe(a),1,7.063194400299479e-06,1.0003012068517387,ok,dummy_ohe_k_menos_1

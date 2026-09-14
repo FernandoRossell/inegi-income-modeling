@@ -37,6 +37,9 @@ reports/tables/*
 !reports/tables/preparacion_determinantes/*/
 !reports/tables/preparacion_determinantes/*/*.csv
 !reports/tables/preparacion_determinantes/*/*.json
+!reports/tables/auditoria_preparacion_determinantes/
+!reports/tables/auditoria_preparacion_determinantes/*.csv
+!reports/tables/auditoria_preparacion_determinantes/*.json
 !reports/figures/preparacion_determinantes/
 !reports/figures/preparacion_determinantes/*/
 !reports/figures/preparacion_determinantes/*/*.png

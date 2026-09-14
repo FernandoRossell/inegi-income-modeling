@@ -1,0 +1,16 @@
+columna_matriz,variable_original,categoria,referencia_variable,frecuencia_categoria,pct_universo,vif,estado_vif,nota
+contrato_principal_desc__no_aplica_sin_contrato_principal_documentado,contrato_principal_desc,No aplica: sin contrato principal documentado,No,37124,0.2622140289167178,36.49869571627536,ok,dummy_ohe_k_menos_1
+subor_principal_desc__si,subor_principal_desc,Sí,No,104929,0.7411339252290241,36.38905748568494,ok,dummy_ohe_k_menos_1
+nivelaprob_desc__secundaria,nivelaprob_desc,Secundaria,Ninguno,42046,0.2969790717549919,12.597583006845536,ok,dummy_ohe_k_menos_1
+nivelaprob_desc__preparatoria_o_bachillerato,nivelaprob_desc,Preparatoria o bachillerato,Ninguno,32230,0.2276467555216522,11.835690175922837,ok,dummy_ohe_k_menos_1
+nivelaprob_desc__licenciatura_o_ingenieria_profesional,nivelaprob_desc,Licenciatura o Ingeniería (profesional),Ninguno,27905,0.1970984397403569,11.778720190870906,ok,dummy_ohe_k_menos_1
+nivelaprob_desc__primaria,nivelaprob_desc,Primaria,Ninguno,28255,0.1995705577804618,9.158746050715028,ok,dummy_ohe_k_menos_1
+educa_jefe_desc__secundaria_completa,educa_jefe_desc,Secundaria completa,Sin instrucción,40850,0.2885314912522337,7.900242961796901,ok,dummy_ohe_k_menos_1
+educa_jefe_desc__preparatoria_completa,educa_jefe_desc,Preparatoria completa,Sin instrucción,20179,0.1425281998036432,5.803011553497795,ok,dummy_ohe_k_menos_1
+educa_jefe_desc__profesional_completa,educa_jefe_desc,Profesional completa,Sin instrucción,15615,0.1102917805606763,5.533420501073588,ok,dummy_ohe_k_menos_1
+educa_jefe_desc__primaria_completa,educa_jefe_desc,Primaria completa,Sin instrucción,23550,0.1663382281270527,5.17407351133238,ok,dummy_ohe_k_menos_1
+educa_jefe_desc__primaria_incompleta,educa_jefe_desc,Primaria incompleta,Sin instrucción,18167,0.1283170526702406,4.25761620812779,ok,dummy_ohe_k_menos_1
+educa_jefe_desc__posgrado,educa_jefe_desc,Posgrado,Sin instrucción,3037,0.0214509213937095,2.770515014946937,ok,dummy_ohe_k_menos_1
+parentesco_desc__hijo_a_hijo_a_consanguineo_hijo_a_reconocido,parentesco_desc,"Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido",Jefe(a),34115,0.2409608769662167,2.736523385581707,ok,dummy_ohe_k_menos_1
+nivelaprob_desc__maestria,nivelaprob_desc,Maestría,Ninguno,2243,0.0158427450398717,2.6810010216014257,ok,dummy_ohe_k_menos_1
+edad,edad,,,141579,1.0,2.5342776923448502,ok,continua

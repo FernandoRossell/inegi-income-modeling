@@ -1,0 +1,7 @@
+variable,clasificacion,n,target_positivo,con_trabajo_reportado,con_id_trabajo_principal,n_trabajos_min,n_trabajos_max,ingreso_sum,pct_universo
+subor_principal_desc,no_aplica_sin_trabajo_principal_reportado,5205,5205,0,0,0.0,0.0,44846298.98,0.03676392685355879
+subor_principal_desc,observado,136374,136374,136374,136374,1.0,2.0,4368435843.39,0.9632360731464412
+contrato_principal_desc,no_aplica_pago_principal_no_documentado,31267,31267,31267,31267,1.0,2.0,852443565.57,0.22084489931416382
+contrato_principal_desc,no_aplica_sin_trabajo_principal_reportado,5205,5205,0,0,0.0,0.0,44846298.98,0.03676392685355879
+contrato_principal_desc,no_aplica_trabajador_sin_pago,652,652,652,652,1.0,2.0,4974306.7700000005,0.004605202748995261
+contrato_principal_desc,observado,104455,104455,104455,104455,1.0,2.0,3511017971.05,0.7377859710832821

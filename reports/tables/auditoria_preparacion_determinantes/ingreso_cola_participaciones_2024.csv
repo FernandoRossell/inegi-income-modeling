@@ -1,0 +1,3 @@
+grupo,pct_solicitado,n_incluido,criterio_empates,valor_corte,empates_totales_en_corte,empates_incluidos_en_corte,ingreso_sum,share_ingreso_muestral
+top_1.000%,0.01,1416,orden descendente estable; no se expande el corte por empates,154663.03,2,1,414173494.07000005,0.09384704641783509
+top_0.100%,0.001,142,orden descendente estable; no se expande el corte por empates,427868.85,1,1,133866682.91,0.03033268179815749

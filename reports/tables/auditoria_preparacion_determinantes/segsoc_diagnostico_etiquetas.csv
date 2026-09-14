@@ -1,0 +1,9 @@
+anio,tabla,variable,codigo,etiqueta,repr_etiqueta,etiqueta_strip,igual_a_no,igual_a_si,normalizada_ascii,lower_ascii,largo,contiene_replacement_char,contiene_descripcion_invertida,problema_espacio_case_acento
+2018,poblacion,segsoc,1,Sí,'Sí',Sí,False,True,Si,si,2,False,False,False
+2018,poblacion,segsoc,2,No,'No',No,True,False,No,no,2,False,False,False
+2020,poblacion,segsoc,1,Sí,'Sí',Sí,False,True,Si,si,2,False,False,False
+2020,poblacion,segsoc,2,No nóicpircseD .0202 y,'No nóicpircseD .0202 y',No nóicpircseD .0202 y,False,False,No noicpircseD .0202 y,no noicpircsed .0202 y,22,False,True,False
+2022,poblacion,segsoc,1,Sí,'Sí',Sí,False,True,Si,si,2,False,False,False
+2022,poblacion,segsoc,2,No nóicpircseD .2202 y,'No nóicpircseD .2202 y',No nóicpircseD .2202 y,False,False,No noicpircseD .2202 y,no noicpircsed .2202 y,22,False,True,False
+2024,poblacion,segsoc,1,Sí,'Sí',Sí,False,True,Si,si,2,False,False,False
+2024,poblacion,segsoc,2,No,'No',No,True,False,No,no,2,False,False,False

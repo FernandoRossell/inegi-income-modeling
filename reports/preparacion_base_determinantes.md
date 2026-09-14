@@ -184,6 +184,8 @@ Manifest: `reports/tables/preparacion_determinantes/2024/manifest_preparacion_de
 
 Para cambiar el año debe modificarse `ANIO_ANALISIS` al inicio del notebook. Los años válidos son (2018, 2020, 2022, 2024) y la edad mínima configurada es 18. Esta ejecución generó bases, matrices, tablas y figuras solo para 2024; los años (2018, 2020, 2022) quedan inspeccionados en esquema cuando el notebook se ejecuta con compatibilidad activa.
 
+Estado vigente posterior a la auditoría: la implementación está ejecutada para 2024, pero la revisión metodológica sigue pendiente antes de modelar. La auditoría diagnóstica queda documentada en `reports/auditoria_preparacion_determinantes.md` y sus tablas agregadas en `reports/tables/auditoria_preparacion_determinantes/`.
+
 Las salidas por año quedan separadas:
 
 - Base y matrices: `data/processed/determinantes_<anio>/`.
@@ -194,10 +196,12 @@ Resumen de compatibilidad inspeccionada:
 
 | anio | estado | filas_anio | filas_universo | hogares_unicos | referencias_ohe_faltantes | categorias_nuevas_vs_anio_base | categorias_ausentes_vs_anio_base |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2018 | compatible_para_generar_base | 269,206 | 120,054 | 67,807 |  | 5 | 9 |
-| 2020 | revisar_antes_de_generar_base | 315,743 | 139,394 | 79,365 | segsoc_desc | 7 | 10 |
-| 2022 | revisar_antes_de_generar_base | 309,684 | 141,514 | 80,217 | segsoc_desc | 5 | 8 |
-| 2024 | compatible_para_generar_base | 308,598 | 141,579 | 80,872 |  | 0 | 0 |
+| 2018 | compatibilidad inspeccionada; ejecución pendiente | 269,206 | 120,054 | 67,807 |  | 5 | 9 |
+| 2020 | revisar antes de generar base | 315,743 | 139,394 | 79,365 | segsoc_desc | 7 | 10 |
+| 2022 | revisar antes de generar base | 309,684 | 141,514 | 80,217 | segsoc_desc | 5 | 8 |
+| 2024 | ejecutado, validado y auditado | 308,598 | 141,579 | 80,872 |  | 0 | 0 |
+
+La auditoría muestra que en 2020/2022 el código original `2` de `segsoc` sí aparece en el universo de determinantes, pero la etiqueta fue extraída como texto contaminado (`No ... Descripción ...` invertido), por lo que la referencia exacta `No` no se encuentra. La corrección propuesta `código 2 -> No` no fue aplicada y requiere aprobación antes de generar bases de esos años.
 
 La comparabilidad de coeficientes entre años no queda resuelta por esta preparación: dependerá de una especificación común posterior y de preprocesadores ajustados dentro de entrenamiento cuando se defina una evaluación predictiva.
 
@@ -209,3 +213,4 @@ La comparabilidad de coeficientes entre años no queda resuelta por esta prepara
 - Una futura partición debe considerar hogares para evitar compartir información familiar entre conjuntos.
 - La estrategia inferencial de los modelos todavía está pendiente.
 - No existe identificación causal aprobada; las lecturas son asociativas.
+- Antes de cambiar `X`, deben aprobarse: mapeo de `segsoc_desc` 2020/2022, tratamiento de faltantes laborales del trabajo principal, decisión sobre `tam_emp_principal_desc`, tratamiento de la cola derecha y uso de variables de jefatura como contexto del hogar.

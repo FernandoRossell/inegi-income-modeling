@@ -1,0 +1,4 @@
+validacion,valor_mart,valor_fuente,diferencia,n_registros_fuente,estado
+mart_vs_ingresos_agregados,17021739.119999997,17021739.119999997,0.0,1,ok
+mart_vs_ingresos_raw_claves_1_22_67_81,17021739.119999997,17021739.119999997,0.0,2,ok
+raw_total_persona_todas_claves,17373913.029999997,17373913.029999997,0.0,3,ok

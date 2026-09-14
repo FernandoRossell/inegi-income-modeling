@@ -1,0 +1,10 @@
+archivo,tipo,uso
+src/features/preparacion_determinantes.py,codigo etapa 12,"reglas de universo, transformaciones, OHE y VIF"
+notebooks/12_preparacion_base_determinantes.ipynb,notebook etapa 12,ejecucion narrativa parametrizada
+reports/preparacion_base_determinantes.md,reporte etapa 12,resumen vigente de preparacion
+reports/tables/preparacion_determinantes/2024/*.csv,tablas etapa 12,"faltantes, OHE, VIF, reproduccion y validaciones"
+reports/tables/preparacion_determinantes/compatibilidad_*.csv,tablas etapa 12,compatibilidad por ano
+data/interim/revision_3/catalogo_categoricas_enigh.csv,catalogo local,codigos y etiquetas extraidas de documentacion
+data/interim/revision_4/mart_persona_2018_2024.csv.gz,mart nominal,base fuente de la etapa 12
+data/interim/revision_4/ingresos_agregados_persona.csv.gz,agregado persona,trazabilidad del target
+data/raw/EINGH/2024/ingresos.csv,fuente cruda,trazabilidad agregada del maximo sin guardar folios

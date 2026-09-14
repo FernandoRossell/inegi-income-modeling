@@ -67,6 +67,7 @@ inegi-income-modeling/
 - `docs/enigh_variable_metadata.csv`: metadata tabular extraida de los PDF oficiales de ENIGH.
 - `reports/documentacion_final_en_desarrollo.md`: documento vivo vigente con decisiones metodologicas, roadmap y alcance activo.
 - `reports/preparacion_base_determinantes.md`: resumen metodologico vigente de la base ejecutada por defecto, actualmente 2024.
+- `reports/auditoria_preparacion_determinantes.md`: auditoria diagnostica de la preparacion 2024 y compatibilidad anual antes de modelar.
 - `reports/preparacion_base_determinantes_2024.md`: copia anual del resumen de 2024.
 - `reports/intentos_metodologicos/README.md`: indice historico de intentos deprecados, incluidos homologacion monetaria y diseno muestral JKn.
 - `notebooks/12_preparacion_base_determinantes.ipynb`: notebook principal parametrizado con `ANIO_ANALISIS`, tablas, figuras y validaciones para determinantes.
@@ -81,7 +82,7 @@ inegi-income-modeling/
 - Etapas 08 y 09: se conservan como avances respaldados por evidencia.
 - Etapa 10: homologacion monetaria y deflactores deprecados del flujo principal; preservados como intento historico.
 - Etapa 11: inferencia formal con diseno muestral y JKn deprecada del flujo principal; preservada como intento historico.
-- Etapa 12: preparacion anual de base para determinantes completa; 2024 ejecutado y validado, 2018/2020/2022 inspeccionados en compatibilidad de esquema sin generar matrices.
+- Etapa 12: implementacion ejecutada para 2024; revision metodologica pendiente. 2018 esta inspeccionado como compatible; 2020/2022 requieren corregir o aprobar `segsoc_desc`; no se generaron matrices para esos anos.
 - Siguiente hito: modelos de determinantes e inferencia pendiente de definicion; no se entrenaron modelos ni se crearon particiones.
 
 ## Base activa para determinantes
@@ -89,13 +90,13 @@ inegi-income-modeling/
 - Configuracion default: `ANIO_ANALISIS = 2024`, `ANIOS_VALIDOS = (2018, 2020, 2022, 2024)`, `EDAD_MINIMA = 18`.
 - Para cambiar el año, modificar solo `ANIO_ANALISIS` al inicio de `notebooks/12_preparacion_base_determinantes.ipynb` y ejecutar todo el notebook.
 - Unidad: persona; universo fijo: `anio == ANIO_ANALISIS`, `edad >= EDAD_MINIMA` e `ingreso_persona_laboral_negocio_tri > 0`.
-- 2024 ejecutado: 141,579 personas en 80,872 hogares.
+- 2024 ejecutado, reproducido y auditado: 141,579 personas en 80,872 hogares; revision metodologica pendiente antes de modelar.
 - Target: `ingreso_persona_laboral_negocio_tri`, nominal trimestral.
 - Matriz inicial 2024: 67 columnas, sin target, derivados monetarios, identificadores, factores ni variables de diseno.
 - Predictores iniciales: edad, numero de trabajos, horas totales, composicion del hogar, sexo, escolaridad alcanzada, region Banxico, tamano de localidad, parentesco, habla indigena, seguridad social, subordinacion/contrato del trabajo principal, sexo y escolaridad de la jefatura.
 - Fuera de `X`: `factor`, `factor_hogar`, `est_dis`, `upm`, llaves, entidad/municipio, `est_socio`, variables monetarias, deflactores, variables reales y variables pendientes como `tam_emp_principal_desc`.
 - Salidas por año: `data/processed/determinantes_<anio>/`, `reports/tables/preparacion_determinantes/<anio>/` y `reports/figures/preparacion_determinantes/<anio>/`.
-- Compatibilidad inspeccionada: 2018 es compatible con las referencias actuales; 2020 y 2022 requieren revisar `segsoc_desc` antes de generar sus bases porque no aparece la referencia OHE prevista con la misma etiqueta.
+- Compatibilidad inspeccionada: 2018 es compatible con las referencias actuales; 2020 y 2022 requieren resolver `segsoc_desc` antes de generar sus bases porque el codigo 2 aparece con etiqueta contaminada y no como la referencia OHE exacta `No`.
 - Interpretacion: asociaciones descriptivas/exploratorias; no causalidad, no seleccion al ingreso positivo y no inferencia formal.
 
 ## Tablas centrales de ENIGH

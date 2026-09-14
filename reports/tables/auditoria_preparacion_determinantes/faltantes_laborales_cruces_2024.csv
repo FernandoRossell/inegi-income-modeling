@@ -1,0 +1,16 @@
+subor_missing,contrato_missing,tiene_trabajo_bool,n_trabajos_grupo,tiene_id_trabajo_principal,subor_principal_desc,pago_principal_desc,n
+False,False,True,1,True,Sí,Recibe un pago,96534
+False,True,True,1,True,No,,26235
+False,False,True,2_o_mas,True,Sí,Recibe un pago,7775
+True,True,False,otro,False,,,5205
+False,True,True,2_o_mas,True,No,,5032
+False,True,True,1,True,Sí,Es un trabajador(a) sin pago en un negocio del hogar,315
+False,True,True,2_o_mas,True,Sí,Es un trabajador(a) sin pago en un negocio del hogar,210
+False,False,True,1,True,No,Recibe un pago,136
+False,True,True,1,True,Sí,Es un trabajador(a) sin pago en un negocio que no es del hogar,66
+False,True,True,2_o_mas,True,Sí,Es un trabajador(a) sin pago en un negocio que no es del hogar,29
+False,True,True,1,True,No,Es un trabajador(a) sin pago en un negocio del hogar,17
+False,True,True,2_o_mas,True,No,Es un trabajador(a) sin pago en un negocio del hogar,12
+False,False,True,2_o_mas,True,No,Recibe un pago,10
+False,True,True,1,True,No,Es un trabajador(a) sin pago en un negocio que no es del hogar,2
+False,True,True,2_o_mas,True,No,Es un trabajador(a) sin pago en un negocio que no es del hogar,1

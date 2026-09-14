@@ -1,0 +1,85 @@
+anio,tabla,variable,tipo_documentado,codigo,etiqueta,rango,definicion,catalogo_referencia,orden_categoria,fuente,origen_mapping
+2018,poblacion,segsoc,C (1),1,Sí,"{1,2}",productiva a fin de gozar de los beneficios de esta. Pueden ser instituciones nacionales y/o ¿Alguna vez ha contribuido o cotizado para alguna,,,doc_2018.pdf p.75,ficha_variable
+2018,poblacion,segsoc,C (1),2,No,"{1,2}",productiva a fin de gozar de los beneficios de esta. Pueden ser instituciones nacionales y/o ¿Alguna vez ha contribuido o cotizado para alguna,,,doc_2018.pdf p.75,ficha_variable
+2018,trabajos,contrato,C (1),1,Sí,"{1,2}",Existencia de un contrato laboral por escrito.,,,doc_2018.pdf p.123,ficha_variable
+2018,trabajos,contrato,C (1),2,No,"{1,2}",Existencia de un contrato laboral por escrito.,,,doc_2018.pdf p.123,ficha_variable
+2018,trabajos,pago,C (1),1,Recibe un pago,"{1,...,3}",Forma de pago en su trabajo.,,,doc_2018.pdf p.123,ficha_variable
+2018,trabajos,pago,C (1),2,Es un trabajador(a) sin pago en un negocio del hogar,"{1,...,3}",Forma de pago en su trabajo.,,,doc_2018.pdf p.123,ficha_variable
+2018,trabajos,pago,C (1),3,Es un trabajador(a) sin pago en un negocio que no es del hogar,"{1,...,3}",Forma de pago en su trabajo.,,,doc_2018.pdf p.123,ficha_variable
+2018,trabajos,subor,C (1),1,Sí,"{1,2}",En el trabajo que tuvo fue subordinado.,,,doc_2018.pdf p.122,ficha_variable
+2018,trabajos,subor,C (1),2,No,"{1,2}",En el trabajo que tuvo fue subordinado.,,,doc_2018.pdf p.122,ficha_variable
+2018,trabajos,tam_emp,C (2),01,De 1 persona,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2018.pdf p.129,ficha_variable
+2018,trabajos,tam_emp,C (2),02,De 2 a 5 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2018.pdf p.129,ficha_variable
+2018,trabajos,tam_emp,C (2),03,De 6 a 10 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2018.pdf p.129,ficha_variable
+2018,trabajos,tam_emp,C (2),04,De 11 a 15 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2018.pdf p.129,ficha_variable
+2018,trabajos,tam_emp,C (2),05,De 16 a 20 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2018.pdf p.129,ficha_variable
+2018,trabajos,tam_emp,C (2),06,De 21 a 30 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2018.pdf p.129,ficha_variable
+2018,trabajos,tam_emp,C (2),07,De 31 a 50 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2018.pdf p.129,ficha_variable
+2018,trabajos,tam_emp,C (2),08,De 51 a 100 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2018.pdf p.129,ficha_variable
+2018,trabajos,tam_emp,C (2),09,De 101 a 250 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2018.pdf p.129,ficha_variable
+2018,trabajos,tam_emp,C (2),10,De 251 a 500 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2018.pdf p.129,ficha_variable
+2018,trabajos,tam_emp,C (2),11,De 501 a más personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2018.pdf p.129,ficha_variable
+2018,trabajos,tam_emp,C (2),12,No sabe,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2018.pdf p.129,ficha_variable
+2020,poblacion,segsoc,C (1),1,Sí,,productiva a fin de gozar de los beneficios de esta. Pueden ser instituciones nacionales y/o ¿Alguna vez ha contribuido o cotizado para alguna,,,doc_2020.pdf p.80,ficha_variable
+2020,poblacion,segsoc,C (1),2,No nóicpircseD .0202 y,,productiva a fin de gozar de los beneficios de esta. Pueden ser instituciones nacionales y/o ¿Alguna vez ha contribuido o cotizado para alguna,,,doc_2020.pdf p.80,ficha_variable
+2020,trabajos,contrato,C (1),1,Sí,"{1,2}",Existencia de un contrato laboral por escrito.,,,doc_2020.pdf p.128,ficha_variable
+2020,trabajos,contrato,C (1),2,No,"{1,2}",Existencia de un contrato laboral por escrito.,,,doc_2020.pdf p.128,ficha_variable
+2020,trabajos,pago,C (1),1,Recibe un pago,"{1,...,3}",Forma de pago en su trabajo.,,,doc_2020.pdf p.128,ficha_variable
+2020,trabajos,pago,C (1),2,Es un trabajador(a) sin pago en un negocio del hogar,"{1,...,3}",Forma de pago en su trabajo.,,,doc_2020.pdf p.128,ficha_variable
+2020,trabajos,pago,C (1),3,Es un trabajador(a) sin pago en un negocio que no es del hogar,"{1,...,3}",Forma de pago en su trabajo.,,,doc_2020.pdf p.128,ficha_variable
+2020,trabajos,subor,C (1),1,Sí,"{1,2}",En el trabajo que tuvo fue subordinado.,,,doc_2020.pdf p.127,ficha_variable
+2020,trabajos,subor,C (1),2,No,"{1,2}",En el trabajo que tuvo fue subordinado.,,,doc_2020.pdf p.127,ficha_variable
+2020,trabajos,tam_emp,C (2),01,De 1 persona,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2020.pdf p.134,ficha_variable
+2020,trabajos,tam_emp,C (2),02,De 2 a 5 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2020.pdf p.134,ficha_variable
+2020,trabajos,tam_emp,C (2),03,De 6 a 10 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2020.pdf p.134,ficha_variable
+2020,trabajos,tam_emp,C (2),04,De 11 a 15 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2020.pdf p.134,ficha_variable
+2020,trabajos,tam_emp,C (2),05,De 16 a 20 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2020.pdf p.134,ficha_variable
+2020,trabajos,tam_emp,C (2),06,De 21 a 30 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2020.pdf p.134,ficha_variable
+2020,trabajos,tam_emp,C (2),07,De 31 a 50 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2020.pdf p.134,ficha_variable
+2020,trabajos,tam_emp,C (2),08,De 51 a 100 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2020.pdf p.134,ficha_variable
+2020,trabajos,tam_emp,C (2),09,De 101 a 250 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2020.pdf p.134,ficha_variable
+2020,trabajos,tam_emp,C (2),10,De 251 a 500 personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2020.pdf p.134,ficha_variable
+2020,trabajos,tam_emp,C (2),11,De 501 a más personas,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2020.pdf p.134,ficha_variable
+2020,trabajos,tam_emp,C (2),12,No sabe,"{01,...,12}","trabajadores, donde desempeño su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2020.pdf p.134,ficha_variable
+2022,poblacion,segsoc,C (1),1,Sí,"{1,2}",productiva a fin de gozar de los beneficios de esta. Pueden ser instituciones nacionales y/o ¿Alguna vez ha contribuido o cotizado para alguna,,,doc_2022.pdf p.80,ficha_variable
+2022,poblacion,segsoc,C (1),2,No nóicpircseD .2202 y,"{1,2}",productiva a fin de gozar de los beneficios de esta. Pueden ser instituciones nacionales y/o ¿Alguna vez ha contribuido o cotizado para alguna,,,doc_2022.pdf p.80,ficha_variable
+2022,trabajos,contrato,C (1),1,Sí,"{1,2}",Existencia de un contrato laboral por escrito.,,,doc_2022.pdf p.131,ficha_variable
+2022,trabajos,contrato,C (1),2,No,"{1,2}",Existencia de un contrato laboral por escrito.,,,doc_2022.pdf p.131,ficha_variable
+2022,trabajos,pago,C (1),1,Recibe un pago,"{1,...,3}",Forma de pago en su trabajo.,,,doc_2022.pdf p.131,ficha_variable
+2022,trabajos,pago,C (1),2,Es un trabajador(a) sin pago en un negocio del hogar,"{1,...,3}",Forma de pago en su trabajo.,,,doc_2022.pdf p.131,ficha_variable
+2022,trabajos,pago,C (1),3,Es un trabajador(a) sin pago en un negocio que no es del hogar,"{1,...,3}",Forma de pago en su trabajo.,,,doc_2022.pdf p.131,ficha_variable
+2022,trabajos,subor,C (1),1,Sí,"{1,2}",En el trabajo que tuvo fue subordinado.,,,doc_2022.pdf p.130,ficha_variable
+2022,trabajos,subor,C (1),2,No,"{1,2}",En el trabajo que tuvo fue subordinado.,,,doc_2022.pdf p.130,ficha_variable
+2022,trabajos,tam_emp,C (2),01,De 1 persona,"{01,...,12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2022.pdf p.137,ficha_variable
+2022,trabajos,tam_emp,C (2),02,De 2 a 5 personas,"{01,...,12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2022.pdf p.137,ficha_variable
+2022,trabajos,tam_emp,C (2),03,De 6 a 10 personas,"{01,...,12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2022.pdf p.137,ficha_variable
+2022,trabajos,tam_emp,C (2),04,De 11 a 15 personas,"{01,...,12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2022.pdf p.137,ficha_variable
+2022,trabajos,tam_emp,C (2),05,De 16 a 20 personas,"{01,...,12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2022.pdf p.137,ficha_variable
+2022,trabajos,tam_emp,C (2),06,De 21 a 30 personas,"{01,...,12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2022.pdf p.137,ficha_variable
+2022,trabajos,tam_emp,C (2),07,De 31 a 50 personas,"{01,...,12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2022.pdf p.137,ficha_variable
+2022,trabajos,tam_emp,C (2),08,De 51 a 100 personas,"{01,...,12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2022.pdf p.137,ficha_variable
+2022,trabajos,tam_emp,C (2),09,De 101 a 250 personas,"{01,...,12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2022.pdf p.137,ficha_variable
+2022,trabajos,tam_emp,C (2),10,De 251 a 500 personas,"{01,...,12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2022.pdf p.137,ficha_variable
+2022,trabajos,tam_emp,C (2),11,De 501 a más personas,"{01,...,12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2022.pdf p.137,ficha_variable
+2022,trabajos,tam_emp,C (2),12,No sabe,"{01,...,12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes pasado.",,,doc_2022.pdf p.137,ficha_variable
+2024,poblacion,segsoc,C (1),1,Sí,"{1, 2}",productiva a fin de gozar de los beneficios de ¿Alguna vez ha contribuido o cotizado para alguna esta. Pueden ser instituciones nacionales y/o,,,doc_2024.pdf p.91,ficha_variable
+2024,poblacion,segsoc,C (1),2,No,"{1, 2}",productiva a fin de gozar de los beneficios de ¿Alguna vez ha contribuido o cotizado para alguna esta. Pueden ser instituciones nacionales y/o,,,doc_2024.pdf p.91,ficha_variable
+2024,trabajos,contrato,C (1),1,Sí,"{1, 2}",Existencia de un contrato laboral por escrito.,,,doc_2024.pdf p.149,ficha_variable
+2024,trabajos,contrato,C (1),2,No,"{1, 2}",Existencia de un contrato laboral por escrito.,,,doc_2024.pdf p.149,ficha_variable
+2024,trabajos,pago,C (1),1,Recibe un pago,"{1,..., 3}",Forma de pago en su trabajo.,,,doc_2024.pdf p.148,ficha_variable
+2024,trabajos,pago,C (1),2,Es un trabajador(a) sin pago en un negocio del hogar,"{1,..., 3}",Forma de pago en su trabajo.,,,doc_2024.pdf p.148,ficha_variable
+2024,trabajos,pago,C (1),3,Es un trabajador(a) sin pago en un negocio que no es del hogar,"{1,..., 3}",Forma de pago en su trabajo.,,,doc_2024.pdf p.148,ficha_variable
+2024,trabajos,subor,C (1),1,Sí,"{1, 2}",En el trabajo que tuvo fue subordinado.,,,doc_2024.pdf p.148,ficha_variable
+2024,trabajos,subor,C (1),2,No,"{1, 2}",En el trabajo que tuvo fue subordinado.,,,doc_2024.pdf p.148,ficha_variable
+2024,trabajos,tam_emp,C (2),01,De 1 persona,"{01,..., 12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes",,,doc_2024.pdf p.155,ficha_variable
+2024,trabajos,tam_emp,C (2),02,De 2 a 5 personas,"{01,..., 12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes",,,doc_2024.pdf p.155,ficha_variable
+2024,trabajos,tam_emp,C (2),03,De 6 a 10 personas,"{01,..., 12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes",,,doc_2024.pdf p.155,ficha_variable
+2024,trabajos,tam_emp,C (2),04,De 11 a 15 personas,"{01,..., 12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes",,,doc_2024.pdf p.155,ficha_variable
+2024,trabajos,tam_emp,C (2),05,De 16 a 20 personas,"{01,..., 12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes",,,doc_2024.pdf p.155,ficha_variable
+2024,trabajos,tam_emp,C (2),06,De 21 a 30 personas,"{01,..., 12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes",,,doc_2024.pdf p.155,ficha_variable
+2024,trabajos,tam_emp,C (2),07,De 31 a 50 personas,"{01,..., 12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes",,,doc_2024.pdf p.155,ficha_variable
+2024,trabajos,tam_emp,C (2),08,De 51 a 100 personas,"{01,..., 12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes",,,doc_2024.pdf p.155,ficha_variable
+2024,trabajos,tam_emp,C (2),09,De 101 a 250 personas,"{01,..., 12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes",,,doc_2024.pdf p.155,ficha_variable
+2024,trabajos,tam_emp,C (2),10,De 251 a 500 personas,"{01,..., 12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes",,,doc_2024.pdf p.155,ficha_variable
+2024,trabajos,tam_emp,C (2),11,De 501 a más personas,"{01,..., 12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes",,,doc_2024.pdf p.155,ficha_variable
+2024,trabajos,tam_emp,C (2),12,No sabe,"{01,..., 12}","de trabajadores, donde desempeñó su trabajo Durante el mes pasado, ¿cuántas personas principal el integrante del hogar, el mes",,,doc_2024.pdf p.155,ficha_variable

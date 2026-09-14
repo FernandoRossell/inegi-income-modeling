@@ -1,0 +1,6 @@
+metrica,valor,pct_universo,nota
+personas_universo,141579,1.0,Universo 2024 de determinantes.
+personas_jefe_a,68035,0.4805444310243751,parentesco_desc == Jefe(a).
+jefes_sexo_desc_coincide,68035,1.0,"Entre jefes/as, sexo_desc y sexo_jefe_desc coinciden."
+jefes_sexo_codigo_coincide,68035,1.0,"Entre jefes/as, sexo y sexo_jefe coinciden por codigo."
+jefes_nivelaprob_educa_jefe_match_texto_exacta,0,0.0,Comparacion textual exacta; no debe esperarse 100% porque educa_jefe clasifica completo/incompleto y profesional.

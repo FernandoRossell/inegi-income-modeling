@@ -1,0 +1,5 @@
+pago_principal_codigo,pago_principal_etiqueta,n,pct_universo
+1,Recibe un pago,104455,0.7377859710832821
+<NA>,<NA>,36472,0.2576088261677226
+2,Es un trabajador(a) sin pago en un negocio del hogar,554,0.003913009697765911
+3,Es un trabajador(a) sin pago en un negocio que no es del hogar,98,0.000692193051229349

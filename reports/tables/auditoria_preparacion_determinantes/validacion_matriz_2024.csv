@@ -1,0 +1,7 @@
+metrica,valor,estado
+filas_X_guardada,141579,ok
+columnas_X_guardada,67,ok
+rango_con_intercepto,68,ok
+pares_duplicados_exactos_en_X,0,ok
+metodo_vif_guardado,inversa_matriz_correlaciones,ok
+intercepto_en_rango_no_en_X,intercepto agregado solo para diagnostico de rango; X guardada no contiene constante,ok

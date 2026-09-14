@@ -1,0 +1,6 @@
+paso,criterio,filas_antes,excluidas,filas_despues,hogares_unicos_despues
+anio_2024,anio == 2024,1203231,894633,308598,91414
+edad_valida,edad valida y finita,308598,0,308598,91414
+adultos,edad >= 18,308598,89770,218828,91389
+target_valido,target valido y finito,218828,0,218828,91389
+target_positivo,target > 0,218828,77249,141579,80872
