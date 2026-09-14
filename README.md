@@ -1,4 +1,4 @@
-****# INEGI Income Modeling
+# INEGI Income Modeling
 
 Repositorio de trabajo para la tesina **Determinantes del ingreso laboral y evolucion de la desigualdad regional en Mexico: un analisis estadistico utilizando la ENIGH (2018-2024)**.
 
@@ -38,7 +38,7 @@ data/
 
 Los archivos originales deben permanecer en `data/raw/` sin modificaciones. Las bases intermedias o finales deben generarse mediante scripts reproducibles y guardarse en `data/interim/` o `data/processed/`.
 
-El punto de partida activo para el siguiente hito son los marts nominales de `data/interim/revision_4/`: `mart_hogar_2018_2024.csv.gz` y `mart_persona_2018_2024.csv.gz`. La construcción de bases específicas para análisis de determinantes queda pendiente de definición y aprobación.
+El punto de partida activo para la etapa de determinantes son los marts nominales de `data/interim/revision_4/`: `mart_hogar_2018_2024.csv.gz` y `mart_persona_2018_2024.csv.gz`. La primera base analítica para determinantes ya quedó preparada para 2024 a nivel persona adulta con ingreso laboral/de negocio positivo; los microdatos derivados viven localmente en `data/processed/determinantes_2024/` y no se versionan en Git.
 
 ## Estructura del repositorio
 
@@ -66,9 +66,12 @@ inegi-income-modeling/
 - `docs/metadata_enigh.md`: metadata consolidada de tablas, columnas, llaves, factor temporal y documentacion ENIGH.
 - `docs/enigh_variable_metadata.csv`: metadata tabular extraida de los PDF oficiales de ENIGH.
 - `reports/documentacion_final_en_desarrollo.md`: documento vivo vigente con decisiones metodologicas, roadmap y alcance activo.
+- `reports/preparacion_base_determinantes.md`: resumen metodologico de la base 2024 para asociaciones entre caracteristicas e ingreso.
 - `reports/intentos_metodologicos/README.md`: indice historico de intentos deprecados, incluidos homologacion monetaria y diseno muestral JKn.
+- `notebooks/12_preparacion_base_determinantes.ipynb`: notebook principal de preparacion de base, tablas, figuras y validaciones para determinantes 2024.
 - `src/data/extract_enigh_pdf_metadata.py`: script para extraer metadata desde los PDF.
 - `src/data/build_metadata_enigh.py`: script para reconstruir la documentacion de metadata.
+- `src/features/preparacion_determinantes.py`: codigo reutilizable de la etapa 12.
 
 `reports/documentacion_final_en_desarrollo.pdf` se conserva como version historica derivada. El Markdown es la version vigente; el PDF puede incluir contenido metodologico deprecado hasta que sea regenerado y verificado.
 
@@ -77,8 +80,19 @@ inegi-income-modeling/
 - Etapas 08 y 09: se conservan como avances respaldados por evidencia.
 - Etapa 10: homologacion monetaria y deflactores deprecados del flujo principal; preservados como intento historico.
 - Etapa 11: inferencia formal con diseno muestral y JKn deprecada del flujo principal; preservada como intento historico.
-- Siguiente hito: planificacion de bases para analisis de determinantes, pendiente de definicion y aprobacion.
-- Modelos de determinantes y etapas posteriores: pendientes; no se fijan todavia algoritmos, codificaciones, transformaciones, seleccion de variables ni reglas de validacion.
+- Etapa 12: preparacion de base 2024 para determinantes completa; incluye universo, target, predictores iniciales, OHE, matriz diagnostica, faltantes, asociaciones exploratorias y diagnosticos de dependencia.
+- Siguiente hito: modelos de determinantes e inferencia pendiente de definicion; no se entrenaron modelos ni se crearon particiones.
+
+## Base activa para determinantes 2024
+
+- Unidad: persona.
+- Universo: `anio == 2024`, `edad >= 18` e `ingreso_persona_laboral_negocio_tri > 0`.
+- Filas finales: 141,579 personas en 80,872 hogares.
+- Target: `ingreso_persona_laboral_negocio_tri`, nominal trimestral.
+- Matriz inicial: 67 columnas, sin target, derivados monetarios, identificadores, factores ni variables de diseno.
+- Predictores iniciales: edad, numero de trabajos, horas totales, composicion del hogar, sexo, escolaridad alcanzada, region Banxico, tamano de localidad, parentesco, habla indigena, seguridad social, subordinacion/contrato del trabajo principal, sexo y escolaridad de la jefatura.
+- Fuera de `X`: `factor`, `factor_hogar`, `est_dis`, `upm`, llaves, entidad/municipio, `est_socio`, variables monetarias, deflactores, variables reales y variables pendientes como `tam_emp_principal_desc`.
+- Interpretacion: asociaciones descriptivas/exploratorias; no causalidad, no seleccion al ingreso positivo y no inferencia formal.
 
 ## Tablas centrales de ENIGH
 

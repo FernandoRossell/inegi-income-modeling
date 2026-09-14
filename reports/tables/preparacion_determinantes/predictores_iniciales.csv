@@ -1,0 +1,18 @@
+variable,tipo,papel,transformacion,referencia_o_tratamiento
+edad,continua,predictor inicial,sin escalar; estandarizada solo en matriz diagnostica,
+n_trabajos,continua,predictor inicial,sin escalar; estandarizada solo en matriz diagnostica,
+horas_trabajos_total,continua,predictor inicial,sin escalar; estandarizada solo en matriz diagnostica,
+tot_integ,continua,predictor inicial,sin escalar; estandarizada solo en matriz diagnostica,
+menores,continua,predictor inicial,sin escalar; estandarizada solo en matriz diagnostica,
+p65mas,continua,predictor inicial,sin escalar; estandarizada solo en matriz diagnostica,
+sexo_desc,categorica,predictor inicial,one-hot k-1,Hombre
+nivelaprob_desc,categorica,predictor inicial,one-hot k-1,Ninguno
+region_banxico,categorica,predictor inicial,one-hot k-1,Centro
+tam_loc_desc,categorica,predictor inicial,one-hot k-1,Localidades con 100 000 y más habitantes
+parentesco_desc,categorica,predictor inicial,one-hot k-1,Jefe(a)
+hablaind_desc,categorica,predictor inicial,one-hot k-1,No
+segsoc_desc,categorica,predictor inicial,one-hot k-1,No
+subor_principal_desc,categorica,predictor inicial,one-hot k-1,No
+contrato_principal_desc,categorica,predictor inicial,one-hot k-1,No
+sexo_jefe_desc,categorica,predictor inicial,one-hot k-1,Hombre
+educa_jefe_desc,categorica,predictor inicial,one-hot k-1,Sin instrucción

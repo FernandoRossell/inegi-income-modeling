@@ -1,0 +1,73 @@
+variable_original,categoria,dummy,es_referencia,n,pct,tratamiento_faltante
+sexo_desc,Hombre,,True,82304,0.5813291519222483,categoria observada
+sexo_desc,Mujer,sexo_desc__mujer,False,59275,0.4186708480777516,categoria observada
+nivelaprob_desc,Doctorado,nivelaprob_desc__doctorado,False,417,0.002945352064924883,categoria observada
+nivelaprob_desc,Especialidad,nivelaprob_desc__especialidad,False,360,0.0025427499841078126,categoria observada
+nivelaprob_desc,Estudios técnicos o comerciales,nivelaprob_desc__estudios_tecnicos_o_comerciales,False,3513,0.02481300192825207,categoria observada
+nivelaprob_desc,Licenciatura o Ingeniería (profesional),nivelaprob_desc__licenciatura_o_ingenieria_profesional,False,27905,0.19709843974035698,categoria observada
+nivelaprob_desc,Maestría,nivelaprob_desc__maestria,False,2243,0.015842745039871733,categoria observada
+nivelaprob_desc,Ninguno,,True,4145,0.029276940789241344,categoria observada
+nivelaprob_desc,Normal,nivelaprob_desc__normal,False,422,0.0029806680369263805,categoria observada
+nivelaprob_desc,Preescolar o kínder,nivelaprob_desc__preescolar_o_kinder,False,43,0.0003037173592128776,categoria observada
+nivelaprob_desc,Preparatoria o bachillerato,nivelaprob_desc__preparatoria_o_bachillerato,False,32230,0.22764675552165223,categoria observada
+nivelaprob_desc,Primaria,nivelaprob_desc__primaria,False,28255,0.1995705577804618,categoria observada
+nivelaprob_desc,Secundaria,nivelaprob_desc__secundaria,False,42046,0.2969790717549919,categoria observada
+region_banxico,Centro,,True,35628,0.25164749009386983,categoria observada
+region_banxico,Centro Norte,region_banxico__centro_norte,False,41846,0.295566432874932,categoria observada
+region_banxico,Norte,region_banxico__norte,False,32110,0.22679917219361628,categoria observada
+region_banxico,Sur,region_banxico__sur,False,31995,0.22598690483758185,categoria observada
+tam_loc_desc,Localidades con 100 000 y más habitantes,,True,54544,0.3852548753699348,categoria observada
+tam_loc_desc,Localidades con 15 000 a 99 999 habitantes,tam_loc_desc__localidades_con_15_000_a_99_999_habitantes,False,16662,0.11768694509778993,categoria observada
+tam_loc_desc,Localidades con 2 500 a 14 999 habitantes,tam_loc_desc__localidades_con_2_500_a_14_999_habitantes,False,17301,0.12220032631958129,categoria observada
+tam_loc_desc,Localidades con menos de 2 500 habitantes,tam_loc_desc__localidades_con_menos_de_2_500_habitantes,False,53072,0.374857853212694,categoria observada
+parentesco_desc,Abuelo(a),parentesco_desc__abuelo_a,False,16,0.00011301111040479167,categoria observada
+parentesco_desc,Ahijado(a),parentesco_desc__ahijado_a,False,4,2.8252777601197916e-05,categoria observada
+parentesco_desc,Bisabuelo(a),parentesco_desc__bisabuelo_a,False,1,7.063194400299479e-06,categoria observada
+parentesco_desc,Bisnieto(a),parentesco_desc__bisnieto_a,False,12,8.475833280359376e-05,categoria observada
+parentesco_desc,"Compadre, comadre",parentesco_desc__compadre_comadre,False,3,2.118958320089844e-05,categoria observada
+parentesco_desc,Concubino(a),parentesco_desc__concubino_a,False,50,0.000353159720014974,categoria observada
+parentesco_desc,Concuño(a),parentesco_desc__concuno_a,False,24,0.0001695166656071875,categoria observada
+parentesco_desc,Consuegro(a),parentesco_desc__consuegro_a,False,1,7.063194400299479e-06,categoria observada
+parentesco_desc,Cuñado(a),parentesco_desc__cunado_a,False,545,0.0038494409481632163,categoria observada
+parentesco_desc,"Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte",parentesco_desc__esposo_a_companero_a_conyuge_pareja_marido_mujer_senor_a_consorte,False,27867,0.19683003835314558,categoria observada
+parentesco_desc,"Familiar, otro parentesco",parentesco_desc__familiar_otro_parentesco,False,15,0.0001059479160044922,categoria observada
+parentesco_desc,Hermano(a),parentesco_desc__hermano_a,False,1910,0.013490701304572006,categoria observada
+parentesco_desc,"Hijastro(a), entenado(a)",parentesco_desc__hijastro_a_entenado_a,False,384,0.002712266649715,categoria observada
+parentesco_desc,Hijo(a) adoptivo(a),parentesco_desc__hijo_a_adoptivo_a,False,6,4.237916640179688e-05,categoria observada
+parentesco_desc,Hijo(a) de crianza,parentesco_desc__hijo_a_de_crianza,False,1,7.063194400299479e-06,categoria observada
+parentesco_desc,"Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido",parentesco_desc__hijo_a_hijo_a_consanguineo_hijo_a_reconocido,False,34115,0.24096087696621674,categoria observada
+parentesco_desc,Jefe(a),,True,68035,0.4805444310243751,categoria observada
+parentesco_desc,"Madre, padre",parentesco_desc__madre_padre,False,491,0.0034680284505470443,categoria observada
+parentesco_desc,Medio(a) hermano(a),parentesco_desc__medio_a_hermano_a,False,1,7.063194400299479e-06,categoria observada
+parentesco_desc,Nieto(a),parentesco_desc__nieto_a,False,2259,0.015955756150276525,categoria observada
+parentesco_desc,No tiene parentesco,parentesco_desc__no_tiene_parentesco,False,669,0.004725277053800352,categoria observada
+parentesco_desc,"Nuera, yerno",parentesco_desc__nuera_yerno,False,3765,0.02659292691712754,categoria observada
+parentesco_desc,"Padrastro, madrastra",parentesco_desc__padrastro_madrastra,False,17,0.00012007430480509115,categoria observada
+parentesco_desc,Pareja del mismo sexo,parentesco_desc__pareja_del_mismo_sexo,False,61,0.00043085485841826826,categoria observada
+parentesco_desc,Primo(a) nóicpircseD .4202 y,parentesco_desc__primo_a_noicpircsed_4202_y,False,163,0.0011513006872488152,categoria observada
+parentesco_desc,Sobrino(a),parentesco_desc__sobrino_a,False,890,0.006286243016266537,categoria observada
+parentesco_desc,Suegro(a),parentesco_desc__suegro_a,False,208,0.0014691444352622916,categoria observada
+parentesco_desc,Tío(a),parentesco_desc__tio_a,False,66,0.00046617083041976563,categoria observada
+hablaind_desc,No,,True,130582,0.9223260511799066,categoria observada
+hablaind_desc,Sí,hablaind_desc__si,False,10997,0.07767394882009337,categoria observada
+segsoc_desc,No,,True,58278,0.4116288432606531,categoria observada
+segsoc_desc,Sí,segsoc_desc__si,False,83301,0.5883711567393469,categoria observada
+subor_principal_desc,No,,True,31445,0.22210214791741714,categoria observada
+subor_principal_desc,No aplica: sin trabajo principal reportado,subor_principal_desc__no_aplica_sin_trabajo_principal_reportado,False,5205,0.03676392685355879,estructural/documentado
+subor_principal_desc,Sí,subor_principal_desc__si,False,104929,0.7411339252290241,categoria observada
+contrato_principal_desc,No,,True,52696,0.3722020921181814,categoria observada
+contrato_principal_desc,No aplica: sin contrato principal documentado,contrato_principal_desc__no_aplica_sin_contrato_principal_documentado,False,37124,0.26221402891671786,estructural/documentado
+contrato_principal_desc,Sí,contrato_principal_desc__si,False,51759,0.36558387896510075,categoria observada
+sexo_jefe_desc,Hombre,,True,100575,0.7103807768101201,categoria observada
+sexo_jefe_desc,Mujer,sexo_jefe_desc__mujer,False,41004,0.28961922318987987,categoria observada
+educa_jefe_desc,Posgrado,educa_jefe_desc__posgrado,False,3037,0.021450921393709518,categoria observada
+educa_jefe_desc,Preescolar,educa_jefe_desc__preescolar,False,34,0.0002401486096101823,categoria observada
+educa_jefe_desc,Preparatoria completa,educa_jefe_desc__preparatoria_completa,False,20179,0.1425281998036432,categoria observada
+educa_jefe_desc,Preparatoria incompleta,educa_jefe_desc__preparatoria_incompleta,False,4425,0.0312546352213252,categoria observada
+educa_jefe_desc,Primaria completa,educa_jefe_desc__primaria_completa,False,23550,0.16633822812705273,categoria observada
+educa_jefe_desc,Primaria incompleta,educa_jefe_desc__primaria_incompleta,False,18167,0.12831705267024066,categoria observada
+educa_jefe_desc,Profesional completa,educa_jefe_desc__profesional_completa,False,15615,0.11029178056067637,categoria observada
+educa_jefe_desc,Profesional incompleta,educa_jefe_desc__profesional_incompleta,False,4383,0.03095798105651262,categoria observada
+educa_jefe_desc,Secundaria completa,educa_jefe_desc__secundaria_completa,False,40850,0.28853149125223376,categoria observada
+educa_jefe_desc,Secundaria incompleta,educa_jefe_desc__secundaria_incompleta,False,4186,0.02956653175965362,categoria observada
+educa_jefe_desc,Sin instrucción,,True,7153,0.05052302954534218,categoria observada

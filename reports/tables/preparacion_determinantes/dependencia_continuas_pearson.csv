@@ -1,0 +1,16 @@
+variable_a,variable_b,pearson
+edad,n_trabajos,0.05489842325405389
+edad,horas_trabajos_total,-0.05164876067326606
+edad,tot_integ,-0.2215760382776404
+edad,menores,-0.2122110933647955
+edad,p65mas,0.3057017423907085
+n_trabajos,horas_trabajos_total,0.4023801796139319
+n_trabajos,tot_integ,-0.0137599560808647
+n_trabajos,menores,0.016181926412690912
+n_trabajos,p65mas,-0.016894082837325627
+horas_trabajos_total,tot_integ,0.022417015161956495
+horas_trabajos_total,menores,0.029458563746056588
+horas_trabajos_total,p65mas,-0.07079335927640991
+tot_integ,menores,0.623931963551989
+tot_integ,p65mas,0.056370335732759284
+menores,p65mas,-0.11476194538851238

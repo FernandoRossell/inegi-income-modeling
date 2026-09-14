@@ -1,0 +1,11 @@
+validacion,resultado,detalle,valor_scipy,valor_pearson,diferencia_abs,tolerancia
+universo_anio_edad_target,ok,"Todas las filas finales cumplen anio 2024, edad >=18 y target positivo.",,,,
+llave_persona_unica,ok,"Duplicados ['anio', 'folioviv', 'foliohog', 'numren']: 0.",,,,
+filas_X_y_metadata,ok,"Dimensiones: X=(141579, 67), X_scaled=(141579, 67), y=(141579, 2), metadata=(141579, 12).",,,,
+sin_target_derivados_metadata_en_X,ok,Columnas prohibidas en X: ninguna,,,,
+ohe_referencias_consistentes,ok,Cada variable categorica tiene exactamente una referencia documentada.,,,,
+X_sin_infinitos,ok,Valores no finitos en X: 0.,,,,
+continuas_sin_imputacion_necesaria,ok,Faltantes en continuas seleccionadas: 0.,,,,
+pendientes_fuera_de_X,ok,Pendientes dentro de predictores: ninguno,,,,
+punto_biserial_pearson_toy,ok,Diferencia absoluta toy: 2.220446049250313e-16.,,,,
+punto_biserial_equivale_a_pearson_binaria,ok,,0.9620942898608358,0.962094289860836,2.220446049250313e-16,1e-12

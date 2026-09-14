@@ -1,0 +1,73 @@
+variable,categoria,n,pct,orden_frecuencia,nota
+sexo_desc,Hombre,82304,0.5813291519222483,1,Se conserva; no se agrupa automaticamente.
+sexo_desc,Mujer,59275,0.4186708480777516,2,Se conserva; no se agrupa automaticamente.
+nivelaprob_desc,Secundaria,42046,0.2969790717549919,1,Se conserva; no se agrupa automaticamente.
+nivelaprob_desc,Preparatoria o bachillerato,32230,0.22764675552165223,2,Se conserva; no se agrupa automaticamente.
+nivelaprob_desc,Primaria,28255,0.1995705577804618,3,Se conserva; no se agrupa automaticamente.
+nivelaprob_desc,Licenciatura o Ingeniería (profesional),27905,0.19709843974035698,4,Se conserva; no se agrupa automaticamente.
+nivelaprob_desc,Ninguno,4145,0.029276940789241344,5,Se conserva; no se agrupa automaticamente.
+nivelaprob_desc,Estudios técnicos o comerciales,3513,0.02481300192825207,6,Se conserva; no se agrupa automaticamente.
+nivelaprob_desc,Maestría,2243,0.015842745039871733,7,Se conserva; no se agrupa automaticamente.
+nivelaprob_desc,Normal,422,0.0029806680369263805,8,Se conserva; no se agrupa automaticamente.
+nivelaprob_desc,Doctorado,417,0.002945352064924883,9,Se conserva; no se agrupa automaticamente.
+nivelaprob_desc,Especialidad,360,0.0025427499841078126,10,Se conserva; no se agrupa automaticamente.
+nivelaprob_desc,Preescolar o kínder,43,0.0003037173592128776,11,Se conserva; no se agrupa automaticamente.
+region_banxico,Centro Norte,41846,0.295566432874932,1,Se conserva; no se agrupa automaticamente.
+region_banxico,Centro,35628,0.25164749009386983,2,Se conserva; no se agrupa automaticamente.
+region_banxico,Norte,32110,0.22679917219361628,3,Se conserva; no se agrupa automaticamente.
+region_banxico,Sur,31995,0.22598690483758185,4,Se conserva; no se agrupa automaticamente.
+tam_loc_desc,Localidades con 100 000 y más habitantes,54544,0.3852548753699348,1,Se conserva; no se agrupa automaticamente.
+tam_loc_desc,Localidades con menos de 2 500 habitantes,53072,0.374857853212694,2,Se conserva; no se agrupa automaticamente.
+tam_loc_desc,Localidades con 2 500 a 14 999 habitantes,17301,0.12220032631958129,3,Se conserva; no se agrupa automaticamente.
+tam_loc_desc,Localidades con 15 000 a 99 999 habitantes,16662,0.11768694509778993,4,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Jefe(a),68035,0.4805444310243751,1,Se conserva; no se agrupa automaticamente.
+parentesco_desc,"Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido",34115,0.24096087696621674,2,Se conserva; no se agrupa automaticamente.
+parentesco_desc,"Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte",27867,0.19683003835314558,3,Se conserva; no se agrupa automaticamente.
+parentesco_desc,"Nuera, yerno",3765,0.02659292691712754,4,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Nieto(a),2259,0.015955756150276525,5,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Hermano(a),1910,0.013490701304572006,6,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Sobrino(a),890,0.006286243016266537,7,Se conserva; no se agrupa automaticamente.
+parentesco_desc,No tiene parentesco,669,0.004725277053800352,8,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Cuñado(a),545,0.0038494409481632163,9,Se conserva; no se agrupa automaticamente.
+parentesco_desc,"Madre, padre",491,0.0034680284505470443,10,Se conserva; no se agrupa automaticamente.
+parentesco_desc,"Hijastro(a), entenado(a)",384,0.002712266649715,11,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Suegro(a),208,0.0014691444352622916,12,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Primo(a) nóicpircseD .4202 y,163,0.0011513006872488152,13,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Tío(a),66,0.00046617083041976563,14,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Pareja del mismo sexo,61,0.00043085485841826826,15,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Concubino(a),50,0.000353159720014974,16,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Concuño(a),24,0.0001695166656071875,17,Se conserva; no se agrupa automaticamente.
+parentesco_desc,"Padrastro, madrastra",17,0.00012007430480509115,18,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Abuelo(a),16,0.00011301111040479167,19,Se conserva; no se agrupa automaticamente.
+parentesco_desc,"Familiar, otro parentesco",15,0.0001059479160044922,20,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Bisnieto(a),12,8.475833280359376e-05,21,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Hijo(a) adoptivo(a),6,4.237916640179688e-05,22,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Ahijado(a),4,2.8252777601197916e-05,23,Se conserva; no se agrupa automaticamente.
+parentesco_desc,"Compadre, comadre",3,2.118958320089844e-05,24,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Consuegro(a),1,7.063194400299479e-06,25,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Bisabuelo(a),1,7.063194400299479e-06,26,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Medio(a) hermano(a),1,7.063194400299479e-06,27,Se conserva; no se agrupa automaticamente.
+parentesco_desc,Hijo(a) de crianza,1,7.063194400299479e-06,28,Se conserva; no se agrupa automaticamente.
+hablaind_desc,No,130582,0.9223260511799066,1,Se conserva; no se agrupa automaticamente.
+hablaind_desc,Sí,10997,0.07767394882009337,2,Se conserva; no se agrupa automaticamente.
+segsoc_desc,Sí,83301,0.5883711567393469,1,Se conserva; no se agrupa automaticamente.
+segsoc_desc,No,58278,0.4116288432606531,2,Se conserva; no se agrupa automaticamente.
+subor_principal_desc,Sí,104929,0.7411339252290241,1,Se conserva; no se agrupa automaticamente.
+subor_principal_desc,No,31445,0.22210214791741714,2,Se conserva; no se agrupa automaticamente.
+subor_principal_desc,No aplica: sin trabajo principal reportado,5205,0.03676392685355879,3,Se conserva; no se agrupa automaticamente.
+contrato_principal_desc,No,52696,0.3722020921181814,1,Se conserva; no se agrupa automaticamente.
+contrato_principal_desc,Sí,51759,0.36558387896510075,2,Se conserva; no se agrupa automaticamente.
+contrato_principal_desc,No aplica: sin contrato principal documentado,37124,0.26221402891671786,3,Se conserva; no se agrupa automaticamente.
+sexo_jefe_desc,Hombre,100575,0.7103807768101201,1,Se conserva; no se agrupa automaticamente.
+sexo_jefe_desc,Mujer,41004,0.28961922318987987,2,Se conserva; no se agrupa automaticamente.
+educa_jefe_desc,Secundaria completa,40850,0.28853149125223376,1,Se conserva; no se agrupa automaticamente.
+educa_jefe_desc,Primaria completa,23550,0.16633822812705273,2,Se conserva; no se agrupa automaticamente.
+educa_jefe_desc,Preparatoria completa,20179,0.1425281998036432,3,Se conserva; no se agrupa automaticamente.
+educa_jefe_desc,Primaria incompleta,18167,0.12831705267024066,4,Se conserva; no se agrupa automaticamente.
+educa_jefe_desc,Profesional completa,15615,0.11029178056067637,5,Se conserva; no se agrupa automaticamente.
+educa_jefe_desc,Sin instrucción,7153,0.05052302954534218,6,Se conserva; no se agrupa automaticamente.
+educa_jefe_desc,Preparatoria incompleta,4425,0.0312546352213252,7,Se conserva; no se agrupa automaticamente.
+educa_jefe_desc,Profesional incompleta,4383,0.03095798105651262,8,Se conserva; no se agrupa automaticamente.
+educa_jefe_desc,Secundaria incompleta,4186,0.02956653175965362,9,Se conserva; no se agrupa automaticamente.
+educa_jefe_desc,Posgrado,3037,0.021450921393709518,10,Se conserva; no se agrupa automaticamente.
+educa_jefe_desc,Preescolar,34,0.0002401486096101823,11,Se conserva; no se agrupa automaticamente.

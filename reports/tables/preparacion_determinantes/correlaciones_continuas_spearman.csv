@@ -1,0 +1,7 @@
+variable,tipo,n_valido,spearman_ingreso_original,nota
+edad,continua,141579,-0.04459967739311937,Correlacion de rangos exploratoria no ponderada; sin p-values.
+n_trabajos,continua,141579,0.08531663429479731,Correlacion de rangos exploratoria no ponderada; sin p-values.
+horas_trabajos_total,continua,141579,0.34341170676460264,Correlacion de rangos exploratoria no ponderada; sin p-values.
+tot_integ,continua,141579,-0.05343972674284177,Correlacion de rangos exploratoria no ponderada; sin p-values.
+menores,continua,141579,-0.007593735685680418,Correlacion de rangos exploratoria no ponderada; sin p-values.
+p65mas,continua,141579,-0.13939260628859632,Correlacion de rangos exploratoria no ponderada; sin p-values.

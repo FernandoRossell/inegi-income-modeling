@@ -459,7 +459,63 @@ Punto de partida activo confirmado para la siguiente planeación:
 | Hogares nominal | `data/interim/revision_4/mart_hogar_2018_2024.csv.gz` | hogar-año | 92 | disponible |
 | Personas nominal | `data/interim/revision_4/mart_persona_2018_2024.csv.gz` | persona-año | 140 | disponible |
 
-La construcción de nuevas bases específicas para análisis de determinantes queda pendiente de definición y aprobación. Todavía no se fijan algoritmos, codificaciones, normalizaciones, selección de variables, particiones de entrenamiento ni reglas de validación para modelos.
+La preparación inicial de la base específica para análisis de determinantes quedó realizada en la etapa 12 para ENIGH 2024. Todavía no se entrenan modelos, no se fijan algoritmos definitivos, no se crean particiones de entrenamiento/prueba y no se activa inferencia formal.
+
+## Base 2024 para determinantes
+
+La etapa 12 prepara una base analítica de personas para estudiar asociaciones entre características personales, laborales, del hogar y territoriales e ingreso. El notebook principal es `notebooks/12_preparacion_base_determinantes.ipynb`, el código reutilizable está en `src/features/preparacion_determinantes.py` y el resumen metodológico queda en `reports/preparacion_base_determinantes.md`.
+
+Definición aprobada:
+
+- Unidad: persona.
+- Año: 2024.
+- Universo: `edad >= 18` e `ingreso_persona_laboral_negocio_tri > 0`.
+- Target: `ingreso_persona_laboral_negocio_tri`.
+- Montos: nominales trimestrales.
+- Fuente: `data/interim/revision_4/mart_persona_2018_2024.csv.gz`.
+- Cobertura: todas las regiones Banxico.
+
+Flujo del universo:
+
+| Paso | Filas antes | Excluidas | Filas después | Hogares únicos después |
+| --- | ---: | ---: | ---: | ---: |
+| `anio == 2024` | 1,203,231 | 894,633 | 308,598 | 91,414 |
+| edad válida | 308,598 | 0 | 308,598 | 91,414 |
+| `edad >= 18` | 308,598 | 89,770 | 218,828 | 91,389 |
+| target válido | 218,828 | 0 | 218,828 | 91,389 |
+| target positivo | 218,828 | 77,249 | 141,579 | 80,872 |
+
+La llave `anio + folioviv + foliohog + numren` quedó única en el universo final. La matriz inicial contiene 67 columnas: 6 continuas y 61 dummies derivadas de 11 variables categóricas con codificación k-1 y referencias explícitas. No se guarda intercepto.
+
+Predictores iniciales:
+
+- Continuos: `edad`, `n_trabajos`, `horas_trabajos_total`, `tot_integ`, `menores`, `p65mas`.
+- Categóricos: `sexo_desc`, `nivelaprob_desc`, `region_banxico`, `tam_loc_desc`, `parentesco_desc`, `hablaind_desc`, `segsoc_desc`, `subor_principal_desc`, `contrato_principal_desc`, `sexo_jefe_desc`, `educa_jefe_desc`.
+
+Exclusiones y resguardos:
+
+- `factor`, `factor_hogar`, `est_dis` y `upm` se conservan como metadata, no como predictores.
+- Las llaves, entidad y municipio quedan fuera de `X`; entidad y municipio se mantienen para diagnóstico territorial porque `region_banxico` ya captura la agrupación territorial inicial.
+- `est_socio` se conserva como diagnóstico contextual y requiere decisión posterior antes de entrar a modelos.
+- `tam_emp_principal_desc` se conserva en la base interpretable, pero queda pendiente/fuera de `X` porque su categoría estructural de ausencia de trabajo principal duplicaba exactamente una dummy de subordinación.
+- No se usan `deflactor_2024`, columnas `_real_2024`, componentes monetarios del ingreso, derivados del target ni JKn.
+
+Diagnósticos principales:
+
+- Target no ponderado: media 31,171.87, mediana 24,245.89, P25 12,433.44, P75 38,225.27, P99 154,663.03 y máximo 17,021,739.12 pesos nominales trimestrales.
+- La distribución del target tiene cola derecha larga; `log_ingreso_persona_laboral_negocio_tri` se genera solo como diagnóstico visual.
+- No se aplica complete-case global. Las continuas seleccionadas no tienen faltantes. Los faltantes laborales estructurales se codifican solo para la matriz diagnóstica y los valores originales se conservan en la base interpretable.
+- Asociaciones marginales exploratorias: entre continuas, la mayor correlación de Spearman con el ingreso original es `horas_trabajos_total` (0.3434). Entre dummies, destacan contrato principal, seguridad social, educación propia y educación de la jefatura como contrastes descriptivos.
+- La matriz con intercepto futuro tiene rango completo: 68 columnas con intercepto y rango 68. Los VIF más altos aparecen en contrato/subordinación del trabajo principal y escolaridad, por dependencia esperable entre variables laborales y educativas.
+
+Salidas:
+
+- Microdatos y matrices fuera de Git: `data/processed/determinantes_2024/`.
+- Tablas agregadas versionadas: `reports/tables/preparacion_determinantes/`.
+- Figuras versionadas: `reports/figures/preparacion_determinantes/`.
+- Manifest de ejecución: `reports/tables/preparacion_determinantes/manifest_preparacion_determinantes.json`.
+
+Los resultados futuros con esta base se interpretarán como asociaciones entre adultos con ingreso laboral/de negocio positivo. No explican la selección al ingreso positivo ni permiten afirmaciones causales sin una estrategia empírica adicional.
 
 ## Flujo de datos:
 
@@ -530,8 +586,8 @@ flowchart LR
 | 09 Desigualdad territorial | COMPLETO: ponderación descriptiva auditada, Gini nacional/regional, comparación Banxico ya documentada, CDMX, zonas metropolitanas, brechas territoriales y unidad del estimando documentada |
 | 10 Homologación monetaria | DEPRECADA del flujo principal; preservada como intento histórico |
 | 11 Diseño muestral formal | DEPRECADA del flujo principal; preservada como intento histórico |
-| 12 Planificación de bases para análisis de determinantes | SIGUIENTE: pendiente de definición y aprobación |
-| 13 Determinantes del ingreso | Pendiente |
+| 12 Preparación de base 2024 para determinantes | COMPLETO: universo, target, predictores iniciales, OHE, matrices diagnósticas, faltantes, asociaciones y dependencia documentados |
+| 13 Determinantes del ingreso | Pendiente: definir estrategia inferencial, partición futura considerando hogares y especificación interpretable |
 | 14 Heterogeneidad territorial | Pendiente |
 | 15 Descomposición de desigualdad | Pendiente |
 | 16 Robustez y sensibilidad | Pendiente |
@@ -554,8 +610,8 @@ flowchart LR
 
 ## Siguientes pasos
 
-- Siguiente hito: planear bases específicas para análisis de determinantes a partir de los marts nominales de `revision_4`.
-- Mantener ese hito como pendiente hasta que se aprueben unidad de análisis, universo, target, variables candidatas y estrategia inferencial.
+- Siguiente hito: definir la estrategia de modelado interpretable para determinantes del ingreso usando la base 2024 preparada en la etapa 12.
+- Antes de modelar, aprobar partición futura considerando hogares, especificación, tratamiento de `est_socio`, decisión sobre `tam_emp_principal_desc` y alcance de inferencia.
 - No preparar bases para ML ni entrenar modelos hasta que esa etapa sea aprobada explícitamente.
 - Antes de reportar cualquier estadístico ponderado, registrar: unidad de observación, población objetivo, variable de peso y definición del estimando.
 - No inventar resultados: todo valor reportado debe salir de notebooks o documentación revisada.

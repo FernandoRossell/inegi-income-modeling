@@ -1,0 +1,18 @@
+variable,faltantes,faltantes_pct,decision
+edad,0,0.0,usar sin imputacion
+n_trabajos,0,0.0,usar sin imputacion
+horas_trabajos_total,0,0.0,usar sin imputacion
+tot_integ,0,0.0,usar sin imputacion
+menores,0,0.0,usar sin imputacion
+p65mas,0,0.0,usar sin imputacion
+sexo_desc,0,0.0,usar sin imputacion
+nivelaprob_desc,0,0.0,usar sin imputacion
+region_banxico,0,0.0,usar sin imputacion
+tam_loc_desc,0,0.0,usar sin imputacion
+parentesco_desc,0,0.0,usar sin imputacion
+hablaind_desc,0,0.0,usar sin imputacion
+segsoc_desc,0,0.0,usar sin imputacion
+subor_principal_desc,5205,0.03676392685355879,faltante estructural convertido solo en categoria de matriz; original se conserva
+contrato_principal_desc,37124,0.26221402891671786,faltante estructural convertido solo en categoria de matriz; original se conserva
+sexo_jefe_desc,0,0.0,usar sin imputacion
+educa_jefe_desc,0,0.0,usar sin imputacion

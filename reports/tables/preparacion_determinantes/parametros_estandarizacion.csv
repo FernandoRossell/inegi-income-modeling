@@ -1,0 +1,7 @@
+variable,media,sd_muestral_ddof1,constante,formula
+edad,40.975660232096565,14.374849083819893,False,z_i = (x_i - media_x) / s_x; s_x con ddof=1
+n_trabajos,1.055544960763955,0.35494853385498076,False,z_i = (x_i - media_x) / s_x; s_x con ddof=1
+horas_trabajos_total,43.76481681605323,19.820681113536903,False,z_i = (x_i - media_x) / s_x; s_x con ddof=1
+tot_integ,4.013299995055764,1.8924559318345329,False,z_i = (x_i - media_x) / s_x; s_x con ddof=1
+menores,0.6973491831415676,0.9592434578002095,False,z_i = (x_i - media_x) / s_x; s_x con ddof=1
+p65mas,0.2597348476822128,0.561328519099081,False,z_i = (x_i - media_x) / s_x; s_x con ddof=1

@@ -1,0 +1,12 @@
+variable,referencia,criterio,n_referencia
+sexo_desc,Hombre,categoria interpretable definida antes de modelar,82304
+nivelaprob_desc,Ninguno,categoria interpretable definida antes de modelar,4145
+region_banxico,Centro,categoria interpretable definida antes de modelar,35628
+tam_loc_desc,Localidades con 100 000 y más habitantes,categoria interpretable definida antes de modelar,54544
+parentesco_desc,Jefe(a),categoria interpretable definida antes de modelar,68035
+hablaind_desc,No,categoria interpretable definida antes de modelar,130582
+segsoc_desc,No,categoria interpretable definida antes de modelar,58278
+subor_principal_desc,No,categoria interpretable definida antes de modelar,31445
+contrato_principal_desc,No,categoria interpretable definida antes de modelar,52696
+sexo_jefe_desc,Hombre,categoria interpretable definida antes de modelar,100575
+educa_jefe_desc,Sin instrucción,categoria interpretable definida antes de modelar,7153
