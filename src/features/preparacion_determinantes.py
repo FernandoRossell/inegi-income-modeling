@@ -1,4 +1,4 @@
-"""Preparacion de base analitica para determinantes ENIGH 2024.
+"""Preparacion de base analitica anual para determinantes ENIGH.
 
 Esta etapa prepara datos y diagnosticos. No entrena modelos, no crea
 particiones y no reactiva las etapas historicas de deflactores o JKn.
@@ -23,6 +23,9 @@ import pandas as pd
 
 TARGET = "ingreso_persona_laboral_negocio_tri"
 LOG_TARGET = "log_ingreso_persona_laboral_negocio_tri"
+ANIOS_VALIDOS = (2018, 2020, 2022, 2024)
+DEFAULT_YEAR = 2024
+DEFAULT_MIN_AGE = 18
 KEY_COLS = ["anio", "folioviv", "foliohog", "numren"]
 HOUSEHOLD_KEY_COLS = ["anio", "folioviv", "foliohog"]
 
@@ -111,6 +114,14 @@ MONEY_PATTERNS = [
 ]
 
 
+def validate_analysis_year(year: int, valid_years: tuple[int, ...] = ANIOS_VALIDOS) -> int:
+    year = int(year)
+    if year not in valid_years:
+        valid = ", ".join(str(value) for value in valid_years)
+        raise ValueError(f"ANIO_ANALISIS debe estar en ({valid}); recibido: {year}.")
+    return year
+
+
 @dataclass(frozen=True)
 class PreparationConfig:
     project_root: Path
@@ -118,19 +129,35 @@ class PreparationConfig:
     processed_dir: Path
     table_dir: Path
     figure_dir: Path
-    year: int = 2024
-    min_age: int = 18
+    year: int = DEFAULT_YEAR
+    min_age: int = DEFAULT_MIN_AGE
     target: str = TARGET
+    valid_years: tuple[int, ...] = ANIOS_VALIDOS
+
+    def __post_init__(self) -> None:
+        validate_analysis_year(self.year, self.valid_years)
+        if self.min_age <= 0:
+            raise ValueError(f"EDAD_MINIMA debe ser positiva; recibida: {self.min_age}.")
 
     @classmethod
-    def from_root(cls, project_root: Path | str = ".") -> "PreparationConfig":
+    def from_root(
+        cls,
+        project_root: Path | str = ".",
+        year: int = DEFAULT_YEAR,
+        min_age: int = DEFAULT_MIN_AGE,
+        valid_years: tuple[int, ...] = ANIOS_VALIDOS,
+    ) -> "PreparationConfig":
         root = Path(project_root).resolve()
+        year = validate_analysis_year(year, valid_years)
         return cls(
             project_root=root,
             input_path=root / "data" / "interim" / "revision_4" / "mart_persona_2018_2024.csv.gz",
-            processed_dir=root / "data" / "processed" / "determinantes_2024",
-            table_dir=root / "reports" / "tables" / "preparacion_determinantes",
-            figure_dir=root / "reports" / "figures" / "preparacion_determinantes",
+            processed_dir=root / "data" / "processed" / f"determinantes_{year}",
+            table_dir=root / "reports" / "tables" / "preparacion_determinantes" / str(year),
+            figure_dir=root / "reports" / "figures" / "preparacion_determinantes" / str(year),
+            year=year,
+            min_age=min_age,
+            valid_years=valid_years,
         )
 
 
@@ -201,7 +228,7 @@ def build_universe(df: pd.DataFrame, config: PreparationConfig) -> tuple[pd.Data
             }
         )
 
-    add_step("anio_2024", df["anio"].eq(config.year), f"anio == {config.year}")
+    add_step(f"anio_{config.year}", df["anio"].eq(config.year), f"anio == {config.year}")
     add_step("edad_valida", age.notna() & np.isfinite(age), "edad valida y finita")
     add_step("adultos", age.ge(config.min_age), f"edad >= {config.min_age}")
     add_step("target_valido", target.notna() & np.isfinite(target), "target valido y finito")
@@ -240,6 +267,11 @@ def _is_money_or_leakage(col: str) -> bool:
     return any(pattern in lower for pattern in MONEY_PATTERNS)
 
 
+def _is_deprecated_real_or_deflator(col: str) -> bool:
+    lower = col.lower()
+    return lower.startswith("deflactor") or "_real_" in lower or lower.endswith("_real")
+
+
 def variable_role(col: str) -> tuple[str, str, str]:
     if col == TARGET:
         return "target", "Ingreso que se pretende explicar.", "target_activo"
@@ -263,8 +295,8 @@ def variable_role(col: str) -> tuple[str, str, str]:
         if col in ["ocupados", "percep_ing", "perc_ocupa", "tiene_trabajo_reportado"]:
             return "diagnostico", "Relacionado mecanicamente con el universo laboral; no entra a X inicial.", "conservar_diagnostico"
         return "diagnostico", "Auxiliar para interpretar rutas de variables laborales; no entra a X inicial.", "conservar_diagnostico"
-    if col.endswith("_real_2024") or col == "deflactor_2024":
-        return "excluida", "Etapa 10 deprecada; no usar variables reales ni deflactor.", "excluir"
+    if _is_deprecated_real_or_deflator(col):
+        return "excluida", "Etapa 10 deprecada; no usar variables reales ni deflactores.", "excluir"
     if _is_money_or_leakage(col):
         return "excluida", "Variable monetaria, componente de ingreso o derivado potencial del target; evita filtracion.", "excluir"
     if col in ["sexo", "nivelaprob", "region_banxico_codigo"]:
@@ -329,7 +361,7 @@ def build_variable_dictionary(df: pd.DataFrame, universe: pd.DataFrame, config: 
         conceptual = _conceptual_type(s, col)
         missing = int(s.isna().sum()) if len(s) else 0
         nunique = int(s.nunique(dropna=True)) if len(s) else 0
-        universe_note = "adultos 2024 con ingreso laboral/de negocio positivo"
+        universe_note = f"personas de {config.year} con edad >= {config.min_age} e ingreso laboral/de negocio positivo"
         if col in ["nivel_desc", "nivel"]:
             universe_note = "solo aplica a asistencia escolar; no es escolaridad general"
         elif col in ["contrato_principal", "contrato_principal_desc"]:
@@ -470,6 +502,146 @@ def build_matrix(universe: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd
     X.index = pd.RangeIndex(len(X))
     cat_prepared.index = pd.RangeIndex(len(cat_prepared))
     return X, cat_prepared, mapping, references
+
+
+def expected_reference_label(col: str) -> str:
+    rule = REFERENCE_RULES[col]
+    if "exact" in rule:
+        return rule["exact"]
+    return f"prefijo: {rule['prefix']}"
+
+
+def required_columns() -> list[str]:
+    cols = KEY_COLS + [TARGET] + METADATA_COLS + DIAGNOSTIC_COLS + PREDICTORS
+    return list(dict.fromkeys(cols))
+
+
+def inspect_year_compatibility_from_source(
+    source: pd.DataFrame,
+    config: PreparationConfig,
+    *,
+    write_outputs: bool = True,
+) -> dict[str, pd.DataFrame]:
+    years = tuple(validate_analysis_year(year, config.valid_years) for year in config.valid_years)
+    table_root = config.project_root / "reports" / "tables" / "preparacion_determinantes"
+    table_root.mkdir(parents=True, exist_ok=True)
+
+    required = required_columns()
+    column_rows = []
+    compatibility_rows = []
+    category_rows = []
+    baseline_categories: dict[str, set[str]] = {}
+
+    missing_source_cols = [col for col in required if col not in source.columns]
+    if not missing_source_cols:
+        baseline_config = PreparationConfig.from_root(
+            config.project_root,
+            year=config.year,
+            min_age=config.min_age,
+            valid_years=config.valid_years,
+        )
+        baseline_universe, _ = build_universe(source, baseline_config)
+        baseline_prepared = prepare_categorical_for_matrix(baseline_universe)
+        baseline_categories = {col: set(baseline_prepared[col].dropna().astype(str).unique()) for col in CATEGORICAL_PREDICTORS}
+
+    for year in years:
+        year_config = PreparationConfig.from_root(
+            config.project_root,
+            year=year,
+            min_age=config.min_age,
+            valid_years=config.valid_years,
+        )
+        missing_cols = [col for col in required if col not in source.columns]
+        for col in required:
+            column_rows.append({"anio": year, "columna": col, "presente": col in source.columns})
+
+        references_missing: list[str] = []
+        new_category_count = 0
+        absent_category_count = 0
+        rows_year = int(source.loc[source["anio"].eq(year)].shape[0]) if "anio" in source.columns else 0
+        universe_rows = 0
+        households = 0
+
+        if not missing_cols:
+            universe, _ = build_universe(source, year_config)
+            universe_rows = int(len(universe))
+            households = int(universe[HOUSEHOLD_KEY_COLS].drop_duplicates().shape[0])
+            cat_prepared = prepare_categorical_for_matrix(universe)
+
+            for col in CATEGORICAL_PREDICTORS:
+                categories = set(cat_prepared[col].dropna().astype(str).unique())
+                baseline = baseline_categories.get(col, set())
+                new_categories = sorted(categories - baseline)
+                absent_categories = sorted(baseline - categories)
+                new_category_count += len(new_categories)
+                absent_category_count += len(absent_categories)
+                reference = ""
+                reference_present = False
+                error = ""
+                try:
+                    reference = select_reference(col, sorted(categories))
+                    reference_present = True
+                except ValueError as exc:
+                    references_missing.append(col)
+                    error = str(exc)
+                category_rows.append(
+                    {
+                        "anio": year,
+                        "variable": col,
+                        "referencia_prevista": expected_reference_label(col),
+                        "referencia_encontrada": reference,
+                        "referencia_presente": reference_present,
+                        "n_referencia": int(cat_prepared[col].eq(reference).sum()) if reference_present else 0,
+                        "categorias_observadas": len(categories),
+                        "anio_base_comparacion": config.year,
+                        "categorias_nuevas_vs_anio_base": "; ".join(new_categories),
+                        "categorias_ausentes_vs_anio_base": "; ".join(absent_categories),
+                        "error": error,
+                    }
+                )
+
+        status = "compatible_para_generar_base"
+        if missing_cols or references_missing or universe_rows == 0:
+            status = "revisar_antes_de_generar_base"
+        compatibility_rows.append(
+            {
+                "anio": year,
+                "estado": status,
+                "filas_anio": rows_year,
+                "filas_universo": universe_rows,
+                "hogares_unicos": households,
+                "columnas_requeridas_faltantes": "; ".join(missing_cols),
+                "referencias_ohe_faltantes": "; ".join(references_missing),
+                "anio_base_comparacion": config.year,
+                "categorias_nuevas_vs_anio_base": new_category_count,
+                "categorias_ausentes_vs_anio_base": absent_category_count,
+                "nota": "Inspeccion de esquema; no genera matrices ni bases para este anio.",
+            }
+        )
+
+    result = {
+        "compatibilidad_anios": pd.DataFrame(compatibility_rows),
+        "compatibilidad_columnas": pd.DataFrame(column_rows),
+        "compatibilidad_categorias_ohe": pd.DataFrame(category_rows),
+    }
+    if write_outputs:
+        for name, table in result.items():
+            table.to_csv(table_root / f"{name}.csv", index=False, encoding="utf-8")
+    return result
+
+
+def inspect_year_compatibility(
+    project_root: Path | str = ".",
+    *,
+    years: tuple[int, ...] = ANIOS_VALIDOS,
+    min_age: int = DEFAULT_MIN_AGE,
+    baseline_year: int = DEFAULT_YEAR,
+    write_outputs: bool = True,
+) -> dict[str, pd.DataFrame]:
+    valid_years = tuple(validate_analysis_year(year, years) for year in years)
+    config = PreparationConfig.from_root(project_root, year=baseline_year, min_age=min_age, valid_years=valid_years)
+    source = read_source(config)
+    return inspect_year_compatibility_from_source(source, config, write_outputs=write_outputs)
 
 
 def standardize_continuous(X: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -822,10 +994,11 @@ def compute_vif(X: pd.DataFrame, full_rank: bool) -> pd.DataFrame:
     return pd.DataFrame(rows).sort_values("vif", ascending=False).reset_index(drop=True)
 
 
-def write_figures(universe: pd.DataFrame, output_dir: Path) -> pd.DataFrame:
+def write_figures(universe: pd.DataFrame, config: PreparationConfig) -> pd.DataFrame:
     import matplotlib.pyplot as plt
     import seaborn as sns
 
+    output_dir = config.figure_dir
     output_dir.mkdir(parents=True, exist_ok=True)
     sns.set_theme(style="whitegrid")
     y = universe[TARGET].astype(float)
@@ -843,7 +1016,7 @@ def write_figures(universe: pd.DataFrame, output_dir: Path) -> pd.DataFrame:
     axes[1].hist(log_y, bins=80, color="#f26419", edgecolor="white")
     axes[1].set_title("log(target)")
     axes[1].set_xlabel("Logaritmo natural")
-    fig.suptitle("Distribucion del target")
+    fig.suptitle(f"Distribucion del target, {config.year}")
     fig.tight_layout()
     path = output_dir / "target_hist_original_log.png"
     fig.savefig(path, dpi=160)
@@ -858,7 +1031,7 @@ def write_figures(universe: pd.DataFrame, output_dir: Path) -> pd.DataFrame:
         fig, ax = plt.subplots(figsize=(10, 5))
         order = universe.groupby(variable)[LOG_TARGET].median().sort_values().index.tolist()
         sns.boxplot(data=universe, x=variable, y=LOG_TARGET, order=order, showfliers=False, ax=ax, color="#86bbd8")
-        ax.set_title(title)
+        ax.set_title(f"{title}, {config.year}")
         ax.set_xlabel(variable)
         ax.set_ylabel("log ingreso laboral/de negocio")
         ax.tick_params(axis="x", rotation=35)
@@ -881,6 +1054,7 @@ def validation_checks(
     mapping: pd.DataFrame,
     dictionary: pd.DataFrame,
     point_biserial_validation: pd.DataFrame,
+    config: PreparationConfig,
 ) -> pd.DataFrame:
     rows = []
 
@@ -890,11 +1064,17 @@ def validation_checks(
     add(
         "universo_anio_edad_target",
         bool(
-            universe["anio"].eq(2024).all()
-            and pd.to_numeric(universe["edad"], errors="coerce").ge(18).all()
+            universe["anio"].eq(config.year).all()
+            and pd.to_numeric(universe["edad"], errors="coerce").ge(config.min_age).all()
             and pd.to_numeric(universe[TARGET], errors="coerce").gt(0).all()
         ),
-        "Todas las filas finales cumplen anio 2024, edad >=18 y target positivo.",
+        f"Todas las filas finales cumplen anio {config.year}, edad >={config.min_age} y target positivo.",
+    )
+    year_values = sorted(universe["anio"].dropna().astype(int).unique().tolist())
+    add(
+        "salidas_universo_anio_unico",
+        year_values == [config.year],
+        f"Anios presentes en universo/base interpretable: {year_values}.",
     )
     duplicates = int(universe.duplicated(KEY_COLS).sum())
     add("llave_persona_unica", duplicates == 0, f"Duplicados {KEY_COLS}: {duplicates}.")
@@ -904,7 +1084,7 @@ def validation_checks(
         f"Dimensiones: X={X.shape}, X_scaled={X_scaled.shape}, y={y.shape}, metadata={metadata.shape}.",
     )
     forbidden = set(KEY_COLS + METADATA_COLS + [TARGET, LOG_TARGET])
-    forbidden |= {col for col in source.columns if col.endswith("_real_2024") or col == "deflactor_2024" or _is_money_or_leakage(col)}
+    forbidden |= {col for col in source.columns if _is_deprecated_real_or_deflator(col) or _is_money_or_leakage(col)}
     bad_x = sorted(set(X.columns) & forbidden)
     add("sin_target_derivados_metadata_en_X", len(bad_x) == 0, "Columnas prohibidas en X: " + (", ".join(bad_x) if bad_x else "ninguna"))
     add(
@@ -943,11 +1123,11 @@ def save_processed_outputs(
 ) -> dict[str, str]:
     config.processed_dir.mkdir(parents=True, exist_ok=True)
     paths = {
-        "base_interpretable": config.processed_dir / "base_interpretable_personas_2024.csv.gz",
+        "base_interpretable": config.processed_dir / f"base_interpretable_personas_{config.year}.csv.gz",
         "X_diagnostico_sin_escalar": config.processed_dir / "X_diagnostico_sin_escalar.csv.gz",
         "X_diagnostico_continuas_estandarizadas": config.processed_dir / "X_diagnostico_continuas_estandarizadas.csv.gz",
         "y_target": config.processed_dir / "y_target.csv.gz",
-        "metadata": config.processed_dir / "metadata_personas_2024.csv.gz",
+        "metadata": config.processed_dir / f"metadata_personas_{config.year}.csv.gz",
         "predictores_iniciales": config.processed_dir / "predictores_iniciales.csv",
         "parametros_estandarizacion": config.processed_dir / "parametros_estandarizacion.csv",
         "mapping_ohe": config.processed_dir / "mapping_ohe.csv",
@@ -983,8 +1163,9 @@ def write_report(
     dependencies: dict[str, pd.DataFrame],
     figures: pd.DataFrame,
     manifest: dict[str, Any],
+    compatibility: dict[str, pd.DataFrame] | None = None,
 ) -> None:
-    report_path = config.project_root / "reports" / "preparacion_base_determinantes.md"
+    report_path = config.project_root / "reports" / f"preparacion_base_determinantes_{config.year}.md"
 
     def md_table(df: pd.DataFrame, cols: list[str], max_rows: int | None = None) -> str:
         use = df[cols].head(max_rows) if max_rows else df[cols]
@@ -1005,17 +1186,20 @@ def write_report(
             "frecuencia_1",
             "frecuencia_0",
         }
+        plain_integer_cols = {"anio", "anio_base_comparacion"}
         lines = ["| " + " | ".join(cols) + " |", "| " + " | ".join(["---"] * len(cols)) + " |"]
         for _, row in use.iterrows():
             cells = []
             for col in cols:
                 value = row[col]
                 if isinstance(value, (int, np.integer)):
-                    cells.append(f"{int(value):,}")
+                    cells.append(str(int(value)) if col in plain_integer_cols else f"{int(value):,}")
                 elif isinstance(value, (float, np.floating)):
                     value_float = float(value)
                     if math.isnan(value_float):
                         cells.append("NA")
+                    elif col in plain_integer_cols and value_float.is_integer():
+                        cells.append(str(int(value_float)))
                     elif col in integer_like_cols and value_float.is_integer():
                         cells.append(f"{int(value_float):,}")
                     elif abs(value_float) < 1:
@@ -1039,8 +1223,25 @@ def write_report(
         f"- `{Path(row['archivo']).relative_to(config.project_root).as_posix()}`: {row['nota']}"
         for _, row in figures.iterrows()
     )
+    inspected_years = [year for year in config.valid_years if year != config.year]
+    if compatibility is not None and not compatibility["compatibilidad_anios"].empty:
+        compatibility_text = md_table(
+            compatibility["compatibilidad_anios"],
+            [
+                "anio",
+                "estado",
+                "filas_anio",
+                "filas_universo",
+                "hogares_unicos",
+                "referencias_ohe_faltantes",
+                "categorias_nuevas_vs_anio_base",
+                "categorias_ausentes_vs_anio_base",
+            ],
+        )
+    else:
+        compatibility_text = "No se ejecutó inspección de compatibilidad multi-año en esta corrida."
 
-    text = f"""# Preparación de base para determinantes 2024
+    text = f"""# Preparación de base para determinantes {config.year}
 
 Esta etapa prepara una base analítica de personas para estudiar asociaciones entre características personales, laborales, del hogar y territoriales e ingreso. No entrena modelos, no crea particiones y no reactiva las etapas históricas de homologación monetaria o JKn.
 
@@ -1049,12 +1250,12 @@ Método de ejecución registrado: {manifest["validacion"]["metodo_ejecucion"]}.
 ## Alcance aprobado
 
 - Unidad: persona.
-- Año: 2024.
+- Año: {config.year}.
 - Universo: edad >= 18 e ingreso laboral/de negocio positivo.
 - Cobertura: todas las regiones Banxico.
 - Target: `ingreso_persona_laboral_negocio_tri`.
 - Montos: nominales trimestrales.
-- Fuente: `data/interim/revision_4/mart_persona_2018_2024.csv.gz`.
+- Fuente: `{config.input_path.relative_to(config.project_root).as_posix()}`.
 
 Los resultados futuros con esta base corresponderán a adultos con ingreso laboral/de negocio positivo. No explican directamente quién obtiene ingreso positivo ni corrigen sesgos de selección.
 
@@ -1122,13 +1323,29 @@ VIF más altos:
 
 ## Archivos locales
 
-Las bases y matrices se escribieron en `data/processed/determinantes_2024/` y quedan fuera de Git por contener microdatos/identificadores. Las tablas agregadas pequeñas se escribieron en `reports/tables/preparacion_determinantes/`.
+Las bases y matrices se escribieron en `{config.processed_dir.relative_to(config.project_root).as_posix()}/` y quedan fuera de Git por contener microdatos/identificadores. Las tablas agregadas pequeñas se escribieron en `{config.table_dir.relative_to(config.project_root).as_posix()}/`.
 
-Manifest: `reports/tables/preparacion_determinantes/manifest_preparacion_determinantes.json`.
+Manifest: `{(config.table_dir / "manifest_preparacion_determinantes.json").relative_to(config.project_root).as_posix()}`.
+
+## Parametrización anual
+
+Para cambiar el año debe modificarse `ANIO_ANALISIS` al inicio del notebook. Los años válidos son {config.valid_years} y la edad mínima configurada es {config.min_age}. Esta ejecución generó bases, matrices, tablas y figuras solo para {config.year}; los años {tuple(inspected_years)} quedan inspeccionados en esquema cuando el notebook se ejecuta con compatibilidad activa.
+
+Las salidas por año quedan separadas:
+
+- Base y matrices: `data/processed/determinantes_<anio>/`.
+- Tablas: `reports/tables/preparacion_determinantes/<anio>/`.
+- Figuras: `reports/figures/preparacion_determinantes/<anio>/`.
+
+Resumen de compatibilidad inspeccionada:
+
+{compatibility_text}
+
+La comparabilidad de coeficientes entre años no queda resuelta por esta preparación: dependerá de una especificación común posterior y de preprocesadores ajustados dentro de entrenamiento cuando se defina una evaluación predictiva.
 
 ## Limitaciones y pendientes
 
-- La base es nominal trimestral y corresponde solo a 2024.
+- La base es nominal trimestral y corresponde solo a {config.year}.
 - No se usa `deflactor_2024`, columnas `_real_2024` ni JKn.
 - No se preparó train/test ni validación cruzada.
 - Una futura partición debe considerar hogares para evitar compartir información familiar entre conjuntos.
@@ -1136,10 +1353,21 @@ Manifest: `reports/tables/preparacion_determinantes/manifest_preparacion_determi
 - No existe identificación causal aprobada; las lecturas son asociativas.
 """
     report_path.write_text(text, encoding="utf-8")
+    if config.year == DEFAULT_YEAR:
+        default_report_path = config.project_root / "reports" / "preparacion_base_determinantes.md"
+        default_report_path.write_text(text, encoding="utf-8")
 
 
-def build_outputs(project_root: Path | str = ".", execution_context: str = "modulo_python_limpio") -> dict[str, Any]:
-    config = PreparationConfig.from_root(project_root)
+def build_outputs(
+    project_root: Path | str = ".",
+    *,
+    year: int = DEFAULT_YEAR,
+    min_age: int = DEFAULT_MIN_AGE,
+    valid_years: tuple[int, ...] = ANIOS_VALIDOS,
+    execution_context: str = "modulo_python_limpio",
+    inspect_compatibility: bool = False,
+) -> dict[str, Any]:
+    config = PreparationConfig.from_root(project_root, year=year, min_age=min_age, valid_years=valid_years)
     require_runtime_dependencies()
     config.table_dir.mkdir(parents=True, exist_ok=True)
     config.figure_dir.mkdir(parents=True, exist_ok=True)
@@ -1196,7 +1424,12 @@ def build_outputs(project_root: Path | str = ".", execution_context: str = "modu
     binary_assoc = binary_associations(X, universe, mapping)
     pb_validation = validate_point_biserial_equivalence()
     dependencies = predictor_dependency_diagnostics(X, cat_prepared)
-    figures = write_figures(universe, config.figure_dir)
+    figures = write_figures(universe, config)
+    compatibility = (
+        inspect_year_compatibility_from_source(source, config, write_outputs=True)
+        if inspect_compatibility
+        else None
+    )
     processed_paths = save_processed_outputs(
         config, universe, X, X_scaled, y, metadata, predictors, scaler_params, mapping, references
     )
@@ -1252,18 +1485,30 @@ def build_outputs(project_root: Path | str = ".", execution_context: str = "modu
     predictors.to_csv(outputs["predictores_iniciales"], index=False, encoding="utf-8")
     scaler_params.to_csv(outputs["parametros_estandarizacion"], index=False, encoding="utf-8")
 
-    validations = validation_checks(source, universe, X, X_scaled, y, metadata, mapping, dictionary, pb_validation)
+    validations = validation_checks(source, universe, X, X_scaled, y, metadata, mapping, dictionary, pb_validation, config)
     validations = pd.concat([validations, pb_validation], ignore_index=True, sort=False)
     validations.to_csv(outputs["validaciones"], index=False, encoding="utf-8")
+    compatibility_paths = {}
+    if compatibility is not None:
+        table_root = config.project_root / "reports" / "tables" / "preparacion_determinantes"
+        compatibility_paths = {
+            name: str(table_root / f"{name}.csv")
+            for name in ["compatibilidad_anios", "compatibilidad_columnas", "compatibilidad_categorias_ohe"]
+        }
+
+    def records_for_manifest(df: pd.DataFrame) -> list[dict[str, Any]]:
+        return json.loads(df.to_json(orient="records", force_ascii=False))
 
     manifest = {
         "etapa": 12,
-        "nombre": "preparacion_base_determinantes_2024",
+        "nombre": f"preparacion_base_determinantes_{config.year}",
         "entrada": str(config.input_path),
         "fecha_ejecucion": pd.Timestamp.now().isoformat(),
         "decisiones": {
             "unidad": "persona",
             "anio": config.year,
+            "anios_validos": list(config.valid_years),
+            "edad_minima": config.min_age,
             "universo": f"edad >= {config.min_age} e ingreso laboral/de negocio positivo",
             "target": config.target,
             "moneda": "nominal trimestral",
@@ -1283,12 +1528,17 @@ def build_outputs(project_root: Path | str = ".", execution_context: str = "modu
         "predictores_categoricos": CATEGORICAL_PREDICTORS,
         "salidas_versionadas": {key: str(value) for key, value in outputs.items()},
         "salidas_fuera_de_git": processed_paths,
+        "salidas_comparabilidad": compatibility_paths,
         "dependencias": dependency_versions(),
         "validacion": {
             "estado_global": "ok" if validations["resultado"].fillna("ok").eq("ok").all() else "revisar",
             "notebook_ejecutado": execution_context.startswith("notebook"),
             "metodo_ejecucion": execution_context,
+            "compatibilidad_anios_inspeccionada": bool(inspect_compatibility),
         },
+        "compatibilidad_anios": records_for_manifest(compatibility["compatibilidad_anios"])
+        if compatibility is not None
+        else [],
         "pendientes_antes_de_modelar": [
             "Aprobar estrategia inferencial.",
             "Definir particion considerando hogares.",
@@ -1313,5 +1563,6 @@ def build_outputs(project_root: Path | str = ".", execution_context: str = "modu
         dependencies,
         figures,
         manifest,
+        compatibility,
     )
     return manifest

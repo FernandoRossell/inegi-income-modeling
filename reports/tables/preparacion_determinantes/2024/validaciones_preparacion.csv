@@ -1,5 +1,6 @@
 validacion,resultado,detalle,valor_scipy,valor_pearson,diferencia_abs,tolerancia
 universo_anio_edad_target,ok,"Todas las filas finales cumplen anio 2024, edad >=18 y target positivo.",,,,
+salidas_universo_anio_unico,ok,Anios presentes en universo/base interpretable: [2024].,,,,
 llave_persona_unica,ok,"Duplicados ['anio', 'folioviv', 'foliohog', 'numren']: 0.",,,,
 filas_X_y_metadata,ok,"Dimensiones: X=(141579, 67), X_scaled=(141579, 67), y=(141579, 2), metadata=(141579, 12).",,,,
 sin_target_derivados_metadata_en_X,ok,Columnas prohibidas en X: ninguna,,,,

@@ -1,0 +1,179 @@
+{
+  "etapa": 12,
+  "nombre": "preparacion_base_determinantes_2024",
+  "entrada": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\interim\\revision_4\\mart_persona_2018_2024.csv.gz",
+  "fecha_ejecucion": "2026-09-13T20:00:12.837890",
+  "decisiones": {
+    "unidad": "persona",
+    "anio": 2024,
+    "anios_validos": [
+      2018,
+      2020,
+      2022,
+      2024
+    ],
+    "edad_minima": 18,
+    "universo": "edad >= 18 e ingreso laboral/de negocio positivo",
+    "target": "ingreso_persona_laboral_negocio_tri",
+    "moneda": "nominal trimestral",
+    "etapas_deprecadas_no_usadas": [
+      "homologacion_monetaria_etapa_10",
+      "diseno_muestral_JKn_etapa_11"
+    ],
+    "sin_modelos": true,
+    "sin_particiones": true
+  },
+  "dimensiones": {
+    "fuente_filas": 1203231,
+    "universo_filas": 141579,
+    "hogares_unicos": 80872,
+    "X_columnas": 67,
+    "continuas": 6,
+    "categoricas": 11
+  },
+  "predictores_continuos": [
+    "edad",
+    "n_trabajos",
+    "horas_trabajos_total",
+    "tot_integ",
+    "menores",
+    "p65mas"
+  ],
+  "predictores_categoricos": [
+    "sexo_desc",
+    "nivelaprob_desc",
+    "region_banxico",
+    "tam_loc_desc",
+    "parentesco_desc",
+    "hablaind_desc",
+    "segsoc_desc",
+    "subor_principal_desc",
+    "contrato_principal_desc",
+    "sexo_jefe_desc",
+    "educa_jefe_desc"
+  ],
+  "salidas_versionadas": {
+    "flujo_universo": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\flujo_universo.csv",
+    "diccionario_variables": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\diccionario_variables.csv",
+    "exclusiones_variables": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\exclusiones_variables.csv",
+    "faltantes_predictores": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\faltantes_predictores.csv",
+    "categorias_frecuencias": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\categorias_frecuencias.csv",
+    "categorias_target_resumen": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\categorias_target_resumen.csv",
+    "referencias_ohe": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\referencias_ohe.csv",
+    "mapping_ohe": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\mapping_ohe.csv",
+    "target_resumen_no_ponderado": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\target_resumen_no_ponderado.csv",
+    "target_resumen_ponderado": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\target_resumen_ponderado.csv",
+    "target_por_region_sexo_escolaridad": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\target_por_region_sexo_escolaridad.csv",
+    "correlaciones_continuas_spearman": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\correlaciones_continuas_spearman.csv",
+    "correlaciones_dummies_punto_biserial": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\correlaciones_dummies_punto_biserial.csv",
+    "dependencia_constantes": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\dependencia_constantes.csv",
+    "dependencia_duplicadas": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\dependencia_duplicadas.csv",
+    "dependencia_continuas_pearson": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\dependencia_continuas_pearson.csv",
+    "dependencia_categoricas_cramers_v": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\dependencia_categoricas_cramers_v.csv",
+    "dependencia_rango_matriz": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\dependencia_rango_matriz.csv",
+    "dependencia_vif": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\dependencia_vif.csv",
+    "validaciones": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\validaciones_preparacion.csv",
+    "figuras": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\figuras_generadas.csv",
+    "predictores_iniciales": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\predictores_iniciales.csv",
+    "parametros_estandarizacion": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\2024\\parametros_estandarizacion.csv"
+  },
+  "salidas_fuera_de_git": {
+    "base_interpretable": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\processed\\determinantes_2024\\base_interpretable_personas_2024.csv.gz",
+    "X_diagnostico_sin_escalar": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\processed\\determinantes_2024\\X_diagnostico_sin_escalar.csv.gz",
+    "X_diagnostico_continuas_estandarizadas": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\processed\\determinantes_2024\\X_diagnostico_continuas_estandarizadas.csv.gz",
+    "y_target": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\processed\\determinantes_2024\\y_target.csv.gz",
+    "metadata": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\processed\\determinantes_2024\\metadata_personas_2024.csv.gz",
+    "predictores_iniciales": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\processed\\determinantes_2024\\predictores_iniciales.csv",
+    "parametros_estandarizacion": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\processed\\determinantes_2024\\parametros_estandarizacion.csv",
+    "mapping_ohe": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\processed\\determinantes_2024\\mapping_ohe.csv",
+    "referencias_ohe": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\processed\\determinantes_2024\\referencias_ohe.csv"
+  },
+  "salidas_comparabilidad": {
+    "compatibilidad_anios": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\compatibilidad_anios.csv",
+    "compatibilidad_columnas": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\compatibilidad_columnas.csv",
+    "compatibilidad_categorias_ohe": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\preparacion_determinantes\\compatibilidad_categorias_ohe.csv"
+  },
+  "dependencias": {
+    "python": "3.14.5",
+    "python_executable": "C:\\Users\\lucia\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pandas": "3.0.5",
+    "numpy": "2.4.6",
+    "scipy": "instalado",
+    "matplotlib": "instalado",
+    "seaborn": "instalado",
+    "sklearn": "instalado",
+    "statsmodels": "no instalado",
+    "nbformat": "no instalado",
+    "nbclient": "no instalado",
+    "pyarrow": "no instalado"
+  },
+  "validacion": {
+    "estado_global": "ok",
+    "notebook_ejecutado": true,
+    "metodo_ejecucion": "notebook_12_parametrizado_proceso_python_limpio_sin_nbclient",
+    "compatibilidad_anios_inspeccionada": true
+  },
+  "compatibilidad_anios": [
+    {
+      "anio": 2018,
+      "estado": "compatible_para_generar_base",
+      "filas_anio": 269206,
+      "filas_universo": 120054,
+      "hogares_unicos": 67807,
+      "columnas_requeridas_faltantes": "",
+      "referencias_ohe_faltantes": "",
+      "anio_base_comparacion": 2024,
+      "categorias_nuevas_vs_anio_base": 5,
+      "categorias_ausentes_vs_anio_base": 9,
+      "nota": "Inspeccion de esquema; no genera matrices ni bases para este anio."
+    },
+    {
+      "anio": 2020,
+      "estado": "revisar_antes_de_generar_base",
+      "filas_anio": 315743,
+      "filas_universo": 139394,
+      "hogares_unicos": 79365,
+      "columnas_requeridas_faltantes": "",
+      "referencias_ohe_faltantes": "segsoc_desc",
+      "anio_base_comparacion": 2024,
+      "categorias_nuevas_vs_anio_base": 7,
+      "categorias_ausentes_vs_anio_base": 10,
+      "nota": "Inspeccion de esquema; no genera matrices ni bases para este anio."
+    },
+    {
+      "anio": 2022,
+      "estado": "revisar_antes_de_generar_base",
+      "filas_anio": 309684,
+      "filas_universo": 141514,
+      "hogares_unicos": 80217,
+      "columnas_requeridas_faltantes": "",
+      "referencias_ohe_faltantes": "segsoc_desc",
+      "anio_base_comparacion": 2024,
+      "categorias_nuevas_vs_anio_base": 5,
+      "categorias_ausentes_vs_anio_base": 8,
+      "nota": "Inspeccion de esquema; no genera matrices ni bases para este anio."
+    },
+    {
+      "anio": 2024,
+      "estado": "compatible_para_generar_base",
+      "filas_anio": 308598,
+      "filas_universo": 141579,
+      "hogares_unicos": 80872,
+      "columnas_requeridas_faltantes": "",
+      "referencias_ohe_faltantes": "",
+      "anio_base_comparacion": 2024,
+      "categorias_nuevas_vs_anio_base": 0,
+      "categorias_ausentes_vs_anio_base": 0,
+      "nota": "Inspeccion de esquema; no genera matrices ni bases para este anio."
+    }
+  ],
+  "pendientes_antes_de_modelar": [
+    "Aprobar estrategia inferencial.",
+    "Definir particion considerando hogares.",
+    "Ajustar encoder/scaler solo sobre entrenamiento en una etapa futura.",
+    "Decidir si est_socio debe entrar como predictor o mantenerse como diagnostico.",
+    "Decidir si tam_emp_principal_desc se recodifica o permanece fuera por redundancia estructural.",
+    "Revisar variables pendientes con etiquetas ambiguas antes de ampliar X."
+  ]
+}

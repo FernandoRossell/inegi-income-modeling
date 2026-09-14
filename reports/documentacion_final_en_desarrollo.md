@@ -459,16 +459,18 @@ Punto de partida activo confirmado para la siguiente planeación:
 | Hogares nominal | `data/interim/revision_4/mart_hogar_2018_2024.csv.gz` | hogar-año | 92 | disponible |
 | Personas nominal | `data/interim/revision_4/mart_persona_2018_2024.csv.gz` | persona-año | 140 | disponible |
 
-La preparación inicial de la base específica para análisis de determinantes quedó realizada en la etapa 12 para ENIGH 2024. Todavía no se entrenan modelos, no se fijan algoritmos definitivos, no se crean particiones de entrenamiento/prueba y no se activa inferencia formal.
+La preparación inicial de la base específica para análisis de determinantes quedó realizada y parametrizada en la etapa 12, con 2024 como ejecución predeterminada. Todavía no se entrenan modelos, no se fijan algoritmos definitivos, no se crean particiones de entrenamiento/prueba y no se activa inferencia formal.
 
-## Base 2024 para determinantes
+## Base anual para determinantes
 
-La etapa 12 prepara una base analítica de personas para estudiar asociaciones entre características personales, laborales, del hogar y territoriales e ingreso. El notebook principal es `notebooks/12_preparacion_base_determinantes.ipynb`, el código reutilizable está en `src/features/preparacion_determinantes.py` y el resumen metodológico queda en `reports/preparacion_base_determinantes.md`.
+La etapa 12 prepara una base analítica anual de personas para estudiar asociaciones entre características personales, laborales, del hogar y territoriales e ingreso. El notebook principal es `notebooks/12_preparacion_base_determinantes.ipynb`, el código reutilizable está en `src/features/preparacion_determinantes.py`, el resumen metodológico vigente queda en `reports/preparacion_base_determinantes.md` y la copia anual de 2024 queda en `reports/preparacion_base_determinantes_2024.md`.
 
 Definición aprobada:
 
 - Unidad: persona.
-- Año: 2024.
+- Año configurable mediante `ANIO_ANALISIS`.
+- Años válidos: 2018, 2020, 2022 y 2024.
+- Edad mínima: `EDAD_MINIMA = 18`.
 - Universo: `edad >= 18` e `ingreso_persona_laboral_negocio_tri > 0`.
 - Target: `ingreso_persona_laboral_negocio_tri`.
 - Montos: nominales trimestrales.
@@ -485,7 +487,7 @@ Flujo del universo:
 | target válido | 218,828 | 0 | 218,828 | 91,389 |
 | target positivo | 218,828 | 77,249 | 141,579 | 80,872 |
 
-La llave `anio + folioviv + foliohog + numren` quedó única en el universo final. La matriz inicial contiene 67 columnas: 6 continuas y 61 dummies derivadas de 11 variables categóricas con codificación k-1 y referencias explícitas. No se guarda intercepto.
+La llave `anio + folioviv + foliohog + numren` quedó única en el universo final de 2024. La matriz inicial de 2024 contiene 67 columnas: 6 continuas y 61 dummies derivadas de 11 variables categóricas con codificación k-1 y referencias explícitas. No se guarda intercepto.
 
 Predictores iniciales:
 
@@ -510,12 +512,24 @@ Diagnósticos principales:
 
 Salidas:
 
-- Microdatos y matrices fuera de Git: `data/processed/determinantes_2024/`.
-- Tablas agregadas versionadas: `reports/tables/preparacion_determinantes/`.
-- Figuras versionadas: `reports/figures/preparacion_determinantes/`.
-- Manifest de ejecución: `reports/tables/preparacion_determinantes/manifest_preparacion_determinantes.json`.
+- Microdatos y matrices fuera de Git por año: `data/processed/determinantes_<anio>/`.
+- Tablas agregadas versionadas por año: `reports/tables/preparacion_determinantes/<anio>/`.
+- Figuras versionadas por año: `reports/figures/preparacion_determinantes/<anio>/`.
+- Manifest anual: `reports/tables/preparacion_determinantes/<anio>/manifest_preparacion_determinantes.json`.
+- Compatibilidad multi-año: `reports/tables/preparacion_determinantes/compatibilidad_anios.csv`, `compatibilidad_columnas.csv` y `compatibilidad_categorias_ohe.csv`.
 
-Los resultados futuros con esta base se interpretarán como asociaciones entre adultos con ingreso laboral/de negocio positivo. No explican la selección al ingreso positivo ni permiten afirmaciones causales sin una estrategia empírica adicional.
+Estado de ejecución y compatibilidad:
+
+| Año | Estado | Personas del universo | Hogares únicos | Nota |
+| --- | --- | ---: | ---: | --- |
+| 2018 | compatible en esquema | 120,054 | 67,807 | inspeccionado; no se generó matriz |
+| 2020 | revisar antes de generar base | 139,394 | 79,365 | `segsoc_desc` no tiene la referencia OHE prevista con la misma etiqueta |
+| 2022 | revisar antes de generar base | 141,514 | 80,217 | `segsoc_desc` no tiene la referencia OHE prevista con la misma etiqueta |
+| 2024 | ejecutado y validado | 141,579 | 80,872 | base, matrices, tablas y figuras generadas |
+
+La comparabilidad de coeficientes entre años no queda resuelta por esta preparación. No se exige igual número de columnas si las categorías observadas difieren y no se introducen columnas constantes artificiales. Una especificación común posterior deberá decidir cómo tratar categorías ausentes, nuevas o incompatibles.
+
+Los resultados futuros con estas bases se interpretarán como asociaciones entre adultos con ingreso laboral/de negocio positivo del año elegido. No explican la selección al ingreso positivo ni permiten afirmaciones causales sin una estrategia empírica adicional.
 
 ## Flujo de datos:
 
@@ -586,7 +600,7 @@ flowchart LR
 | 09 Desigualdad territorial | COMPLETO: ponderación descriptiva auditada, Gini nacional/regional, comparación Banxico ya documentada, CDMX, zonas metropolitanas, brechas territoriales y unidad del estimando documentada |
 | 10 Homologación monetaria | DEPRECADA del flujo principal; preservada como intento histórico |
 | 11 Diseño muestral formal | DEPRECADA del flujo principal; preservada como intento histórico |
-| 12 Preparación de base 2024 para determinantes | COMPLETO: universo, target, predictores iniciales, OHE, matrices diagnósticas, faltantes, asociaciones y dependencia documentados |
+| 12 Preparación anual de base para determinantes | COMPLETO: parametrizada por `ANIO_ANALISIS`; 2024 ejecutado y validado; 2018/2020/2022 inspeccionados en compatibilidad |
 | 13 Determinantes del ingreso | Pendiente: definir estrategia inferencial, partición futura considerando hogares y especificación interpretable |
 | 14 Heterogeneidad territorial | Pendiente |
 | 15 Descomposición de desigualdad | Pendiente |
@@ -610,8 +624,9 @@ flowchart LR
 
 ## Siguientes pasos
 
-- Siguiente hito: definir la estrategia de modelado interpretable para determinantes del ingreso usando la base 2024 preparada en la etapa 12.
-- Antes de modelar, aprobar partición futura considerando hogares, especificación, tratamiento de `est_socio`, decisión sobre `tam_emp_principal_desc` y alcance de inferencia.
+- Siguiente hito: definir la estrategia de modelado interpretable para determinantes del ingreso usando una base anual preparada en la etapa 12.
+- Antes de modelar, aprobar `ANIO_ANALISIS`, partición futura considerando hogares, especificación, tratamiento de `est_socio`, decisión sobre `tam_emp_principal_desc` y alcance de inferencia.
+- Los notebooks de modelado deberán leer exclusivamente `data/processed/determinantes_<anio>/` del año seleccionado y guardar modelos, métricas y figuras separados por año y especificación.
 - No preparar bases para ML ni entrenar modelos hasta que esa etapa sea aprobada explícitamente.
 - Antes de reportar cualquier estadístico ponderado, registrar: unidad de observación, población objetivo, variable de peso y definición del estimando.
 - No inventar resultados: todo valor reportado debe salir de notebooks o documentación revisada.

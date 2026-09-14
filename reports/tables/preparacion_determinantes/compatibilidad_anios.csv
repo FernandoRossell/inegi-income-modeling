@@ -1,0 +1,5 @@
+anio,estado,filas_anio,filas_universo,hogares_unicos,columnas_requeridas_faltantes,referencias_ohe_faltantes,anio_base_comparacion,categorias_nuevas_vs_anio_base,categorias_ausentes_vs_anio_base,nota
+2018,compatible_para_generar_base,269206,120054,67807,,,2024,5,9,Inspeccion de esquema; no genera matrices ni bases para este anio.
+2020,revisar_antes_de_generar_base,315743,139394,79365,,segsoc_desc,2024,7,10,Inspeccion de esquema; no genera matrices ni bases para este anio.
+2022,revisar_antes_de_generar_base,309684,141514,80217,,segsoc_desc,2024,5,8,Inspeccion de esquema; no genera matrices ni bases para este anio.
+2024,compatible_para_generar_base,308598,141579,80872,,,2024,0,0,Inspeccion de esquema; no genera matrices ni bases para este anio.

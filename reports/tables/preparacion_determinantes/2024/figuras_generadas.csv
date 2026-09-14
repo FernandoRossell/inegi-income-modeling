@@ -1,0 +1,5 @@
+figura,archivo,nota
+target_hist_original_log,C:\Users\lucia\OneDrive\Escritorio\Fer\inegi-income-modeling\reports\figures\preparacion_determinantes\2024\target_hist_original_log.png,El panel original limita el eje x a P99 solo para lectura visual; no recorta datos.
+target_log_por_region,C:\Users\lucia\OneDrive\Escritorio\Fer\inegi-income-modeling\reports\figures\preparacion_determinantes\2024\target_log_por_region.png,Boxplot descriptivo no ponderado; outliers ocultos solo en la figura para legibilidad.
+target_log_por_sexo,C:\Users\lucia\OneDrive\Escritorio\Fer\inegi-income-modeling\reports\figures\preparacion_determinantes\2024\target_log_por_sexo.png,Boxplot descriptivo no ponderado; outliers ocultos solo en la figura para legibilidad.
+target_log_por_escolaridad,C:\Users\lucia\OneDrive\Escritorio\Fer\inegi-income-modeling\reports\figures\preparacion_determinantes\2024\target_log_por_escolaridad.png,Boxplot descriptivo no ponderado; outliers ocultos solo en la figura para legibilidad.
