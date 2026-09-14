@@ -1,0 +1,12 @@
+figura,descripcion
+C:\Users\lucia\OneDrive\Escritorio\Fer\inegi-income-modeling\reports\figures\regresion_diagnostico\2024\diagnostico_inicial\regresion_residuos_vs_ajustados.png,OLS nominal: residuos contra ajustados; muestra grafica si n es grande.
+C:\Users\lucia\OneDrive\Escritorio\Fer\inegi-income-modeling\reports\figures\regresion_diagnostico\2024\diagnostico_inicial\regresion_residuos_histograma.png,Histograma de residuos nominales; no elimina observaciones.
+C:\Users\lucia\OneDrive\Escritorio\Fer\inegi-income-modeling\reports\figures\regresion_diagnostico\2024\diagnostico_inicial\pca_scree_varianza.png,Scree plot de PCA exploratorio.
+C:\Users\lucia\OneDrive\Escritorio\Fer\inegi-income-modeling\reports\figures\regresion_diagnostico\2024\diagnostico_inicial\pca_varianza_acumulada.png,Varianza acumulada; no selecciona numero de componentes.
+C:\Users\lucia\OneDrive\Escritorio\Fer\inegi-income-modeling\reports\figures\regresion_diagnostico\2024\diagnostico_inicial\pca_cargas_heatmap_pc1_pc8_top40.png,Mapa legible de cargas principales.
+C:\Users\lucia\OneDrive\Escritorio\Fer\inegi-income-modeling\reports\figures\regresion_diagnostico\2024\diagnostico_inicial\pca_cargas_pc1.png,Cargas mayores de PC1; signo global arbitrario.
+C:\Users\lucia\OneDrive\Escritorio\Fer\inegi-income-modeling\reports\figures\regresion_diagnostico\2024\diagnostico_inicial\pca_cargas_pc2.png,Cargas mayores de PC2; signo global arbitrario.
+C:\Users\lucia\OneDrive\Escritorio\Fer\inegi-income-modeling\reports\figures\regresion_diagnostico\2024\diagnostico_inicial\pca_cargas_pc3.png,Cargas mayores de PC3; signo global arbitrario.
+C:\Users\lucia\OneDrive\Escritorio\Fer\inegi-income-modeling\reports\figures\regresion_diagnostico\2024\diagnostico_inicial\pca_cargas_pc4.png,Cargas mayores de PC4; signo global arbitrario.
+C:\Users\lucia\OneDrive\Escritorio\Fer\inegi-income-modeling\reports\figures\regresion_diagnostico\2024\diagnostico_inicial\pca_cargas_pc5.png,Cargas mayores de PC5; signo global arbitrario.
+C:\Users\lucia\OneDrive\Escritorio\Fer\inegi-income-modeling\reports\figures\regresion_diagnostico\2024\diagnostico_inicial\pca_cargas_pc6.png,Cargas mayores de PC6; signo global arbitrario.

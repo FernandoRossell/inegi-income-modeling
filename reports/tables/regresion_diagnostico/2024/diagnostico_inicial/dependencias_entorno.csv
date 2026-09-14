@@ -1,0 +1,9 @@
+paquete,disponible,version
+numpy,True,2.4.6
+pandas,True,3.0.5
+sklearn,True,1.9.0
+matplotlib,True,3.10.9
+scipy,True,1.17.1
+statsmodels,False,
+nbformat,False,
+nbclient,False,

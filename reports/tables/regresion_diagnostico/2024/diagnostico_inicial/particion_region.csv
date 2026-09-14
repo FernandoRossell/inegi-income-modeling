@@ -1,0 +1,9 @@
+particion,region_banxico,personas,pct_dentro_particion
+entrenamiento,Centro,28364,0.25062514910800276
+entrenamiento,Centro Norte,33366,0.2948229701430553
+entrenamiento,Norte,25750,0.22752776722363108
+entrenamiento,Sur,25693,0.2270241135253108
+validacion,Centro,7264,0.2557206224037175
+validacion,Centro Norte,8480,0.298528479898613
+validacion,Norte,6360,0.22389635992395973
+validacion,Sur,6302,0.22185453777370978

@@ -1,0 +1,2 @@
+modelo,max_depth,min_samples_leaf,random_state,n_repeticiones_permutacion,nota
+DecisionTreeRegressor,5,0.01,20240914,10,Parametros exploratorios iniciales; no son resultado de optimizacion.

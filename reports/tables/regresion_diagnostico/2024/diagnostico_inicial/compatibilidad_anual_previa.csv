@@ -1,0 +1,5 @@
+anio,estado_preparacion,filas_universo,hogares_unicos,referencias_ohe_faltantes,estado_en_regresion_diagnostica,nota_regresion
+2018,compatible_para_generar_base,120054,67807,,solo_compatibilidad_inspeccionada_previa,No se genero matriz ni modelo para este anio en esta etapa.
+2020,revisar_antes_de_generar_base,139394,79365,segsoc_desc,solo_inspeccion_previa_con_pendientes,No se genero matriz; resolver referencias OHE antes de ejecutar.
+2022,revisar_antes_de_generar_base,141514,80217,segsoc_desc,solo_inspeccion_previa_con_pendientes,No se genero matriz; resolver referencias OHE antes de ejecutar.
+2024,compatible_para_generar_base,141579,80872,,ejecutado_y_validado_en_esta_etapa,"Se genero diagnostico de regresion, PCA y arbol para este anio."

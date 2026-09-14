@@ -1,0 +1,12 @@
+variable_original,referencia,n_referencia_entrenamiento,n_referencia_validacion
+sexo_desc,Hombre,65851,16453
+nivelaprob_desc,Ninguno,3313,832
+region_banxico,Centro,28364,7264
+tam_loc_desc,Localidades con 100 000 y más habitantes,43685,10859
+parentesco_desc,Jefe(a),54428,13607
+hablaind_desc,No,104412,26170
+segsoc_desc,No,46616,11662
+subor_principal_desc,No,25055,6390
+contrato_principal_desc,No,42131,10565
+sexo_jefe_desc,Hombre,80468,20107
+educa_jefe_desc,Sin instrucción,5691,1462

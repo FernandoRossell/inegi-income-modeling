@@ -459,7 +459,7 @@ Punto de partida activo confirmado para la siguiente planeación:
 | Hogares nominal | `data/interim/revision_4/mart_hogar_2018_2024.csv.gz` | hogar-año | 92 | disponible |
 | Personas nominal | `data/interim/revision_4/mart_persona_2018_2024.csv.gz` | persona-año | 140 | disponible |
 
-La preparación inicial de la base específica para análisis de determinantes quedó implementada y parametrizada en la etapa 12, con 2024 como ejecución predeterminada. La ejecución 2024 está reproducida, pero la revisión metodológica sigue pendiente antes de modelar. Todavía no se entrenan modelos, no se fijan algoritmos definitivos, no se crean particiones de entrenamiento/prueba y no se activa inferencia formal.
+La preparación inicial de la base específica para análisis de determinantes quedó implementada y parametrizada en la etapa 12, con 2024 como ejecución predeterminada. La ejecución 2024 está reproducida y auditada. La etapa 13 agrega una primera corrida diagnóstica para revisar regresión, colinealidad, PCA exploratorio y un árbol de referencia antes de aprobar reducciones o cambios de especificación. Esta corrida sí crea una partición diagnóstica por hogares y ajusta modelos exploratorios, pero no adopta un modelo definitivo, no ejecuta selección automática, no activa PCR y no introduce inferencia formal.
 
 ## Base anual para determinantes
 
@@ -530,6 +530,51 @@ Estado de ejecución y compatibilidad:
 La comparabilidad de coeficientes entre años no queda resuelta por esta preparación. No se exige igual número de columnas si las categorías observadas difieren y no se introducen columnas constantes artificiales. Una especificación común posterior deberá decidir cómo tratar categorías ausentes, nuevas o incompatibles.
 
 La auditoría diagnóstica de preparación queda en `reports/auditoria_preparacion_determinantes.md` y sus tablas agregadas en `reports/tables/auditoria_preparacion_determinantes/`. Sus hallazgos principales son: `segsoc_desc` 2020/2022 requiere mapeo explícito no aplicado; los faltantes laborales son estructurales por ruta de trabajo principal/contrato; la cola derecha del ingreso es extrema y fue trazada hasta `ingresos.csv`; `tam_emp_principal_desc` conserva información, pero su categoría estructural duplicaría una dummy de subordinación; y las variables de jefatura mezclan redundancia esperada para jefes/as con contexto del hogar para no jefes/as.
+
+## Plan de regresión y diagnóstico: fases y confirmaciones
+
+La etapa 13 queda documentada en `notebooks/13_regresion_diagnostico_determinantes.ipynb`, `src/analysis/regresion_diagnostico.py`, `src/models/regresion_diagnostico.py` y `reports/regresion_diagnostico_determinantes.md`. Sus salidas agregadas se guardan en `reports/tables/regresion_diagnostico/<anio>/diagnostico_inicial/` y `reports/figures/regresion_diagnostico/<anio>/diagnostico_inicial/`; la partición por hogar se guarda localmente fuera de Git en `data/processed/regresion_diagnostico/<anio>/diagnostico_inicial/`.
+
+Configuración vigente de la primera ejecución:
+
+- `ANIO_ANALISIS = 2024`.
+- `ANIOS_VALIDOS = (2018, 2020, 2022, 2024)`.
+- `EDAD_MINIMA = 18`.
+- `TARGET = ingreso_persona_laboral_negocio_tri`.
+- `CRITERIO_STEPWISE = None`.
+- `EJECUTAR_SELECCION = False`.
+
+Fases y estados:
+
+| Fase | Contenido | Estado |
+| --- | --- | --- |
+| A. Preparación y auditoría de base | Universo anual, target, variables candidatas, referencias OHE y pendientes metodológicos | Ejecutada para 2024; compatibilidad 2018 inspeccionada; 2020/2022 pendientes por `segsoc_desc` |
+| B. Regresión completa y diagnósticos | OLS nominal, OLS log exploratorio, VIF/GVIF, PCA exploratorio y árbol diagnóstico | Primera ejecución 2024 implementada |
+| C. Revisión conjunta | Lectura de diagnósticos y discusión de variables problemáticas | Pendiente de aprobación |
+| D. Selección iterativa supervisada | Posible stepwise con AIC/BIC/R2 ajustado y reglas aprobadas | No ejecutada |
+| E. Regresión reducida y componentes | Posible especificación reducida o PCR separada | No ejecutada |
+| F. Comparación, estabilidad e interpretación | Comparación anual/regional y escritura final | Pendiente |
+
+Resultados de la ejecución diagnóstica 2024:
+
+- Universo reproducido contra etapa 12: 141,579 personas y 80,872 hogares; media, mediana, P99 y máximo del target coinciden dentro de tolerancias explícitas.
+- Partición diagnóstica: 113,173 personas en entrenamiento y 28,406 en validación; 64,697 hogares en entrenamiento y 16,175 en validación; hogares compartidos entre particiones: 0.
+- OLS nominal no ponderado: `R2=0.0700`, `R2 ajustado=0.0694`; MAE validación 15,827.77 y RMSE validación 41,410.43 pesos nominales trimestrales.
+- OLS log exploratorio: `R2=0.4600`, `R2 ajustado=0.4597`; MAE validación 0.6310 y RMSE validación 0.9033 en escala log. No se compara directamente por AIC/R2 con el modelo nominal.
+- La matriz diagnóstica de entrenamiento tiene 66 columnas, rango completo con intercepto, 0 constantes y 0 duplicados exactos.
+- Al aplicar categorías aprendidas en entrenamiento apareció 1 caso de validación no visto en `parentesco_desc` (`Hijo(a) de crianza`); se registra sin cambiar referencia OHE ni crear columnas artificiales.
+- VIF/GVIF señalan dependencia laboral alta entre `contrato_principal_desc` y `subor_principal_desc`; esto orienta revisión, no eliminación automática.
+- PCA exploratorio: 66 componentes no nulos y 11 componentes nulos por la geometría de OHE completo centrado; no se selecciona número de componentes ni se ajusta PCR.
+- Árbol diagnóstico (`max_depth=5`, `min_samples_leaf=0.01`) muestra como más sensibles por permutación a `educa_jefe_desc`, `contrato_principal_desc` y `horas_trabajos_total`; las importancias no tienen interpretación causal.
+
+Pausas metodológicas:
+
+- Ninguna variable se elimina sin revisión conjunta.
+- Stepwise y eliminación por multicolinealidad son decisiones distintas.
+- `tam_emp_principal_desc` se conserva en la base interpretable y queda pendiente por dependencia exacta potencial; no se descarta de forma sustantiva.
+- `est_socio_desc` queda como diagnóstico contextual pendiente.
+- `segsoc_desc` en 2020/2022 requiere mapeo aprobado antes de cualquier comparación anual.
+- La validación es diagnóstica y no sustituye un diseño inferencial formal.
 
 Los resultados futuros con estas bases se interpretarán como asociaciones entre adultos con ingreso laboral/de negocio positivo del año elegido. No explican la selección al ingreso positivo ni permiten afirmaciones causales sin una estrategia empírica adicional.
 
@@ -603,7 +648,7 @@ flowchart LR
 | 10 Homologación monetaria | DEPRECADA del flujo principal; preservada como intento histórico |
 | 11 Diseño muestral formal | DEPRECADA del flujo principal; preservada como intento histórico |
 | 12 Preparación anual de base para determinantes | EJECUTADA PARA 2024: parametrizada por `ANIO_ANALISIS`; 2024 ejecutado, validado y auditado; revisión metodológica pendiente; 2018 compatible inspeccionado; 2020/2022 pendientes por `segsoc_desc` |
-| 13 Determinantes del ingreso | Pendiente: definir estrategia inferencial, partición futura considerando hogares y especificación interpretable |
+| 13 Regresión diagnóstica de determinantes | EJECUTADA PARA 2024 COMO DIAGNÓSTICO: partición por hogares, OLS nominal, OLS log exploratorio, VIF/GVIF, PCA exploratorio y árbol de referencia; sin selección automática, sin regresión reducida, sin PCR y sin inferencia formal |
 | 14 Heterogeneidad territorial | Pendiente |
 | 15 Descomposición de desigualdad | Pendiente |
 | 16 Robustez y sensibilidad | Pendiente |
@@ -626,10 +671,10 @@ flowchart LR
 
 ## Siguientes pasos
 
-- Siguiente hito: definir la estrategia de modelado interpretable para determinantes del ingreso usando una base anual preparada en la etapa 12.
-- Antes de modelar, aprobar `ANIO_ANALISIS`, partición futura considerando hogares, especificación, tratamiento de `est_socio`, mapeo de `segsoc_desc` 2020/2022, decisión sobre faltantes laborales y `tam_emp_principal_desc`, tratamiento de cola derecha y alcance de inferencia.
+- Siguiente hito: revisar conjuntamente los diagnósticos de la etapa 13 y decidir escala principal, criterio de selección, variables a retirar si procede y uso o no de componentes principales.
+- Antes de adoptar modelos, aprobar `ANIO_ANALISIS`, partición definitiva considerando hogares, especificación, tratamiento de `est_socio`, mapeo de `segsoc_desc` 2020/2022, decisión sobre faltantes laborales y `tam_emp_principal_desc`, tratamiento de cola derecha y alcance de inferencia.
 - Los notebooks de modelado deberán leer exclusivamente `data/processed/determinantes_<anio>/` del año seleccionado y guardar modelos, métricas y figuras separados por año y especificación.
-- No preparar bases para ML ni entrenar modelos hasta que esa etapa sea aprobada explícitamente.
+- No preparar bases de modelado predictivo ni adoptar modelos finales hasta que esa etapa sea aprobada explícitamente.
 - Antes de reportar cualquier estadístico ponderado, registrar: unidad de observación, población objetivo, variable de peso y definición del estimando.
 - No inventar resultados: todo valor reportado debe salir de notebooks o documentación revisada.
 - No asumir causalidad desde asociaciones descriptivas.

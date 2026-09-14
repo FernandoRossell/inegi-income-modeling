@@ -1,0 +1,7 @@
+grupo,criterio
+target_derivados,"Excluir target, log(target), componentes y agregados que contienen el ingreso objetivo."
+identificadores,"Excluir llaves de persona/hogar, entidad, municipio e identificadores."
+pesos_diseno,"Conservar factor, factor_hogar, est_dis y upm como metadata; no predictores."
+deflactores_reales,"Etapas 10/11 deprecadas; no usar deflactores, variables reales ni JKn."
+constantes_duplicados,Excluir columnas constantes o duplicados exactos si aparecen en la matriz identificable.
+representaciones_redundantes,Usar una representacion interpretable por variable; no incluir simultaneamente codigo y etiqueta.

@@ -1,0 +1,3 @@
+escala,n_entrenamiento,parametros_con_intercepto,rango_con_intercepto,r2_entrenamiento,r2_ajustado_entrenamiento,aic_entrenamiento_misma_escala,bic_entrenamiento_misma_escala,nota
+ingreso_nominal,113173,67,67,0.06996756366513956,0.06942486795670588,2511093.797483678,2511739.4545680047,AIC/BIC solo comparables dentro de la misma escala de respuesta.
+log_ingreso,113173,67,67,0.4599805666846475,0.45966545269777837,-27309.210765558815,-26663.553681231966,AIC/BIC solo comparables dentro de la misma escala de respuesta.

@@ -1,0 +1,68 @@
+escala,columna_matriz,variable_original,categoria,referencia_variable,coeficiente,nota
+log_ingreso,intercepto,intercepto,,,9.637962833136577,Intercepto de OLS no ponderado.
+log_ingreso,edad,edad,,,-0.002043589085512325,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,n_trabajos,n_trabajos,,,-0.042410257296265415,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,horas_trabajos_total,horas_trabajos_total,,,0.01664445958478654,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,tot_integ,tot_integ,,,0.021471966361308825,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,menores,menores,,,-0.03090873620539447,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,p65mas,p65mas,,,-0.08060460395940931,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,sexo_desc__mujer,sexo_desc,Mujer,Hombre,-0.32247828282680696,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,nivelaprob_desc__doctorado,nivelaprob_desc,Doctorado,Ninguno,1.3146745453799165,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,nivelaprob_desc__especialidad,nivelaprob_desc,Especialidad,Ninguno,1.2086423087199483,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,nivelaprob_desc__estudios_tecnicos_o_comerciales,nivelaprob_desc,Estudios técnicos o comerciales,Ninguno,0.5546676724407138,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,nivelaprob_desc__licenciatura_o_ingenieria_profesional,nivelaprob_desc,Licenciatura o Ingeniería (profesional),Ninguno,0.759256397009189,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,nivelaprob_desc__maestria,nivelaprob_desc,Maestría,Ninguno,1.1616930135313122,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,nivelaprob_desc__normal,nivelaprob_desc,Normal,Ninguno,0.8673255324388882,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,nivelaprob_desc__preescolar_o_kinder,nivelaprob_desc,Preescolar o kínder,Ninguno,0.28148893014841453,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,nivelaprob_desc__preparatoria_o_bachillerato,nivelaprob_desc,Preparatoria o bachillerato,Ninguno,0.48731077390743766,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,nivelaprob_desc__primaria,nivelaprob_desc,Primaria,Ninguno,0.2805829550235038,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,nivelaprob_desc__secundaria,nivelaprob_desc,Secundaria,Ninguno,0.43106638838278666,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,region_banxico__centro_norte,region_banxico,Centro Norte,Centro,0.06694820692194597,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,region_banxico__norte,region_banxico,Norte,Centro,0.17843729637406172,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,region_banxico__sur,region_banxico,Sur,Centro,-0.15820370961860114,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,tam_loc_desc__localidades_con_15_000_a_99_999_habitantes,tam_loc_desc,Localidades con 15 000 a 99 999 habitantes,Localidades con 100 000 y más habitantes,-0.0626754321529625,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,tam_loc_desc__localidades_con_2_500_a_14_999_habitantes,tam_loc_desc,Localidades con 2 500 a 14 999 habitantes,Localidades con 100 000 y más habitantes,-0.12091662378558987,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,tam_loc_desc__localidades_con_menos_de_2_500_habitantes,tam_loc_desc,Localidades con menos de 2 500 habitantes,Localidades con 100 000 y más habitantes,-0.21289998582822645,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__abuelo_a,parentesco_desc,Abuelo(a),Jefe(a),-0.6417881242589081,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__ahijado_a,parentesco_desc,Ahijado(a),Jefe(a),0.07759280234808608,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__bisabuelo_a,parentesco_desc,Bisabuelo(a),Jefe(a),1.020747378011726,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__bisnieto_a,parentesco_desc,Bisnieto(a),Jefe(a),-0.6076448815401307,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__compadre_comadre,parentesco_desc,"Compadre, comadre",Jefe(a),-0.9069305039581568,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__concubino_a,parentesco_desc,Concubino(a),Jefe(a),0.1639528158354433,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__concuno_a,parentesco_desc,Concuño(a),Jefe(a),-0.04080256970245258,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__consuegro_a,parentesco_desc,Consuegro(a),Jefe(a),-1.2548910663809412,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__cunado_a,parentesco_desc,Cuñado(a),Jefe(a),-0.2633273060291624,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__esposo_a_companero_a_conyuge_pareja_marido_mujer_senor_a_consorte,parentesco_desc,"Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte",Jefe(a),-0.16118985802658703,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__familiar_otro_parentesco,parentesco_desc,"Familiar, otro parentesco",Jefe(a),-0.23226560660340023,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__hermano_a,parentesco_desc,Hermano(a),Jefe(a),-0.23911786262404094,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__hijastro_a_entenado_a,parentesco_desc,"Hijastro(a), entenado(a)",Jefe(a),-0.43263223290948605,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__hijo_a_adoptivo_a,parentesco_desc,Hijo(a) adoptivo(a),Jefe(a),-1.152378742152973,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__hijo_a_hijo_a_consanguineo_hijo_a_reconocido,parentesco_desc,"Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido",Jefe(a),-0.3052167589377436,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__madre_padre,parentesco_desc,"Madre, padre",Jefe(a),-0.31891833998047836,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__medio_a_hermano_a,parentesco_desc,Medio(a) hermano(a),Jefe(a),-0.17558327819937825,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__nieto_a,parentesco_desc,Nieto(a),Jefe(a),-0.3851430872185311,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__no_tiene_parentesco,parentesco_desc,No tiene parentesco,Jefe(a),-0.1622315299553456,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__nuera_yerno,parentesco_desc,"Nuera, yerno",Jefe(a),-0.1825367035838973,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__padrastro_madrastra,parentesco_desc,"Padrastro, madrastra",Jefe(a),0.13158718556821436,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__pareja_del_mismo_sexo,parentesco_desc,Pareja del mismo sexo,Jefe(a),-0.1428660922911077,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__primo_a_noicpircsed_4202_y,parentesco_desc,Primo(a) nóicpircseD .4202 y,Jefe(a),-0.11794361145764476,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__sobrino_a,parentesco_desc,Sobrino(a),Jefe(a),-0.36591681365531503,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__suegro_a,parentesco_desc,Suegro(a),Jefe(a),-0.1327752512759549,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,parentesco_desc__tio_a,parentesco_desc,Tío(a),Jefe(a),-0.30365223089130433,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,hablaind_desc__si,hablaind_desc,Sí,No,-0.29587275390970325,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,segsoc_desc__si,segsoc_desc,Sí,No,0.2571400476783635,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,subor_principal_desc__no_aplica_sin_trabajo_principal_reportado,subor_principal_desc,No aplica: sin trabajo principal reportado,No,-0.5424076066429584,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,subor_principal_desc__si,subor_principal_desc,Sí,No,-0.6899551942689718,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,contrato_principal_desc__no_aplica_sin_contrato_principal_documentado,contrato_principal_desc,No aplica: sin contrato principal documentado,No,-1.0766435252185664,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,contrato_principal_desc__si,contrato_principal_desc,Sí,No,0.2985792012267281,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,sexo_jefe_desc__mujer,sexo_jefe_desc,Mujer,Hombre,0.01243085566456148,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,educa_jefe_desc__posgrado,educa_jefe_desc,Posgrado,Sin instrucción,0.13616600324770006,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,educa_jefe_desc__preescolar,educa_jefe_desc,Preescolar,Sin instrucción,0.2308475611151246,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,educa_jefe_desc__preparatoria_completa,educa_jefe_desc,Preparatoria completa,Sin instrucción,0.009063753033152266,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,educa_jefe_desc__preparatoria_incompleta,educa_jefe_desc,Preparatoria incompleta,Sin instrucción,-0.08957549887370264,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,educa_jefe_desc__primaria_completa,educa_jefe_desc,Primaria completa,Sin instrucción,-0.015966939217594733,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,educa_jefe_desc__primaria_incompleta,educa_jefe_desc,Primaria incompleta,Sin instrucción,-0.0849412404743195,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,educa_jefe_desc__profesional_completa,educa_jefe_desc,Profesional completa,Sin instrucción,0.14882351653840642,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,educa_jefe_desc__profesional_incompleta,educa_jefe_desc,Profesional incompleta,Sin instrucción,-0.03057273228297117,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,educa_jefe_desc__secundaria_completa,educa_jefe_desc,Secundaria completa,Sin instrucción,-0.0619009052989844,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.
+log_ingreso,educa_jefe_desc__secundaria_incompleta,educa_jefe_desc,Secundaria incompleta,Sin instrucción,-0.060316234161499394,Coeficiente en unidades de la escala indicada; no interpretar como inferencia poblacional.

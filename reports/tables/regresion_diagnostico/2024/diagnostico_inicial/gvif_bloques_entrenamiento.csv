@@ -1,0 +1,18 @@
+variable_original,df_bloque,gvif,gvif_ajustado,estado,nota
+subor_principal_desc,2,57.105250466107,2.7489637325607035,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.
+contrato_principal_desc,2,49.486862391104374,2.652298989286199,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.
+edad,1,2.529876616438462,1.5905585862955385,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.
+tot_integ,1,2.1384252292807373,1.462335539225091,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.
+menores,1,2.0144272500492244,1.41930519975417,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.
+n_trabajos,1,1.6980794055410673,1.3031037585476712,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.
+segsoc_desc,1,1.5603579426482037,1.2491428831995977,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.
+p65mas,1,1.5275421766077797,1.2359377721421818,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.
+sexo_desc,1,1.4692558552123425,1.2121286463128995,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.
+horas_trabajos_total,1,1.4549417033887562,1.206209643216616,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.
+nivelaprob_desc,10,19.68402195804719,1.1606618026114617,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.
+educa_jefe_desc,10,18.65471423495829,1.157549122366097,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.
+sexo_jefe_desc,1,1.217770685287465,1.1035264769308732,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.
+hablaind_desc,1,1.1821261458161463,1.0872562466208904,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.
+tam_loc_desc,3,1.372450511480602,1.0541832601236545,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.
+region_banxico,3,1.2209476279351559,1.0338308936389504,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.
+parentesco_desc,26,4.185521119344218,1.0279138598034543,ok,GVIF por bloque; no comparar GVIF ajustado con umbrales VIF como si fueran la misma escala.

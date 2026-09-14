@@ -1,0 +1,293 @@
+{
+  "configuracion": {
+    "ANIO_ANALISIS": 2024,
+    "ANIOS_VALIDOS": [
+      2018,
+      2020,
+      2022,
+      2024
+    ],
+    "EDAD_MINIMA": 18,
+    "TARGET": "ingreso_persona_laboral_negocio_tri",
+    "CRITERIO_STEPWISE": null,
+    "EJECUTAR_SELECCION": false,
+    "ESPECIFICACION": "diagnostico_inicial",
+    "TRAIN_FRAC": 0.8,
+    "RANDOM_STATE": 20240914,
+    "TREE_MAX_DEPTH": 5,
+    "TREE_MIN_SAMPLES_LEAF": 0.01,
+    "PERMUTATION_REPEATS": 10
+  },
+  "fuentes": {
+    "mart_persona": "data/interim/revision_4/mart_persona_2018_2024.csv.gz",
+    "preparacion": "src/features/preparacion_determinantes.py",
+    "auditoria": "reports/auditoria_preparacion_determinantes.md"
+  },
+  "dimensiones": {
+    "personas_universo": 141579,
+    "hogares_universo": 80872,
+    "columnas_regresion": 66
+  },
+  "particion": {
+    "unidad": "hogar: anio + folioviv + foliohog",
+    "ruta_local_fuera_de_git": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\processed\\regresion_diagnostico\\2024\\diagnostico_inicial\\particion_hogares_2024.csv.gz"
+  },
+  "variables": [
+    "edad",
+    "n_trabajos",
+    "horas_trabajos_total",
+    "tot_integ",
+    "menores",
+    "p65mas",
+    "sexo_desc",
+    "nivelaprob_desc",
+    "region_banxico",
+    "tam_loc_desc",
+    "parentesco_desc",
+    "hablaind_desc",
+    "segsoc_desc",
+    "subor_principal_desc",
+    "contrato_principal_desc",
+    "sexo_jefe_desc",
+    "educa_jefe_desc"
+  ],
+  "referencias": [
+    {
+      "variable_original": "sexo_desc",
+      "referencia": "Hombre",
+      "n_referencia_entrenamiento": 65851,
+      "n_referencia_validacion": 16453
+    },
+    {
+      "variable_original": "nivelaprob_desc",
+      "referencia": "Ninguno",
+      "n_referencia_entrenamiento": 3313,
+      "n_referencia_validacion": 832
+    },
+    {
+      "variable_original": "region_banxico",
+      "referencia": "Centro",
+      "n_referencia_entrenamiento": 28364,
+      "n_referencia_validacion": 7264
+    },
+    {
+      "variable_original": "tam_loc_desc",
+      "referencia": "Localidades con 100 000 y más habitantes",
+      "n_referencia_entrenamiento": 43685,
+      "n_referencia_validacion": 10859
+    },
+    {
+      "variable_original": "parentesco_desc",
+      "referencia": "Jefe(a)",
+      "n_referencia_entrenamiento": 54428,
+      "n_referencia_validacion": 13607
+    },
+    {
+      "variable_original": "hablaind_desc",
+      "referencia": "No",
+      "n_referencia_entrenamiento": 104412,
+      "n_referencia_validacion": 26170
+    },
+    {
+      "variable_original": "segsoc_desc",
+      "referencia": "No",
+      "n_referencia_entrenamiento": 46616,
+      "n_referencia_validacion": 11662
+    },
+    {
+      "variable_original": "subor_principal_desc",
+      "referencia": "No",
+      "n_referencia_entrenamiento": 25055,
+      "n_referencia_validacion": 6390
+    },
+    {
+      "variable_original": "contrato_principal_desc",
+      "referencia": "No",
+      "n_referencia_entrenamiento": 42131,
+      "n_referencia_validacion": 10565
+    },
+    {
+      "variable_original": "sexo_jefe_desc",
+      "referencia": "Hombre",
+      "n_referencia_entrenamiento": 80468,
+      "n_referencia_validacion": 20107
+    },
+    {
+      "variable_original": "educa_jefe_desc",
+      "referencia": "Sin instrucción",
+      "n_referencia_entrenamiento": 5691,
+      "n_referencia_validacion": 1462
+    }
+  ],
+  "compatibilidad_anual_previa": [
+    {
+      "anio": 2018,
+      "estado_preparacion": "compatible_para_generar_base",
+      "filas_universo": 120054,
+      "hogares_unicos": 67807,
+      "referencias_ohe_faltantes": "",
+      "estado_en_regresion_diagnostica": "solo_compatibilidad_inspeccionada_previa",
+      "nota_regresion": "No se genero matriz ni modelo para este anio en esta etapa."
+    },
+    {
+      "anio": 2020,
+      "estado_preparacion": "revisar_antes_de_generar_base",
+      "filas_universo": 139394,
+      "hogares_unicos": 79365,
+      "referencias_ohe_faltantes": "segsoc_desc",
+      "estado_en_regresion_diagnostica": "solo_inspeccion_previa_con_pendientes",
+      "nota_regresion": "No se genero matriz; resolver referencias OHE antes de ejecutar."
+    },
+    {
+      "anio": 2022,
+      "estado_preparacion": "revisar_antes_de_generar_base",
+      "filas_universo": 141514,
+      "hogares_unicos": 80217,
+      "referencias_ohe_faltantes": "segsoc_desc",
+      "estado_en_regresion_diagnostica": "solo_inspeccion_previa_con_pendientes",
+      "nota_regresion": "No se genero matriz; resolver referencias OHE antes de ejecutar."
+    },
+    {
+      "anio": 2024,
+      "estado_preparacion": "compatible_para_generar_base",
+      "filas_universo": 141579,
+      "hogares_unicos": 80872,
+      "referencias_ohe_faltantes": "",
+      "estado_en_regresion_diagnostica": "ejecutado_y_validado_en_esta_etapa",
+      "nota_regresion": "Se genero diagnostico de regresion, PCA y arbol para este anio."
+    }
+  ],
+  "reproduccion_2024": [
+    {
+      "metrica": "universo_filas",
+      "esperado": 141579.0,
+      "observado": 141579.0,
+      "tolerancia": 0.0,
+      "diferencia_abs": 0.0,
+      "resultado": "ok",
+      "nota": "Comparacion contra etapa 12."
+    },
+    {
+      "metrica": "hogares_unicos",
+      "esperado": 80872.0,
+      "observado": 80872.0,
+      "tolerancia": 0.0,
+      "diferencia_abs": 0.0,
+      "resultado": "ok",
+      "nota": "Comparacion contra etapa 12."
+    },
+    {
+      "metrica": "media_target",
+      "esperado": 31171.869714929475,
+      "observado": 31171.869714929475,
+      "tolerancia": 0.01,
+      "diferencia_abs": 0.0,
+      "resultado": "ok",
+      "nota": "Comparacion contra etapa 12."
+    },
+    {
+      "metrica": "mediana_target",
+      "esperado": 24245.89,
+      "observado": 24245.89,
+      "tolerancia": 0.01,
+      "diferencia_abs": 0.0,
+      "resultado": "ok",
+      "nota": "Comparacion contra etapa 12."
+    },
+    {
+      "metrica": "p99_target",
+      "esperado": 154663.03,
+      "observado": 154663.03,
+      "tolerancia": 0.01,
+      "diferencia_abs": 0.0,
+      "resultado": "ok",
+      "nota": "Comparacion contra etapa 12."
+    },
+    {
+      "metrica": "max_target",
+      "esperado": 17021739.12,
+      "observado": 17021739.119999997,
+      "tolerancia": 0.01,
+      "diferencia_abs": 3.725290298461914e-09,
+      "resultado": "ok",
+      "nota": "Comparacion contra etapa 12."
+    },
+    {
+      "metrica": "columnas_matriz_diagnostica",
+      "esperado": "",
+      "observado": 66.0,
+      "tolerancia": "",
+      "diferencia_abs": "",
+      "resultado": "documentado",
+      "nota": "No se compara contra X_columnas de etapa 12: esta matriz excluye pendientes y se ajusta solo con entrenamiento."
+    }
+  ],
+  "versiones": [
+    {
+      "paquete": "numpy",
+      "disponible": true,
+      "version": "2.4.6"
+    },
+    {
+      "paquete": "pandas",
+      "disponible": true,
+      "version": "3.0.5"
+    },
+    {
+      "paquete": "sklearn",
+      "disponible": true,
+      "version": "1.9.0"
+    },
+    {
+      "paquete": "matplotlib",
+      "disponible": true,
+      "version": "3.10.9"
+    },
+    {
+      "paquete": "scipy",
+      "disponible": true,
+      "version": "1.17.1"
+    },
+    {
+      "paquete": "statsmodels",
+      "disponible": false,
+      "version": ""
+    },
+    {
+      "paquete": "nbformat",
+      "disponible": false,
+      "version": ""
+    },
+    {
+      "paquete": "nbclient",
+      "disponible": false,
+      "version": ""
+    }
+  ],
+  "modelos_diagnosticos": [
+    "OLS ingreso nominal",
+    "OLS log ingreso",
+    "PCA exploratorio",
+    "DecisionTreeRegressor exploratorio"
+  ],
+  "pruebas": {
+    "alineacion_X_y_metadata": true,
+    "transformaciones_ajustadas_solo_entrenamiento": true,
+    "sin_target_en_X": true,
+    "hogares_compartidos": 0,
+    "seleccion_automatica": false
+  },
+  "limitaciones": [
+    "OLS no ponderado, sin diseno muestral formal.",
+    "Validacion diagnostica; no prueba final independiente.",
+    "AIC/R2 no comparables directamente entre ingreso nominal y log ingreso.",
+    "No se selecciono numero de componentes PCA.",
+    "No se elimino ninguna variable."
+  ],
+  "decisiones_pendientes": [
+    "criterio stepwise",
+    "escala principal del target",
+    "eliminacion de variables",
+    "numero de componentes"
+  ]
+}

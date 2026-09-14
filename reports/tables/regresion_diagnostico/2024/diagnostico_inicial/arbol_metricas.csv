@@ -1,0 +1,3 @@
+escala,particion,n,mae,rmse
+arbol_ingreso_nominal,entrenamiento,113173,16097.544661003501,66159.91737325829
+arbol_ingreso_nominal,validacion,28406,15977.2235888836,41997.04236959743

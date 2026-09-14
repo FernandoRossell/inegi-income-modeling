@@ -1,0 +1,7 @@
+{
+  "alineacion_X_y_metadata": true,
+  "transformaciones_ajustadas_solo_entrenamiento": true,
+  "sin_target_en_X": true,
+  "hogares_compartidos": 0,
+  "seleccion_automatica": false
+}

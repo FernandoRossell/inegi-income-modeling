@@ -1,0 +1,3 @@
+prueba,valor_a,valor_b,diferencia_abs,estado
+gvif_un_df_igual_vif,1030.8593750000387,1030.8593749996576,3.8107828004285693e-10,ok
+gvif_bloque_multicolumna_finito,29.208333333327634,2.324752342873636,,ok

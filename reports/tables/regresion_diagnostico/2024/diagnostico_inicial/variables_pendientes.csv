@@ -1,0 +1,3 @@
+variable,motivo,estado
+tam_emp_principal_desc,"Pendiente de parametrizacion: conserva informacion de tamano, pero su categoria estructural duplicaria una dummy de subor si entrara sin recodificar.",pendiente_no_incluida_en_matriz_identificable
+est_socio_desc,Diagnostico contextual; requiere aprobacion para entrar al modelo.,pendiente_no_incluida_en_matriz_identificable

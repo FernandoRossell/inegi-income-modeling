@@ -1,0 +1,8 @@
+metrica,esperado,observado,tolerancia,diferencia_abs,resultado,nota
+universo_filas,141579.0,141579.0,0.0,0.0,ok,Comparacion contra etapa 12.
+hogares_unicos,80872.0,80872.0,0.0,0.0,ok,Comparacion contra etapa 12.
+media_target,31171.869714929475,31171.869714929475,0.01,0.0,ok,Comparacion contra etapa 12.
+mediana_target,24245.89,24245.89,0.01,0.0,ok,Comparacion contra etapa 12.
+p99_target,154663.03,154663.03,0.01,0.0,ok,Comparacion contra etapa 12.
+max_target,17021739.12,17021739.119999997,0.01,3.725290298461914e-09,ok,Comparacion contra etapa 12.
+columnas_matriz_diagnostica,,66.0,,,documentado,No se compara contra X_columnas de etapa 12: esta matriz excluye pendientes y se ajusta solo con entrenamiento.

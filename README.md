@@ -68,12 +68,15 @@ inegi-income-modeling/
 - `reports/documentacion_final_en_desarrollo.md`: documento vivo vigente con decisiones metodologicas, roadmap y alcance activo.
 - `reports/preparacion_base_determinantes.md`: resumen metodologico vigente de la base ejecutada por defecto, actualmente 2024.
 - `reports/auditoria_preparacion_determinantes.md`: auditoria diagnostica de la preparacion 2024 y compatibilidad anual antes de modelar.
+- `reports/regresion_diagnostico_determinantes.md`: primera corrida diagnostica de regresion, VIF/GVIF, PCA y arbol para revisar variables antes de aprobar reducciones.
 - `reports/preparacion_base_determinantes_2024.md`: copia anual del resumen de 2024.
 - `reports/intentos_metodologicos/README.md`: indice historico de intentos deprecados, incluidos homologacion monetaria y diseno muestral JKn.
 - `notebooks/12_preparacion_base_determinantes.ipynb`: notebook principal parametrizado con `ANIO_ANALISIS`, tablas, figuras y validaciones para determinantes.
+- `notebooks/13_regresion_diagnostico_determinantes.ipynb`: notebook parametrizado para diagnostico inicial de regresion sin seleccion automatica.
 - `src/data/extract_enigh_pdf_metadata.py`: script para extraer metadata desde los PDF.
 - `src/data/build_metadata_enigh.py`: script para reconstruir la documentacion de metadata.
 - `src/features/preparacion_determinantes.py`: codigo reutilizable de la etapa 12.
+- `src/analysis/regresion_diagnostico.py` y `src/models/regresion_diagnostico.py`: funciones reutilizables para la etapa 13.
 
 `reports/documentacion_final_en_desarrollo.pdf` se conserva como version historica derivada. El Markdown es la version vigente; el PDF puede incluir contenido metodologico deprecado hasta que sea regenerado y verificado.
 
@@ -83,7 +86,8 @@ inegi-income-modeling/
 - Etapa 10: homologacion monetaria y deflactores deprecados del flujo principal; preservados como intento historico.
 - Etapa 11: inferencia formal con diseno muestral y JKn deprecada del flujo principal; preservada como intento historico.
 - Etapa 12: implementacion ejecutada para 2024; revision metodologica pendiente. 2018 esta inspeccionado como compatible; 2020/2022 requieren corregir o aprobar `segsoc_desc`; no se generaron matrices para esos anos.
-- Siguiente hito: modelos de determinantes e inferencia pendiente de definicion; no se entrenaron modelos ni se crearon particiones.
+- Etapa 13: primera ejecucion diagnostica para 2024 con particion 80/20 por hogares, OLS nominal, OLS log exploratorio, VIF/GVIF, PCA exploratorio y arbol diagnostico. No hay seleccion automatica, regresion reducida ni PCR aprobada.
+- Siguiente hito: revisar diagnosticos, aprobar escala principal, criterio de seleccion y tratamiento de variables laborales/jefatura antes de adoptar un modelo definitivo.
 
 ## Base activa para determinantes
 
@@ -98,6 +102,16 @@ inegi-income-modeling/
 - Salidas por año: `data/processed/determinantes_<anio>/`, `reports/tables/preparacion_determinantes/<anio>/` y `reports/figures/preparacion_determinantes/<anio>/`.
 - Compatibilidad inspeccionada: 2018 es compatible con las referencias actuales; 2020 y 2022 requieren resolver `segsoc_desc` antes de generar sus bases porque el codigo 2 aparece con etiqueta contaminada y no como la referencia OHE exacta `No`.
 - Interpretacion: asociaciones descriptivas/exploratorias; no causalidad, no seleccion al ingreso positivo y no inferencia formal.
+
+## Regresion diagnostica activa
+
+- Configuracion default: `ANIO_ANALISIS = 2024`, `ANIOS_VALIDOS = (2018, 2020, 2022, 2024)`, `EDAD_MINIMA = 18`, `TARGET = ingreso_persona_laboral_negocio_tri`, `CRITERIO_STEPWISE = None`, `EJECUTAR_SELECCION = False`.
+- Para cambiar el año en la etapa 13, modificar solo `ANIO_ANALISIS` al inicio de `notebooks/13_regresion_diagnostico_determinantes.ipynb` y ejecutar todo el notebook.
+- Salidas agregadas por año/especificacion: `reports/tables/regresion_diagnostico/<anio>/diagnostico_inicial/` y `reports/figures/regresion_diagnostico/<anio>/diagnostico_inicial/`.
+- Particiones locales fuera de Git: `data/processed/regresion_diagnostico/<anio>/diagnostico_inicial/`.
+- Ejecucion 2024: 141,579 personas, 80,872 hogares; entrenamiento 113,173 personas en 64,697 hogares; validacion 28,406 personas en 16,175 hogares; sin hogares compartidos entre particiones.
+- Hallazgos iniciales: la OLS nominal tiene bajo poder explicativo en entrenamiento (`R2=0.0700`); la escala log mejora ajuste dentro de su propia escala (`R2=0.4600`) y no se compara directamente por AIC/R2 con la escala nominal; contrato/subordinacion concentran la mayor evidencia de dependencia; educacion de jefatura, contrato y horas trabajadas son las variables mas sensibles en el arbol diagnostico.
+- Estado multi-anio: solo 2024 fue ejecutado en regresion diagnostica; 2018 queda como compatibilidad inspeccionada; 2020/2022 siguen pendientes por `segsoc_desc`.
 
 ## Tablas centrales de ENIGH
 
