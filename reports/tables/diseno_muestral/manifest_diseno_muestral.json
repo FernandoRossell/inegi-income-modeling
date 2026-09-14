@@ -1,7 +1,7 @@
 {
   "etapa": 11,
   "nombre": "diseno_muestral_formal_e_inferencia_descriptiva",
-  "fecha_ejecucion": "2026-09-13T17:44:53.836733",
+  "fecha_ejecucion": "2026-09-13T18:07:22.472980",
   "inputs": {
     "revision_dir": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\interim\\revision_4",
     "mart_hogar": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\interim\\revision_4\\mart_hogar_2018_2024.csv.gz",
@@ -40,17 +40,17 @@
     "grados_libertad": "nu_D = M_D - H_D por soporte de dominio; contraste usa union Norte-Sur"
   },
   "dependencias": {
-    "python": "3.12.14",
-    "python_executable": "C:\\Users\\lucia\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "python": "3.14.5",
+    "python_executable": "c:\\Users\\lucia\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
     "platform": "Windows-11-10.0.26200-SP0",
-    "pandas": "3.0.1",
-    "numpy": "2.3.5",
-    "scipy": "no instalado",
-    "matplotlib": "no instalado",
-    "seaborn": "no instalado",
+    "pandas": "3.0.5",
+    "numpy": "2.4.6",
+    "scipy": "instalado",
+    "matplotlib": "instalado",
+    "seaborn": "instalado",
     "nbformat": "no instalado",
     "nbclient": "no instalado",
-    "pypdf": "instalado",
+    "pypdf": "no instalado",
     "Rscript": "no disponible"
   },
   "salidas": {
@@ -63,13 +63,13 @@
     "figures": [
       {
         "figura": "media_hogar_nacional",
-        "archivo": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\figures_documentacion\\diseno_muestral_ingreso_hogar_ic95.svg",
-        "motor": "svg_fallback"
+        "archivo": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\figures_documentacion\\diseno_muestral_ingreso_hogar_ic95.png",
+        "motor": "matplotlib"
       },
       {
         "figura": "contraste_norte_sur",
-        "archivo": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\figures_documentacion\\diseno_muestral_contraste_norte_sur_ic95.svg",
-        "motor": "svg_fallback"
+        "archivo": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\figures_documentacion\\diseno_muestral_contraste_norte_sur_ic95.png",
+        "motor": "matplotlib"
       }
     ],
     "r_survey_script": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\reports\\tables\\diseno_muestral\\validacion_r_survey_jkn.R"

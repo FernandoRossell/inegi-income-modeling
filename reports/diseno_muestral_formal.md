@@ -1,5 +1,7 @@
 # Diseño muestral formal e inferencia descriptiva
 
+> Análisis histórico deprecado del flujo principal de la tesina. Se conserva para trazabilidad. Sus métodos y resultados no forman parte de la especificación activa ni de las conclusiones finales.
+
 Etapa 11 del proyecto ENIGH. Esta revisión incorpora inferencia descriptiva aproximada con el diseño observable en los marts: ponderador `factor`, estrato de diseño `est_dis` y UPM `upm`. El trabajo se mantiene en variables nominales trimestrales y no modifica datos crudos, marts ni la etapa 10 de homologación monetaria.
 
 ## Alcance
@@ -119,8 +121,8 @@ La comparación especializada con R `survey` queda preparada en `reports/tables/
 
 ## Figuras
 
-- `C:/Users/lucia/OneDrive/Escritorio/Fer/inegi-income-modeling/reports/figures_documentacion/diseno_muestral_ingreso_hogar_ic95.svg` (svg_fallback)
-- `C:/Users/lucia/OneDrive/Escritorio/Fer/inegi-income-modeling/reports/figures_documentacion/diseno_muestral_contraste_norte_sur_ic95.svg` (svg_fallback)
+- `C:/Users/lucia/OneDrive/Escritorio/Fer/inegi-income-modeling/reports/figures_documentacion/diseno_muestral_ingreso_hogar_ic95.png` (matplotlib)
+- `C:/Users/lucia/OneDrive/Escritorio/Fer/inegi-income-modeling/reports/figures_documentacion/diseno_muestral_contraste_norte_sur_ic95.png` (matplotlib)
 
 ## Decisiones metodológicas
 

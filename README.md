@@ -38,6 +38,8 @@ data/
 
 Los archivos originales deben permanecer en `data/raw/` sin modificaciones. Las bases intermedias o finales deben generarse mediante scripts reproducibles y guardarse en `data/interim/` o `data/processed/`.
 
+El punto de partida activo para el siguiente hito son los marts nominales de `data/interim/revision_4/`: `mart_hogar_2018_2024.csv.gz` y `mart_persona_2018_2024.csv.gz`. La construcción de bases específicas para análisis de determinantes queda pendiente de definición y aprobación.
+
 ## Estructura del repositorio
 
 ```text
@@ -63,11 +65,20 @@ inegi-income-modeling/
 - `docs/planteamiento.md`: planteamiento actualizado de la tesina.
 - `docs/metadata_enigh.md`: metadata consolidada de tablas, columnas, llaves, factor temporal y documentacion ENIGH.
 - `docs/enigh_variable_metadata.csv`: metadata tabular extraida de los PDF oficiales de ENIGH.
-- `reports/documentacion_final_en_desarrollo.md`: documento vivo con decisiones metodologicas, roadmap y estado de cada etapa.
-- `reports/diseno_muestral_formal.md`: etapa 11; inferencia descriptiva aproximada con `factor`, `est_dis`, `upm` y JKn estratificado por UPM.
-- `notebooks/11_diseno_muestral_formal.ipynb`: libreta reproducible de auditoria de diseno, estimaciones, contraste Norte-Sur y validaciones.
+- `reports/documentacion_final_en_desarrollo.md`: documento vivo vigente con decisiones metodologicas, roadmap y alcance activo.
+- `reports/intentos_metodologicos/README.md`: indice historico de intentos deprecados, incluidos homologacion monetaria y diseno muestral JKn.
 - `src/data/extract_enigh_pdf_metadata.py`: script para extraer metadata desde los PDF.
 - `src/data/build_metadata_enigh.py`: script para reconstruir la documentacion de metadata.
+
+`reports/documentacion_final_en_desarrollo.pdf` se conserva como version historica derivada. El Markdown es la version vigente; el PDF puede incluir contenido metodologico deprecado hasta que sea regenerado y verificado.
+
+## Roadmap vigente
+
+- Etapas 08 y 09: se conservan como avances respaldados por evidencia.
+- Etapa 10: homologacion monetaria y deflactores deprecados del flujo principal; preservados como intento historico.
+- Etapa 11: inferencia formal con diseno muestral y JKn deprecada del flujo principal; preservada como intento historico.
+- Siguiente hito: planificacion de bases para analisis de determinantes, pendiente de definicion y aprobacion.
+- Modelos de determinantes y etapas posteriores: pendientes; no se fijan todavia algoritmos, codificaciones, transformaciones, seleccion de variables ni reglas de validacion.
 
 ## Tablas centrales de ENIGH
 
