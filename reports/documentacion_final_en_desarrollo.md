@@ -8,9 +8,9 @@
 
 El notebook 12 incorpora codigo visible para auditar disponibilidad, tipos, faltantes, categorias, frecuencias y referencias de cada variable en los cuatro cortes, y para preparar una base de personas por año. La fuente unica de microdatos es `mart_persona_revision_4`; no se usa ni se une `mart_hogar`. El hogar se conserva como identificador para particiones futuras. Los cortes son independientes, no un panel.
 
-Se conserva el target nominal trimestral y se agrega el mismo ingreso expresado en pesos aproximados de 2024 mediante los factores anuales versionados en `docs/deflactores_precios_2024.csv`. Su origen es un benchmark de ingreso corriente del hogar; la aplicacion al ingreso laboral individual es una aproximacion que debe aprobarse antes de interpretar cambios reales. Se proponen diez variables para un modelo completo comun; escolaridad y parentesco quedan pendientes de equivalencia semantica. Una regla exacta y auditable corrige la etiqueta contaminada de `segsoc_desc` en 2020/2022 conservando el valor original. `region_banxico` y `entidad` son especificaciones geograficas alternativas; la referencia estatal esta pendiente.
+Se conserva el target nominal trimestral y se agrega el mismo ingreso expresado en pesos aproximados de 2024 mediante los factores anuales versionados en `docs/deflactores_precios_2024.csv`. Su origen es un benchmark de ingreso corriente del hogar; la aplicacion al ingreso laboral individual es una aproximacion que debe aprobarse antes de interpretar cambios reales. Se proponen diez variables para un modelo completo comun; escolaridad y parentesco quedan pendientes de equivalencia semantica. Una regla exacta y auditable corrige la etiqueta contaminada de `segsoc_desc` en 2020/2022 conservando el valor original. `region_banxico` y `entidad` son especificaciones geograficas alternativas; para la sensibilidad estatal del 14 se fija `Ciudad de Mexico` tras verificar presencia y codigos consistentes en los cuatro cortes.
 
-No se ejecutaron notebooks ni modelos en esta tarea. Los outputs locales de 2024 y todas las cifras posteriores a esta seccion son evidencia historica de otras corridas, no validacion de la nueva preparacion temporal. El contrato de las cuatro bases, tabla futura de coeficientes y roadmap detallado estan en `reports/contrato_analisis_temporal.md`.
+Actualizacion del 24-09-2026: Fernando exporto manualmente las cuatro bases anuales. Una inspeccion de lectura confirmo columnas, llaves, targets, categorias comunes y cobertura estatal; no se volvieron a ejecutar los notebooks 12 o 13 ni se entrenaron modelos en esta tarea. El nuevo notebook 14 esta preparado sin outputs para modelos anuales, pooled, interacciones y Wald. Los outputs locales de 2024 son evidencia de otras corridas, no resultados del 14. La escolaridad de 2024 cambia de etiquetas y añade `Especialidad`, por lo que la ampliacion educativa sigue detenida. El contrato y el roadmap detallado estan en `reports/contrato_analisis_temporal.md`.
 
 ## Correccion vigente de notebooks 12 y 13
 
@@ -663,10 +663,10 @@ flowchart LR
 | 09 Desigualdad territorial | COMPLETO: ponderación descriptiva auditada, Gini nacional/regional, comparación Banxico ya documentada, CDMX, zonas metropolitanas, brechas territoriales y unidad del estimando documentada |
 | 10 Homologación monetaria | Implementación histórica deprecada; solo su tabla de factores anuales se reutiliza con limitaciones explícitas |
 | 11 Diseño muestral formal | DEPRECADA del flujo principal; preservada como intento histórico |
-| 12 Preparación anual de base para determinantes | Auditoria de comparabilidad y base individual nominal/real 2024 preparadas para los cuatro años; ejecución manual temporal pendiente |
+| 12 Preparación anual de base para determinantes | Cuatro bases locales exportadas por Fernando; esquema y categorias inspeccionados sin reejecutar el 12 en esta tarea |
 | 13 Regresión diagnóstica de determinantes | Exploración local de 2024 conservada; selección de ese año no se traslada a otros cortes. No se ejecutó en esta tarea |
-| Siguiente etapa temporal | Modelos completos por año y geografía, selección anual independiente, comparación común, pooled, interacciones, Wald y diseño muestral pendientes; ver contrato temporal |
-| 14 Heterogeneidad territorial | Pendiente |
+| 14 Comparación temporal de determinantes | Notebook preparado para OLS anual, pooled, interacciones y Wald; ejecución y revisión manual pendientes |
+| Heterogeneidad territorial de pendientes | Fase posterior; no confundir con diferencias de intercepto regional/estatal del 14 |
 | 15 Descomposición de desigualdad | Pendiente |
 | 16 Robustez y sensibilidad | Pendiente |
 | 17 Resultados y conclusiones | Pendiente |
@@ -688,9 +688,9 @@ flowchart LR
 
 ## Siguientes pasos
 
-- Siguiente hito: ejecutar manualmente el notebook 12 para cada uno de los cuatro años, revisar tablas de comparabilidad, factores, categorias y geografia; despues definir modelos por año.
+- Siguiente hito: ejecutar manualmente el notebook 14 con las cuatro bases disponibles y revisar sus auditorias, IC, tablas normalizadas, figuras y pruebas antes de redactar hallazgos temporales.
 - Antes de adoptar modelos, aprobar `ANIO_ANALISIS`, partición definitiva considerando hogares, especificación, tratamiento de `est_socio`, mapeo de `segsoc_desc` 2020/2022, decisión sobre faltantes laborales y `tam_emp_principal_desc`, tratamiento de cola derecha y alcance de inferencia.
-- Los notebooks de modelado deberán leer exclusivamente `data/processed/determinantes_<anio>/` del año seleccionado y guardar modelos, métricas y figuras separados por año y especificación.
+- El notebook 14 lee exclusivamente las cuatro bases individuales `data/processed/determinantes_<anio>/` y prepara salidas agregadas en `outputs/comparacion_temporal_determinantes/`. Modelos futuros de un solo año deberan usar `ANIO_ANALISIS` explicito y separar salidas por año/especificacion.
 - No preparar bases de modelado predictivo ni adoptar modelos finales hasta que esa etapa sea aprobada explícitamente.
 - Antes de reportar cualquier estadístico ponderado, registrar: unidad de observación, población objetivo, variable de peso y definición del estimando.
 - No inventar resultados: todo valor reportado debe salir de notebooks o documentación revisada.

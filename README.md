@@ -75,6 +75,7 @@ inegi-income-modeling/
 - `reports/intentos_metodologicos/README.md`: indice historico de intentos deprecados, incluidos homologacion monetaria y diseno muestral JKn.
 - `notebooks/12_preparacion_base_determinantes.ipynb`: notebook principal parametrizado con `ANIO_ANALISIS`, tablas, figuras y validaciones para determinantes.
 - `notebooks/13_regresion_diagnostico_determinantes.ipynb`: notebook parametrizado para diagnostico inicial de regresion sin seleccion automatica.
+- `notebooks/14_comparacion_temporal_determinantes.ipynb`: notebook academico de comparacion 2018-2024, preparado sin ejecutar.
 - `src/data/extract_enigh_pdf_metadata.py`: script para extraer metadata desde los PDF.
 - `src/data/build_metadata_enigh.py`: script para reconstruir la documentacion de metadata.
 - `src/features/preparacion_determinantes.py`, `src/analysis/regresion_diagnostico.py` y `src/models/regresion_diagnostico.py`: codigo legado de ejecuciones anteriores; los notebooks 12 y 13 activos no dependen de estos modulos.
@@ -86,22 +87,23 @@ inegi-income-modeling/
 - Etapas 08 y 09: se conservan como avances respaldados por evidencia.
 - Etapa 10: implementacion historica de homologacion monetaria deprecada. La preparacion temporal nueva reutiliza solo su tabla versionada de factores anuales, con limitaciones explicitas.
 - Etapa 11: inferencia formal con diseno muestral y JKn deprecada del flujo principal; preservada como intento historico.
-- Etapa 12: preparacion individual parametrizada para los cuatro años, con auditoria de comparabilidad, regla visible de `segsoc_desc`, targets nominal y real aproximado en pesos de 2024, y alternativas regional/estatal. Ejecucion manual del codigo temporal pendiente.
-- Etapa 13: exploracion local de 2024 conservada como antecedente y limitada a ese año mediante una validacion inicial; sus variables significativas no seleccionan predictores de otros años. El futuro analisis temporal usara una especificacion completa comun y exploraciones independientes por año.
-- Siguiente hito: ejecutar manualmente 12 en los cuatro cortes, revisar categorias, referencias, deflactores y bases antes de modelar. Roadmap completo en `reports/contrato_analisis_temporal.md`.
+- Etapa 12: preparacion individual parametrizada para los cuatro años. Fernando ya exporto las cuatro bases locales; su esquema y categorias se inspeccionaron sin volver a ejecutar el notebook.
+- Etapa 13: exploracion local de 2024 conservada como antecedente; sus variables significativas no seleccionan predictores de otros años. El notebook 14 prepara una especificacion completa comun, sin repetir PCA, arbol ni seleccion exploratoria por año.
+- Etapa 14: notebook temporal preparado para OLS anual, pooled, interacciones y Wald con nucleo comun, region principal y entidad como sensibilidad. No se ejecuto ni entreno ningun modelo en esta tarea.
+- Siguiente hito: ejecutar manualmente el 14 y revisar sus auditorias, coeficientes e intervalos antes de interpretar cambios. Roadmap y pendientes metodologicos en `reports/contrato_analisis_temporal.md`.
 
 ## Base activa para determinantes
 
 - Configuracion default: `ANIO_ANALISIS = 2024`, `ANIOS_VALIDOS = (2018, 2020, 2022, 2024)`, `EDAD_MINIMA = 18`.
 - Para cambiar el año, modificar solo `ANIO_ANALISIS` al inicio de `notebooks/12_preparacion_base_determinantes.ipynb` y ejecutar todo el notebook.
 - Unidad: persona; universo fijo: `anio == ANIO_ANALISIS`, `edad >= EDAD_MINIMA` e `ingreso_persona_laboral_negocio_tri > 0`.
-- La version anterior de 2024 reporto 141,579 personas en 80,872 hogares; la version corregida esta pendiente de ejecucion manual y esos conteos deben verificarse de nuevo.
+- La base local exportada de 2024 contiene 141,579 personas y 80,872 hogares segun inspeccion de lectura; no es un resultado de modelado temporal.
 - Target: `ingreso_persona_laboral_negocio_tri`, nominal trimestral conservado en todos los años; su version real aproximada en pesos de 2024 y ambos `log1p` se agregan en la base individual. El factor anual procede de `docs/deflactores_precios_2024.csv` y requiere revision para ingreso laboral individual.
 - La matriz historica de 2024 tuvo 67 columnas; la nueva matriz individual tendra una especificacion distinta y su tamaño se verificara al ejecutarla.
 - Predictores principales: edad, sexo, escolaridad, parentesco, habla indigena, numero de trabajos, horas, seguridad social, subordinacion, contrato, region Banxico y tamaño de localidad. `tot_integ`, `menores`, `p65mas`, `sexo_jefe_desc` y `educa_jefe_desc` quedan como contexto del hogar fuera del modelo principal. `tam_emp_principal_desc` y `est_socio_desc` siguen pendientes.
 - Fuera de la matriz descriptiva `X`: `factor`, `factor_hogar`, `est_dis`, `upm`, llaves, montos nominales/reales, deflactor y variables pendientes. `entidad` se conserva como alternativa geografica separada de `region_banxico`.
 - Salidas por año: `data/processed/determinantes_<anio>/`, `reports/tables/preparacion_determinantes/<anio>/` y `reports/figures/preparacion_determinantes/<anio>/`.
-- Comparabilidad historica inspeccionada: 2018 tenia las referencias previstas; 2020/2022 muestran una etiqueta contaminada de `segsoc_desc` para el codigo 2. El notebook 12 deja una recodificacion exacta y auditada; escolaridad, parentesco y referencia estatal requieren revision manual. Los resultados historicos no validan todavia la nueva preparacion.
+- Comparabilidad de las cuatro bases exportadas: llaves unicas, targets consistentes, las mismas categorias del nucleo tras etiquetar faltantes estructurales laborales y 32 entidades en cada año. `segsoc_desc_original` permite verificar la correccion exacta 2020/2022. `nivelaprob_desc` cambia en 2024 y queda fuera del nucleo; parentesco, tamaño de empresa y estrato socioeconomico siguen pendientes. La referencia estatal explicita del 14 es `Ciudad de Mexico`.
 - Interpretacion: asociaciones descriptivas/exploratorias; no causalidad, no seleccion al ingreso positivo y no inferencia formal.
 
 ## Regresion diagnostica activa
@@ -112,7 +114,13 @@ inegi-income-modeling/
 - Particiones locales fuera de Git: `data/processed/regresion_diagnostico/<anio>/diagnostico_inicial/`.
 - Las cifras previas de particion y ajuste de 2024 corresponden a la especificacion historica con variables de hogar; no son resultados de los notebooks corregidos.
 - El notebook 13 lee `base_interpretable_personas_<anio>.csv.gz` generada por el 12. Ajusta su encoder solo en entrenamiento y prepara resúmenes completos de statsmodels, HC3, errores agrupados por hogar, pruebas, gráficas, PCA y árbol. El hogar sirve para evitar fuga y para agrupar errores, sin cambiar la unidad persona.
-- Estado multi-anio: existe una exploracion local 2024; el codigo de comparacion temporal no se ha ejecutado. Modelos completos por año, geograficos, pooled e interacciones siguen pendientes.
+- Estado multi-anio: existe una exploracion local 2024 del notebook 13. El notebook 14 todavia no se ha ejecutado; sus modelos anuales, geograficos, pooled e interacciones son codigo preparado, no resultados.
+
+## Comparacion temporal preparada
+
+El notebook 14 lee exclusivamente `data/processed/determinantes_<anio>/base_interpretable_personas_<anio>.csv.gz` para 2018, 2020, 2022 y 2024. El nucleo usa `edad`, `n_trabajos`, `horas_trabajos_total`, `sexo_desc`, `hablaind_desc`, `segsoc_desc`, `subor_principal_desc`, `contrato_principal_desc`, `tam_loc_desc` y, en el modelo principal, `region_banxico`. `entidad` reemplaza a region en la sensibilidad estatal; nunca entran juntas. Escolaridad ampliada se detiene hasta homologar categorias/codigos, no se omite sin explicacion.
+
+La escala principal es `log1p` del ingreso individual real **aproximado** en pesos de 2024, que coincide con el log nominal en 2024. El nivel nominal se modela como secundario, sin comparar sus betas monetarias directamente entre años. El factor de ajuste fue calibrado con ingreso corriente del hogar y requiere aprobacion para tendencias del ingreso laboral individual. La inferencia usa muestras completas; una evaluacion predictiva futura con particion por hogar sera independiente. El notebook prepara OLS, HC3, EE hogar, WLS solo como sensibilidad, pooled con 2024 de referencia, interacciones por bloques y Wald. WLS/EE hogar no equivalen al diseño complejo ENIGH. La exportacion manual prevista esta en `outputs/comparacion_temporal_determinantes/`; no hay resultados de esta etapa hasta ejecutarlo y revisarlo.
 
 ## Tablas centrales de ENIGH
 
