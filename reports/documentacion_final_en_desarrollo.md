@@ -4,6 +4,14 @@
 **Años:** 2018, 2020, 2022 y 2024  
 **Estado:** documento vivo de trabajo para tesina
 
+## Preparacion temporal 2018-2024 vigente
+
+El notebook 12 incorpora codigo visible para auditar disponibilidad, tipos, faltantes, categorias, frecuencias y referencias de cada variable en los cuatro cortes, y para preparar una base de personas por año. La fuente unica de microdatos es `mart_persona_revision_4`; no se usa ni se une `mart_hogar`. El hogar se conserva como identificador para particiones futuras. Los cortes son independientes, no un panel.
+
+Se conserva el target nominal trimestral y se agrega el mismo ingreso expresado en pesos aproximados de 2024 mediante los factores anuales versionados en `docs/deflactores_precios_2024.csv`. Su origen es un benchmark de ingreso corriente del hogar; la aplicacion al ingreso laboral individual es una aproximacion que debe aprobarse antes de interpretar cambios reales. Se proponen diez variables para un modelo completo comun; escolaridad y parentesco quedan pendientes de equivalencia semantica. Una regla exacta y auditable corrige la etiqueta contaminada de `segsoc_desc` en 2020/2022 conservando el valor original. `region_banxico` y `entidad` son especificaciones geograficas alternativas; la referencia estatal esta pendiente.
+
+No se ejecutaron notebooks ni modelos en esta tarea. Los outputs locales de 2024 y todas las cifras posteriores a esta seccion son evidencia historica de otras corridas, no validacion de la nueva preparacion temporal. El contrato de las cuatro bases, tabla futura de coeficientes y roadmap detallado estan en `reports/contrato_analisis_temporal.md`.
+
 ## Correccion vigente de notebooks 12 y 13
 
 La unidad analitica de determinantes es la persona. El notebook 12 usa exclusivamente `mart_persona_revision_4` y entrega `data/processed/determinantes_<anio>/base_interpretable_personas_<anio>.csv.gz`; el 13 lee esa base. No se agrega un merge con `mart_hogar`. El hogar agrupa la particion train/validacion y permite evaluar errores estandar agrupados, pero cada fila y cada target siguen siendo individuales.
@@ -454,11 +462,11 @@ El grupo desfavorecido es descriptivo, no una clasificación de marginación: se
 
 Fuente: elaboración propia con ENIGH 2024. Mediana ponderada del ingreso corriente per cápita del hogar distribuido entre personas: `mart_persona` + `factor`. Montos nominales trimestrales.
 
-## Montos nominales y alcance temporal activo
+## Antecedente nominal de las etapas 12 y 13
 
-El flujo metodológico activo vuelve a trabajar con montos nominales trimestrales de ENIGH. Las comparaciones entre años se mantienen como descripciones nominales y no miden por sí solas cambios de poder adquisitivo.
+Las cifras de esta sección describen el flujo nominal anterior. Las comparaciones nominales no miden por sí solas cambios de poder adquisitivo; la nueva preparación temporal conserva esos montos y agrega una conversión anual aproximada a pesos de 2024.
 
-La etapa 10 de homologación monetaria y deflactores se conserva como intento histórico en `reports/intentos_metodologicos/homologacion_monetaria_etapa_10.md`, junto con el notebook `notebooks/10_homologacion_monetaria.ipynb`, `docs/deflactores_precios_2024.csv` y los marts locales de `data/interim/revision_5/`. Esos artefactos no se eliminan, pero `deflactor_2024` y las columnas `_real_2024` no son entradas activas para el siguiente trabajo.
+La implementación completa de la etapa 10 sigue siendo histórica en `reports/intentos_metodologicos/homologacion_monetaria_etapa_10.md`; no se reactiva `revision_5`. Solo se reutiliza su tabla versionada `docs/deflactores_precios_2024.csv` como referencia explícita de conversión anual del target individual.
 
 Punto de partida activo confirmado para la siguiente planeación:
 
@@ -481,7 +489,7 @@ Definición aprobada:
 - Edad mínima: `EDAD_MINIMA = 18`.
 - Universo: `edad >= 18` e `ingreso_persona_laboral_negocio_tri > 0`.
 - Target: `ingreso_persona_laboral_negocio_tri`.
-- Montos: nominales trimestrales.
+- Montos de esta ejecución histórica: nominales trimestrales. La nueva preparación conserva el nominal y agrega el real aproximado de 2024.
 - Fuente: `data/interim/revision_4/mart_persona_2018_2024.csv.gz`.
 - Cobertura: todas las regiones Banxico.
 
@@ -508,7 +516,7 @@ Exclusiones y resguardos:
 - Las llaves, entidad y municipio quedan fuera de `X`; entidad y municipio se mantienen para diagnóstico territorial porque `region_banxico` ya captura la agrupación territorial inicial.
 - `est_socio` se conserva como diagnóstico contextual y requiere decisión posterior antes de entrar a modelos.
 - `tam_emp_principal_desc` se conserva en la base interpretable, pero queda pendiente/fuera de `X` porque su categoría estructural de ausencia de trabajo principal duplicaba exactamente una dummy de subordinación.
-- No se usan `deflactor_2024`, columnas `_real_2024`, componentes monetarios del ingreso, derivados del target ni JKn.
+- En esta ejecución histórica no se usaron `deflactor_2024` ni columnas `_real_2024`. La nueva preparación calcula solo el target individual real aproximado, sin modificar marts ni reactivar JKn.
 
 Diagnósticos principales:
 
@@ -535,7 +543,7 @@ Estado de ejecución y compatibilidad:
 | 2022 | revisar antes de generar base | 141,514 | 80,217 | `segsoc_desc` contiene etiqueta contaminada para el código 2; requiere aprobación de mapeo antes de generar base |
 | 2024 | ejecutado, validado y auditado | 141,579 | 80,872 | base, matrices, tablas y figuras generadas; revisión metodológica pendiente |
 
-La comparabilidad de coeficientes entre años no queda resuelta por esta preparación. No se exige igual número de columnas si las categorías observadas difieren y no se introducen columnas constantes artificiales. Una especificación común posterior deberá decidir cómo tratar categorías ausentes, nuevas o incompatibles.
+La comparabilidad de coeficientes entre años no queda resuelta por esta preparación. No se exige igual número de columnas si las categorías observadas difieren y no se introducen columnas constantes artificiales. Una especificación común posterior deberá decidir cómo tratar categorías ausentes, nuevas o incompatibles. El nuevo notebook 12 prepara la auditoria para tomar esas decisiones, pero no la ha ejecutado en esta tarea.
 
 La auditoría diagnóstica de preparación queda en `reports/auditoria_preparacion_determinantes.md` y sus tablas agregadas en `reports/tables/auditoria_preparacion_determinantes/`. Sus hallazgos principales son: `segsoc_desc` 2020/2022 requiere mapeo explícito no aplicado; los faltantes laborales son estructurales por ruta de trabajo principal/contrato; la cola derecha del ingreso es extrema y fue trazada hasta `ingresos.csv`; `tam_emp_principal_desc` conserva información, pero su categoría estructural duplicaría una dummy de subordinación; y las variables de jefatura mezclan redundancia esperada para jefes/as con contexto del hogar para no jefes/as.
 
@@ -653,10 +661,11 @@ flowchart LR
 | --- | --- |
 | 08 Calidad de bases | COMPLETO |
 | 09 Desigualdad territorial | COMPLETO: ponderación descriptiva auditada, Gini nacional/regional, comparación Banxico ya documentada, CDMX, zonas metropolitanas, brechas territoriales y unidad del estimando documentada |
-| 10 Homologación monetaria | DEPRECADA del flujo principal; preservada como intento histórico |
+| 10 Homologación monetaria | Implementación histórica deprecada; solo su tabla de factores anuales se reutiliza con limitaciones explícitas |
 | 11 Diseño muestral formal | DEPRECADA del flujo principal; preservada como intento histórico |
-| 12 Preparación anual de base para determinantes | CODIGO CORREGIDO para persona y catalogo conceptual; ejecucion manual pendiente. Resultados anteriores de 2024 historicos; compatibilidad de otros años requiere nueva revision. |
-| 13 Regresión diagnóstica de determinantes | CODIGO CORREGIDO para especificacion individual; OLS nominal/log1p, HC3/hogar, pruebas, figuras, PCA y arbol preparados. Ejecucion manual pendiente; resultados anteriores historicos. |
+| 12 Preparación anual de base para determinantes | Auditoria de comparabilidad y base individual nominal/real 2024 preparadas para los cuatro años; ejecución manual temporal pendiente |
+| 13 Regresión diagnóstica de determinantes | Exploración local de 2024 conservada; selección de ese año no se traslada a otros cortes. No se ejecutó en esta tarea |
+| Siguiente etapa temporal | Modelos completos por año y geografía, selección anual independiente, comparación común, pooled, interacciones, Wald y diseño muestral pendientes; ver contrato temporal |
 | 14 Heterogeneidad territorial | Pendiente |
 | 15 Descomposición de desigualdad | Pendiente |
 | 16 Robustez y sensibilidad | Pendiente |
@@ -665,8 +674,8 @@ flowchart LR
 ## Comentarios generales
 
 - Los años son cortes transversales, no panel.
-- Los montos activos son nominales y trimestrales.
-- Las comparaciones entre años no miden por sí solas poder adquisitivo.
+- El target original es nominal trimestral; la preparación temporal agrega una versión real aproximada en pesos de 2024.
+- Las comparaciones reales siguen sujetas a aprobación del deflactor anual para el ingreso laboral individual.
 - `factor` permite estimaciones descriptivas ponderadas y no debe eliminarse de los marts.
 - La exclusión de la etapa 11 no convierte las observaciones en una muestra aleatoria simple ni justifica errores estándar convencionales.
 - La estrategia inferencial de los futuros modelos todavía no está definida.
@@ -679,7 +688,7 @@ flowchart LR
 
 ## Siguientes pasos
 
-- Siguiente hito: ejecutar manualmente notebook 12 y luego 13 para el mismo año; revisar validaciones, categorias raras, HC3/agrupados, diagnosticos de ambas escalas y comparacion monetaria antes de decidir escala principal y sensibilidad contextual.
+- Siguiente hito: ejecutar manualmente el notebook 12 para cada uno de los cuatro años, revisar tablas de comparabilidad, factores, categorias y geografia; despues definir modelos por año.
 - Antes de adoptar modelos, aprobar `ANIO_ANALISIS`, partición definitiva considerando hogares, especificación, tratamiento de `est_socio`, mapeo de `segsoc_desc` 2020/2022, decisión sobre faltantes laborales y `tam_emp_principal_desc`, tratamiento de cola derecha y alcance de inferencia.
 - Los notebooks de modelado deberán leer exclusivamente `data/processed/determinantes_<anio>/` del año seleccionado y guardar modelos, métricas y figuras separados por año y especificación.
 - No preparar bases de modelado predictivo ni adoptar modelos finales hasta que esa etapa sea aprobada explícitamente.

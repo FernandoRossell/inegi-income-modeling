@@ -66,6 +66,7 @@ inegi-income-modeling/
 - `docs/metadata_enigh.md`: metadata consolidada de tablas, columnas, llaves, factor temporal y documentacion ENIGH.
 - `docs/enigh_variable_metadata.csv`: metadata tabular extraida de los PDF oficiales de ENIGH.
 - `reports/documentacion_final_en_desarrollo.md`: documento vivo vigente con decisiones metodologicas, roadmap y alcance activo.
+- `reports/contrato_analisis_temporal.md`: contrato de bases, comparabilidad, precios de 2024, geografias y futuros modelos por año.
 - `AGENTS.md`: reglas permanentes de notebooks ejecutables, granularidad y ejecucion manual.
 - `reports/preparacion_base_determinantes.md`: resumen metodologico vigente de la base ejecutada por defecto, actualmente 2024.
 - `reports/auditoria_preparacion_determinantes.md`: auditoria diagnostica de la preparacion 2024 y compatibilidad anual antes de modelar.
@@ -83,11 +84,11 @@ inegi-income-modeling/
 ## Roadmap vigente
 
 - Etapas 08 y 09: se conservan como avances respaldados por evidencia.
-- Etapa 10: homologacion monetaria y deflactores deprecados del flujo principal; preservados como intento historico.
+- Etapa 10: implementacion historica de homologacion monetaria deprecada. La preparacion temporal nueva reutiliza solo su tabla versionada de factores anuales, con limitaciones explicitas.
 - Etapa 11: inferencia formal con diseno muestral y JKn deprecada del flujo principal; preservada como intento historico.
-- Etapa 12: codigo corregido para una fila por persona desde el mart de personas, con catalogo conceptual y base interpretable. Ejecucion manual de esta version pendiente; las cifras anteriores de 2024 son historicas.
-- Etapa 13: especificacion individual principal, particion por hogar, OLS nominal y `log1p`, pruebas de supuestos, figuras, PCA y arbol preparados en celdas locales. Ejecucion manual y revision de resultados pendientes; sin seleccion automatica ni PCR.
-- Siguiente hito: ejecutar manualmente 12 y 13 en ese orden, revisar validaciones y diagnosticos, y decidir escala principal y sensibilidad contextual.
+- Etapa 12: preparacion individual parametrizada para los cuatro años, con auditoria de comparabilidad, regla visible de `segsoc_desc`, targets nominal y real aproximado en pesos de 2024, y alternativas regional/estatal. Ejecucion manual del codigo temporal pendiente.
+- Etapa 13: exploracion local de 2024 conservada como antecedente y limitada a ese año mediante una validacion inicial; sus variables significativas no seleccionan predictores de otros años. El futuro analisis temporal usara una especificacion completa comun y exploraciones independientes por año.
+- Siguiente hito: ejecutar manualmente 12 en los cuatro cortes, revisar categorias, referencias, deflactores y bases antes de modelar. Roadmap completo en `reports/contrato_analisis_temporal.md`.
 
 ## Base activa para determinantes
 
@@ -95,12 +96,12 @@ inegi-income-modeling/
 - Para cambiar el año, modificar solo `ANIO_ANALISIS` al inicio de `notebooks/12_preparacion_base_determinantes.ipynb` y ejecutar todo el notebook.
 - Unidad: persona; universo fijo: `anio == ANIO_ANALISIS`, `edad >= EDAD_MINIMA` e `ingreso_persona_laboral_negocio_tri > 0`.
 - La version anterior de 2024 reporto 141,579 personas en 80,872 hogares; la version corregida esta pendiente de ejecucion manual y esos conteos deben verificarse de nuevo.
-- Target: `ingreso_persona_laboral_negocio_tri`, nominal trimestral.
+- Target: `ingreso_persona_laboral_negocio_tri`, nominal trimestral conservado en todos los años; su version real aproximada en pesos de 2024 y ambos `log1p` se agregan en la base individual. El factor anual procede de `docs/deflactores_precios_2024.csv` y requiere revision para ingreso laboral individual.
 - La matriz historica de 2024 tuvo 67 columnas; la nueva matriz individual tendra una especificacion distinta y su tamaño se verificara al ejecutarla.
 - Predictores principales: edad, sexo, escolaridad, parentesco, habla indigena, numero de trabajos, horas, seguridad social, subordinacion, contrato, region Banxico y tamaño de localidad. `tot_integ`, `menores`, `p65mas`, `sexo_jefe_desc` y `educa_jefe_desc` quedan como contexto del hogar fuera del modelo principal. `tam_emp_principal_desc` y `est_socio_desc` siguen pendientes.
-- Fuera de `X`: `factor`, `factor_hogar`, `est_dis`, `upm`, llaves, entidad/municipio, `est_socio`, variables monetarias, deflactores, variables reales y variables pendientes como `tam_emp_principal_desc`.
+- Fuera de la matriz descriptiva `X`: `factor`, `factor_hogar`, `est_dis`, `upm`, llaves, montos nominales/reales, deflactor y variables pendientes. `entidad` se conserva como alternativa geografica separada de `region_banxico`.
 - Salidas por año: `data/processed/determinantes_<anio>/`, `reports/tables/preparacion_determinantes/<anio>/` y `reports/figures/preparacion_determinantes/<anio>/`.
-- Compatibilidad inspeccionada: 2018 es compatible con las referencias actuales; 2020 y 2022 requieren resolver `segsoc_desc` antes de generar sus bases porque el codigo 2 aparece con etiqueta contaminada y no como la referencia OHE exacta `No`.
+- Comparabilidad historica inspeccionada: 2018 tenia las referencias previstas; 2020/2022 muestran una etiqueta contaminada de `segsoc_desc` para el codigo 2. El notebook 12 deja una recodificacion exacta y auditada; escolaridad, parentesco y referencia estatal requieren revision manual. Los resultados historicos no validan todavia la nueva preparacion.
 - Interpretacion: asociaciones descriptivas/exploratorias; no causalidad, no seleccion al ingreso positivo y no inferencia formal.
 
 ## Regresion diagnostica activa
@@ -111,7 +112,7 @@ inegi-income-modeling/
 - Particiones locales fuera de Git: `data/processed/regresion_diagnostico/<anio>/diagnostico_inicial/`.
 - Las cifras previas de particion y ajuste de 2024 corresponden a la especificacion historica con variables de hogar; no son resultados de los notebooks corregidos.
 - El notebook 13 lee `base_interpretable_personas_<anio>.csv.gz` generada por el 12. Ajusta su encoder solo en entrenamiento y prepara resúmenes completos de statsmodels, HC3, errores agrupados por hogar, pruebas, gráficas, PCA y árbol. El hogar sirve para evitar fuga y para agrupar errores, sin cambiar la unidad persona.
-- Estado multi-anio: solo 2024 fue ejecutado en regresion diagnostica; 2018 queda como compatibilidad inspeccionada; 2020/2022 siguen pendientes por `segsoc_desc`.
+- Estado multi-anio: existe una exploracion local 2024; el codigo de comparacion temporal no se ha ejecutado. Modelos completos por año, geograficos, pooled e interacciones siguen pendientes.
 
 ## Tablas centrales de ENIGH
 

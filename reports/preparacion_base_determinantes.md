@@ -1,5 +1,13 @@
 # Preparación de base para determinantes 2024
 
+## Preparacion temporal vigente
+
+El notebook 12 ahora contiene codigo visible para auditar 2018, 2020, 2022 y 2024, y para preparar una base individual por ejecucion cambiando `ANIO_ANALISIS`. Conserva ingreso laboral/de negocio nominal trimestral y agrega su version real aproximada en pesos de 2024 mediante el factor anual de `docs/deflactores_precios_2024.csv`, junto con ambos `log1p`. Esta conversion usa una tabla de referencia calibrada previamente con un benchmark de ingreso corriente del hogar; no lee ni une microdatos de hogares y su pertinencia para el target laboral individual requiere revision.
+
+El conjunto comun propuesto tiene diez variables; `nivelaprob_desc` y `parentesco_desc` permanecen en las bases anuales pero pendientes de armonizacion semantica. La etiqueta `No` contaminada de `segsoc_desc` en 2020/2022 tiene una regla exacta y visible, verificada contra el codigo 2 al ejecutar. Se guardan las etiquetas originales. `region_banxico` y `entidad` se preparan como geografias alternativas, con referencia estatal aun pendiente. El contrato completo y roadmap estan en `reports/contrato_analisis_temporal.md`.
+
+**No se ejecuto el codigo temporal en esta tarea.** Los conteos y asociaciones siguientes son de corridas anteriores, principalmente 2024 nominal, y no prueban comparabilidad real entre los cuatro años.
+
 ## Estado de la correccion actual
 
 El notebook 12 activo define una fila por persona y lee exclusivamente `mart_persona_revision_4`; no lee ni une `mart_hogar`. Clasifica predictores individuales, laborales y territoriales para la especificacion principal, y conserva `tot_integ`, `menores`, `p65mas`, `sexo_jefe_desc` y `educa_jefe_desc` solo como contexto del hogar para auditoria o sensibilidad futura. `tam_emp_principal_desc` y `est_socio_desc` siguen pendientes. Exporta `base_interpretable_personas_<anio>.csv.gz` con llave personal y llave de hogar; el notebook 13 lee esa base directamente. El log de la nueva version es `log1p(target)`; los descriptivos OHE/escalado del 12 no se reutilizan en modelado.

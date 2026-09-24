@@ -1,5 +1,9 @@
 # Regresion diagnostica de determinantes
 
+## Relacion con el analisis temporal
+
+Este notebook conserva la exploracion local de 2024 y sus celdas de seleccion por p-value como antecedente de ese corte. Una validacion inicial impide ejecutarlo para otro año. Se limpiaron outputs guardados al preparar la infraestructura temporal; no se ejecuto regresion en esta tarea. `significativas_2024` se documenta separadamente en el notebook 12 y no filtra variables de otros años. Los futuros modelos usaran el target real aproximado en pesos de 2024, una especificacion completa comun y exploraciones independientes por año, segun `reports/contrato_analisis_temporal.md`. Las cifras historicas mas abajo no se atribuyen al flujo temporal nuevo.
+
 ## Estado de la correccion actual
 
 El notebook 13 activo lee exclusivamente la base de personas del notebook 12. No lee ni une `mart_hogar`. La particion se agrupa por hogar para impedir fuga entre train y validacion, y los errores estandar pueden agruparse por hogar; el target y las filas siguen siendo individuales. El ajuste principal incluye solo variables individuales, laborales y territoriales. `tot_integ`, `menores`, `p65mas`, `sexo_jefe_desc` y `educa_jefe_desc` quedan fuera; el modelo anterior se conserva como antecedente historico. La seleccion tiene criterios sustantivos, de granularidad, calidad, redundancia, aporte y parsimonia explicitos.

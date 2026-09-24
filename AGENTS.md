@@ -8,3 +8,5 @@
 6. Los outputs visibles proceden de objetos creados durante la ejecucion actual; la exportacion va al final.
 7. Codex no ejecuta notebooks salvo solicitud explicita de la persona usuaria.
 8. Codex no hace push ni merge sin autorizacion explicita.
+9. En comparaciones temporales, conservar el target nominal y documentar el factor usado para expresarlo en pesos de 2024; no alterar marts.
+10. Los años ENIGH son cortes transversales, no seguimiento de personas u hogares. No trasladar selecciones exploratorias de un año a otro automaticamente.
