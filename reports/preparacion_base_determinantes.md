@@ -1,5 +1,11 @@
 # Preparación de base para determinantes 2024
 
+## Estado de la correccion actual
+
+El notebook 12 activo define una fila por persona y lee exclusivamente `mart_persona_revision_4`; no lee ni une `mart_hogar`. Clasifica predictores individuales, laborales y territoriales para la especificacion principal, y conserva `tot_integ`, `menores`, `p65mas`, `sexo_jefe_desc` y `educa_jefe_desc` solo como contexto del hogar para auditoria o sensibilidad futura. `tam_emp_principal_desc` y `est_socio_desc` siguen pendientes. Exporta `base_interpretable_personas_<anio>.csv.gz` con llave personal y llave de hogar; el notebook 13 lee esa base directamente. El log de la nueva version es `log1p(target)`; los descriptivos OHE/escalado del 12 no se reutilizan en modelado.
+
+**Ejecucion manual pendiente.** Todas las cifras y tablas que siguen documentan la version historica de 2024, con especificacion distinta; no se han reproducido tras esta correccion.
+
 Esta etapa prepara una base analítica de personas para estudiar asociaciones entre características personales, laborales, del hogar y territoriales e ingreso. No entrena modelos, no crea particiones y no reactiva las etapas históricas de homologación monetaria o JKn.
 
 Método de ejecución registrado: notebook_12_parametrizado_proceso_python_limpio_sin_nbclient.

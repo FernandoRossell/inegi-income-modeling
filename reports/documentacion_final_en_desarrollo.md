@@ -4,6 +4,14 @@
 **Años:** 2018, 2020, 2022 y 2024  
 **Estado:** documento vivo de trabajo para tesina
 
+## Correccion vigente de notebooks 12 y 13
+
+La unidad analitica de determinantes es la persona. El notebook 12 usa exclusivamente `mart_persona_revision_4` y entrega `data/processed/determinantes_<anio>/base_interpretable_personas_<anio>.csv.gz`; el 13 lee esa base. No se agrega un merge con `mart_hogar`. El hogar agrupa la particion train/validacion y permite evaluar errores estandar agrupados, pero cada fila y cada target siguen siendo individuales.
+
+Las variables se clasifican en individuales, laborales, territoriales y contextuales del hogar. La especificacion principal incluye los tres primeros grupos. `tot_integ`, `menores`, `p65mas`, `sexo_jefe_desc` y `educa_jefe_desc` se conservan para auditoria/sensibilidad futura, fuera del ajuste principal. `tam_emp_principal_desc` y `est_socio_desc` permanecen pendientes. La seleccion se revisara con criterios sustantivos, granularidad, calidad, colinealidad, aporte y parsimonia, sin eliminacion automatica.
+
+Los notebooks contienen el codigo local para preparar datos, ajustar OLS nominal y `log1p`, mostrar summaries, HC3 y errores agrupados, pruebas de supuestos, influencia, figuras, PCA y arbol. Esta correccion no ejecuto notebooks ni recalculo resultados. Las cifras anteriores de 2024 son historicas y requieren reproduccion manual con la nueva especificacion.
+
 Este documento consolida las decisiones metodológicas ya tomadas en las revisiones 1 a 4, el estado del arte geográfico y los notebooks 04 a 08. Los archivos históricos en `reports/` se conservan como bitácora; de aquí en adelante este archivo funciona como referencia principal del proyecto.
 
 ## Resumen del proyecto
@@ -647,8 +655,8 @@ flowchart LR
 | 09 Desigualdad territorial | COMPLETO: ponderación descriptiva auditada, Gini nacional/regional, comparación Banxico ya documentada, CDMX, zonas metropolitanas, brechas territoriales y unidad del estimando documentada |
 | 10 Homologación monetaria | DEPRECADA del flujo principal; preservada como intento histórico |
 | 11 Diseño muestral formal | DEPRECADA del flujo principal; preservada como intento histórico |
-| 12 Preparación anual de base para determinantes | EJECUTADA PARA 2024: parametrizada por `ANIO_ANALISIS`; 2024 ejecutado, validado y auditado; revisión metodológica pendiente; 2018 compatible inspeccionado; 2020/2022 pendientes por `segsoc_desc` |
-| 13 Regresión diagnóstica de determinantes | EJECUTADA PARA 2024 COMO DIAGNÓSTICO: partición por hogares, OLS nominal, OLS log exploratorio, VIF/GVIF, PCA exploratorio y árbol de referencia; sin selección automática, sin regresión reducida, sin PCR y sin inferencia formal |
+| 12 Preparación anual de base para determinantes | CODIGO CORREGIDO para persona y catalogo conceptual; ejecucion manual pendiente. Resultados anteriores de 2024 historicos; compatibilidad de otros años requiere nueva revision. |
+| 13 Regresión diagnóstica de determinantes | CODIGO CORREGIDO para especificacion individual; OLS nominal/log1p, HC3/hogar, pruebas, figuras, PCA y arbol preparados. Ejecucion manual pendiente; resultados anteriores historicos. |
 | 14 Heterogeneidad territorial | Pendiente |
 | 15 Descomposición de desigualdad | Pendiente |
 | 16 Robustez y sensibilidad | Pendiente |
@@ -671,7 +679,7 @@ flowchart LR
 
 ## Siguientes pasos
 
-- Siguiente hito: revisar conjuntamente los diagnósticos de la etapa 13 y decidir escala principal, criterio de selección, variables a retirar si procede y uso o no de componentes principales.
+- Siguiente hito: ejecutar manualmente notebook 12 y luego 13 para el mismo año; revisar validaciones, categorias raras, HC3/agrupados, diagnosticos de ambas escalas y comparacion monetaria antes de decidir escala principal y sensibilidad contextual.
 - Antes de adoptar modelos, aprobar `ANIO_ANALISIS`, partición definitiva considerando hogares, especificación, tratamiento de `est_socio`, mapeo de `segsoc_desc` 2020/2022, decisión sobre faltantes laborales y `tam_emp_principal_desc`, tratamiento de cola derecha y alcance de inferencia.
 - Los notebooks de modelado deberán leer exclusivamente `data/processed/determinantes_<anio>/` del año seleccionado y guardar modelos, métricas y figuras separados por año y especificación.
 - No preparar bases de modelado predictivo ni adoptar modelos finales hasta que esa etapa sea aprobada explícitamente.

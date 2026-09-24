@@ -1,5 +1,11 @@
 # Regresion diagnostica de determinantes
 
+## Estado de la correccion actual
+
+El notebook 13 activo lee exclusivamente la base de personas del notebook 12. No lee ni une `mart_hogar`. La particion se agrupa por hogar para impedir fuga entre train y validacion, y los errores estandar pueden agruparse por hogar; el target y las filas siguen siendo individuales. El ajuste principal incluye solo variables individuales, laborales y territoriales. `tot_integ`, `menores`, `p65mas`, `sexo_jefe_desc` y `educa_jefe_desc` quedan fuera; el modelo anterior se conserva como antecedente historico. La seleccion tiene criterios sustantivos, de granularidad, calidad, redundancia, aporte y parsimonia explicitos.
+
+Se prepararon `summary()` completos para OLS nominal y `log1p`, EE convencionales/HC3/agrupados, pruebas Jarque-Bera, Omnibus, Breusch-Pagan, White opcional, RESET y Durbin-Watson, VIF/GVIF, influencia agregada y figuras diagnosticas en ambas escalas. PCA y arbol siguen siendo complementarios. **Ejecucion manual pendiente:** todos los resultados numericos siguientes proceden de la especificacion historica y no se han reproducido despues de la correccion.
+
 ## Estado
 
 - Notebook: `notebooks/13_regresion_diagnostico_determinantes.ipynb`.
