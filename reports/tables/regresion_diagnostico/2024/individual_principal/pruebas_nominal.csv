@@ -1,0 +1,7 @@
+prueba,estadistico,p_value,nota
+Jarque-Bera,7454890881851.887,0.0,Sensible con n grande
+Omnibus,522882.86685138696,0.0,Sensible con n grande
+Breusch-Pagan,29.678707692914585,0.9945733899115882,Sensible con n grande
+Durbin-Watson,1.9458898958286102,,Orden de filas; alcance limitado en corte transversal
+White,,,"Omitida: EJECUTAR_WHITE=False; columnas=52, limite=20"
+RESET,515.9662612786635,5.752788337483853e-114,Forma funcional; no identifica la causa

@@ -1,0 +1,3 @@
+escala,particion,n,mae,rmse
+arbol_pesos,entrenamiento,113173,16059.773255280694,66197.11044270835
+arbol_pesos,validacion,28406,16018.921034115625,42104.66184032012

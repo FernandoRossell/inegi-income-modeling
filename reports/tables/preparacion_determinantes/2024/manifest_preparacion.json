@@ -1,0 +1,168 @@
+{
+  "estado": "pendiente_ejecucion_manual",
+  "unidad_analisis": "persona",
+  "fuente_microdatos": "mart_persona_revision_4",
+  "merge_base_hogares": false,
+  "anio": 2024,
+  "filas": 141579,
+  "hogares": 80872,
+  "target_nominal": "ingreso_persona_laboral_negocio_tri",
+  "target_real_2024": "ingreso_persona_laboral_negocio_tri_real_2024",
+  "deflactor_2024": 1.0,
+  "fuente_deflactor": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\docs\\deflactores_precios_2024.csv",
+  "metodo_deflactor": "factor anual calibrado al benchmark INEGI de ingreso corriente del hogar; aproximacion para ingreso laboral individual",
+  "variables_comunes_propuestas": [
+    "edad",
+    "sexo_desc",
+    "hablaind_desc",
+    "n_trabajos",
+    "horas_trabajos_total",
+    "segsoc_desc",
+    "subor_principal_desc",
+    "contrato_principal_desc",
+    "region_banxico",
+    "tam_loc_desc"
+  ],
+  "variables_exploratorias_anuales": [
+    "edad",
+    "sexo_desc",
+    "nivelaprob_desc",
+    "parentesco_desc",
+    "hablaind_desc",
+    "n_trabajos",
+    "horas_trabajos_total",
+    "segsoc_desc",
+    "subor_principal_desc",
+    "contrato_principal_desc",
+    "region_banxico",
+    "tam_loc_desc"
+  ],
+  "significativas_2024_antecedente": [
+    "edad",
+    "n_trabajos",
+    "horas_trabajos_total",
+    "sexo_desc",
+    "nivelaprob_desc",
+    "parentesco_desc",
+    "hablaind_desc",
+    "segsoc_desc",
+    "subor_principal_desc",
+    "contrato_principal_desc",
+    "region_banxico",
+    "tam_loc_desc"
+  ],
+  "variables_contextuales_excluidas": [
+    "tot_integ",
+    "menores",
+    "p65mas",
+    "sexo_jefe_desc",
+    "educa_jefe_desc"
+  ],
+  "variables_pendientes": [
+    "tam_emp_principal_desc",
+    "est_socio_desc",
+    "nivelaprob_desc",
+    "parentesco_desc"
+  ],
+  "especificacion_regional": [
+    "edad",
+    "sexo_desc",
+    "hablaind_desc",
+    "n_trabajos",
+    "horas_trabajos_total",
+    "segsoc_desc",
+    "subor_principal_desc",
+    "contrato_principal_desc",
+    "tam_loc_desc",
+    "region_banxico"
+  ],
+  "especificacion_estatal": [
+    "edad",
+    "sexo_desc",
+    "hablaind_desc",
+    "n_trabajos",
+    "horas_trabajos_total",
+    "segsoc_desc",
+    "subor_principal_desc",
+    "contrato_principal_desc",
+    "tam_loc_desc",
+    "entidad"
+  ],
+  "referencia_estatal": null,
+  "referencias_ohe": {
+    "sexo_desc": "Hombre",
+    "nivelaprob_desc": "Ninguno",
+    "region_banxico": "Centro",
+    "tam_loc_desc": "Localidades con 100 000 y más habitantes",
+    "parentesco_desc": "Jefe(a)",
+    "hablaind_desc": "No",
+    "segsoc_desc": "No",
+    "subor_principal_desc": "No",
+    "contrato_principal_desc": "No"
+  },
+  "reglas_armonizacion": {
+    "2020": {
+      "No nóicpircseD .0202 y": "No"
+    },
+    "2022": {
+      "No nóicpircseD .2202 y": "No"
+    }
+  },
+  "validaciones": [
+    {
+      "prueba": "filas sin cambio",
+      "valor": 141579.0,
+      "ok": true
+    },
+    {
+      "prueba": "llave persona unica",
+      "valor": 0.0,
+      "ok": true
+    },
+    {
+      "prueba": "hogares distintos",
+      "valor": 80872.0,
+      "ok": true
+    },
+    {
+      "prueba": "anio",
+      "valor": 2024.0,
+      "ok": true
+    },
+    {
+      "prueba": "edad minima",
+      "valor": 18.0,
+      "ok": true
+    },
+    {
+      "prueba": "target nominal positivo",
+      "valor": 2.93,
+      "ok": true
+    },
+    {
+      "prueba": "target real positivo",
+      "valor": 2.93,
+      "ok": true
+    },
+    {
+      "prueba": "factor real consistente",
+      "valor": 1.0,
+      "ok": true
+    },
+    {
+      "prueba": "columnas requeridas",
+      "valor": 30.0,
+      "ok": true
+    },
+    {
+      "prueba": "diseño muestral conservado",
+      "valor": 3.0,
+      "ok": true
+    },
+    {
+      "prueba": "candidatas clasificadas",
+      "valor": 17.0,
+      "ok": true
+    }
+  ]
+}

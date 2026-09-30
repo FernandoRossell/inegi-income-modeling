@@ -1,0 +1,59 @@
+variable,categoria,n,n_influyentes
+parentesco_desc,Bisabuelo(a),1,1
+parentesco_desc,"Compadre, comadre",1,1
+parentesco_desc,Consuegro(a),1,1
+parentesco_desc,Medio(a) hermano(a),1,1
+parentesco_desc,Ahijado(a),3,3
+parentesco_desc,Hijo(a) adoptivo(a),3,3
+parentesco_desc,Bisnieto(a),9,9
+parentesco_desc,"Familiar, otro parentesco",10,10
+parentesco_desc,"Padrastro, madrastra",13,13
+parentesco_desc,Abuelo(a),14,14
+parentesco_desc,Concuño(a),20,20
+nivelaprob_desc,Preescolar o kínder,30,30
+parentesco_desc,Concubino(a),39,39
+parentesco_desc,Pareja del mismo sexo,53,53
+parentesco_desc,Tío(a),53,53
+parentesco_desc,Primo(a) nóicpircseD .4202 y,135,135
+parentesco_desc,Suegro(a),171,171
+nivelaprob_desc,Especialidad,285,285
+parentesco_desc,"Hijastro(a), entenado(a)",294,294
+nivelaprob_desc,Doctorado,337,337
+nivelaprob_desc,Normal,340,340
+parentesco_desc,"Madre, padre",390,390
+parentesco_desc,Cuñado(a),436,436
+parentesco_desc,No tiene parentesco,521,521
+parentesco_desc,Sobrino(a),725,725
+parentesco_desc,Hermano(a),1561,321
+parentesco_desc,Nieto(a),1767,222
+nivelaprob_desc,Maestría,1805,166
+nivelaprob_desc,Estudios técnicos o comerciales,2773,316
+parentesco_desc,"Nuera, yerno",3032,212
+nivelaprob_desc,Ninguno,3313,584
+subor_principal_desc,No aplica: sin trabajo principal reportado,4179,1035
+hablaind_desc,Sí,8761,974
+tam_loc_desc,Localidades con 15 000 a 99 999 habitantes,13365,940
+tam_loc_desc,Localidades con 2 500 a 14 999 habitantes,13834,995
+parentesco_desc,"Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte",22309,1295
+nivelaprob_desc,Licenciatura o Ingeniería (profesional),22410,1160
+nivelaprob_desc,Primaria,22521,1618
+subor_principal_desc,No,25055,2333
+nivelaprob_desc,Preparatoria o bachillerato,25686,1415
+region_banxico,Sur,25693,2168
+region_banxico,Norte,25750,1722
+parentesco_desc,"Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido",27183,1019
+region_banxico,Centro,28364,1845
+contrato_principal_desc,No aplica: sin contrato principal documentado,29617,3751
+region_banxico,Centro Norte,33366,2348
+nivelaprob_desc,Secundaria,33673,1832
+contrato_principal_desc,Sí,41425,2102
+contrato_principal_desc,No,42131,2230
+tam_loc_desc,Localidades con menos de 2 500 habitantes,42289,3064
+tam_loc_desc,Localidades con 100 000 y más habitantes,43685,3084
+segsoc_desc,No,46616,4084
+sexo_desc,Mujer,47322,4033
+parentesco_desc,Jefe(a),54428,2121
+sexo_desc,Hombre,65851,4050
+segsoc_desc,Sí,66557,3999
+subor_principal_desc,Sí,83939,4715
+hablaind_desc,No,104412,7109

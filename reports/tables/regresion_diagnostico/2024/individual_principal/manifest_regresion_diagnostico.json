@@ -1,0 +1,72 @@
+{
+  "estado": "pendiente_ejecucion_manual",
+  "unidad_analisis": "persona",
+  "fuente": "mart_persona_revision_4 a traves de base del notebook 12",
+  "merge_mart_hogar": false,
+  "particion": "agrupada por hogar para evitar fuga",
+  "anio": 2024,
+  "base_entrada": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\processed\\determinantes_2024\\base_interpretable_personas_2024.csv.gz",
+  "personas": 141579,
+  "hogares": 80872,
+  "variables_modelo_individual": [
+    "edad",
+    "sexo_desc",
+    "nivelaprob_desc",
+    "parentesco_desc",
+    "hablaind_desc",
+    "n_trabajos",
+    "horas_trabajos_total",
+    "segsoc_desc",
+    "subor_principal_desc",
+    "contrato_principal_desc",
+    "region_banxico",
+    "tam_loc_desc"
+  ],
+  "variables_contextuales_excluidas": [
+    "tot_integ",
+    "menores",
+    "p65mas",
+    "sexo_jefe_desc",
+    "educa_jefe_desc"
+  ],
+  "variables_pendientes": [
+    "tam_emp_principal_desc",
+    "est_socio_desc"
+  ],
+  "referencias": {
+    "sexo_desc": "Hombre",
+    "nivelaprob_desc": "Ninguno",
+    "parentesco_desc": "Jefe(a)",
+    "hablaind_desc": "No",
+    "segsoc_desc": "No",
+    "subor_principal_desc": "No",
+    "contrato_principal_desc": "No",
+    "region_banxico": "Centro",
+    "tam_loc_desc": "Localidades con 100 000 y más habitantes"
+  },
+  "transformacion_target": "log1p",
+  "diagnosticos": [
+    "summary nominal/log",
+    "HC3",
+    "EE hogar",
+    "JB",
+    "Omnibus",
+    "BP",
+    "White parametrizable",
+    "RESET",
+    "DW",
+    "VIF",
+    "GVIF",
+    "influencia",
+    "8 graficas por escala",
+    "PCA",
+    "arbol",
+    "permutacion por bloque"
+  ],
+  "limitaciones": [
+    "no ponderado y sin diseno muestral formal",
+    "White opcional por costo",
+    "categoria nueva en validacion codificada como bloque de ceros",
+    "sin seleccion automatica ni PCR"
+  ]
+}

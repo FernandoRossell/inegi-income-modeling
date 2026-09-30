@@ -1,0 +1,53 @@
+columna_matriz,variable_original,categoria,referencia,transformacion
+edad,edad,,,continua original
+n_trabajos,n_trabajos,,,continua original
+horas_trabajos_total,horas_trabajos_total,,,continua original
+sexo_desc__Mujer,sexo_desc,Mujer,Hombre,OHE k-1
+nivelaprob_desc__Doctorado,nivelaprob_desc,Doctorado,Ninguno,OHE k-1
+nivelaprob_desc__Especialidad,nivelaprob_desc,Especialidad,Ninguno,OHE k-1
+nivelaprob_desc__Estudios técnicos o comerciales,nivelaprob_desc,Estudios técnicos o comerciales,Ninguno,OHE k-1
+nivelaprob_desc__Licenciatura o Ingeniería (profesional),nivelaprob_desc,Licenciatura o Ingeniería (profesional),Ninguno,OHE k-1
+nivelaprob_desc__Maestría,nivelaprob_desc,Maestría,Ninguno,OHE k-1
+nivelaprob_desc__Normal,nivelaprob_desc,Normal,Ninguno,OHE k-1
+nivelaprob_desc__Preescolar o kínder,nivelaprob_desc,Preescolar o kínder,Ninguno,OHE k-1
+nivelaprob_desc__Preparatoria o bachillerato,nivelaprob_desc,Preparatoria o bachillerato,Ninguno,OHE k-1
+nivelaprob_desc__Primaria,nivelaprob_desc,Primaria,Ninguno,OHE k-1
+nivelaprob_desc__Secundaria,nivelaprob_desc,Secundaria,Ninguno,OHE k-1
+parentesco_desc__Abuelo(a),parentesco_desc,Abuelo(a),Jefe(a),OHE k-1
+parentesco_desc__Ahijado(a),parentesco_desc,Ahijado(a),Jefe(a),OHE k-1
+parentesco_desc__Bisabuelo(a),parentesco_desc,Bisabuelo(a),Jefe(a),OHE k-1
+parentesco_desc__Bisnieto(a),parentesco_desc,Bisnieto(a),Jefe(a),OHE k-1
+"parentesco_desc__Compadre, comadre",parentesco_desc,"Compadre, comadre",Jefe(a),OHE k-1
+parentesco_desc__Concubino(a),parentesco_desc,Concubino(a),Jefe(a),OHE k-1
+parentesco_desc__Concuño(a),parentesco_desc,Concuño(a),Jefe(a),OHE k-1
+parentesco_desc__Consuegro(a),parentesco_desc,Consuegro(a),Jefe(a),OHE k-1
+parentesco_desc__Cuñado(a),parentesco_desc,Cuñado(a),Jefe(a),OHE k-1
+"parentesco_desc__Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte",parentesco_desc,"Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte",Jefe(a),OHE k-1
+"parentesco_desc__Familiar, otro parentesco",parentesco_desc,"Familiar, otro parentesco",Jefe(a),OHE k-1
+parentesco_desc__Hermano(a),parentesco_desc,Hermano(a),Jefe(a),OHE k-1
+"parentesco_desc__Hijastro(a), entenado(a)",parentesco_desc,"Hijastro(a), entenado(a)",Jefe(a),OHE k-1
+parentesco_desc__Hijo(a) adoptivo(a),parentesco_desc,Hijo(a) adoptivo(a),Jefe(a),OHE k-1
+"parentesco_desc__Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido",parentesco_desc,"Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido",Jefe(a),OHE k-1
+"parentesco_desc__Madre, padre",parentesco_desc,"Madre, padre",Jefe(a),OHE k-1
+parentesco_desc__Medio(a) hermano(a),parentesco_desc,Medio(a) hermano(a),Jefe(a),OHE k-1
+parentesco_desc__Nieto(a),parentesco_desc,Nieto(a),Jefe(a),OHE k-1
+parentesco_desc__No tiene parentesco,parentesco_desc,No tiene parentesco,Jefe(a),OHE k-1
+"parentesco_desc__Nuera, yerno",parentesco_desc,"Nuera, yerno",Jefe(a),OHE k-1
+"parentesco_desc__Padrastro, madrastra",parentesco_desc,"Padrastro, madrastra",Jefe(a),OHE k-1
+parentesco_desc__Pareja del mismo sexo,parentesco_desc,Pareja del mismo sexo,Jefe(a),OHE k-1
+parentesco_desc__Primo(a) nóicpircseD .4202 y,parentesco_desc,Primo(a) nóicpircseD .4202 y,Jefe(a),OHE k-1
+parentesco_desc__Sobrino(a),parentesco_desc,Sobrino(a),Jefe(a),OHE k-1
+parentesco_desc__Suegro(a),parentesco_desc,Suegro(a),Jefe(a),OHE k-1
+parentesco_desc__Tío(a),parentesco_desc,Tío(a),Jefe(a),OHE k-1
+hablaind_desc__Sí,hablaind_desc,Sí,No,OHE k-1
+segsoc_desc__Sí,segsoc_desc,Sí,No,OHE k-1
+subor_principal_desc__No aplica: sin trabajo principal reportado,subor_principal_desc,No aplica: sin trabajo principal reportado,No,OHE k-1
+subor_principal_desc__Sí,subor_principal_desc,Sí,No,OHE k-1
+contrato_principal_desc__No aplica: sin contrato principal documentado,contrato_principal_desc,No aplica: sin contrato principal documentado,No,OHE k-1
+contrato_principal_desc__Sí,contrato_principal_desc,Sí,No,OHE k-1
+region_banxico__Centro Norte,region_banxico,Centro Norte,Centro,OHE k-1
+region_banxico__Norte,region_banxico,Norte,Centro,OHE k-1
+region_banxico__Sur,region_banxico,Sur,Centro,OHE k-1
+tam_loc_desc__Localidades con 15 000 a 99 999 habitantes,tam_loc_desc,Localidades con 15 000 a 99 999 habitantes,Localidades con 100 000 y más habitantes,OHE k-1
+tam_loc_desc__Localidades con 2 500 a 14 999 habitantes,tam_loc_desc,Localidades con 2 500 a 14 999 habitantes,Localidades con 100 000 y más habitantes,OHE k-1
+tam_loc_desc__Localidades con menos de 2 500 habitantes,tam_loc_desc,Localidades con menos de 2 500 habitantes,Localidades con 100 000 y más habitantes,OHE k-1

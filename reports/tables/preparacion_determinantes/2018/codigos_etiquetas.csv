@@ -1,0 +1,155 @@
+anio,codigo_variable,codigo,etiqueta_variable,etiqueta,frecuencia
+2018,segsoc,1.0,segsoc_desc,Sí,68625
+2018,segsoc,2.0,segsoc_desc,No,51429
+2018,nivelaprob,0.0,nivelaprob_desc,Ninguno,4833
+2018,nivelaprob,1.0,nivelaprob_desc,Preescolar,101
+2018,nivelaprob,2.0,nivelaprob_desc,Primaria,29209
+2018,nivelaprob,3.0,nivelaprob_desc,Secundaria,36552
+2018,nivelaprob,4.0,nivelaprob_desc,Preparatoria o bachillerato,23626
+2018,nivelaprob,5.0,nivelaprob_desc,Normal,584
+2018,nivelaprob,6.0,nivelaprob_desc,Carrera técnica o comercial,3953
+2018,nivelaprob,7.0,nivelaprob_desc,Profesional,19276
+2018,nivelaprob,8.0,nivelaprob_desc,Maestría,1597
+2018,nivelaprob,9.0,nivelaprob_desc,Doctorado,323
+2018,parentesco,101,parentesco_desc,Jefe(a),58573
+2018,parentesco,201,parentesco_desc,"Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte",23960
+2018,parentesco,202,parentesco_desc,Concubino(a),13
+2018,parentesco,205,parentesco_desc,Pareja del mismo sexo,25
+2018,parentesco,301,parentesco_desc,"Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido",27839
+2018,parentesco,302,parentesco_desc,Hijo(a) adoptivo(a),8
+2018,parentesco,303,parentesco_desc,"Hijastro(a), entenado(a)",226
+2018,parentesco,501,parentesco_desc,No tiene parentesco,603
+2018,parentesco,601,parentesco_desc,"Madre, padre",429
+2018,parentesco,602,parentesco_desc,"Padrastro, madrastra",10
+2018,parentesco,603,parentesco_desc,Hermano(a),1533
+2018,parentesco,606,parentesco_desc,Abuelo(a),9
+2018,parentesco,609,parentesco_desc,Nieto(a),1570
+2018,parentesco,610,parentesco_desc,Bisnieto(a),9
+2018,parentesco,612,parentesco_desc,Tío(a),56
+2018,parentesco,613,parentesco_desc,Sobrino(a) .9102 nóicpircseD .8102 y,759
+2018,parentesco,614,parentesco_desc,Primo(a),203
+2018,parentesco,615,parentesco_desc,Suegro(a),190
+2018,parentesco,616,parentesco_desc,Consuegro(a),1
+2018,parentesco,617,parentesco_desc,"Nuera, yerno",3485
+2018,parentesco,618,parentesco_desc,Cuñado(a),493
+2018,parentesco,619,parentesco_desc,Concuño(a),20
+2018,parentesco,621,parentesco_desc,Ahijado(a),3
+2018,parentesco,622,parentesco_desc,"Compadre, comadre",2
+2018,parentesco,623,parentesco_desc,"Familiar, otro parentesco",35
+2020,segsoc,1.0,segsoc_desc,Sí,81436
+2020,segsoc,2.0,segsoc_desc,No nóicpircseD .0202 y,57958
+2020,nivelaprob,0.0,nivelaprob_desc,Ninguno,4912
+2020,nivelaprob,1.0,nivelaprob_desc,Preescolar,30
+2020,nivelaprob,2.0,nivelaprob_desc,Primaria,31748
+2020,nivelaprob,3.0,nivelaprob_desc,Secundaria,41757
+2020,nivelaprob,4.0,nivelaprob_desc,Preparatoria o bachillerato,28896
+2020,nivelaprob,5.0,nivelaprob_desc,Normal,663
+2020,nivelaprob,6.0,nivelaprob_desc,Carrera técnica o comercial,4552
+2020,nivelaprob,7.0,nivelaprob_desc,Profesional,24322
+2020,nivelaprob,8.0,nivelaprob_desc,Maestría,2053
+2020,nivelaprob,9.0,nivelaprob_desc,Doctorado,461
+2020,parentesco,101,parentesco_desc,Jefe(a),66579
+2020,parentesco,201,parentesco_desc,"Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte",27156
+2020,parentesco,202,parentesco_desc,Concubino(a),26
+2020,parentesco,205,parentesco_desc,Pareja del mismo sexo,39
+2020,parentesco,301,parentesco_desc,"Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido",34215
+2020,parentesco,302,parentesco_desc,Hijo(a) adoptivo(a),4
+2020,parentesco,303,parentesco_desc,"Hijastro(a), entenado(a)",291
+2020,parentesco,501,parentesco_desc,No tiene parentesco,685
+2020,parentesco,601,parentesco_desc,"Madre, padre",442
+2020,parentesco,602,parentesco_desc,"Padrastro, madrastra",11
+2020,parentesco,603,parentesco_desc,Hermano(a),1793
+2020,parentesco,605,parentesco_desc,Hermanastro(a),1
+2020,parentesco,606,parentesco_desc,Abuelo(a),14
+2020,parentesco,609,parentesco_desc,Nieto(a),2146
+2020,parentesco,610,parentesco_desc,Bisnieto(a),17
+2020,parentesco,612,parentesco_desc,Tío(a),74
+2020,parentesco,613,parentesco_desc,Sobrino(a) nóicpircseD .0202 y Fe de erratas,833
+2020,parentesco,614,parentesco_desc,Primo(a),185
+2020,parentesco,615,parentesco_desc,Suegro(a),198
+2020,parentesco,616,parentesco_desc,Consuegro(a),2
+2020,parentesco,617,parentesco_desc,"Nuera, yerno",4123
+2020,parentesco,618,parentesco_desc,Cuñado(a),507
+2020,parentesco,619,parentesco_desc,Concuño(a),21
+2020,parentesco,621,parentesco_desc,Ahijado(a),10
+2020,parentesco,622,parentesco_desc,"Compadre, comadre",2
+2020,parentesco,623,parentesco_desc,"Familiar, otro parentesco",20
+2022,segsoc,1.0,segsoc_desc,Sí,83518
+2022,segsoc,2.0,segsoc_desc,No nóicpircseD .2202 y,57996
+2022,nivelaprob,0.0,nivelaprob_desc,Ninguno,4410
+2022,nivelaprob,1.0,nivelaprob_desc,Preescolar,42
+2022,nivelaprob,2.0,nivelaprob_desc,Primaria,29555
+2022,nivelaprob,3.0,nivelaprob_desc,Secundaria,42029
+2022,nivelaprob,4.0,nivelaprob_desc,Preparatoria o bachillerato,31104
+2022,nivelaprob,5.0,nivelaprob_desc,Normal,651
+2022,nivelaprob,6.0,nivelaprob_desc,Carrera técnica o comercial,4249
+2022,nivelaprob,7.0,nivelaprob_desc,Profesional,26862
+2022,nivelaprob,8.0,nivelaprob_desc,Maestría,2151
+2022,nivelaprob,9.0,nivelaprob_desc,Doctorado,461
+2022,parentesco,101,parentesco_desc,Jefe(a),67746
+2022,parentesco,201,parentesco_desc,"Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte",27623
+2022,parentesco,202,parentesco_desc,Concubino(a),58
+2022,parentesco,205,parentesco_desc,Pareja del mismo sexo,46
+2022,parentesco,301,parentesco_desc,"Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido",34351
+2022,parentesco,302,parentesco_desc,Hijo(a) adoptivo(a),4
+2022,parentesco,303,parentesco_desc,"Hijastro(a), entenado(a)",346
+2022,parentesco,304,parentesco_desc,Hijo(a) de crianza,1
+2022,parentesco,501,parentesco_desc,No tiene parentesco,667
+2022,parentesco,601,parentesco_desc,"Madre, padre",475
+2022,parentesco,602,parentesco_desc,"Padrastro, madrastra",12
+2022,parentesco,603,parentesco_desc,Hermano(a),1925
+2022,parentesco,606,parentesco_desc,Abuelo(a),11
+2022,parentesco,609,parentesco_desc,Nieto(a),2210
+2022,parentesco,610,parentesco_desc,Bisnieto(a),10
+2022,parentesco,612,parentesco_desc,Tío(a),80
+2022,parentesco,613,parentesco_desc,Sobrino(a),902
+2022,parentesco,614,parentesco_desc,Primo(a) nóicpircseD .2202 y,171
+2022,parentesco,615,parentesco_desc,Suegro(a),206
+2022,parentesco,616,parentesco_desc,Consuegro(a),3
+2022,parentesco,617,parentesco_desc,"Nuera, yerno",4125
+2022,parentesco,618,parentesco_desc,Cuñado(a),500
+2022,parentesco,619,parentesco_desc,Concuño(a),16
+2022,parentesco,621,parentesco_desc,Ahijado(a),4
+2022,parentesco,622,parentesco_desc,"Compadre, comadre",1
+2022,parentesco,623,parentesco_desc,"Familiar, otro parentesco",21
+2024,segsoc,1.0,segsoc_desc,Sí,83301
+2024,segsoc,2.0,segsoc_desc,No,58278
+2024,nivelaprob,0.0,nivelaprob_desc,Ninguno,4145
+2024,nivelaprob,1.0,nivelaprob_desc,Preescolar o kínder,43
+2024,nivelaprob,2.0,nivelaprob_desc,Primaria,28255
+2024,nivelaprob,3.0,nivelaprob_desc,Secundaria,42046
+2024,nivelaprob,4.0,nivelaprob_desc,Preparatoria o bachillerato,32230
+2024,nivelaprob,5.0,nivelaprob_desc,Normal,422
+2024,nivelaprob,6.0,nivelaprob_desc,Estudios técnicos o comerciales,3513
+2024,nivelaprob,7.0,nivelaprob_desc,Licenciatura o Ingeniería (profesional),27905
+2024,nivelaprob,8.0,nivelaprob_desc,Especialidad,360
+2024,nivelaprob,9.0,nivelaprob_desc,Maestría,2243
+2024,nivelaprob,10.0,nivelaprob_desc,Doctorado,417
+2024,parentesco,101,parentesco_desc,Jefe(a),68035
+2024,parentesco,201,parentesco_desc,"Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte",27867
+2024,parentesco,202,parentesco_desc,Concubino(a),50
+2024,parentesco,205,parentesco_desc,Pareja del mismo sexo,61
+2024,parentesco,301,parentesco_desc,"Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido",34115
+2024,parentesco,302,parentesco_desc,Hijo(a) adoptivo(a),6
+2024,parentesco,303,parentesco_desc,"Hijastro(a), entenado(a)",384
+2024,parentesco,304,parentesco_desc,Hijo(a) de crianza,1
+2024,parentesco,501,parentesco_desc,No tiene parentesco,669
+2024,parentesco,601,parentesco_desc,"Madre, padre",491
+2024,parentesco,602,parentesco_desc,"Padrastro, madrastra",17
+2024,parentesco,603,parentesco_desc,Hermano(a),1910
+2024,parentesco,604,parentesco_desc,Medio(a) hermano(a),1
+2024,parentesco,606,parentesco_desc,Abuelo(a),16
+2024,parentesco,607,parentesco_desc,Bisabuelo(a),1
+2024,parentesco,609,parentesco_desc,Nieto(a),2259
+2024,parentesco,610,parentesco_desc,Bisnieto(a),12
+2024,parentesco,612,parentesco_desc,Tío(a),66
+2024,parentesco,613,parentesco_desc,Sobrino(a),890
+2024,parentesco,614,parentesco_desc,Primo(a) nóicpircseD .4202 y,163
+2024,parentesco,615,parentesco_desc,Suegro(a),208
+2024,parentesco,616,parentesco_desc,Consuegro(a),1
+2024,parentesco,617,parentesco_desc,"Nuera, yerno",3765
+2024,parentesco,618,parentesco_desc,Cuñado(a),545
+2024,parentesco,619,parentesco_desc,Concuño(a),24
+2024,parentesco,621,parentesco_desc,Ahijado(a),4
+2024,parentesco,622,parentesco_desc,"Compadre, comadre",3
+2024,parentesco,623,parentesco_desc,"Familiar, otro parentesco",15

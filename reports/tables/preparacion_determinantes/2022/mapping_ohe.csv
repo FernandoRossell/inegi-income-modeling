@@ -1,0 +1,51 @@
+columna_matriz,variable_original,categoria,referencia
+edad,edad,,
+n_trabajos,n_trabajos,,
+horas_trabajos_total,horas_trabajos_total,,
+sexo_desc__Mujer,sexo_desc,Mujer,Hombre
+nivelaprob_desc__Carrera técnica o comercial,nivelaprob_desc,Carrera técnica o comercial,Ninguno
+nivelaprob_desc__Doctorado,nivelaprob_desc,Doctorado,Ninguno
+nivelaprob_desc__Maestría,nivelaprob_desc,Maestría,Ninguno
+nivelaprob_desc__Normal,nivelaprob_desc,Normal,Ninguno
+nivelaprob_desc__Preescolar,nivelaprob_desc,Preescolar,Ninguno
+nivelaprob_desc__Preparatoria o bachillerato,nivelaprob_desc,Preparatoria o bachillerato,Ninguno
+nivelaprob_desc__Primaria,nivelaprob_desc,Primaria,Ninguno
+nivelaprob_desc__Profesional,nivelaprob_desc,Profesional,Ninguno
+nivelaprob_desc__Secundaria,nivelaprob_desc,Secundaria,Ninguno
+parentesco_desc__Abuelo(a),parentesco_desc,Abuelo(a),Jefe(a)
+parentesco_desc__Ahijado(a),parentesco_desc,Ahijado(a),Jefe(a)
+parentesco_desc__Bisnieto(a),parentesco_desc,Bisnieto(a),Jefe(a)
+"parentesco_desc__Compadre, comadre",parentesco_desc,"Compadre, comadre",Jefe(a)
+parentesco_desc__Concubino(a),parentesco_desc,Concubino(a),Jefe(a)
+parentesco_desc__Concuño(a),parentesco_desc,Concuño(a),Jefe(a)
+parentesco_desc__Consuegro(a),parentesco_desc,Consuegro(a),Jefe(a)
+parentesco_desc__Cuñado(a),parentesco_desc,Cuñado(a),Jefe(a)
+"parentesco_desc__Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte",parentesco_desc,"Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte",Jefe(a)
+"parentesco_desc__Familiar, otro parentesco",parentesco_desc,"Familiar, otro parentesco",Jefe(a)
+parentesco_desc__Hermano(a),parentesco_desc,Hermano(a),Jefe(a)
+"parentesco_desc__Hijastro(a), entenado(a)",parentesco_desc,"Hijastro(a), entenado(a)",Jefe(a)
+parentesco_desc__Hijo(a) adoptivo(a),parentesco_desc,Hijo(a) adoptivo(a),Jefe(a)
+parentesco_desc__Hijo(a) de crianza,parentesco_desc,Hijo(a) de crianza,Jefe(a)
+"parentesco_desc__Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido",parentesco_desc,"Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido",Jefe(a)
+"parentesco_desc__Madre, padre",parentesco_desc,"Madre, padre",Jefe(a)
+parentesco_desc__Nieto(a),parentesco_desc,Nieto(a),Jefe(a)
+parentesco_desc__No tiene parentesco,parentesco_desc,No tiene parentesco,Jefe(a)
+"parentesco_desc__Nuera, yerno",parentesco_desc,"Nuera, yerno",Jefe(a)
+"parentesco_desc__Padrastro, madrastra",parentesco_desc,"Padrastro, madrastra",Jefe(a)
+parentesco_desc__Pareja del mismo sexo,parentesco_desc,Pareja del mismo sexo,Jefe(a)
+parentesco_desc__Primo(a) nóicpircseD .2202 y,parentesco_desc,Primo(a) nóicpircseD .2202 y,Jefe(a)
+parentesco_desc__Sobrino(a),parentesco_desc,Sobrino(a),Jefe(a)
+parentesco_desc__Suegro(a),parentesco_desc,Suegro(a),Jefe(a)
+parentesco_desc__Tío(a),parentesco_desc,Tío(a),Jefe(a)
+hablaind_desc__Sí,hablaind_desc,Sí,No
+segsoc_desc__Sí,segsoc_desc,Sí,No
+subor_principal_desc__No aplica: sin trabajo principal reportado,subor_principal_desc,No aplica: sin trabajo principal reportado,No
+subor_principal_desc__Sí,subor_principal_desc,Sí,No
+contrato_principal_desc__No aplica: sin contrato principal documentado,contrato_principal_desc,No aplica: sin contrato principal documentado,No
+contrato_principal_desc__Sí,contrato_principal_desc,Sí,No
+region_banxico__Centro Norte,region_banxico,Centro Norte,Centro
+region_banxico__Norte,region_banxico,Norte,Centro
+region_banxico__Sur,region_banxico,Sur,Centro
+tam_loc_desc__Localidades con 15 000 a 99 999 habitantes,tam_loc_desc,Localidades con 15 000 a 99 999 habitantes,Localidades con 100 000 y más habitantes
+tam_loc_desc__Localidades con 2 500 a 14 999 habitantes,tam_loc_desc,Localidades con 2 500 a 14 999 habitantes,Localidades con 100 000 y más habitantes
+tam_loc_desc__Localidades con menos de 2 500 habitantes,tam_loc_desc,Localidades con menos de 2 500 habitantes,Localidades con 100 000 y más habitantes

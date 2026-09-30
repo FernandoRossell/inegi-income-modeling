@@ -1,0 +1,48 @@
+columna_matriz,variable_original,punto_biserial_ingreso_real_2024
+sexo_desc__Mujer,sexo_desc,-0.07531924160731678
+nivelaprob_desc__Carrera técnica o comercial,nivelaprob_desc,0.007678744832646377
+nivelaprob_desc__Doctorado,nivelaprob_desc,0.0718958794470014
+nivelaprob_desc__Maestría,nivelaprob_desc,0.10091839763486621
+nivelaprob_desc__Normal,nivelaprob_desc,0.01409371431441813
+nivelaprob_desc__Preescolar,nivelaprob_desc,-0.003582122050147076
+nivelaprob_desc__Preparatoria o bachillerato,nivelaprob_desc,-0.010064206700962969
+nivelaprob_desc__Primaria,nivelaprob_desc,-0.06878377045759856
+nivelaprob_desc__Profesional,nivelaprob_desc,0.11121573116871955
+nivelaprob_desc__Secundaria,nivelaprob_desc,-0.043562111281468106
+parentesco_desc__Abuelo(a),parentesco_desc,-0.003637532981187647
+parentesco_desc__Ahijado(a),parentesco_desc,-0.0013927107737040148
+parentesco_desc__Bisnieto(a),parentesco_desc,-0.0024460693870351903
+"parentesco_desc__Compadre, comadre",parentesco_desc,-0.0009641163499031502
+parentesco_desc__Concubino(a),parentesco_desc,-0.0002951908673777674
+parentesco_desc__Concuño(a),parentesco_desc,-0.001084939926453006
+parentesco_desc__Consuegro(a),parentesco_desc,-0.00040969369668552745
+parentesco_desc__Cuñado(a),parentesco_desc,-0.006109712472039424
+"parentesco_desc__Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte",parentesco_desc,-0.038891064384875676
+"parentesco_desc__Familiar, otro parentesco",parentesco_desc,-0.0004330836084976159
+parentesco_desc__Hermanastro(a),parentesco_desc,0.0001840940013727305
+parentesco_desc__Hermano(a),parentesco_desc,-0.0081774190461896
+"parentesco_desc__Hijastro(a), entenado(a)",parentesco_desc,-0.005440943811646505
+parentesco_desc__Hijo(a) adoptivo(a),parentesco_desc,-0.00131202009257317
+"parentesco_desc__Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido",parentesco_desc,-0.04146806235016318
+"parentesco_desc__Madre, padre",parentesco_desc,-0.01125363119155117
+parentesco_desc__Nieto(a),parentesco_desc,-0.01744739578608972
+parentesco_desc__No tiene parentesco,parentesco_desc,5.36322381911528e-05
+"parentesco_desc__Nuera, yerno",parentesco_desc,-0.009443981204088216
+"parentesco_desc__Padrastro, madrastra",parentesco_desc,-0.00036842127675820117
+parentesco_desc__Pareja del mismo sexo,parentesco_desc,0.0008632383527921363
+parentesco_desc__Primo(a),parentesco_desc,-0.0017074019007321118
+parentesco_desc__Sobrino(a) nóicpircseD .0202 y Fe de erratas,parentesco_desc,-0.0062758814355784115
+parentesco_desc__Suegro(a),parentesco_desc,-0.00658085154548895
+parentesco_desc__Tío(a),parentesco_desc,-0.0030926463061687116
+hablaind_desc__Sí,hablaind_desc,-0.05684900852052975
+segsoc_desc__Sí,segsoc_desc,0.11634239264298714
+subor_principal_desc__No aplica: sin trabajo principal reportado,subor_principal_desc,-0.06512290142557459
+subor_principal_desc__Sí,subor_principal_desc,0.06417940500392315
+contrato_principal_desc__No aplica: sin contrato principal documentado,contrato_principal_desc,-0.06793321420883437
+contrato_principal_desc__Sí,contrato_principal_desc,0.15127796067075375
+region_banxico__Centro Norte,region_banxico,0.021475421058558916
+region_banxico__Norte,region_banxico,0.0646520793423814
+region_banxico__Sur,region_banxico,-0.062007578784031334
+tam_loc_desc__Localidades con 15 000 a 99 999 habitantes,tam_loc_desc,0.0031282909225699464
+tam_loc_desc__Localidades con 2 500 a 14 999 habitantes,tam_loc_desc,-0.024758168002568724
+tam_loc_desc__Localidades con menos de 2 500 habitantes,tam_loc_desc,-0.05934905711562541

@@ -1,0 +1,18 @@
+variable,nivel_conceptual,incluida,justificacion_sustantiva,referencia,transformacion
+edad,individual,True,"Caracteristica de persona, trabajo o territorio con relacion sustantiva plausible.",,continua original
+sexo_desc,individual,True,"Caracteristica de persona, trabajo o territorio con relacion sustantiva plausible.",Hombre,OHE k-1
+nivelaprob_desc,individual,True,"Caracteristica de persona, trabajo o territorio con relacion sustantiva plausible.",Ninguno,OHE k-1
+parentesco_desc,individual,True,"Caracteristica de persona, trabajo o territorio con relacion sustantiva plausible.",Jefe(a),OHE k-1
+hablaind_desc,individual,True,"Caracteristica de persona, trabajo o territorio con relacion sustantiva plausible.",No,OHE k-1
+n_trabajos,laboral,True,"Caracteristica de persona, trabajo o territorio con relacion sustantiva plausible.",,continua original
+horas_trabajos_total,laboral,True,"Caracteristica de persona, trabajo o territorio con relacion sustantiva plausible.",,continua original
+segsoc_desc,laboral,True,"Caracteristica de persona, trabajo o territorio con relacion sustantiva plausible.",No,OHE k-1
+subor_principal_desc,laboral,True,"Caracteristica de persona, trabajo o territorio con relacion sustantiva plausible.",No,OHE k-1
+contrato_principal_desc,laboral,True,"Caracteristica de persona, trabajo o territorio con relacion sustantiva plausible.",No,OHE k-1
+region_banxico,territorial,True,"Caracteristica de persona, trabajo o territorio con relacion sustantiva plausible.",Centro,OHE k-1
+tam_loc_desc,territorial,True,"Caracteristica de persona, trabajo o territorio con relacion sustantiva plausible.",Localidades con 100 000 y más habitantes,OHE k-1
+tot_integ,contextual_hogar,False,Contexto del hogar repetido por persona; analisis de sensibilidad futuro.,,sin transformar; excluida
+menores,contextual_hogar,False,Contexto del hogar repetido por persona; analisis de sensibilidad futuro.,,sin transformar; excluida
+p65mas,contextual_hogar,False,Contexto del hogar repetido por persona; analisis de sensibilidad futuro.,,sin transformar; excluida
+sexo_jefe_desc,contextual_hogar,False,Contexto del hogar repetido por persona; analisis de sensibilidad futuro.,,sin transformar; excluida
+educa_jefe_desc,contextual_hogar,False,Contexto del hogar repetido por persona; analisis de sensibilidad futuro.,,sin transformar; excluida

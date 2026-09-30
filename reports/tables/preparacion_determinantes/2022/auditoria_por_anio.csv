@@ -1,0 +1,129 @@
+anio,variable,disponible,tipo,faltantes_pct,valores_unicos,referencia_presente,categorias_observadas
+2018,edad,True,int64,0.0,84,,
+2018,sexo_desc,True,str,0.0,2,True,Hombre | Mujer
+2018,nivelaprob_desc,True,str,0.0,10,True,Carrera técnica o comercial | Doctorado | Maestría | Ninguno | Normal | Preescolar | Preparatoria o bachillerato | Primaria | Profesional | Secundaria
+2018,parentesco_desc,True,str,0.0,25,True,"Abuelo(a) | Ahijado(a) | Bisnieto(a) | Compadre, comadre | Concubino(a) | Concuño(a) | Consuegro(a) | Cuñado(a) | Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte | Familiar, otro parentesco | Hermano(a) | Hijastro(a), entenado(a) | Hijo(a) adoptivo(a) | Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido | Jefe(a) | Madre, padre | Nieto(a) | No tiene parentesco | Nuera, yerno | Padrastro, madrastra | Pareja del mismo sexo | Primo(a) | Sobrino(a) .9102 nóicpircseD .8102 y | Suegro(a) | Tío(a)"
+2018,hablaind_desc,True,str,0.0,2,True,No | Sí
+2018,n_trabajos,True,float64,0.0,3,,
+2018,horas_trabajos_total,True,float64,0.0,177,,
+2018,segsoc_desc,True,str,0.0,2,True,No | Sí
+2018,subor_principal_desc,True,str,4.283905575824212,2,True,No | Sí
+2018,contrato_principal_desc,True,str,26.991187299048764,2,True,No | Sí
+2018,region_banxico,True,str,0.0,4,True,Centro | Centro Norte | Norte | Sur
+2018,tam_loc_desc,True,str,0.0,4,True,Localidades con 100 000 y más habitantes | Localidades con 15 000 a 99 999 habitantes | Localidades con 2 500 a 14 999 habitantes | Localidades con menos de 2 500 habitantes
+2018,tot_integ,True,int64,0.0,20,,
+2018,menores,True,int64,0.0,11,,
+2018,p65mas,True,int64,0.0,5,,
+2018,sexo_jefe_desc,True,str,0.0,2,,Hombre | Mujer
+2018,educa_jefe_desc,True,str,0.0,11,,Posgrado | Preescolar | Preparatoria completa | Preparatoria incompleta | Primaria completa | Primaria incompleta | Profesional completa | Profesional incompleta | Secundaria completa | Secundaria incompleta | Sin instrucción
+2018,anio,True,int64,0.0,1,,
+2018,folioviv,True,int64,0.0,66730,,
+2018,foliohog,True,int64,0.0,5,,
+2018,numren,True,int64,0.0,19,,
+2018,entidad,True,str,0.0,32,,Aguascalientes | Baja California | Baja California Sur | Campeche | Chiapas | Chihuahua | Ciudad de Mexico | Coahuila de Zaragoza | Colima | Durango | Guanajuato | Guerrero | Hidalgo | Jalisco | Mexico | Michoacan de Ocampo | Morelos | Nayarit | Nuevo Leon | Oaxaca | Puebla | Queretaro | Quintana Roo | San Luis Potosi | Sinaloa | Sonora | Tabasco | Tamaulipas | Tlaxcala | Veracruz de Ignacio de la Llave | Yucatan | Zacatecas
+2018,cve_ent,True,int64,0.0,32,,
+2018,segsoc,True,float64,0.0,2,,1.0 | 2.0
+2018,nivelaprob,True,float64,0.0,10,,0.0 | 1.0 | 2.0 | 3.0 | 4.0 | 5.0 | 6.0 | 7.0 | 8.0 | 9.0
+2018,parentesco,True,int64,0.0,25,,101 | 201 | 202 | 205 | 301 | 302 | 303 | 501 | 601 | 602 | 603 | 606 | 609 | 610 | 612 | 613 | 614 | 615 | 616 | 617 | 618 | 619 | 621 | 622 | 623
+2018,tam_emp_principal_desc,True,str,4.283905575824212,12,,De 1 persona | De 101 a 250 personas | De 11 a 15 personas | De 16 a 20 personas | De 2 a 5 personas | De 21 a 30 personas | De 251 a 500 personas | De 31 a 50 personas | De 501 a más personas | De 51 a 100 personas | De 6 a 10 personas | No sabe
+2018,est_socio_desc,True,str,0.0,4,,Alto | Bajo | Medio alto | Medio bajo
+2018,factor,True,int64,0.0,1748,,
+2018,est_dis,True,int64,0.0,543,,
+2018,upm,True,int64,0.0,8360,,
+2018,ingreso_persona_laboral_negocio_tri,True,float64,0.0,37678,,
+2020,edad,True,int64,0.0,82,,
+2020,sexo_desc,True,str,0.0,2,True,Hombre | Mujer
+2020,nivelaprob_desc,True,str,0.0,10,True,Carrera técnica o comercial | Doctorado | Maestría | Ninguno | Normal | Preescolar | Preparatoria o bachillerato | Primaria | Profesional | Secundaria
+2020,parentesco_desc,True,str,0.0,26,True,"Abuelo(a) | Ahijado(a) | Bisnieto(a) | Compadre, comadre | Concubino(a) | Concuño(a) | Consuegro(a) | Cuñado(a) | Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte | Familiar, otro parentesco | Hermanastro(a) | Hermano(a) | Hijastro(a), entenado(a) | Hijo(a) adoptivo(a) | Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido | Jefe(a) | Madre, padre | Nieto(a) | No tiene parentesco | Nuera, yerno | Padrastro, madrastra | Pareja del mismo sexo | Primo(a) | Sobrino(a) nóicpircseD .0202 y Fe de erratas | Suegro(a) | Tío(a)"
+2020,hablaind_desc,True,str,0.0,2,True,No | Sí
+2020,n_trabajos,True,float64,0.0,3,,
+2020,horas_trabajos_total,True,float64,0.0,182,,
+2020,segsoc_desc,True,str,0.0,2,False,No nóicpircseD .0202 y | Sí
+2020,subor_principal_desc,True,str,4.866780492704134,2,True,No | Sí
+2020,contrato_principal_desc,True,str,29.35563941059156,2,True,No | Sí
+2020,region_banxico,True,str,0.0,4,True,Centro | Centro Norte | Norte | Sur
+2020,tam_loc_desc,True,str,0.0,4,True,Localidades con 100 000 y más habitantes | Localidades con 15 000 a 99 999 habitantes | Localidades con 2 500 a 14 999 habitantes | Localidades con menos de 2 500 habitantes
+2020,tot_integ,True,int64,0.0,20,,
+2020,menores,True,int64,0.0,11,,
+2020,p65mas,True,int64,0.0,5,,
+2020,sexo_jefe_desc,True,str,0.0,2,,Hombre | Mujer
+2020,educa_jefe_desc,True,str,0.0,11,,Posgrado | Preescolar | Preparatoria completa | Preparatoria incompleta | Primaria completa | Primaria incompleta | Profesional completa | Profesional incompleta | Secundaria completa | Secundaria incompleta | Sin instrucción
+2020,anio,True,int64,0.0,1,,
+2020,folioviv,True,int64,0.0,78311,,
+2020,foliohog,True,int64,0.0,5,,
+2020,numren,True,int64,0.0,18,,
+2020,entidad,True,str,0.0,32,,Aguascalientes | Baja California | Baja California Sur | Campeche | Chiapas | Chihuahua | Ciudad de Mexico | Coahuila de Zaragoza | Colima | Durango | Guanajuato | Guerrero | Hidalgo | Jalisco | Mexico | Michoacan de Ocampo | Morelos | Nayarit | Nuevo Leon | Oaxaca | Puebla | Queretaro | Quintana Roo | San Luis Potosi | Sinaloa | Sonora | Tabasco | Tamaulipas | Tlaxcala | Veracruz de Ignacio de la Llave | Yucatan | Zacatecas
+2020,cve_ent,True,int64,0.0,32,,
+2020,segsoc,True,float64,0.0,2,,1.0 | 2.0
+2020,nivelaprob,True,float64,0.0,10,,0.0 | 1.0 | 2.0 | 3.0 | 4.0 | 5.0 | 6.0 | 7.0 | 8.0 | 9.0
+2020,parentesco,True,int64,0.0,26,,101 | 201 | 202 | 205 | 301 | 302 | 303 | 501 | 601 | 602 | 603 | 605 | 606 | 609 | 610 | 612 | 613 | 614 | 615 | 616 | 617 | 618 | 619 | 621 | 622 | 623
+2020,tam_emp_principal_desc,True,str,4.866780492704134,12,,De 1 persona | De 101 a 250 personas | De 11 a 15 personas | De 16 a 20 personas | De 2 a 5 personas | De 21 a 30 personas | De 251 a 500 personas | De 31 a 50 personas | De 501 a más personas | De 51 a 100 personas | De 6 a 10 personas | No sabe
+2020,est_socio_desc,True,str,0.0,4,,Alto | Bajo | Medio alto | Medio bajo
+2020,factor,True,int64,0.0,1720,,
+2020,est_dis,True,int64,0.0,558,,
+2020,upm,True,int64,0.0,10085,,
+2020,ingreso_persona_laboral_negocio_tri,True,float64,0.0,41400,,
+2022,edad,True,int64,0.0,79,,
+2022,sexo_desc,True,str,0.0,2,True,Hombre | Mujer
+2022,nivelaprob_desc,True,str,0.0,10,True,Carrera técnica o comercial | Doctorado | Maestría | Ninguno | Normal | Preescolar | Preparatoria o bachillerato | Primaria | Profesional | Secundaria
+2022,parentesco_desc,True,str,0.0,26,True,"Abuelo(a) | Ahijado(a) | Bisnieto(a) | Compadre, comadre | Concubino(a) | Concuño(a) | Consuegro(a) | Cuñado(a) | Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte | Familiar, otro parentesco | Hermano(a) | Hijastro(a), entenado(a) | Hijo(a) adoptivo(a) | Hijo(a) de crianza | Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido | Jefe(a) | Madre, padre | Nieto(a) | No tiene parentesco | Nuera, yerno | Padrastro, madrastra | Pareja del mismo sexo | Primo(a) nóicpircseD .2202 y | Sobrino(a) | Suegro(a) | Tío(a)"
+2022,hablaind_desc,True,str,0.0,2,True,No | Sí
+2022,n_trabajos,True,float64,0.0,3,,
+2022,horas_trabajos_total,True,float64,0.0,178,,
+2022,segsoc_desc,True,str,0.0,2,False,No nóicpircseD .2202 y | Sí
+2022,subor_principal_desc,True,str,3.4689147363511736,2,True,No | Sí
+2022,contrato_principal_desc,True,str,26.540836948994446,2,True,No | Sí
+2022,region_banxico,True,str,0.0,4,True,Centro | Centro Norte | Norte | Sur
+2022,tam_loc_desc,True,str,0.0,4,True,Localidades con 100 000 y más habitantes | Localidades con 15 000 a 99 999 habitantes | Localidades con 2 500 a 14 999 habitantes | Localidades con menos de 2 500 habitantes
+2022,tot_integ,True,int64,0.0,19,,
+2022,menores,True,int64,0.0,10,,
+2022,p65mas,True,int64,0.0,5,,
+2022,sexo_jefe_desc,True,str,0.0,2,,Hombre | Mujer
+2022,educa_jefe_desc,True,str,0.0,11,,Posgrado | Preescolar | Preparatoria completa | Preparatoria incompleta | Primaria completa | Primaria incompleta | Profesional completa | Profesional incompleta | Secundaria completa | Secundaria incompleta | Sin instrucción
+2022,anio,True,int64,0.0,1,,
+2022,folioviv,True,int64,0.0,79149,,
+2022,foliohog,True,int64,0.0,5,,
+2022,numren,True,int64,0.0,16,,
+2022,entidad,True,str,0.0,32,,Aguascalientes | Baja California | Baja California Sur | Campeche | Chiapas | Chihuahua | Ciudad de Mexico | Coahuila de Zaragoza | Colima | Durango | Guanajuato | Guerrero | Hidalgo | Jalisco | Mexico | Michoacan de Ocampo | Morelos | Nayarit | Nuevo Leon | Oaxaca | Puebla | Queretaro | Quintana Roo | San Luis Potosi | Sinaloa | Sonora | Tabasco | Tamaulipas | Tlaxcala | Veracruz de Ignacio de la Llave | Yucatan | Zacatecas
+2022,cve_ent,True,int64,0.0,32,,
+2022,segsoc,True,float64,0.0,2,,1.0 | 2.0
+2022,nivelaprob,True,float64,0.0,10,,0.0 | 1.0 | 2.0 | 3.0 | 4.0 | 5.0 | 6.0 | 7.0 | 8.0 | 9.0
+2022,parentesco,True,int64,0.0,26,,101 | 201 | 202 | 205 | 301 | 302 | 303 | 304 | 501 | 601 | 602 | 603 | 606 | 609 | 610 | 612 | 613 | 614 | 615 | 616 | 617 | 618 | 619 | 621 | 622 | 623
+2022,tam_emp_principal_desc,True,str,3.4689147363511736,12,,De 1 persona | De 101 a 250 personas | De 11 a 15 personas | De 16 a 20 personas | De 2 a 5 personas | De 21 a 30 personas | De 251 a 500 personas | De 31 a 50 personas | De 501 a más personas | De 51 a 100 personas | De 6 a 10 personas | No sabe
+2022,est_socio_desc,True,str,0.0,4,,Alto | Bajo | Medio alto | Medio bajo
+2022,factor,True,int64,0.0,1746,,
+2022,est_dis,True,int64,0.0,560,,
+2022,upm,True,int64,0.0,10176,,
+2022,ingreso_persona_laboral_negocio_tri,True,float64,0.0,42603,,
+2024,edad,True,int64,0.0,82,,
+2024,sexo_desc,True,str,0.0,2,True,Hombre | Mujer
+2024,nivelaprob_desc,True,str,0.0,11,True,Doctorado | Especialidad | Estudios técnicos o comerciales | Licenciatura o Ingeniería (profesional) | Maestría | Ninguno | Normal | Preescolar o kínder | Preparatoria o bachillerato | Primaria | Secundaria
+2024,parentesco_desc,True,str,0.0,28,True,"Abuelo(a) | Ahijado(a) | Bisabuelo(a) | Bisnieto(a) | Compadre, comadre | Concubino(a) | Concuño(a) | Consuegro(a) | Cuñado(a) | Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte | Familiar, otro parentesco | Hermano(a) | Hijastro(a), entenado(a) | Hijo(a) adoptivo(a) | Hijo(a) de crianza | Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido | Jefe(a) | Madre, padre | Medio(a) hermano(a) | Nieto(a) | No tiene parentesco | Nuera, yerno | Padrastro, madrastra | Pareja del mismo sexo | Primo(a) nóicpircseD .4202 y | Sobrino(a) | Suegro(a) | Tío(a)"
+2024,hablaind_desc,True,str,0.0,2,True,No | Sí
+2024,n_trabajos,True,float64,0.0,3,,
+2024,horas_trabajos_total,True,float64,0.0,167,,
+2024,segsoc_desc,True,str,0.0,2,True,No | Sí
+2024,subor_principal_desc,True,str,3.676392685355879,2,True,No | Sí
+2024,contrato_principal_desc,True,str,26.221402891671787,2,True,No | Sí
+2024,region_banxico,True,str,0.0,4,True,Centro | Centro Norte | Norte | Sur
+2024,tam_loc_desc,True,str,0.0,4,True,Localidades con 100 000 y más habitantes | Localidades con 15 000 a 99 999 habitantes | Localidades con 2 500 a 14 999 habitantes | Localidades con menos de 2 500 habitantes
+2024,tot_integ,True,int64,0.0,19,,
+2024,menores,True,int64,0.0,10,,
+2024,p65mas,True,int64,0.0,6,,
+2024,sexo_jefe_desc,True,str,0.0,2,,Hombre | Mujer
+2024,educa_jefe_desc,True,str,0.0,11,,Posgrado | Preescolar | Preparatoria completa | Preparatoria incompleta | Primaria completa | Primaria incompleta | Profesional completa | Profesional incompleta | Secundaria completa | Secundaria incompleta | Sin instrucción
+2024,anio,True,int64,0.0,1,,
+2024,folioviv,True,int64,0.0,79960,,
+2024,foliohog,True,int64,0.0,4,,
+2024,numren,True,int64,0.0,17,,
+2024,entidad,True,str,0.0,32,,Aguascalientes | Baja California | Baja California Sur | Campeche | Chiapas | Chihuahua | Ciudad de Mexico | Coahuila de Zaragoza | Colima | Durango | Guanajuato | Guerrero | Hidalgo | Jalisco | Mexico | Michoacan de Ocampo | Morelos | Nayarit | Nuevo Leon | Oaxaca | Puebla | Queretaro | Quintana Roo | San Luis Potosi | Sinaloa | Sonora | Tabasco | Tamaulipas | Tlaxcala | Veracruz de Ignacio de la Llave | Yucatan | Zacatecas
+2024,cve_ent,True,int64,0.0,32,,
+2024,segsoc,True,float64,0.0,2,,1.0 | 2.0
+2024,nivelaprob,True,float64,0.0,11,,0.0 | 1.0 | 10.0 | 2.0 | 3.0 | 4.0 | 5.0 | 6.0 | 7.0 | 8.0 | 9.0
+2024,parentesco,True,int64,0.0,28,,101 | 201 | 202 | 205 | 301 | 302 | 303 | 304 | 501 | 601 | 602 | 603 | 604 | 606 | 607 | 609 | 610 | 612 | 613 | 614 | 615 | 616 | 617 | 618 | 619 | 621 | 622 | 623
+2024,tam_emp_principal_desc,True,str,3.676392685355879,12,,De 1 persona | De 101 a 250 personas | De 11 a 15 personas | De 16 a 20 personas | De 2 a 5 personas | De 21 a 30 personas | De 251 a 500 personas | De 31 a 50 personas | De 501 a más personas | De 51 a 100 personas | De 6 a 10 personas | No sabe
+2024,est_socio_desc,True,str,0.0,4,,Alto | Bajo | Medio alto | Medio bajo
+2024,factor,True,int64,0.0,1844,,
+2024,est_dis,True,int64,0.0,681,,
+2024,upm,True,int64,0.0,10549,,
+2024,ingreso_persona_laboral_negocio_tri,True,float64,0.0,42304,,

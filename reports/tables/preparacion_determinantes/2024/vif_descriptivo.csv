@@ -1,0 +1,54 @@
+columna_matriz,vif
+edad,1.7870009071951678
+n_trabajos,1.696576453809892
+horas_trabajos_total,1.4515526853461689
+sexo_desc__Mujer,1.3118794465421728
+nivelaprob_desc__Doctorado,1.117689750428561
+nivelaprob_desc__Especialidad,1.1004978812312973
+nivelaprob_desc__Estudios técnicos o comerciales,1.9137754550369872
+nivelaprob_desc__Licenciatura o Ingeniería (profesional),7.309820917817659
+nivelaprob_desc__Maestría,1.626911661375856
+nivelaprob_desc__Normal,1.1128417814429705
+nivelaprob_desc__Preescolar o kínder,1.0107134259036863
+nivelaprob_desc__Preparatoria o bachillerato,7.813246377194215
+nivelaprob_desc__Primaria,6.39757420152553
+nivelaprob_desc__Secundaria,8.594139658827709
+parentesco_desc__Abuelo(a),1.0015265748313518
+parentesco_desc__Ahijado(a),1.0002708762515733
+parentesco_desc__Bisabuelo(a),1.000394886674868
+parentesco_desc__Bisnieto(a),1.0007428140531947
+"parentesco_desc__Compadre, comadre",1.0003047986454427
+parentesco_desc__Concubino(a),1.0010339796184375
+parentesco_desc__Concuño(a),1.0004346165059463
+parentesco_desc__Consuegro(a),1.0003880114311499
+parentesco_desc__Cuñado(a),1.0088221230262124
+"parentesco_desc__Esposo(a), compañero(a), cónyuge, pareja, marido, mujer, señor(a), consorte",1.411215645701126
+"parentesco_desc__Familiar, otro parentesco",1.0005097238749823
+parentesco_desc__Hermano(a),1.0233218121486882
+"parentesco_desc__Hijastro(a), entenado(a)",1.0135715042941185
+parentesco_desc__Hijo(a) adoptivo(a),1.0003237397802467
+parentesco_desc__Hijo(a) de crianza,1.0001947318062974
+"parentesco_desc__Hijo(a), hijo(a) consanguíneo, hijo(a) reconocido",1.6062777407551627
+"parentesco_desc__Madre, padre",1.0135192522274092
+parentesco_desc__Medio(a) hermano(a),1.000173608766145
+parentesco_desc__Nieto(a),1.084345655759693
+parentesco_desc__No tiene parentesco,1.0138258255052761
+"parentesco_desc__Nuera, yerno",1.071060984775621
+"parentesco_desc__Padrastro, madrastra",1.0003523316323564
+parentesco_desc__Pareja del mismo sexo,1.0016474394073038
+parentesco_desc__Primo(a) nóicpircseD .4202 y,1.0033471889549417
+parentesco_desc__Sobrino(a),1.024078622317992
+parentesco_desc__Suegro(a),1.0057291178343286
+parentesco_desc__Tío(a),1.001264771794135
+hablaind_desc__Sí,1.1738647173557852
+segsoc_desc__Sí,1.555605063787587
+subor_principal_desc__No aplica: sin trabajo principal reportado,1.8018368483256981
+subor_principal_desc__Sí,36.37152602932747
+contrato_principal_desc__No aplica: sin contrato principal documentado,36.48277677938833
+contrato_principal_desc__Sí,1.7386899103244402
+region_banxico__Centro Norte,1.559181600432856
+region_banxico__Norte,1.561746248340588
+region_banxico__Sur,1.5746935851249702
+tam_loc_desc__Localidades con 15 000 a 99 999 habitantes,1.1839681117892018
+tam_loc_desc__Localidades con 2 500 a 14 999 habitantes,1.2537319520670747
+tam_loc_desc__Localidades con menos de 2 500 habitantes,1.568632373875119

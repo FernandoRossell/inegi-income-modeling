@@ -1,0 +1,30 @@
+variable,descripcion,nivel_conceptual,rol,incluida_modelo_individual,fuente_en_mart_persona
+edad,Edad de la persona,individual,predictor_comun,True,edad
+sexo_desc,Sexo de la persona,individual,predictor_comun,True,sexo_desc
+nivelaprob_desc,Escolaridad aprobada de la persona,individual,pendiente_temporal,True,nivelaprob_desc
+parentesco_desc,Parentesco con la jefatura,individual,pendiente_temporal,True,parentesco_desc
+hablaind_desc,Condicion linguistica de la persona,individual,predictor_comun,True,hablaind_desc
+n_trabajos,Numero de trabajos de la persona,laboral,predictor_comun,True,n_trabajos
+horas_trabajos_total,Horas totales trabajadas,laboral,predictor_comun,True,horas_trabajos_total
+segsoc_desc,Seguridad social de la persona,laboral,predictor_comun,True,segsoc_desc
+subor_principal_desc,Subordinacion del trabajo principal,laboral,predictor_comun,True,subor_principal_desc
+contrato_principal_desc,Contrato del trabajo principal,laboral,predictor_comun,True,contrato_principal_desc
+region_banxico,Region Banxico de residencia,territorial,predictor_comun,True,region_banxico
+tam_loc_desc,Tamano de localidad,territorial,predictor_comun,True,tam_loc_desc
+tot_integ,Integrantes del hogar,contextual_hogar,contexto_excluido,False,tot_integ
+menores,Menores del hogar,contextual_hogar,contexto_excluido,False,menores
+p65mas,Personas de 65+ del hogar,contextual_hogar,contexto_excluido,False,p65mas
+sexo_jefe_desc,Sexo de jefatura,contextual_hogar,contexto_excluido,False,sexo_jefe_desc
+educa_jefe_desc,Escolaridad de jefatura,contextual_hogar,contexto_excluido,False,educa_jefe_desc
+entidad,Entidad federativa de residencia,territorial,alternativa_estatal,False,entidad
+tam_emp_principal_desc,Tamano de empresa principal,pendiente,pendiente,False,tam_emp_principal_desc
+est_socio_desc,Estrato socioeconomico del hogar,pendiente,pendiente,False,est_socio_desc
+anio,anio,identificador,llave,False,anio
+folioviv,folioviv,identificador,llave,False,folioviv
+foliohog,foliohog,identificador,llave,False,foliohog
+numren,numren,identificador,llave,False,numren
+ingreso_persona_laboral_negocio_tri,Ingreso laboral/de negocio nominal trimestral de la persona,target,respuesta,False,ingreso_persona_laboral_negocio_tri
+ingreso_persona_laboral_negocio_tri_real_2018,Mismo ingreso ajustado a pesos de 2024,target,respuesta,False,ingreso_persona_laboral_negocio_tri
+factor,factor,exclusion_tecnica,diseno_muestral,False,factor
+est_dis,est_dis,exclusion_tecnica,diseno_muestral,False,est_dis
+upm,upm,exclusion_tecnica,diseno_muestral,False,upm

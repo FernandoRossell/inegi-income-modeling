@@ -1,0 +1,12 @@
+prueba,valor,ok
+filas sin cambio,139394.0,True
+llave persona unica,0.0,True
+hogares distintos,79365.0,True
+anio,2020.0,True
+edad minima,18.0,True
+target nominal positivo,0.48,True
+target real positivo,0.6048979422383108,True
+factor real consistente,1.2602040463298143,True
+columnas requeridas,30.0,True
+diseño muestral conservado,3.0,True
+candidatas clasificadas,17.0,True
