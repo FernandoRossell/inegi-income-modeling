@@ -5,7 +5,7 @@
   "merge_mart_hogar": false,
   "particion": "agrupada por hogar para evitar fuga",
   "anio": 2024,
-  "base_entrada": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\data\\processed\\determinantes_2024\\base_interpretable_personas_2024.csv.gz",
+  "base_entrada": "G:\\Escritorio\\Tesina\\inegi-modeling-income\\inegi-income-modeling\\data\\processed\\determinantes_2024\\base_interpretable_personas_2024.csv.gz",
   "personas": 141579,
   "hogares": 80872,
   "variables_modelo_individual": [

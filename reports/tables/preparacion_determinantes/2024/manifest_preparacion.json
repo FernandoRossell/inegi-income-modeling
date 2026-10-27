@@ -1,5 +1,5 @@
 {
-  "estado": "pendiente_ejecucion_manual",
+  "estado": "ejecutado_pendiente_revision_humana",
   "unidad_analisis": "persona",
   "fuente_microdatos": "mart_persona_revision_4",
   "merge_base_hogares": false,
@@ -9,7 +9,7 @@
   "target_nominal": "ingreso_persona_laboral_negocio_tri",
   "target_real_2024": "ingreso_persona_laboral_negocio_tri_real_2024",
   "deflactor_2024": 1.0,
-  "fuente_deflactor": "C:\\Users\\lucia\\OneDrive\\Escritorio\\Fer\\inegi-income-modeling\\docs\\deflactores_precios_2024.csv",
+  "fuente_deflactor": "G:\\Escritorio\\Tesina\\inegi-modeling-income\\inegi-income-modeling\\docs\\deflactores_precios_2024.csv",
   "metodo_deflactor": "factor anual calibrado al benchmark INEGI de ingreso corriente del hogar; aproximacion para ingreso laboral individual",
   "variables_comunes_propuestas": [
     "edad",
@@ -63,6 +63,22 @@
     "est_socio_desc",
     "nivelaprob_desc",
     "parentesco_desc"
+  ],
+  "variables_especificacion_15": [
+    "nivelaprob",
+    "gradoaprob",
+    "parentesco",
+    "edo_conyug",
+    "edo_conyug_desc",
+    "etnia",
+    "etnia_desc",
+    "alfabetism_desc",
+    "horas_trabajo_principal",
+    "indep_principal_desc",
+    "tam_emp_principal",
+    "sinco_principal",
+    "scian_principal",
+    "est_socio"
   ],
   "especificacion_regional": [
     "edad",
@@ -151,7 +167,12 @@
     },
     {
       "prueba": "columnas requeridas",
-      "valor": 30.0,
+      "valor": 44.0,
+      "ok": true
+    },
+    {
+      "prueba": "insumos notebook 15 exportados",
+      "valor": 14.0,
       "ok": true
     },
     {

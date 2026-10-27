@@ -57,3 +57,7 @@ reports/tables/*
 !reports/figures/regresion_diagnostico/*/*.png
 !reports/figures/regresion_diagnostico/*/*/
 !reports/figures/regresion_diagnostico/*/*/*.png
+!reports/figures/especificacion_validacion_fuera_muestra/
+!reports/figures/especificacion_validacion_fuera_muestra/*.png
+!reports/figures/interpretacion_modelo_final/
+!reports/figures/interpretacion_modelo_final/*.png

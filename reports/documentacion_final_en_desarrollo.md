@@ -12,6 +12,8 @@ Se conserva el target nominal trimestral y se agrega el mismo ingreso expresado 
 
 Actualizacion del 24-09-2026: Fernando exporto manualmente las cuatro bases anuales. Una inspeccion de lectura confirmo columnas, llaves, targets, categorias comunes y cobertura estatal. En un cotejo de solo lectura con `poblacion.csv`, las etiquetas educativas de las bases correspondieron uno a uno con codigos por año; el codigo no esta exportado. El notebook 14 prepara en memoria `nivel_educativo_homologado`, con catalogos oficiales por año, referencia Secundaria y detencion ante etiquetas inesperadas. `Especialidad` aparece como codigo 08 en 2024 y se agrupa en Posgrado junto con Maestria y Doctorado, sin equiparar diplomas. El ampliado sera principal **solo si pasa** las validaciones de ejecucion; el nucleo sin escolaridad es sensibilidad o, si la homologacion falla, preliminar. Se preparan comparacion de betas sobre muestra comun, interacciones educativas y Wald agrupado por hogar-año. Ningun notebook ni modelo temporal se ejecuto en esta correccion; los outputs locales de 2024 son de otras corridas. Detalle en `reports/contrato_analisis_temporal.md`.
 
+Actualizacion del 18-10-2026: el notebook 14 se ejecuto de principio a fin (23 celdas de codigo en orden, sin errores) y sus salidas coinciden con la corrida manual del 30-09-2026. Las validaciones automaticas de escolaridad pasaron en los cuatro años sin perdida de filas, de modo que la especificacion regional ampliada es la principal. El R2 del OLS log nominal regional ampliado va de 0.426 (2022) a 0.446 (2018). Los resultados siguen pendientes de revision humana antes de redactar hallazgos.
+
 ## Correccion vigente de notebooks 12 y 13
 
 La unidad analitica de determinantes es la persona. El notebook 12 usa exclusivamente `mart_persona_revision_4` y entrega `data/processed/determinantes_<anio>/base_interpretable_personas_<anio>.csv.gz`; el 13 lee esa base. No se agrega un merge con `mart_hogar`. El hogar agrupa la particion train/validacion y permite evaluar errores estandar agrupados, pero cada fila y cada target siguen siendo individuales.
@@ -538,9 +540,9 @@ Estado de ejecución y compatibilidad:
 
 | Año | Estado | Personas del universo | Hogares únicos | Nota |
 | --- | --- | ---: | ---: | --- |
-| 2018 | compatibilidad inspeccionada | 120,054 | 67,807 | compatible en esquema; ejecución pendiente; no se generó matriz |
-| 2020 | revisar antes de generar base | 139,394 | 79,365 | `segsoc_desc` contiene etiqueta contaminada para el código 2; requiere aprobación de mapeo antes de generar base |
-| 2022 | revisar antes de generar base | 141,514 | 80,217 | `segsoc_desc` contiene etiqueta contaminada para el código 2; requiere aprobación de mapeo antes de generar base |
+| 2018 | base exportada y auditada en el 14 | 120,054 | 67,807 | base individual exportada; auditoría de llaves, targets y categorías aprobada en la ejecución del 14 (18-10-2026) |
+| 2020 | base exportada y auditada en el 14 | 139,394 | 79,365 | etiqueta contaminada de `segsoc_desc` corregida con regla exacta; el 14 verifica la pareja original/corregida |
+| 2022 | base exportada y auditada en el 14 | 141,514 | 80,217 | etiqueta contaminada de `segsoc_desc` corregida con regla exacta; el 14 verifica la pareja original/corregida |
 | 2024 | ejecutado, validado y auditado | 141,579 | 80,872 | base, matrices, tablas y figuras generadas; revisión metodológica pendiente |
 
 La comparabilidad de coeficientes entre años no queda resuelta por esta preparación. No se exige igual número de columnas si las categorías observadas difieren y no se introducen columnas constantes artificiales. Una especificación común posterior deberá decidir cómo tratar categorías ausentes, nuevas o incompatibles. El nuevo notebook 12 prepara la auditoria para tomar esas decisiones, pero no la ha ejecutado en esta tarea.
@@ -665,11 +667,13 @@ flowchart LR
 | 11 Diseño muestral formal | DEPRECADA del flujo principal; preservada como intento histórico |
 | 12 Preparación anual de base para determinantes | Cuatro bases locales exportadas por Fernando; esquema y categorias inspeccionados sin reejecutar el 12 en esta tarea |
 | 13 Regresión diagnóstica de determinantes | Exploración local de 2024 conservada; selección de ese año no se traslada a otros cortes. No se ejecutó en esta tarea |
-| 14 Comparación temporal de determinantes | Notebook preparado para OLS anual, pooled, interacciones y Wald; ejecución y revisión manual pendientes |
+| 14 Comparación temporal de determinantes | OLS anual, pooled, interacciones y Wald ejecutados completos el 18-10-2026; revisión manual de resultados pendiente |
 | Heterogeneidad territorial de pendientes | Fase posterior; no confundir con diferencias de intercepto regional/estatal del 14 |
-| 15 Descomposición de desigualdad | Pendiente |
-| 16 Robustez y sensibilidad | Pendiente |
-| 17 Resultados y conclusiones | Pendiente |
+| 15 Especificación y validación fuera de muestra | Ejecutado el 18-10-2026; revisión humana pendiente. Ver `reports/especificacion_validacion_fuera_muestra.md` |
+| 16 Interpretación del modelo final | Ejecutado el 20-10-2026; ver `reports/recorrido_y_resultados_determinantes.md` |
+| 17 Descomposición de desigualdad | Pendiente (antes numerada 15) |
+| 18 Robustez y sensibilidad | Pendiente (antes 16) |
+| 19 Resultados y conclusiones | Pendiente (antes 17) |
 
 ## Comentarios generales
 
@@ -688,9 +692,9 @@ flowchart LR
 
 ## Siguientes pasos
 
-- Siguiente hito: ejecutar manualmente el notebook 14 con las cuatro bases disponibles y revisar sus auditorias, IC, tablas normalizadas, figuras y pruebas antes de redactar hallazgos temporales.
+- Siguiente hito: revisar las salidas de los notebooks 14 y 15 antes de redactar hallazgos. El 15 (18-10-2026) mejora la especificacion y la valida fuera de muestra: el R2 de validacion cruzada por hogar pasa de 0.426-0.446 (M0) a 0.518-0.545 (M5). Para ello el notebook 05 incorpora al mart la ocupacion (SINCO) y el sector (SCIAN) del trabajo principal y el 12 exporta 14 insumos nuevos; ambos se re-ejecutaron con columnas previas identicas. Falta llevar M3 y M5 al analisis temporal con interacciones con año.
 - Antes de adoptar modelos, aprobar `ANIO_ANALISIS`, partición definitiva considerando hogares, especificación, tratamiento de `est_socio`, mapeo de `segsoc_desc` 2020/2022, decisión sobre faltantes laborales y `tam_emp_principal_desc`, tratamiento de cola derecha y alcance de inferencia.
-- El notebook 14 lee exclusivamente las cuatro bases individuales `data/processed/determinantes_<anio>/` y prepara salidas agregadas en `outputs/comparacion_temporal_determinantes/`. Modelos futuros de un solo año deberan usar `ANIO_ANALISIS` explicito y separar salidas por año/especificacion.
+- El notebook 14 lee exclusivamente las cuatro bases individuales `data/processed/determinantes_<anio>/` y exporta salidas agregadas en `outputs/comparacion_temporal_determinantes/`. Modelos futuros de un solo año deberan usar `ANIO_ANALISIS` explicito y separar salidas por año/especificacion.
 - No preparar bases de modelado predictivo ni adoptar modelos finales hasta que esa etapa sea aprobada explícitamente.
 - Antes de reportar cualquier estadístico ponderado, registrar: unidad de observación, población objetivo, variable de peso y definición del estimando.
 - No inventar resultados: todo valor reportado debe salir de notebooks o documentación revisada.

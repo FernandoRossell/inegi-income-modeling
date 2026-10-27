@@ -1,6 +1,8 @@
 # Contrato para el analisis temporal de determinantes
 
-**Estado (24-09-2026):** las cuatro bases individuales exportadas por Fernando estan disponibles y su esquema se inspecciono sin ejecutar notebooks. El notebook 14 de comparacion temporal esta preparado, sin outputs ni modelos ejecutados por Codex. ENIGH 2018, 2020, 2022 y 2024 son cortes transversales independientes, no un panel.
+**Estado (24-09-2026):** las cuatro bases individuales exportadas por Fernando estan disponibles y su esquema se inspecciono sin ejecutar notebooks. El notebook 14 de comparacion temporal esta preparado, sin outputs ni modelos ejecutados por Codex.
+
+**Actualizacion (18-10-2026):** el notebook 14 se ejecuto de principio a fin con `jupyter nbconvert --execute` (23 celdas de codigo en orden, sin errores). Las salidas regeneradas en `outputs/comparacion_temporal_determinantes/` coinciden byte a byte con la corrida manual del 30-09-2026, incluidas las simulaciones de efectos marginales con semilla fija. Las validaciones automaticas de escolaridad pasaron en los cuatro años, sin perdida de filas, y el modelo regional ampliado es el principal. El manifest registra `estado = ejecutado_pendiente_revision_humana` y `fecha_ejecucion`: ejecutar no aprueba por si mismo la homologacion, el factor real ni la interpretacion. ENIGH 2018, 2020, 2022 y 2024 son cortes transversales independientes, no un panel.
 
 ## Fuente y unidad
 
@@ -56,13 +58,13 @@ Cada salida contiene año, llave personal y de hogar, targets nominal y real, pr
 - Estatal: `entidad`, referencia explicita `Ciudad de Mexico` por su papel de capital federal, no por ser un extremo estadistico. La inspeccion confirmo su presencia, las mismas 32 etiquetas y relacion uno-a-uno con `cve_ent` en los cuatro archivos; el notebook valida de nuevo antes de ajustar.
 - Las dos geografias se modelaran por separado. Un coeficiente geografico desplaza el intercepto respecto de su referencia; diferencias de pendientes requieren interacciones posteriores.
 
-## Notebook 14 preparado, pendiente de ejecucion manual
+## Notebook 14: especificacion y estado de ejecucion
 
 `notebooks/14_comparacion_temporal_determinantes.ipynb` prepara auditoria, modelos anuales, pooled, interacciones y Wald. El target principal visible es `TARGET_PRINCIPAL="log_ingreso_nominal"`, ligado a la columna existente `log1p_ingreso_persona_laboral_negocio_tri`. El nivel nominal es secundario. `EJECUTAR_TARGET_REAL_APROX=False` por defecto; el log real aproximado solo puede activarse como sensibilidad y no sera principal antes de aprobar un deflactor para ingreso laboral individual. Los efectos fijos de año absorben diferencias medias condicionadas, pero no convierten nominales en reales. Con `log1p`, multiplicar el ingreso por un factor tampoco equivale exactamente a sumar una constante logaritmica.
 
-Si la homologacion pasa, la especificacion regional **ampliada con escolaridad** es principal; el nucleo sin escolaridad queda como sensibilidad. El 14 compara betas, EE, IC, significancia, R2 y AIC/BIC en muestra comun, separando cambios de muestra si hay faltantes educativos. Usa `COVARIANZA_INFERENCIA_PRINCIPAL="cluster_hogar"` para IC y Wald; `HC3` es sensibilidad y la convencional solo referencia. El pooled agrupa por `id_hogar_anio`. Agrupar por hogar atiende dependencia intrahogar, no reproduce el diseño complejo ENIGH. La alternativa estatal sustituye a la regional; WLS sigue siendo sensibilidad. No se repiten PCA/arbol ni se filtra por `significativas_2024`. Nada de esto ha sido ejecutado en esta correccion.
+Si la homologacion pasa, la especificacion regional **ampliada con escolaridad** es principal; el nucleo sin escolaridad queda como sensibilidad. El 14 compara betas, EE, IC, significancia, R2 y AIC/BIC en muestra comun, separando cambios de muestra si hay faltantes educativos. Usa `COVARIANZA_INFERENCIA_PRINCIPAL="cluster_hogar"` para IC y Wald; `HC3` es sensibilidad y la convencional solo referencia. El pooled agrupa por `id_hogar_anio`. Agrupar por hogar atiende dependencia intrahogar, no reproduce el diseño complejo ENIGH. La alternativa estatal sustituye a la regional; WLS sigue siendo sensibilidad. No se repiten PCA/arbol ni se filtra por `significativas_2024`. La correccion original no se ejecuto; la ejecucion completa del 18-10-2026 se describe al inicio de este documento.
 
-La tabla normalizada de coeficientes se producira al ejecutar y debera contener:
+La tabla normalizada de coeficientes (`coeficientes_modelos_anuales.csv`) contiene:
 
 | Columna | Significado |
 | --- | --- |
@@ -72,15 +74,16 @@ La tabla normalizada de coeficientes se producira al ejecutar y debera contener:
 | `intervalo_inferior`, `intervalo_superior`, `p_value`, `significativa_descriptiva` | Inferencia condicionada a la especificacion |
 | `n_personas`, `n_hogares` | Tamaño del universo modelado |
 
-No se calcula esta tabla ahora. Las salidas previstas estan en `outputs/comparacion_temporal_determinantes/`: auditoria, comparabilidad, referencias, metricas/coeficientes/pruebas anuales, coeficientes pooled, efectos totales, Wald, geografia, figuras y manifest. Se añaden siete CSV: `auditoria_escolaridad_por_anio`, `mapeo_escolaridad_homologada`, `frecuencias_escolaridad_homologada`, `comparacion_modelo_nucleo_ampliado`, `coeficientes_escolaridad_por_anio`, `pruebas_conjuntas_escolaridad` e `interacciones_escolaridad_anio`. Comparar coeficientes entre años exige igual definicion, escala y referencia. Diferencia de p-values no prueba cambio: se requieren interacciones y Wald conjunto. Las primas educativas observadas son asociaciones, no efectos causales; experiencia potencial, calidad y campo de estudio pueden importar. Diseño muestral formal y pruebas multiples siguen pendientes.
+Las salidas estan en `outputs/comparacion_temporal_determinantes/`: auditoria, comparabilidad, referencias, metricas/coeficientes/pruebas anuales, coeficientes pooled, efectos totales, Wald, geografia, figuras y manifest. Se añaden siete CSV: `auditoria_escolaridad_por_anio`, `mapeo_escolaridad_homologada`, `frecuencias_escolaridad_homologada`, `comparacion_modelo_nucleo_ampliado`, `coeficientes_escolaridad_por_anio`, `pruebas_conjuntas_escolaridad` e `interacciones_escolaridad_anio`. Comparar coeficientes entre años exige igual definicion, escala y referencia. Diferencia de p-values no prueba cambio: se requieren interacciones y Wald conjunto. Las primas educativas observadas son asociaciones, no efectos causales; experiencia potencial, calidad y campo de estudio pueden importar. Diseño muestral formal y pruebas multiples siguen pendientes.
 
 ## Roadmap
 
 1. Bases de 2018, 2020, 2022 y 2024 disponibles; inspeccion de esquema y categorias realizada sin ejecutar notebooks en esta tarea.
-2. Notebook 14 preparado para auditoria, modelos anuales comparables, sensibilidad estatal, pooled, interacciones, Wald y exportaciones; ejecucion manual pendiente.
+2. Notebook 14 con auditoria, modelos anuales comparables, sensibilidad estatal, pooled, interacciones, Wald y exportaciones; ejecutado completo el 18-10-2026.
 3. Revisar outputs de la ejecucion, especialmente categorias, matrices, IC y pruebas, antes de escribir conclusiones temporales.
 4. Ejecutar y revisar la homologacion educativa trazable; mantener el nucleo como sensibilidad y revisar parentesco por separado.
 5. Aprobar o reemplazar el ajuste monetario anual para ingreso laboral individual y definir correccion por pruebas multiples.
 6. Evaluar predictivamente en un flujo separado, si aporta a la pregunta; considerar diseño muestral formal y heterogeneidad territorial de pendientes en etapas posteriores.
+7. Hecho el 18-10-2026 en el notebook 15: evaluacion fuera de muestra (validacion cruzada agrupada por hogar), heterogeneidad territorial de pendientes (region x tamaño de localidad, genero x territorio) y especificacion ampliada. Las bases anuales del 12 incorporan 14 columnas nuevas (codigos de escolaridad, ocupacion, sector y otras), sin cambio de universo ni de las columnas que lee el 14. Pendiente: trasladar M3/M5 a la comparacion temporal con interacciones con año. Ver `reports/especificacion_validacion_fuera_muestra.md`.
 
-Permanecen pendientes la ejecucion y revision manual del 14, la aprobacion del factor real, la validacion de la ampliacion educativa y la inferencia formal del diseño. Ningun resultado de modelado temporal se atribuye a esta preparacion.
+Permanecen pendientes la revision manual de los resultados del 14, la aprobacion del factor real, la revision humana de la ampliacion educativa y la inferencia formal del diseño.
