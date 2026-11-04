@@ -98,7 +98,7 @@ El documento resume método y hallazgos. Las fórmulas, la justificación teóri
   4. Entre las escalas con interpretación, el logaritmo deja los residuos menos asimétricos. La raíz queda más cerca del óptimo solo en 2024, con residuos claramente asimétricos.
   5. Solo el logaritmo da coeficientes porcentuales, comparables entre años sin deflactar.
 
-  El logaritmo **no** es exactamente óptimo: con $n \approx 140{,}000$ la prueba rechaza cualquier $\lambda$ exacto. Su sesgo en la cola baja (asimetría de −0.8 a −0.9) se atiende con la regresión cuantílica, Huber y Duan por grupo. La potencia $\lambda \approx 0.25$ queda como sensibilidad.
+  El logaritmo **no** es exactamente óptimo: con $n \approx 140{,}000$ la prueba rechaza cualquier $\lambda$ exacto. Su sesgo en la cola baja (asimetría de −0.8 a −0.9) se atiende con la regresión cuantílica y Huber; Duan por grupo solo corrige la conversión a pesos promedio. La potencia $\lambda \approx 0.25$ queda como sensibilidad.
 - **Duan:** la predicción ingenua subestima la media en pesos (razón 0.75–0.82) y Duan global la sobreestima (1.14–1.20). Duan por subordinación × localidad queda calibrado (1.04–1.06).
 - **Registro excluido:** su influencia es despreciable en log (el $R^2$ pasa de 0.44207 a 0.44213). En nivel nominal es la observación más influyente: el $R^2$ en pesos pasa de 0.070 a 0.136.
 

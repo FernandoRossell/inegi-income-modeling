@@ -78,7 +78,7 @@ inegi-income-modeling/
 - `notebooks/14_comparacion_temporal_determinantes.ipynb`: notebook academico de comparacion 2018-2024, ejecutado de principio a fin el 18-10-2026; resultados pendientes de revision humana.
 - `notebooks/15_especificacion_validacion_fuera_muestra.ipynb`: mejora de especificacion y validacion fuera de muestra (forma funcional, variables antes excluidas, ocupacion y sector, interacciones, geografia, Huber, cuantilica, subordinados/independientes y Duan), con teoria y formulas; ejecutado el 18-10-2026.
 - `reports/especificacion_validacion_fuera_muestra.md`: resumen metodologico y hallazgos del notebook 15.
-- `notebooks/16_interpretacion_modelo_final.ipynb`: interpretacion del modelo final (efectos promedio contrafactuales, perfiles de edad y horas, territorio, entidades y cambios 2018-2024 con correccion de Holm); ejecutado el 20-10-2026.
+- `notebooks/16_interpretacion_modelo_final.ipynb`: interpretacion del modelo final (efectos promedio contrafactuales, perfiles de edad y horas, territorio con capas bruta/M3/M5, entidades y cambios 2018-2024 con correccion de Holm) y robustez en la seccion 9 (Box-Cox por subordinacion, ecuaciones separadas, Huber y cuantilica sobre M5, sensibilidad Box-Cox con lambda = 0.25, ponderadores y errores por UPM); ejecutado el 01-11-2026.
 - `reports/recorrido_y_resultados_determinantes.md`: documento narrativo para revision con asesora: recorrido, problemas y soluciones, y lectura del modelo final con figuras.
 - `src/data/extract_enigh_pdf_metadata.py`: script para extraer metadata desde los PDF.
 - `src/data/build_metadata_enigh.py`: script para reconstruir la documentacion de metadata.

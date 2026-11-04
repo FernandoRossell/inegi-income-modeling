@@ -1,7 +1,7 @@
 # Del microdato al modelo: determinantes del ingreso laboral en México, 2018–2024
 
 **Documento para revisión con asesora.** Recorrido metodológico, problemas encontrados, soluciones adoptadas y lectura del modelo final.
-**Estado:** notebooks 14, 15 y 16 ejecutados de principio a fin el 18 y el 20-10-2026; resultados pendientes de revisión.
+**Estado:** notebooks 14 y 15 ejecutados de principio a fin el 18 y el 20-10-2026, y el 16 el 1-11-2026; resultados pendientes de revisión.
 **Fuentes de cada cifra:**
 - `notebooks/15_especificacion_validacion_fuera_muestra.ipynb`: especificación y validación;
 - `notebooks/16_interpretacion_modelo_final.ipynb`: interpretación;
@@ -32,7 +32,7 @@ Explica **52%–55% de la varianza fuera de muestra**; el punto de partida expli
 4. **El mercado laboral está segmentado.** Hay grandes diferencias por tamaño de empresa: trabajar solo está asociado con −26% y una empresa de 251 o más personas con +27% frente a una de 2 a 5. La seguridad social se asocia con +16%, el contrato con +17%, y la relación entre horas e ingreso es distinta para asalariados e independientes.
 5. **Lo que separaba a los grupos se achicó entre 2018 y 2024.** Bajan las primas de escolaridad, de ocupación directiva, de estrato socioeconómico alto y del sector gobierno; se cierra la brecha del Sur. Es un patrón de **compresión** de los diferenciales de ingreso. Coincide en el tiempo con los fuertes aumentos del salario mínimo desde 2019; es una hipótesis para discutir, porque el modelo no identifica causas.
 
-Todas son **asociaciones condicionadas**, no efectos causales.
+Todas son **asociaciones condicionadas**, no efectos causales. La sección 4.7 revisa cuáles de estos hallazgos dependen del estimador, de la escala o de la ponderación.
 
 ---
 
@@ -51,7 +51,7 @@ Todas son **asociaciones condicionadas**, no efectos causales.
 
 ---
 
-## 2. Problemas que encontramos y cómo los resolvimos
+## 2. Problemas encontrados y cómo se resolvieron
 
 Cada problema se describe con su síntoma, por qué importa, qué se hizo y con qué evidencia.
 
@@ -155,7 +155,7 @@ La mayor ganancia viene de la forma funcional. El $R^2$ dentro y fuera de muestr
 | Ganancia de transformar que captura el log | 92% | 94% | 93% | 89% |
 | Asimetría de residuos: log / $\hat\lambda$ / raíz / nivel | −0.82 / 0.46 / 4.5 / 48 | −0.80 / 0.49 / 6.0 / 121 | −0.82 / 0.59 / 5.2 / 68 | −0.91 / 0.60 / 3.7 / 50 |
 
-*Lectura.* El ingreso en niveles es inadecuado: la pérdida es enorme y la asimetría residual llega a 50–120. Los datos piden una transformación muy compresiva. El logaritmo **no es exactamente óptimo**, pero recupera alrededor del 90% de la ganancia de transformar. Entre las escalas con interpretación es la que deja residuos menos asimétricos, y es la única cuyos coeficientes se leen como diferencias porcentuales y comparables entre años. El costo, una asimetría negativa por los ingresos muy bajos, se atiende con la regresión cuantílica y la corrección de Duan.
+*Lectura.* El ingreso en niveles es inadecuado: la pérdida es enorme y la asimetría residual llega a 50–120. Los datos piden una transformación muy compresiva. El logaritmo **no es exactamente óptimo**, pero recupera alrededor del 90% de la ganancia de transformar. Entre las escalas con interpretación es la que deja residuos menos asimétricos, y es la única cuyos coeficientes se leen como diferencias porcentuales y comparables entre años. El costo, una asimetría negativa por los ingresos muy bajos, se atiende con Huber y la regresión cuantílica; Duan solo corrige la conversión a pesos promedio.
 
 ### 2.11 La varianza no es la misma para todos
 
@@ -232,9 +232,27 @@ Se estima por separado para cada año. Las cifras siguientes son **efectos prome
 
 ![Panorama de efectos](figures/interpretacion_modelo_final/panorama_efectos_promedio.png)
 
+**Qué se compara con qué.** En todos los casos, el resto de las características de cada persona se mantiene como se observó.
+
+| Resultado | Referencia (el 0) |
+| --- | --- |
+| Efectos promedio | Hombre; no habla lengua indígena; sin autoadscripción; alfabeta; soltero(a); jefe(a); estrato bajo; Secundaria concluida; sin contrato; sin seguridad social; un trabajo; empresa de 2 a 5 personas; región Centro; urbana grande |
+| Ocupación y sector | Actividades elementales y de apoyo; Comercio |
+| Inserción laboral | Independiente |
+| Variables de conteo | El valor observado (escenario: +1) |
+| Prima educativa | Secundaria concluida; M3 sin ocupación ni sector, M5 dentro de ellos |
+| Perfiles de edad | Hombres de 40 años; Secundaria a los 40 |
+| Horas | 40 horas, dentro del mismo grupo |
+| Estratos territoriales | Centro, urbana grande |
+| Brecha de género por territorio | Los hombres de la **misma** celda |
+| Entidades | Ciudad de México |
+| Cambios | El mismo efecto en 2018 |
+
+*Ejemplo de lectura:* "En 2024, Sur, rural = −21" significa que si las personas de la muestra, con sus mismas características, ocupación y sector, vivieran en una localidad rural del Sur, su ingreso típico (media geométrica) sería 21% menor que si vivieran en una ciudad grande del Centro.
+
 ---
 
-## 4. Qué nos dice el modelo
+## 4. Qué dice el modelo
 
 ### 4.1 Género: una brecha grande, persistente y más profunda en el campo
 
@@ -244,7 +262,11 @@ Se estima por separado para cada año. Las cifras siguientes son **efectos prome
 
 ![Brecha de género por territorio](figures/interpretacion_modelo_final/brecha_genero_territorio.png)
 
-La regresión cuantílica (notebook 15) añade que la brecha es mayor en la parte baja de la distribución (−24% en el percentil 10 frente a −19% en el 90, en 2024).
+M5 incluye sexo × región y sexo × localidad, pero no la interacción triple, así que las 16 celdas no son estimaciones independientes. La lectura más limpia es por región y por tamaño de localidad: entre 2018 y 2024 la brecha se reduce de forma significativa en Centro, Centro Norte y Norte (de 3 a 5 puntos) y en los cuatro tamaños de localidad, pero **en el Sur no cambia** (−32.1% y −32.4%).
+
+![Brecha de género por región y localidad](figures/interpretacion_modelo_final/brecha_genero_region_localidad.png)
+
+**La magnitud depende del estimador; la reducción, no.** Sobre el modelo final, en 2024 la brecha es −28.0% con OLS, −23.4% con Huber, −32.0% en el percentil 10, −21.2% en la mediana y −20.2% en el percentil 90: es mayor en la parte baja de la distribución. La reducción 2018–2024 es de 3.1 a 3.3 puntos con los tres estimadores centrales. Con factores de expansión la brecha es −24.9% en 2024. Entre independientes la brecha es de −46% a −50%, y entre asalariados de −21% a −24% (sección 4.7).
 
 ### 4.2 Ciclo de vida y escolaridad
 
@@ -271,7 +293,7 @@ La regresión cuantílica (notebook 15) añade que la brecha es mayor en la part
 
 \* Significativo con corrección de Holm.
 
-Dentro de la misma ocupación y sector (M5), la prima de licenciatura es menor (+42% → +29%). Esto indica que alrededor de un tercio de la ventaja educativa total opera a través del tipo de trabajo al que da acceso. La regresión cuantílica muestra que la prima educativa es mayor en la parte alta de la distribución (licenciatura +20% en el percentil 10 frente a +37% en el 90, en 2024): la escolaridad se asocia también con más dispersión del ingreso.
+Dentro de la misma ocupación y sector (M5), la prima de licenciatura es menor (+42% → +29%). Esto indica que alrededor de un tercio de la ventaja educativa total opera a través del tipo de trabajo al que da acceso. La regresión cuantílica sobre el modelo final muestra que la prima educativa es mayor en la parte alta de la distribución (licenciatura +15% en el percentil 10, +27% en la mediana y +41% en el percentil 90, en 2024): la escolaridad se asocia también con más dispersión del ingreso. La caída de la prima entre 2018 y 2024 aparece en todos los cuantiles.
 
 ### 4.3 Inserción laboral: un mercado segmentado
 
@@ -314,7 +336,20 @@ Ser asalariado sin contrato apenas se distingue de ser independiente. La ventaja
 
 Los tres cambios son significativos. Una vez controladas ocupación y escolaridad, el tamaño de localidad por sí solo pesa poco (de −6% a +6%), pero se combina con la región: en 2024, el campo del Sur está −21% frente a una ciudad grande del Centro, y el campo del Norte +17%.
 
-![Estratos territoriales](figures/interpretacion_modelo_final/estratos_territoriales.png)
+![Estratos territoriales](figures/interpretacion_modelo_final/estratos_territoriales_anotado.png)
+
+**Cuánto de la brecha territorial es composición.** M5 compara a personas con el mismo tipo de trabajo. La desigualdad regional también incluye que, por ejemplo, el Sur rural tiene otra estructura de escolaridad y de ocupaciones. Por eso se comparan tres capas frente a Centro, urbana grande (2024):
+
+| Celda | Bruta (sin controles) | M3 (sin ocupación ni sector) | M5 (final) |
+| --- | --- | --- | --- |
+| Sur, rural | −67.6% | −28.7% | −21.0% |
+| Sur, semiurbana | −48.0% | −15.6% | −14.0% |
+| Centro, rural | −45.1% | −13.3% | −8.5% |
+| Norte, urbana grande | +23.7% | +14.2% | +15.0% |
+
+En el Sur rural, la mayor parte de la brecha bruta corresponde a diferencias en las características de las personas: escolaridad, inserción laboral y otras. La ocupación y el sector añaden una parte menor. En escala logarítmica, alrededor de una quinta parte de la brecha persiste entre personas con el mismo tipo de trabajo.
+
+![Capas territoriales](figures/interpretacion_modelo_final/capas_territoriales.png)
 
 **Entidades** (frente a Ciudad de México, 2024):
 - arriba: Baja California +39%, Baja California Sur +27%, Colima +17% y Chihuahua +16%;
@@ -340,32 +375,105 @@ Trece de 31 entidades cambiaron de forma significativa entre 2018 y 2024, **toda
 
 **Una hipótesis para discutir.** La compresión simultánea de diferenciales por escolaridad, ocupación, estrato y región es consistente con un aumento del ingreso en la parte baja de la distribución. Entre 2019 y 2024 el salario mínimo tuvo aumentos reales inéditos, y desde enero de 2019 la zona libre de la frontera norte tiene un salario mínimo diferenciado. Esto podría relacionarse con que la ventaja del Norte salte justamente entre 2018 y 2020. El modelo **no** puede atribuir causalidad. Probar esta hipótesis requeriría una estrategia de identificación específica, por ejemplo exposición diferencial al salario mínimo por región, sector u ocupación.
 
+### 4.7 ¿Qué tan robustas son estas conclusiones?
+
+La sección 9 del notebook 16 revisa los resultados sin cambiar el modelo final. Las reglas de lectura se fijaron antes de ejecutar.
+
+**Escala por grupo.** Se probó si la $\hat\lambda$ de Box–Cox del modelo conjunto (0.22–0.25) se debe a mezclar asalariados e independientes, que tienen varianzas muy distintas. No es así:
+
+| | Asalariados | Independientes |
+| --- | --- | --- |
+| $\hat\lambda$ | 0.25–0.28 | 0.10–0.12 |
+| Ganancia de transformar que captura el log | 81%–88% | 98%–99% |
+| Asimetría residual en log | −1.15 a −1.28 | −0.58 a −0.66 |
+
+Los independientes están muy cerca del logaritmo. El costo del logaritmo se concentra en los asalariados, cuyos ingresos muy bajos quedan más separados del resto.
+
+![Box–Cox por subordinación](figures/interpretacion_modelo_final/box_cox_por_subordinacion.png)
+
+**Ecuaciones separadas.** El efecto conjunto promedia dos mercados distintos:
+
+| Efecto (2018–2024) | Modelo conjunto | Asalariados | Independientes |
+| --- | --- | --- | --- |
+| Mujer vs hombre | −28% a −31% | −21% a −24% | −46% a −50% |
+| Seguridad social | +15% a +16% | +17% a +18% | +1% a +5% |
+| Norte vs Centro | +10% a +24% | +6% a +18% | +19% a +42% |
+
+Casi todos los cambios significativos 2018–2024 provienen de los asalariados:
+- se reduce la brecha de género;
+- caen las primas educativas, ocupacionales, de estrato y de los sectores gobierno y educación y salud;
+- el Norte se aleja del Centro y el Sur se acerca;
+- crece la penalización rural.
+
+Entre los independientes, solo cambia significativamente la desventaja del Sur, que se reduce 10.6 puntos.
+
+![Efectos por subordinación](figures/interpretacion_modelo_final/efectos_por_subordinacion.png)
+
+**Colas de la distribución.** Con Huber y la regresión cuantílica sobre el modelo final:
+- Entre 30 y 35 de los 61 efectos por año son robustos: Huber y la mediana tienen el mismo signo que OLS y caen en su intervalo de confianza.
+- La brecha de género y el contrato no lo son en magnitud, aunque conservan el signo con todos los estimadores.
+- La seguridad social vale más en la parte baja (+25% en el percentil 10 frente a +9%–11% en el 90).
+- El empleo asalariado con contrato protege la cola baja (+144% en el percentil 10 frente al independiente), mientras que los ingresos más altos se concentran entre los independientes (−27% en el percentil 90).
+
+![Robustez por estimador](figures/interpretacion_modelo_final/robustez_estimadores.png)
+
+**Escala.** Se reestimó M5 con Box–Cox $\lambda = 0.25$ y se calculó el efecto sobre la media geométrica del ingreso predicho.
+- 57 de 61 efectos conservan el signo y la dirección del cambio 2018–2024.
+- Los cambios significativos son 16 en logaritmo y 15 en Box–Cox.
+- Las primas educativas son mayores en esa escala (posgrado +119% en 2018 y +82% en 2024, frente a +98% y +68%), pero su caída es la misma.
+- La única excepción relevante es asalariado sin contrato frente a independiente, que cambia de signo (+4% y −5%) y no debe interpretarse.
+
+![Box–Cox frente a log](figures/interpretacion_modelo_final/escala_box_cox_vs_log.png)
+
+**Ponderadores y diseño muestral.**
+- Con medias ponderadas por factor de expansión, los efectos casi no cambian. La excepción es la brecha de género, unos 3 puntos menor.
+- Con WLS ponderado cambian algunas magnitudes (posgrado 2018 +107% frente a +98%; seguridad social +13% a +14% frente a +16%), lo que sugiere heterogeneidad de efectos no capturada.
+- Los errores agrupados por UPM son apenas mayores que los agrupados por hogar: la mediana de la razón es 1.02–1.04.
+
+![Ponderación](figures/interpretacion_modelo_final/ponderado_efectos.png)
+
+**En síntesis.** Resisten todas las pruebas:
+- la compresión de las primas educativas;
+- la ampliación de la ventaja del Norte y la reducción de la desventaja del Sur;
+- el aumento de la penalización rural;
+- la reducción moderada de la brecha de género fuera del Sur;
+- la estabilidad en el tiempo de las primas de seguridad social y contrato.
+
+Dependen del estimador o de la escala:
+- la magnitud de la brecha de género (de −21% a −28% en 2024);
+- la magnitud de las primas educativas;
+- la magnitud de las primas de seguridad social y contrato, mayores en la cola baja.
+
 ---
 
 ## 5. Limitaciones
 
 - **Asociaciones, no causas:** no hay una estrategia de identificación causal; las variables omitidas (habilidad, calidad educativa, experiencia real) pueden sesgar los coeficientes.
 - **Selección:** solo se observa a quien tiene ingreso laboral positivo. No se modela la decisión de participar, lo que importa especialmente para la brecha de género.
-- **Diseño muestral:** las estimaciones no están ponderadas y los errores agrupados por hogar no reproducen estratos ni UPM.
+- **Diseño muestral:** las estimaciones principales no están ponderadas. La sensibilidad con factores de expansión y errores agrupados por UPM mueve poco los resultados (sección 4.7), pero no reproduce el diseño completo con estratos.
+- **Errores de Huber y de la cuantílica:** no están agrupados por hogar; un *bootstrap* por hogares queda pendiente por su costo computacional.
 - **Montos nominales:** los niveles en pesos no se comparan entre años; las brechas porcentuales sí.
 - **Homologación:** los años de escolaridad son aproximados (sin antecedente escolar para Normal y Técnica), y ocupación y sector se usan en agregados estables por los cambios de catálogo.
-- **Escala:** el logaritmo no es la transformación óptima de Box–Cox ($\hat\lambda \approx 0.22$–$0.25$); queda pendiente una sensibilidad con potencia.
+- **Escala:** el logaritmo no es la transformación óptima de Box–Cox ($\hat\lambda \approx 0.22$–$0.25$). La sensibilidad con $\lambda = 0.25$ conserva el signo y la dirección del cambio en 57 de 61 efectos; las magnitudes de las primas educativas sí dependen de la escala.
 - **Ingresos muy bajos:** dominan la asimetría residual; un modelo de dos partes podría tratarlos mejor.
 
-## 6. Decisiones que conviene revisar juntos
+## 6. Decisiones abiertas para revisión
 
-1. ¿Leer la escolaridad con M3 (asociación total) y el resto de los determinantes con M5, como se propone aquí?
+1. ¿Leer la escolaridad con M3 (asociación total) y el resto de los determinantes con M5, como se propone en este documento?
 2. ¿Presentar asalariados e independientes como ecuaciones separadas en la versión final, dado que mejoran el ajuste y sus determinantes difieren?
+   *Evidencia del notebook 16:* la brecha de género y la prima de seguridad social son muy distintas entre grupos, y casi todos los cambios 2018–2024 provienen de los asalariados. Se propone reportar el modelo conjunto como resumen y las ecuaciones separadas como resultado principal de la inserción laboral.
 3. ¿Incorporar los ponderadores de la ENIGH al menos como sensibilidad, y retomar el diseño muestral formal?
+   *Evidencia del notebook 16:* la versión ponderada ya existe como sensibilidad y cambia poco los efectos, salvo la brecha de género (unos 3 puntos menor), y los errores por UPM apenas superan a los agrupados por hogar. Se propone mantener la versión sin ponderar como principal y reportar la ponderada junto a ella.
 4. ¿Modelar la participación (ingreso positivo o no) para abordar la selección, sobre todo por género?
 5. ¿Incluir la hipótesis del salario mínimo como discusión o como una extensión empírica?
 6. ¿Adoptar Box–Cox ($\lambda \approx 0.25$) como análisis de sensibilidad de la escala?
+   *Evidencia del notebook 16:* ya está incorporada como sensibilidad, y las conclusiones cualitativas se mantienen. Se propone conservar el logaritmo como escala principal.
 
 ## 7. Cómo reproducir
 
 1. **Notebook 05:** construye el mart de personas, incluidos ocupación y sector del trabajo principal.
 2. **Notebook 12:** construye una base por año; se ejecuta con `ANIO_ANALISIS` igual a 2018, 2020, 2022 y 2024.
 3. **Notebook 15:** especificación y validación (unos 30 minutos). Exporta las bases de modelado a `data/processed/especificacion_validacion/`.
-4. **Notebook 16:** interpretación del modelo final (unos 25 minutos).
+4. **Notebook 16:** interpretación del modelo final y robustez (unos 85 minutos con todas las secciones). Las banderas `EJECUTAR_HUBER_M5`, `EJECUTAR_CUANTILICA_M5` y `EJECUTAR_PONDERADO` permiten omitir las estimaciones más costosas, y `ANIOS_ROBUSTEZ` limita los años.
 
 Todas las figuras de este documento se regeneran al ejecutar los notebooks 15 y 16.
